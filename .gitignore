@@ -1,0 +1,21 @@
+# Build output and staging
+site/dist/
+site/.build/
+qa-out/
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
+# Never in git (public repo)
+*.env
+.env*
+.dev.vars
+private/
+people_src/
+site_qa/
+.secrets/
+*.pem
+*.key
+# Local guard and test fixtures (supplied in CI from secrets)
+MW_GUARD*.json
+compliance_terms*.txt
