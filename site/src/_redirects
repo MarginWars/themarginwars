@@ -1,2 +1,4 @@
 /routed /tracewire 301
 /routed.html /tracewire 301
+/insights /warroom 301
+/network /#network 301

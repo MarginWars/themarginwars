@@ -1,0 +1,7 @@
+/* calm reveal guard: content is visible by default; JS only adds motion, with a failsafe */
+(function(){var d=document,h=d.documentElement,RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(RM||!('IntersectionObserver' in window))return;h.classList.add('mo');
+function all(){[].forEach.call(d.querySelectorAll('.pst,.rv,.plate'),function(e){e.classList.add('in');e.classList.add('rv-in');e.classList.add('pin')})}
+function vis(){var H=innerHeight;[].forEach.call(d.querySelectorAll('.pst:not(.in),.rv:not(.rv-in)'),function(e){var b=e.getBoundingClientRect();if(b.top<H&&b.bottom>0){e.classList.add('in');e.classList.add('rv-in')}})}
+addEventListener('load',vis);addEventListener('pageshow',function(){vis();setTimeout(all,1500)});addEventListener('scroll',vis,{passive:true});
+setTimeout(vis,300);var PS=function(){return [].slice.call(d.querySelectorAll('.plate'))};var px=function(){var H=innerHeight;PS().forEach(function(f){var b=f.getBoundingClientRect();if(b.top<H*.95&&b.bottom>0)f.classList.add('pin');var i=f.querySelector('img');if(i&&b.bottom>0&&b.top<H){var c=(b.top+b.height/2-H/2)/H;i.style.setProperty('--py',(c*-10).toFixed(1)+'px')}})};addEventListener('scroll',px,{passive:true});addEventListener('load',px);setTimeout(px,200);setTimeout(function(){PS().forEach(function(f){f.classList.add('pin')})},2500);setTimeout(all,2500);window.onerror=function(){all();h.classList.remove('mo')};})();

@@ -13,7 +13,7 @@ function balance(){G.forEach(function(g){var ul=g.querySelector('.rx-tiles'),v=[
   v.forEach(function(li){li.classList.remove('rx-full')});var p=plan(v.length,maxCols(ul.clientWidth||S.clientWidth));
   ul.style.setProperty('--c',p[0]);if(p[1])v[v.length-1].classList.add('rx-full')});
  var lis=tabs.map(function(t){return t.parentNode}).filter(function(li){return!li.hidden});lis.forEach(function(li){li.classList.remove('rx-full')});
- if(lis.length%2)lis[lis.length-1].classList.add('rx-full')}
+ if(lis.length%2)lis[lis.length-1].classList.add('rx-full');air.classList.toggle('rx-few',lis.length<3)}
 function anim(el){if(RM)return;el.classList.remove('rx-in');void el.offsetWidth;el.classList.add('rx-in')}
 function pick(i,focus){sel=i;tabs.forEach(function(t,k){var on=k===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;panels[k].classList.toggle('on',on)});
  if(focus)tabs[i].focus();anim(panels[i])}
@@ -25,7 +25,7 @@ function apply(){var q=(qi.value||'').trim().toLowerCase(),words=q.split(/\s+/).
   if(q&&n)g.open=true});
  var rok=f==='all'||f==='regions',vis=[];tabs.forEach(function(t,i){var h=!(rok&&m(t.dataset.q));t.parentNode.hidden=h;if(!h)vis.push(i)});
  mk=vis.length;air.hidden=hA.hidden=!mk;if(mk&&vis.indexOf(sel)<0)pick(vis[0]);
- hR.hidden=!G.some(function(g){return g.dataset.k!=='networks'&&!g.hidden});
+ hR.hidden=!G.some(function(g){return!g.hidden});
  empty.hidden=!!(names||mk);
  st.textContent=(q||f!=='all')?'Showing '+names+' name'+(names===1?'':'s')+' and '+mk+' market'+(mk===1?'':'s')+(q?' matching \u201c'+qi.value.trim()+'\u201d':''):'';
  balance();syncTog()}
