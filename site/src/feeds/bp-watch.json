@@ -1,0 +1,40 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "The Margin Wars | Basis-Point Watch [Preview]",
+  "home_page_url": "https://calm.themarginwars.pages.dev/bp-watch/",
+  "feed_url": "https://calm.themarginwars.pages.dev/feeds/bp-watch.json",
+  "description": "Preview, pending Avi’s review",
+  "language": "en-US",
+  "items": [
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/bp-watch/au-pass-through-test",
+      "url": "https://calm.themarginwars.pages.dev/bp-watch/#au-pass-through-test",
+      "title": "Australia: audit the pass-through",
+      "content_text": "Preview, pending Avi’s review. Cost direction: lower interchange; net savings unquantified. Method: Direction follows the RBA’s cap reductions. Merchant impact needs transaction mix and contracted pass-through; no basis-point estimate is claimed. The move: Reconcile October fees against September, holding card mix constant. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "AU & NZ"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/bp-watch/nz-commercial-readiness",
+      "url": "https://calm.themarginwars.pages.dev/bp-watch/#nz-commercial-readiness",
+      "title": "NZ: price the commercial-card reset",
+      "content_text": "Preview, pending Avi’s review. Cost direction: lower regulated interchange; merchant savings unquantified. Method: Direction follows the Commission’s decision. No conversion to merchant basis points without commercial-card share and acquirer terms. The move: Ask for an April repricing plan and a commercial-card mix report. Official source: https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "AU & NZ"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/bp-watch/uk-fee-evidence",
+      "url": "https://calm.themarginwars.pages.dev/bp-watch/#uk-fee-evidence",
+      "title": "UK: make fee evidence usable",
+      "content_text": "Preview, pending Avi’s review. Impact direction: greater transparency; no guaranteed fee reduction. Method: Governance and disclosure duties do not themselves set merchant prices. No numeric savings estimate is claimed. The move: Build a fee-line inventory now; map each trigger to the acquiring invoice. Official source: https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "UK / EU"
+      ]
+    }
+  ]
+}

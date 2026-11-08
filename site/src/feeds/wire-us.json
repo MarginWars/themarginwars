@@ -1,0 +1,80 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "The Margin Wars | The Rulebook Wire / US [Preview]",
+  "home_page_url": "https://calm.themarginwars.pages.dev/wire/?market=us",
+  "feed_url": "https://calm.themarginwars.pages.dev/feeds/wire-us.json",
+  "description": "Preview, pending Avi’s review",
+  "language": "en-US",
+  "items": [
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-same-day-limit",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-same-day-limit",
+      "title": "Same Day ACH: $10 million limit",
+      "content_text": "Preview, pending Avi’s review. Nacha lists an increase of the Same Day ACH dollar limit to $10 million for 17 September 2027. Who: US treasury, payout and originating-bank teams. Effective: 2027-09-17. Official source: https://www.nacha.org/content/summary-upcoming-rule-changes",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-availability",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-availability",
+      "title": "ACH credits: 9am availability",
+      "content_text": "Preview, pending Avi’s review. Non-Same Day ACH credits must be available by 9am in the receiving bank’s local time on settlement date. Who: Receiving banks and payout teams. Effective: 2026-09-18. Official source: https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-iat",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-iat",
+      "title": "ACH: IAT definition changes",
+      "content_text": "Preview, pending Avi’s review. Nacha lists its revised definition of International ACH Transactions among the September changes. Who: ACH originators and compliance teams. Effective: 2026-09-18. Official source: https://www.nacha.org/content/summary-upcoming-rule-changes",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-availability-exceptions",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-availability-exceptions",
+      "title": "ACH availability exceptions update",
+      "content_text": "Preview, pending Avi’s review. Nacha lists changes to funds-availability exceptions for Non-Same Day credit entries. Check the rule text before changing controls. Who: Receiving banks. Effective: 2026-09-18. Official source: https://www.nacha.org/content/summary-upcoming-rule-changes",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-iat-date-of-birth",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-iat-date-of-birth",
+      "title": "IAT: optional date-of-birth field",
+      "content_text": "Preview, pending Avi’s review. Nacha lists the optional date-of-birth field for IAT entries for 19 March 2027. Who: IAT originators, banks and service providers. Effective: 2027-03-19. Official source: https://www.nacha.org/content/summary-upcoming-rule-changes",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ach-iat-contacts",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ach-iat-contacts",
+      "title": "ACH: register IAT contacts",
+      "content_text": "Preview, pending Avi’s review. Registration of IAT contacts in the ACH Contact Registry is listed for 1 January 2027. Who: ACH participants handling international entries. Effective: 2027-01-01. Official source: https://www.nacha.org/content/summary-upcoming-rule-changes",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/us-regii-watch",
+      "url": "https://calm.themarginwars.pages.dev/wire/#us-regii-watch",
+      "title": "Reg II: proposal watch, not a new rate",
+      "content_text": "Preview, pending Avi’s review. The Federal Reserve proposal docket is the source to monitor. No final rate, litigation outcome or effective date is asserted in this preview. Who: US debit economics and regulatory teams. Effective: Not confirmed / not applicable. Official source: https://www.federalreserve.gov/apps/proposals/FR-0000-0095-01/details",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    }
+  ]
+}

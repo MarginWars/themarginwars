@@ -1,0 +1,42 @@
+[
+  {
+    "id": "us-bank-context-20261108",
+    "date": "2026-11-08",
+    "market": "us",
+    "route_id": "us-bank",
+    "wire_id": "ach-availability",
+    "title": "US BANK / rule context linked",
+    "description": "Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged.",
+    "source": "https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries"
+  },
+  {
+    "id": "ukeu-card-context-20261108",
+    "date": "2026-11-08",
+    "market": "ukeu",
+    "route_id": "ukeu-card",
+    "wire_id": "eu-psd3-position",
+    "title": "UKEU CARD / rule context linked",
+    "description": "Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged.",
+    "source": "https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf"
+  },
+  {
+    "id": "br-instant-context-20261108",
+    "date": "2026-11-08",
+    "market": "br",
+    "route_id": "br-instant",
+    "wire_id": "pix-dict-default",
+    "title": "BR INSTANT / rule context linked",
+    "description": "Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged.",
+    "source": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html"
+  },
+  {
+    "id": "anz-card-context-20261108",
+    "date": "2026-11-08",
+    "market": "anz",
+    "route_id": "anz-card",
+    "wire_id": "au-surcharging",
+    "title": "ANZ CARD / rule context linked",
+    "description": "Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged.",
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html"
+  }
+]

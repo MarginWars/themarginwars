@@ -1,0 +1,30 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "The Margin Wars | The Rulebook Wire / Canada & LATAM [Preview]",
+  "home_page_url": "https://calm.themarginwars.pages.dev/wire/?market=ca-latam",
+  "feed_url": "https://calm.themarginwars.pages.dev/feeds/wire-ca-latam.json",
+  "description": "Preview, pending Avi’s review",
+  "language": "en-US",
+  "items": [
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ca-rtr-launch",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ca-rtr-launch",
+      "title": "Canada: RTR launch set for 9 November",
+      "content_text": "Preview, pending Avi’s review. Payments Canada confirms a scheduled 9 November launch. This preview does not describe the service as already live. Who: Canadian banks, PSPs and payment users. Effective: 2026-11-09. Official source: https://www.payments.ca/canadas-real-time-rail-launch-confirmed-budget-2026",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "Canada & LATAM"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/ca-eu-interlink",
+      "url": "https://calm.themarginwars.pages.dev/wire/#ca-eu-interlink",
+      "title": "Canada–EU: interlink work supported",
+      "content_text": "Preview, pending Avi’s review. A joint commitment supports work toward connecting instant payment systems. It is not an operating cross-border route. Who: Cross-border product and treasury teams. Effective: Not confirmed / not applicable. Official source: https://www.payments.ca/payments-canada-welcomes-joint-canada-eu-commitment-interlink-real-time-payment-systems",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "Canada & LATAM"
+      ]
+    }
+  ]
+}

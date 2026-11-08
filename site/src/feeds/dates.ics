@@ -1,0 +1,371 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Margin Wars//Effective Dates Preview//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Margin Wars — Preview dates
+X-WR-CALDESC:Preview\, pending Avi’s review\; all-day source-calendar dat
+ es\, not Pacific-time deadlines. Past milestones retained for context.
+BEGIN:VEVENT
+UID:au-surcharging@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[PREVIEW] Australia: card surcharge reset
+DESCRIPTION:Effective. eftpos\, Mastercard and Visa no-surcharge rules appl
+ y from 1 October after the RBA removed its prohibition on those rules.\nOf
+ ficial source: https://www.rba.gov.au/payments-and-infrastructure/review-o
+ f-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html\nPr
+ eview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-surcharging
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-domestic-interchange@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[PREVIEW] Domestic interchange: lower caps
+DESCRIPTION:Effective. Revised interchange regulation applies to domestic-i
+ ssued card transactions acquired in Australia.\nOfficial source: https://w
+ ww.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regula
+ tion/2026-03/conclusions-paper/impact-and-implementation.html\nPreview\, p
+ ending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-domestic-interchange
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-net-compensation@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:[PREVIEW] Issuer compensation rules change
+DESCRIPTION:Effective. The amended net-compensation regime starts\, with tr
+ ansitional arrangements for 2026/27.\nOfficial source: https://www.rba.gov
+ .au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-
+ 03/conclusions-paper/impact-and-implementation.html\nPreview\, pending Avi
+ ’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-net-compensation
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-network-disclosure@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:[PREVIEW] Scheme fees come into view
+DESCRIPTION:Publication deadline. First quarterly aggregate fee publication
+ s by designated card networks were due for the July–September period.\nO
+ fficial source: https://www.rba.gov.au/payments-and-infrastructure/review-
+ of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-impleme
+ ntation.html\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-network-disclosure
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-acquirer-disclosure@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:[PREVIEW] Acquirer fee disclosures begin
+DESCRIPTION:Publication deadline. Qualifying large acquirers must publish m
+ erchant service fee data by merchant size and card type.\nOfficial source:
+  https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payme
+ nts-regulation/2026-03/conclusions-paper/impact-and-implementation.html\nP
+ review\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-acquirer-disclosure
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-pass-through@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:[PREVIEW] Next: prove interchange pass-through
+DESCRIPTION:Publication deadline. First publication of large acquirers’ i
+ nterchange pass-through measures covers October–December 2026.\nOfficial
+  source: https://www.rba.gov.au/payments-and-infrastructure/review-of-reta
+ il-payments-regulation/2026-03/conclusions-paper/impact-and-implementation
+ .html\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-pass-through
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-foreign-cards@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:[PREVIEW] Foreign-issued cards get a cap
+DESCRIPTION:Effective. Interchange caps extend to foreign-issued card trans
+ actions acquired in Australia.\nOfficial source: https://www.rba.gov.au/pa
+ yments-and-infrastructure/review-of-retail-payments-regulation/2026-03/con
+ clusions-paper/impact-and-implementation.html\nPreview\, pending Avi’s r
+ eview
+URL:https://calm.themarginwars.pages.dev/calendar/#au-foreign-cards
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-statements@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:[PREVIEW] Merchant statements get sharper
+DESCRIPTION:Effective. More statement detail is required from the first ful
+ l statement period starting on or after 1 April.\nOfficial source: https:/
+ /www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regu
+ lation/2026-03/conclusions-paper/impact-and-implementation.html\nPreview\,
+  pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-statements
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:au-scheme-roadmap@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:[PREVIEW] Scheme-fee roadmap expected
+DESCRIPTION:Policy expectation. The RBA expects a scheme-fee roadmap by 1 A
+ pril\; this is an expectation\, not a new fee cap.\nOfficial source: https
+ ://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-re
+ gulation/2026-03/conclusions-paper/impact-and-implementation.html\nPreview
+ \, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#au-scheme-roadmap
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:nz-commercial-cards@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:[PREVIEW] NZ moves on commercial cards
+DESCRIPTION:Effective. The 22 October decision introduces commercial credit
+ -card interchange limits on Mastercard and Visa.\nOfficial source: https:/
+ /www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulati
+ on/\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#nz-commercial-cards
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-same-day-limit@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270917
+DTEND;VALUE=DATE:20270918
+SUMMARY:[PREVIEW] Same Day ACH: $10 million limit
+DESCRIPTION:Effective. Nacha lists an increase of the Same Day ACH dollar l
+ imit to $10 million for 17 September 2027.\nOfficial source: https://www.n
+ acha.org/content/summary-upcoming-rule-changes\nPreview\, pending Avi’s 
+ review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-same-day-limit
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-availability@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[PREVIEW] ACH credits: 9am availability
+DESCRIPTION:Effective. Non-Same Day ACH credits must be available by 9am in
+  the receiving bank’s local time on settlement date.\nOfficial source: h
+ ttps://www.nacha.org/rules/funds-availability-requirements-non-same-day-cr
+ edit-entries\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-availability
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-iat@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[PREVIEW] ACH: IAT definition changes
+DESCRIPTION:Effective. Nacha lists its revised definition of International 
+ ACH Transactions among the September changes.\nOfficial source: https://ww
+ w.nacha.org/content/summary-upcoming-rule-changes\nPreview\, pending Avi
+ ’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-availability-exceptions@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:[PREVIEW] ACH availability exceptions update
+DESCRIPTION:Effective. Nacha lists changes to funds-availability exceptions
+  for Non-Same Day credit entries. Check the rule text before changing cont
+ rols.\nOfficial source: https://www.nacha.org/content/summary-upcoming-rul
+ e-changes\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-availability-excepti
+ ons
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-iat-date-of-birth@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:[PREVIEW] IAT: optional date-of-birth field
+DESCRIPTION:Effective. Nacha lists the optional date-of-birth field for IAT
+  entries for 19 March 2027.\nOfficial source: https://www.nacha.org/conten
+ t/summary-upcoming-rule-changes\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat-date-of-birth
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ach-iat-contacts@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[PREVIEW] ACH: register IAT contacts
+DESCRIPTION:Effective. Registration of IAT contacts in the ACH Contact Regi
+ stry is listed for 1 January 2027.\nOfficial source: https://www.nacha.org
+ /content/summary-upcoming-rule-changes\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat-contacts
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:uk-pricing-governance@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:[PREVIEW] UK scheme pricing: evidence required
+DESCRIPTION:Effective. Relevant scheme-fee decisions must comply with the P
+ SR’s pricing-governance direction from the end of November.\nOfficial so
+ urce: https://www.psr.org.uk/publications/policy-statements/ps261-market-r
+ eview-of-card-scheme-and-processing-fees-final-decision-information-transp
+ arency-and-complexity-remedy-pricing-governance-remedy/\nPreview\, pending
+  Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#uk-pricing-governance
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:uk-fee-transparency@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:[PREVIEW] UK fee transparency: next stage
+DESCRIPTION:Effective. Substantive information\, transparency and complexit
+ y requirements apply from the end of July 2027\, subject to the limited fe
+ e-logic extension.\nOfficial source: https://www.psr.org.uk/publications/p
+ olicy-statements/ps261-market-review-of-card-scheme-and-processing-fees-fi
+ nal-decision-information-transparency-and-complexity-remedy-pricing-govern
+ ance-remedy/\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#uk-fee-transparency
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:uk-fee-logic-extension@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:[PREVIEW] Small fee lines: a limited extension
+DESCRIPTION:Effective. ITC Standard B is deferred for qualifying fee lines 
+ generating £850\,000 or less in annual UK gross revenue. During the exten
+ sion\, acquirers can request that information without charge.\nOfficial so
+ urce: https://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-e
+ xtensions-decision-aug-2026.pdf\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#uk-fee-logic-extension
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:uk-safeguarding@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20260507
+DTEND;VALUE=DATE:20260508
+SUMMARY:[PREVIEW] Safeguarding: the operating baseline
+DESCRIPTION:Effective. Daily reconciliations\, monthly reports and resoluti
+ on packs form part of the strengthened safeguarding regime. Audit requirem
+ ents have exceptions.\nOfficial source: https://www.fca.org.uk/firms/emi-p
+ ayment-institutions-safeguarding-requirements\nPreview\, pending Avi’s r
+ eview
+URL:https://calm.themarginwars.pages.dev/calendar/#uk-safeguarding
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-psr-position@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:[PREVIEW] EU PSR: Council first-reading position
+DESCRIPTION:Legislative milestone. The Council voting record documents adop
+ tion of its first-reading position on 29 October. This is a legislative mi
+ lestone\, not an application date. PSD3 and PSR must be tracked separately
+ \; no implementation date is asserted here.\nOfficial source: https://data
+ .consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf\nPreview\, pen
+ ding Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#eu-psr-position
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:ca-rtr-launch@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:[PREVIEW] Canada: RTR launch set for 9 November
+DESCRIPTION:Scheduled launch. Payments Canada confirms a scheduled 9 Novemb
+ er launch. This preview does not describe the service as already live.\nOf
+ ficial source: https://www.payments.ca/canadas-real-time-rail-launch-confi
+ rmed-budget-2026\nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#ca-rtr-launch
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-psd3-position@themarginwars.com
+DTSTAMP:20261108T140000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:[PREVIEW] PSD3: Council first-reading position
+DESCRIPTION:Legislative milestone. The Council voting record documents its 
+ first-reading position on the payment and electronic-money services direct
+ ive on 29 October. This is not an implementation deadline.\nOfficial sourc
+ e: https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf
+ \nPreview\, pending Avi’s review
+URL:https://calm.themarginwars.pages.dev/calendar/#eu-psd3-position
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

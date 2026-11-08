@@ -1,0 +1,35 @@
+[
+  {
+    "id": "au-pass-through-test",
+    "date": "2026-11-08",
+    "title": "Australia: audit the pass-through",
+    "impact": "Cost direction: lower interchange; net savings unquantified.",
+    "method": "Direction follows the RBA’s cap reductions. Merchant impact needs transaction mix and contracted pass-through; no basis-point estimate is claimed.",
+    "move": "Reconcile October fees against September, holding card mix constant.",
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+    "wire_id": "au-domestic-interchange",
+    "market": "anz"
+  },
+  {
+    "id": "nz-commercial-readiness",
+    "date": "2026-11-08",
+    "title": "NZ: price the commercial-card reset",
+    "impact": "Cost direction: lower regulated interchange; merchant savings unquantified.",
+    "method": "Direction follows the Commission’s decision. No conversion to merchant basis points without commercial-card share and acquirer terms.",
+    "move": "Ask for an April repricing plan and a commercial-card mix report.",
+    "source": "https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+    "wire_id": "nz-commercial-cards",
+    "market": "anz"
+  },
+  {
+    "id": "uk-fee-evidence",
+    "date": "2026-11-08",
+    "title": "UK: make fee evidence usable",
+    "impact": "Impact direction: greater transparency; no guaranteed fee reduction.",
+    "method": "Governance and disclosure duties do not themselves set merchant prices. No numeric savings estimate is claimed.",
+    "move": "Build a fee-line inventory now; map each trigger to the acquiring invoice.",
+    "source": "https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/",
+    "wire_id": "uk-pricing-governance",
+    "market": "ukeu"
+  }
+]

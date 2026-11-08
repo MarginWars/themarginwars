@@ -2,3 +2,16 @@ https://review.themarginwars.pages.dev/*
   X-Robots-Tag: noindex
 https://:hash.themarginwars.pages.dev/*
   X-Robots-Tag: noindex
+
+# feeds-headers
+/feeds/*.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=300
+/feeds/*.atom
+  Content-Type: application/atom+xml; charset=utf-8
+/feeds/*.json
+  Content-Type: application/feed+json; charset=utf-8
+/feeds/dates.ics
+  Content-Type: text/calendar; charset=utf-8
+  Content-Disposition: inline; filename="margin-wars-dates-preview.ics"
+# /feeds-headers

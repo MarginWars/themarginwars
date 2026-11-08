@@ -1,0 +1,580 @@
+{
+ "version": "2026-11-07",
+ "markets": [
+  {
+   "id": "us",
+   "label": "United States"
+  },
+  {
+   "id": "ukeu",
+   "label": "UK / EU"
+  },
+  {
+   "id": "br",
+   "label": "Brazil"
+  },
+  {
+   "id": "anz",
+   "label": "Australia & NZ"
+  }
+ ],
+ "methods": [
+  {
+   "id": "card",
+   "label": "Cards"
+  },
+  {
+   "id": "bank",
+   "label": "Bank transfer"
+  },
+  {
+   "id": "instant",
+   "label": "Instant / A2A"
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "us-bank",
+   "market": "us",
+   "method": "bank",
+   "title": "US bank transfer",
+   "path": [
+    [
+     "Payment instruction",
+     "Your business"
+    ],
+    [
+     "Recipient account",
+     "Domestic US"
+    ]
+   ],
+   "rails": [
+    [
+     "ACH",
+     "US bank rail: pay-ins and payouts, run under Nacha rules"
+    ],
+    [
+     "RTP",
+     "US real-time payments network operated by The Clearing House"
+    ],
+    [
+     "FedNow",
+     "US instant payments, operated by the Federal Reserve"
+    ]
+   ],
+   "rails_note": "These are alternatives, not legs of one transfer. Each rail prices differently, and your provider decides eligibility.",
+   "authorities": [
+    [
+     "Nacha",
+     "Governs the ACH Network rules"
+    ],
+    [
+     "Federal Reserve",
+     "Central bank; operates FedNow"
+    ],
+    [
+     "CFPB",
+     "Consumer financial protection regulator"
+    ],
+    [
+     "FinCEN",
+     "Anti-money-laundering authority under the Bank Secrecy Act"
+    ]
+   ],
+   "questions": [
+    [
+     "Where the fee becomes a loss",
+     "Compare processing cost with returns, exceptions and the operational effort behind them."
+    ],
+    [
+     "Who can use the route",
+     "Ask your provider about eligibility, limits and access. A listing is not approval."
+    ],
+    [
+     "Who owns the exception",
+     "Check settlement, reconciliation and the recovery path before you change the flow."
+    ]
+   ],
+   "unknowns": "Your bank or provider access, contract, price, limits and return exposure.",
+   "sources": [
+    [
+     "Site: United States market entry",
+     "index.html#network"
+    ],
+    [
+     "Nacha: the ACH Network",
+     "https://www.nacha.org/content/ach-network"
+    ],
+    [
+     "The Clearing House: RTP",
+     "https://www.theclearinghouse.org/payment-systems/rtp"
+    ],
+    [
+     "Federal Reserve Financial Services: FedNow",
+     "https://www.frbservices.org/financial-services/fednow"
+    ]
+   ]
+  },
+  {
+   "id": "us-card",
+   "market": "us",
+   "method": "card",
+   "title": "US card acceptance",
+   "path": [
+    [
+     "Card payment",
+     "Your checkout"
+    ],
+    [
+     "Acquirer",
+     "Routing decision"
+    ]
+   ],
+   "rails": [
+    [
+     "Debit routing",
+     "Regulation II stops issuers and networks limiting debit to fewer than two unaffiliated networks, or blocking the merchant's routing choice"
+    ],
+    [
+     "Network tokens",
+     "Turn on network tokens and account updater for stored cards"
+    ],
+    [
+     "Second acquirer",
+     "Route on all-in cost per approved order, with failover tested"
+    ]
+   ],
+   "rails_note": "Options to investigate, not a recommendation. Which debit networks a card carries is set by the issuer.",
+   "authorities": [
+    [
+     "Federal Reserve",
+     "Central bank; sets Regulation II"
+    ],
+    [
+     "EMVCo",
+     "Sets the EMV and EMV 3-D Secure specifications"
+    ],
+    [
+     "PCI SSC",
+     "Sets the PCI DSS card-data security standard"
+    ],
+    [
+     "CFPB",
+     "Consumer financial protection regulator"
+    ]
+   ],
+   "questions": [
+    [
+     "Which downgrades you pay for",
+     "Sort the qualification report by reason code: Level 2/3 data, card-present flag, AVS, capture timing."
+    ],
+    [
+     "Who chooses the debit route",
+     "Check whether your acquirer routes debit least-cost where the rules allow, or by default."
+    ],
+    [
+     "Which declines are soft",
+     "Split soft from hard declines and price each lost sale next to the fee line."
+    ]
+   ],
+   "unknowns": "Your pricing model (blended or pass-through), downgrade volume, and how your acquirer routes debit today.",
+   "sources": [
+    [
+     "Site: Interchange, Acceptance and Routing fronts",
+     "index.html"
+    ],
+    [
+     "Federal Reserve: Regulation II",
+     "https://www.federalreserve.gov/paymentsystems/regii-about.htm"
+    ],
+    [
+     "EMVCo: 3-D Secure",
+     "https://www.emvco.com/emv-technologies/3-d-secure/"
+    ]
+   ],
+   "status": [
+    [
+     "3DS / SCA",
+     "EMVCo sets EMV 3DS. We cite no US rule that mandates SCA."
+    ]
+   ]
+  },
+  {
+   "id": "ukeu-card",
+   "market": "ukeu",
+   "method": "card",
+   "title": "UK / EU card acceptance",
+   "path": [
+    [
+     "Card payment",
+     "Your checkout"
+    ],
+    [
+     "Issuer authentication",
+     "3DS and SCA"
+    ]
+   ],
+   "rails": [
+    [
+     "3DS exemptions",
+     "Where approvals are won or lost under strong customer authentication"
+    ],
+    [
+     "Bank debit",
+     "Enabled market by market across the EU"
+    ],
+    [
+     "Open banking",
+     "Account-to-account payment, enabled market by market"
+    ]
+   ],
+   "rails_note": "Authentication decides conversion. Alternatives depend on the market and your provider.",
+   "authorities": [
+    [
+     "EBA",
+     "EU banking authority; PSD2 and SCA technical standards"
+    ],
+    [
+     "FCA",
+     "Authorises payment and e-money institutions"
+    ],
+    [
+     "PSR",
+     "Payment Systems Regulator"
+    ],
+    [
+     "EMVCo",
+     "Sets the EMV 3-D Secure specification"
+    ],
+    [
+     "UK Finance",
+     "UK banking and finance trade association"
+    ],
+    [
+     "European Payments Council",
+     "Manages the SEPA payment schemes"
+    ]
+   ],
+   "questions": [
+    [
+     "Where friction costs the sale",
+     "Put authentication drop-off next to the fee line so the trade-off is priced."
+    ],
+    [
+     "Which exemptions you use",
+     "Check which SCA exemptions your provider applies, and on which flows."
+    ],
+    [
+     "Which market needs a local method",
+     "List where bank debit or open banking would replace a card, market by market."
+    ]
+   ],
+   "unknowns": "Your exemption rates, issuer behaviour by market, and which local methods your provider supports.",
+   "sources": [
+    [
+     "Site: United Kingdom and European Union market entries",
+     "index.html#network"
+    ],
+    [
+     "EBA: payment services and e-money",
+     "https://www.eba.europa.eu/regulation-and-policy/payment-services-and-electronic-money"
+    ],
+    [
+     "FCA: payment services and e-money regulations",
+     "https://www.fca.org.uk/firms/payment-services-regulations-e-money-regulations"
+    ],
+    [
+     "EMVCo: 3-D Secure",
+     "https://www.emvco.com/emv-technologies/3-d-secure/"
+    ],
+    [
+     "FCA: Strong Customer Authentication",
+     "https://www.fca.org.uk/firms/strong-customer-authentication"
+    ],
+    [
+     "Council of the EU: PSR position at first reading, 29 Oct 2026",
+     "https://data.consilium.europa.eu/doc/document/ST-8543-2026-REV-1-ADD-1/en/pdf"
+    ],
+    [
+     "UK Finance: about us",
+     "https://www.ukfinance.org.uk/about-us"
+    ]
+   ],
+   "status": [
+    [
+     "3DS / SCA",
+     "EU: SCA under PSD2, with EBA technical standards. UK: SCA under FCA rules."
+    ],
+    [
+     "PSD3 / PSR (EU)",
+     "Not in force. Council adopted its first-reading position on 29 Oct 2026; Parliament's second reading is pending. PSD2 still applies."
+    ]
+   ]
+  },
+  {
+   "id": "br-instant",
+   "market": "br",
+   "method": "instant",
+   "title": "Brazil instant payment",
+   "path": [
+    [
+     "Payment instruction",
+     "Cross-border seller"
+    ],
+    [
+     "Local settlement",
+     "Brazil"
+    ]
+   ],
+   "rails": [
+    [
+     "Pix",
+     "Instant payment scheme created by Banco Central do Brasil"
+    ],
+    [
+     "Local acquiring",
+     "Local acquiring and local methods decide approval rates"
+    ],
+    [
+     "Cross-border card",
+     "The baseline to beat: cross-border fees and FX, sometimes twice"
+    ]
+   ],
+   "rails_note": "Test one corridor against a control before rolling anything out.",
+   "authorities": [
+    [
+     "Banco Central do Brasil",
+     "Central bank and payments regulator"
+    ],
+    [
+     "EMVCo",
+     "Sets the EMV specifications for the card baseline"
+    ],
+    [
+     "PCI SSC",
+     "Sets the PCI DSS card-data security standard"
+    ]
+   ],
+   "questions": [
+    [
+     "Where the FX markup sits",
+     "Quote the markup per corridor and per order, then decide where it should sit."
+    ],
+    [
+     "Local or cross-border",
+     "Compare all-in cost, approval and settlement days against a held-out control."
+    ],
+    [
+     "Who owns the entity question",
+     "Check what local presence a local route needs before you price it."
+    ]
+   ],
+   "unknowns": "Your entity setup, local acquiring access, where conversion happens, and settlement timing.",
+   "sources": [
+    [
+     "Site: Mexico, Brazil and LATAM entry; Cross-border front",
+     "index.html#network"
+    ],
+    [
+     "Banco Central do Brasil: Pix",
+     "https://www.bcb.gov.br/en/financialstability/pix_en"
+    ]
+   ],
+   "status": [
+    [
+     "3DS / SCA",
+     "Not yet sourced for Brazil."
+    ]
+   ]
+  },
+  {
+   "id": "anz-card",
+   "market": "anz",
+   "method": "card",
+   "title": "Australia & NZ card acceptance",
+   "path": [
+    [
+     "Card payment",
+     "Your checkout"
+    ],
+    [
+     "Acquirer",
+     "Dual-network debit"
+    ]
+   ],
+   "rails": [
+    [
+     "Least-cost routing",
+     "Send dual-network debit via the network that costs less. The RBA expects acquirers to offer and promote it."
+    ],
+    [
+     "eftpos",
+     "Australia's domestic debit card scheme"
+    ],
+    [
+     "Bank acquirers",
+     "ANZ, CBA, NAB and Westpac report LCR take-up to the RBA"
+    ]
+   ],
+   "rails_note": "Options to investigate. LCR can be binary, threshold or dynamic, and your provider sets which.",
+   "authorities": [
+    [
+     "RBA",
+     "Payments System Board; regulates designated card networks"
+    ],
+    [
+     "AusPayNet",
+     "Industry body; runs the CNP Fraud Mitigation Framework"
+    ],
+    [
+     "Commerce Commission",
+     "NZ; regulates Mastercard and Visa interchange under the Retail Payment System Act 2022"
+    ],
+    [
+     "Payments NZ",
+     "Governs the rules for NZ's core payment systems"
+    ]
+   ],
+   "status": [
+    [
+     "AU surcharging",
+     "Removed from 1 Oct 2026 on eftpos, Mastercard and Visa."
+    ],
+    [
+     "AU interchange",
+     "Lower domestic caps from 1 Oct 2026; a cap on foreign-issued cards from 1 Apr 2027. Online and wallet LCR is under further RBA consultation."
+    ],
+    [
+     "NZ interchange",
+     "Personal-card limits from 1 Dec 2025 (domestic) and 1 May 2026 (foreign); commercial credit limits from 22 Apr 2027."
+    ],
+    [
+     "3DS / SCA",
+     "AU: AusPayNet requires SCA once a merchant breaches its fraud threshold for consecutive quarters. NZ: not yet sourced."
+    ]
+   ],
+   "questions": [
+    [
+     "Is LCR on, and which kind",
+     "Check binary, threshold or dynamic routing, in person and online."
+    ],
+    [
+     "Where the surcharge used to sit",
+     "Price the acceptance cost you can no longer pass on in Australia."
+    ],
+    [
+     "Did the cut reach your fee",
+     "Compare your rate with the pass-through large acquirers must publish from 30 Jan 2027."
+    ]
+   ],
+   "unknowns": "Your plan type, LCR setting, pass-through, and whether NZ surcharging rules change.",
+   "sources": [
+    [
+     "RBA: surcharging FAQs, Oct 2026 changes",
+     "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html"
+    ],
+    [
+     "RBA: conclusions, impact and implementation",
+     "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+    ],
+    [
+     "RBA: least-cost routing",
+     "https://www.rba.gov.au/payments-and-infrastructure/debit-cards/least-cost-routing/"
+    ],
+    [
+     "RBA: LCR implementation update, Sep 2026",
+     "https://www.rba.gov.au/payments-and-infrastructure/debit-cards/least-cost-routing/update-on-implementation.html"
+    ],
+    [
+     "AusPayNet: CNP Fraud Mitigation Framework",
+     "https://auspaynet.com.au/insights/initiatives/CNP-Fraud-Mitigation-Framework"
+    ],
+    [
+     "Commerce Commission: interchange fee regulation",
+     "https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/"
+    ],
+    [
+     "Payments NZ",
+     "https://www.paymentsnz.co.nz/"
+    ]
+   ],
+   "proof": "Anitha set up Braintree Australia, twice."
+  },
+  {
+   "id": "anz-instant",
+   "market": "anz",
+   "method": "instant",
+   "title": "Australia instant payment",
+   "path": [
+    [
+     "Payment instruction",
+     "Your business"
+    ],
+    [
+     "Customer bank account",
+     "Australia"
+    ]
+   ],
+   "rails": [
+    [
+     "NPP",
+     "Australia's real-time payments platform"
+    ],
+    [
+     "PayTo",
+     "Business-initiated real-time payments from a customer's bank account, under an agreement the customer authorises"
+    ],
+    [
+     "Card baseline",
+     "Compare against card cost after the Oct 2026 changes"
+    ]
+   ],
+   "rails_note": "Alternatives, not one route. Your bank or provider decides access.",
+   "authorities": [
+    [
+     "Australian Payments Plus",
+     "Runs NPP and PayTo"
+    ],
+    [
+     "RBA",
+     "Central bank; Payments System Board"
+    ],
+    [
+     "AusPayNet",
+     "Australian Payments Network; industry body"
+    ]
+   ],
+   "status": [
+    [
+     "NZ instant / A2A",
+     "Not yet sourced."
+    ]
+   ],
+   "questions": [
+    [
+     "Which flows suit PayTo",
+     "List recurring and ad-hoc pulls now on cards or direct debit."
+    ],
+    [
+     "Who can offer it",
+     "Ask your bank or provider about PayTo access and pricing."
+    ],
+    [
+     "Who owns the exception",
+     "Check agreement changes, failures and reconciliation before you move."
+    ]
+   ],
+   "unknowns": "Your bank or provider access, price, limits, and customer take-up.",
+   "sources": [
+    [
+     "Australian Payments Plus: NPP",
+     "https://www.auspayplus.com.au/solutions/npp"
+    ],
+    [
+     "Australian Payments Plus: PayTo for businesses",
+     "https://www.auspayplus.com.au/solutions/payto-for-businesses"
+    ]
+   ]
+  }
+ ]
+}

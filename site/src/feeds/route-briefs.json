@@ -1,0 +1,50 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "The Margin Wars | Route Brief Updates [Preview]",
+  "home_page_url": "https://calm.themarginwars.pages.dev/feeds/#route-updates",
+  "feed_url": "https://calm.themarginwars.pages.dev/feeds/route-briefs.json",
+  "description": "Preview, pending Avi’s review",
+  "language": "en-US",
+  "items": [
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/us-bank-context-20261108",
+      "url": "https://calm.themarginwars.pages.dev/index.html#rb-us-bank",
+      "title": "US BANK / rule context linked",
+      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "US"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/ukeu-card-context-20261108",
+      "url": "https://calm.themarginwars.pages.dev/index.html#rb-ukeu-card",
+      "title": "UKEU CARD / rule context linked",
+      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "UK / EU"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/br-instant-context-20261108",
+      "url": "https://calm.themarginwars.pages.dev/index.html#rb-br-instant",
+      "title": "BR INSTANT / rule context linked",
+      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "Brazil"
+      ]
+    },
+    {
+      "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/anz-card-context-20261108",
+      "url": "https://calm.themarginwars.pages.dev/index.html#rb-anz-card",
+      "title": "ANZ CARD / rule context linked",
+      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+      "date_published": "2026-11-08T14:00:00Z",
+      "tags": [
+        "AU & NZ"
+      ]
+    }
+  ]
+}
