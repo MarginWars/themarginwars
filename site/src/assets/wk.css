@@ -173,3 +173,46 @@ footer{padding-bottom:calc(34px + env(safe-area-inset-bottom,0px))!important}
  html body>header nav::-webkit-scrollbar{display:none}
  html body>header nav a{white-space:nowrap;flex:none}
 }
+
+/* ===== mobile-first spacing layer (Nov 8) — global tokens owned here ===== */
+:root{--g:16px;--sec:64px;--band:64px;--h2b:16px;--cta:32px;--tap:44px}
+@media(min-width:601px){:root{--g:24px;--sec:96px;--band:80px;--h2b:24px;--cta:40px}}
+@media(min-width:1024px){:root{--sec:120px;--band:96px}}
+:root{--edge:max(var(--g),calc((100% - var(--cw))/2))}
+/* one shared edge for every top-level block, whatever its own stylesheet says */
+html body main>section,html body main>nav,html body main>.wrap,html body main>div,html body>footer{padding-left:max(var(--edge),env(safe-area-inset-left,0px))!important;padding-right:max(var(--edge),env(safe-area-inset-right,0px))!important;margin-left:0!important;margin-right:0!important;max-width:none!important;box-sizing:border-box!important}
+html body main>.wrap>*{margin-left:0!important;margin-right:0!important}
+html body main>.wrap>section{padding-left:0!important;padding-right:0!important}
+/* rhythm: every non-hero section 64/96/120 */
+html body main>section:not(.hero):not(.ihero),html body main>.wrap>section{padding-top:var(--sec)!important;margin-top:0!important}
+html body main>section:not(.hero):not(.ihero)[class]{padding-bottom:var(--sec)!important}
+html body main>.wrap>section{padding-bottom:0!important}
+html body main>.wrap:last-of-type>section:last-child{padding-bottom:var(--sec)!important}
+html body main>section.intro2{padding-bottom:0!important}
+html body.pg-warroom main .wrap>section.wg,html body.pg-warroom main .wrap>section.wg:first-child{margin-top:var(--sec)!important;padding-top:24px!important}
+html body main>section.hero,html body main>section.ihero{padding-top:var(--band)!important;padding-bottom:var(--band)!important}
+/* games terminal hero: full-bleed band on the shared edge */
+html body.pg-arcade main>section.ihero{margin:0!important;border-radius:0!important;padding-left:max(var(--edge),env(safe-area-inset-left,0px))!important;padding-right:max(var(--edge),env(safe-area-inset-right,0px))!important}
+/* heading -> body */
+html body main section>h2{margin-bottom:var(--h2b)!important}
+html body main section>h2+*{margin-top:0!important}
+/* tap targets */
+html body>header a,html body>header button,html body>footer a,html body main button,html body main summary,html body main .btn,html body main [role=tab]{min-height:var(--tap)!important;box-sizing:border-box}
+html body>header nav a,html body>header .brand,html body>footer a{display:inline-flex!important;align-items:center}
+html body>header nav a{padding-top:0!important;padding-bottom:0!important}
+html body main button:not(.wk-jack):not(.yt),html body main .btn{display:inline-flex;align-items:center;justify-content:center}
+
+/* id-level specificity so page/component stylesheets can't pull blocks off the shared edge */
+html body main>section:not(#\#),html body main>nav:not(#\#),html body main>div:not(#\#){padding-left:max(var(--edge),env(safe-area-inset-left,0px))!important;padding-right:max(var(--edge),env(safe-area-inset-right,0px))!important}
+html body main section:not(#\#)>h2+*{margin-top:0!important}
+html body main section:not(#\#)>h2{margin-bottom:var(--h2b)!important}
+html body>header:not(#\#) .hcta{min-height:var(--tap)!important}
+html body>header nav a{min-width:var(--tap)!important;justify-content:center}
+html body main nav.nextp a,html body main .f-strip a,html body main a.go,html body main .wrl a{min-height:var(--tap)!important;display:inline-flex!important;align-items:center}
+html body main .f-strip a{display:flex!important}
+@media(max-width:1100px){.wk-jacks>:nth-child(7):last-child{grid-column:1/-1}}
+html body main section.stg:not(#\#){row-gap:0!important}
+html body main .rt-cta a{min-height:var(--tap)!important;display:inline-flex!important;align-items:center}
+html body .rb-sti dt{color:#CC67A7!important}
+html body main .band .bh>a{min-height:var(--tap)!important;display:inline-flex!important;align-items:center}
+html body .rx-g.rx-dark:not([open]) .rl{color:#3E474D!important}

@@ -1,0 +1,62 @@
+/* Reading surfaces: white for the work, grey for grouping, dark for orientation. */
+body.nm{--nm-white:#FFFFFF;--nm-paper:#F4F6F7;--nm-grey:#E9EDEF;--nm-rule:#C2CBD0;--nm-muted:#4A555B}
+/* Home: the live research desk is a light workspace, not another dark band. */
+body.nm .f-strip{background:var(--nm-grey)!important;color:var(--nm-ink)!important}
+body.nm .f-striphead h2,body.nm .f-stripitem>a{color:var(--nm-ink)!important}
+body.nm .f-stripitem{border-top-color:#8D999F}
+body.nm .f-striphead a,body.nm .f-strip small{color:var(--nm-brand)!important}
+body.nm .f-stripitem>a:hover{color:var(--nm-ink)!important}
+/* Shared saved-preference workspace. The search dialog remains a dark overlay. */
+body.nm :is(.f-strip,.f-shell) .fx-tools{color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-prefs{background:var(--nm-white);border-color:var(--nm-rule);color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-prefs :is(legend,.fx-check){color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-check{border-color:#819097}
+body.nm :is(.f-strip,.f-shell) .fx-prefs-status{color:var(--nm-muted)}
+body.nm .fx-search{background:#171B1F;color:#F4F6F7}
+/* Research suite: paper canvas, white reading cards, one dark title anchor. */
+body.nm.f-page{background:var(--nm-paper);color:var(--nm-ink)}
+body.nm.f-page :is(.f-header,.f-preview){border-color:var(--nm-rule)}
+body.nm.f-page .f-preview b{color:var(--nm-muted)}
+body.nm.f-page .f-k{color:var(--nm-muted)}
+body.nm.f-page .f-hero{background:#101315;color:#F4F6F7;padding-inline:24px!important;border-color:#39434A}
+body.nm.f-page .f-hero .f-k,body.nm.f-page .fx-search .f-k{color:#CDD5DA}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section){background:var(--nm-white)}
+body.nm.f-page :is(.f-filter,.fx-timeline,.fx-timeline-row,.f-weekline,.f-marketfeeds,.fx-back,.fx-digesthead,.fx-digestarchive,.fx-digestsignals li,.fx-digestdates li){border-color:var(--nm-rule)}
+body.nm.f-page .f-filter select{background:var(--nm-white);color:var(--nm-ink);border-color:#819097}
+body.nm.f-page :is(.f-note,.fx-cardproof figcaption,.fx-timeline time,.fx-timeline [data-countdown],.fx-printhelp,.fx-digest footer){color:var(--nm-muted)}
+body.nm.f-page .fx-timeline li{border-color:#8D999F}
+body.nm.f-page .fx-near{color:var(--nm-ink)!important;border-color:var(--nm-coral)!important}
+body.nm.f-page .f-footer{background:var(--nm-grey);color:var(--nm-ink);border-color:var(--nm-rule)}
+body.nm.f-page .fx-cardproof img{border-color:var(--nm-rule)}
+body.nm.f-page .f-entry:target{background:var(--nm-white);border-left-color:var(--nm-gold)}
+/* Route Brief is a working document; retain the surrounding hero as dark anchor. */
+body.nm .rbf{--rb-bg:#E9EDEF;--rb-s:#F4F6F7;--rb-t:#111417;--rb-l:#C2CBD0;--rb-d:#4A555B}
+body.nm .rbf :is(.rb-out,.rb-pick,.rb-bar){background:var(--nm-white)}
+body.nm .rb-opt:hover span:not(.vh){border-color:#4A555B}
+/* About: keep the portrait hero dark, make the principles another readable page. */
+body.nm.about-palette .ab-method{background:var(--nm-white);color:var(--nm-ink)}
+body.nm.about-palette #main .ab-method :is(h2,p,li,b,.edu-s){color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+body.nm.about-palette .ab-method .bio-acc{background:var(--nm-paper);color:var(--nm-ink);border-color:var(--nm-rule)}
+body.nm.about-spectrum #main .ab-method .bio-acc .ch{color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+body.nm.about-spectrum .ab-method .bio-acc :is(.acc-chev,.acc-b,.acc-b li,.acc-b b){color:var(--nm-ink)}
+body.nm.about-palette .ab-method .beliefs li{border-color:var(--nm-rule)}
+/* A quiet grey canvas unifies existing white game panels; no game mechanics change. */
+body.nm.pg-arcade{background:var(--nm-paper);--bg:#F4F6F7;--tint:#E9EDEF}
+/* Underlines remain distinct against paper; hue is an additional action cue. */
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a,body.nm .rbf a.nm-inline{ text-decoration-color:currentColor }
+
+body.nm .f-strip small{color:var(--nm-muted)!important}
+body.nm .f-strip .f-stripstatus{color:var(--nm-brand)!important}
+body.nm .f-strip :is(.fx-prefs .f-k,.fx-home-empty){color:var(--nm-muted)!important}
+body.nm.f-page .fx-timeline h3{color:var(--nm-ink)!important}
+body.nm.f-page .fx-timeline p{color:var(--nm-muted)!important}
+body.nm .rbf{--rb-m:#B5237F}
+body.nm .rbf .rb-sti dt{color:var(--nm-muted)}
+
+body.nm .rb-opt span:not(.vh){border-color:#819097}
+body.nm :is(.fx-check,.wk-opt):focus-within,body.nm .rb-opt input:focus-visible+span{box-shadow:0 0 0 1px #111417!important}
+body.nm .f-striphead a,body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a,body.nm .rbf a.nm-inline{text-decoration-color:currentColor!important}
+
+body.nm .rbf .rb-sti dt{color:var(--nm-muted)!important}
+body.nm.f-page .fx-timeline summary,body.nm.f-page .fx-timeline summary strong{color:var(--nm-ink)!important}
+body.nm.f-page .fx-timeline summary span{color:var(--nm-muted)}

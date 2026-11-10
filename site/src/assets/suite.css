@@ -1,0 +1,285 @@
+/* Preview suite: brand conversion, sky affordance, mint selection, gold focus, coral correction. */
+body.nm{--nm-sky:#8FB0E0;--nm-mint:#3FBF85;--nm-gold:#D2A63A;--nm-coral:#EA6259;--nm-brand:#B5237F;--nm-ink:#111417;--nm-paper:#F4F6F7;--D:'Schibsted Grotesk',system-ui,sans-serif;--M:'Martian Mono',monospace}
+body.nm :is(button,input,select,textarea,summary,a){-webkit-tap-highlight-color:transparent;scroll-margin-block:100px}
+body.nm :is(button,select,summary,input:not([type=radio]):not([type=checkbox])){min-height:44px;box-sizing:border-box}
+body.nm button{min-width:44px;touch-action:manipulation}
+body.nm label:has(input[type=checkbox]),body.nm label:has(input[type=radio]){min-height:44px;display:flex;align-items:center;gap:8px;box-sizing:border-box;cursor:pointer}
+body.nm :is(input[type=checkbox],input[type=radio]){accent-color:var(--nm-mint);flex-shrink:0}
+body.nm a.nm-inline{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;line-height:1.4}
+body.nm :is(button,a,input,select,summary,textarea):focus-visible{outline:3px solid var(--nm-gold)!important;outline-offset:3px!important;box-shadow:0 0 0 1px #111417!important}
+body.nm a:not(.nm-primary):hover{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm :is(.btn,.rb-cta,.f-cta,.fx-actions>*,.rx-btn,.rb-print,.wk-router a){min-height:44px;padding:10px 16px!important;border-radius:3px!important;font:600 13px/1.4 'Schibsted Grotesk',system-ui,sans-serif!important;box-shadow:none!important;transform:none!important}
+body.nm .nm-primary{background:var(--nm-brand)!important;color:#FFFFFF!important;border:1px solid var(--nm-brand)!important;text-decoration:none!important;box-shadow:none!important}
+body.nm .nm-primary:hover{background:#8A1A61!important;border-color:#8A1A61!important;text-decoration:none!important}
+body.nm :is(.btn.alt,.rb-print,.fx-actions>*,.rx-btn){background:transparent!important;border:1px solid currentColor!important;color:inherit!important}
+body.nm :is(.fx-actions>*,.btn.alt,.rb-print,.rx-btn):hover{background:var(--nm-sky)!important;color:#111417!important;border-color:var(--nm-sky)!important;text-decoration:none!important}
+body.nm :is(.lk-seg,.wk-jack,.tg,.rx-chip,.rx-r,.fx-filter button,.f-filters button,.fx-actions button,button[data-mode]){min-height:44px;box-shadow:none!important;border-radius:3px!important;cursor:pointer}
+body.nm :is(button,[role=tab])[aria-selected=true],body.nm button[aria-pressed=true],body.nm :is(.rx-chip,.rx-r).on,body.nm .fx-check:has(input:checked){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important;box-shadow:none!important}
+body.nm :is(.rb-opt,.wk-opt):has(input:checked){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important}
+body.nm :is(.rb-opt,.wk-opt):has(input:checked) :is(span,b){color:#111417!important}
+body.nm details[open]>summary{border-left:3px solid var(--nm-gold)!important;padding-left:12px!important;box-sizing:border-box}
+body.nm summary{cursor:pointer;align-content:center}
+body.nm :is(button,[aria-disabled=true]):disabled,body.nm [aria-disabled=true]{box-shadow:none!important;transform:none!important;cursor:default;opacity:.65}
+body.nm :is(button.ok,button.correct){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important;animation:none!important}
+body.nm :is(button.no,button.wrong){background:var(--nm-coral)!important;color:#111417!important;border-color:var(--nm-coral)!important;animation:none!important}
+/* Retain neutral relief. Remove the About experiment's full-color fields. */
+body.nm.about-spectrum .ab-evidence,body.nm.about-palette .ab-evidence{background:#F4F6F7}
+body.nm.about-spectrum .ab-archive,body.nm.about-palette .ab-archive{background:#E9EDEF}
+body.nm.about-spectrum .ab-conf,body.nm.about-palette .ab-conf{background:#F4F6F7}
+body.nm.about-spectrum .ab-evidence .pc:before{background:#C2CBD0}
+body.nm.about-spectrum .ab-method .bio-acc,body.nm.about-palette .ab-method .bio-acc{background:#171B1F;color:#F4F6F7;border-top:1px solid #39434A}
+body.nm.about-spectrum #main .ab-method .bio-acc .ch{color:#F4F6F7!important;-webkit-text-fill-color:#F4F6F7!important}
+body.nm.about-spectrum .ab-method .bio-acc :is(.acc-chev,.acc-b,.acc-b li,.acc-b b){color:#F4F6F7}
+body.nm.about-spectrum .ab-method .bio-acc .acc-b a{color:var(--nm-sky)}
+body.nm.about-palette #main .ab-method h2{border:0;padding-left:0}
+body.nm .ab-flow .ab-label{color:#4A555B!important;-webkit-text-fill-color:#4A555B!important}
+/* Header hit areas and calm navigation across both shells. */
+body.nm :is(header nav a,.f-top nav a){min-height:44px!important;padding:10px 8px!important;box-sizing:border-box;display:inline-flex;align-items:center}
+body.nm :is(header .brand,.f-brand){display:inline-flex;align-items:center;min-height:44px}
+body.nm :is(.ab-link,.rd,.f-item h2 a,.f-item h3 a){text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+/* Games inherit the suite type, neutral surfaces and actual answer states. */
+body.nm.pg-arcade{--D:'Schibsted Grotesk',system-ui,sans-serif;--card:#FFFFFF;--line:#C2CBD0;--ink:#111417}
+body.nm .gm{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box;font-family:'Schibsted Grotesk',system-ui,sans-serif}
+body.nm .gm :is(button,input){font-family:'Schibsted Grotesk',system-ui,sans-serif!important;border-radius:3px!important;box-shadow:none!important}
+body.nm .gm button:not(.ok):not(.no):not(.correct):not(.wrong):hover:not(:disabled){border-color:var(--nm-sky)!important;background:var(--nm-sky)!important;color:#111417!important;transform:none!important}
+body.nm .gm .dp{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+body.nm .gm .dp>*{min-width:0;width:auto!important;margin:0!important;padding:0!important;box-sizing:border-box}
+body.nm .rt-hero{background:#171B1F!important;border:1px solid #39434A;border-radius:3px!important;box-shadow:none!important}
+body.nm .rt-mini i{border-radius:3px!important}
+body.nm .gm tr[tabindex],body.nm .gm tr:has([role=button]){height:44px}
+body.nm .wk-jacks>:nth-child(7):last-child{grid-column:1/-1}
+body.nm .wk-jacks{padding:0!important}
+@media(min-width:1101px){body.nm .wk-jacks{grid-template-columns:repeat(7,minmax(0,1fr))}body.nm .wk-jacks>:nth-child(7):last-child{grid-column:auto}}
+@media(max-width:640px){body.nm .gm .dp{grid-template-columns:1fr!important;gap:8px!important}body.nm .gm .dp dd{padding-bottom:16px!important;border-bottom:1px solid #DDE3E6}body.nm .fx-actions{display:grid;grid-template-columns:1fr;gap:8px}}
+@media(prefers-reduced-motion:reduce){body.nm *,body.nm *:before,body.nm *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+body.nm a.nm-inline{min-width:44px}
+body.nm :is(a.rd,a.gc,a.f-brand,a.brand){min-height:44px;min-width:44px}
+/* Research: neutral reading surfaces, dark navigation/tools. Data stays untouched. */
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section){background:#F4F6F7;color:#111417;padding:24px!important;border:1px solid #C2CBD0;margin-bottom:16px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(h2,h3,h4,p,b,strong,dd,time,.f-datebig,.fx-so,.f-impact,.fx-impact){color:#111417!important}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(.f-meta,.f-tag,.f-k,dt,small,.fx-so>span,.fx-countdown,.fx-details>summary,.fx-copy-status,.f-path){color:#4A555B!important}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a{color:#111417!important;text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) button{color:#111417;background:#FFFFFF;border:1px solid #4A555B;box-shadow:none;border-radius:3px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) button:hover{background:var(--nm-sky);border-color:var(--nm-sky)}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(.fx-details,.fx-impact,.f-impact,.f-facts>div){border-color:#C2CBD0}
+body.nm.f-page .f-entry.fx-soon:before{background:var(--nm-coral)}
+body.nm :is(.f-tag,.f-strip small,.fx-visit,.fx-impact,.fx-copy-status,.fx-timeline h3,.fx-digestsignals strong,.fx-digestdates time,.f-weekline,.f-live){color:inherit!important}
+body.nm .fx-actions kbd{color:inherit}
+body.nm .f-striphead a{color:var(--nm-sky)!important}
+body.nm .f-stripitem>a:hover{color:var(--nm-sky)!important;text-decoration:underline!important}
+body.nm.f-page .f-header [aria-current]{border-color:var(--nm-mint)}
+body.nm :is(button,[role=tab])[aria-selected=true] :is(span,b,i,small),body.nm button[aria-pressed=true] :is(span,b,i,small){color:#111417!important}
+body.nm :is(button,[role=tab])[aria-selected=true] *,body.nm button[aria-pressed=true] *,body.nm :is(.rx-chip,.rx-r).on *{color:#111417!important}
+body.nm main>.hero{background-color:#101315!important}
+body.nm.f-page button:hover:not(:disabled){background:var(--nm-sky)!important;border-color:var(--nm-sky)!important;color:#111417!important}
+body.nm.f-page a:not(.nm-primary):hover{color:inherit!important}
+body.nm .fx-near{color:var(--nm-coral)!important;border-color:var(--nm-coral)!important}
+body.nm .f-preview b{color:#CDD5DA}
+body.nm button[aria-expanded=true]{border-color:var(--nm-gold)!important;box-shadow:inset 3px 0 var(--nm-gold)!important}
+body.nm button[data-prefs-reset]:hover{border-color:var(--nm-coral)!important;background:var(--nm-coral)!important;color:#111417!important}
+
+/* Non-interactive game facts are reading matter, never action-colored. */
+body.nm .gm .illus{background:#E9EDEF!important;color:#111417!important;border-left:3px solid #C2CBD0!important;padding:16px!important}
+body.nm .gm .dp dt{color:#111417!important}
+
+body.nm.f-page .fx-digestgrid article{background:#FFFFFF!important;border:1px solid #C2CBD0!important;color:#111417}
+
+body.nm a.nm-inline:not(.nm-primary):not(.btn){color:inherit!important;text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm .beat :is(.eyebrow,.cd),body.nm .wk-soon-k{color:#4A555B!important}
+body.nm .rt-mini i.b{background:var(--nm-sky);color:#111417}
+body.nm .rt-t.sel{background:var(--nm-mint);color:#111417}
+body.nm .rt-t.hd:not(.sel){box-shadow:inset 0 0 0 3px var(--nm-gold)}
+body.nm :is(.rt-stats span,.rt-sum b,.rt-no,.rt-cd){color:#111417;background:transparent}
+body.nm .rt-slot i.rv{color:#111417;box-shadow:inset 0 0 0 2px var(--nm-gold)}
+
+body.nm :is(header nav,.f-nav,.fx-actions) a.nm-inline{text-decoration:none!important}
+body.nm :is(header nav,.f-nav) a[aria-current]{border-bottom-color:var(--nm-mint)!important;color:inherit!important}
+
+/* Radio labels retain a single full-width face, not a small nested pill. */
+body.nm .rb-opt{display:block!important}
+body.nm .rb-opt span:not(.vh){width:100%;box-sizing:border-box;border-radius:3px}
+body.nm .rb-opt input:checked+span{background:var(--nm-mint)!important;border-color:var(--nm-mint)!important;color:#111417!important;box-shadow:none!important}
+body.nm .wk-opt{align-items:stretch!important;gap:12px!important}
+
+body.nm .rb-opt input:focus-visible+span,body.nm .wk-opt:focus-within{outline:3px solid var(--nm-gold)!important;outline-offset:3px}
+
+body.nm header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--nm-mint)!important}
+
+body.nm .fx-check:focus-within{outline:3px solid var(--nm-gold)!important;outline-offset:3px}
+
+/* Reading surfaces: white for the work, grey for grouping, dark for orientation. */
+body.nm{--nm-white:#FFFFFF;--nm-paper:#F4F6F7;--nm-grey:#E9EDEF;--nm-rule:#C2CBD0;--nm-muted:#4A555B}
+/* Home: the live research desk is a light workspace, not another dark band. */
+body.nm .f-strip{background:var(--nm-grey)!important;color:var(--nm-ink)!important}
+body.nm .f-striphead h2,body.nm .f-stripitem>a{color:var(--nm-ink)!important}
+body.nm .f-stripitem{border-top-color:#8D999F}
+body.nm .f-striphead a,body.nm .f-strip small{color:var(--nm-brand)!important}
+body.nm .f-stripitem>a:hover{color:var(--nm-ink)!important}
+/* Shared saved-preference workspace. The search dialog remains a dark overlay. */
+body.nm :is(.f-strip,.f-shell) .fx-tools{color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-prefs{background:var(--nm-white);border-color:var(--nm-rule);color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-prefs :is(legend,.fx-check){color:var(--nm-ink)}
+body.nm :is(.f-strip,.f-shell) .fx-check{border-color:#819097}
+body.nm :is(.f-strip,.f-shell) .fx-prefs-status{color:var(--nm-muted)}
+body.nm .fx-search{background:#171B1F;color:#F4F6F7}
+/* Research suite: paper canvas, white reading cards, one dark title anchor. */
+body.nm.f-page{background:var(--nm-paper);color:var(--nm-ink)}
+body.nm.f-page :is(.f-header,.f-preview){border-color:var(--nm-rule)}
+body.nm.f-page .f-preview b{color:var(--nm-muted)}
+body.nm.f-page .f-k{color:var(--nm-muted)}
+body.nm.f-page .f-hero{background:#101315;color:#F4F6F7;padding-inline:24px!important;border-color:#39434A}
+body.nm.f-page .f-hero .f-k,body.nm.f-page .fx-search .f-k{color:#CDD5DA}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section){background:var(--nm-white)}
+body.nm.f-page :is(.f-filter,.fx-timeline,.fx-timeline-row,.f-weekline,.f-marketfeeds,.fx-back,.fx-digesthead,.fx-digestarchive,.fx-digestsignals li,.fx-digestdates li){border-color:var(--nm-rule)}
+body.nm.f-page .f-filter select{background:var(--nm-white);color:var(--nm-ink);border-color:#819097}
+body.nm.f-page :is(.f-note,.fx-cardproof figcaption,.fx-timeline time,.fx-timeline [data-countdown],.fx-printhelp,.fx-digest footer){color:var(--nm-muted)}
+body.nm.f-page .fx-timeline li{border-color:#8D999F}
+body.nm.f-page .fx-near{color:var(--nm-ink)!important;border-color:var(--nm-coral)!important}
+body.nm.f-page .f-footer{background:var(--nm-grey);color:var(--nm-ink);border-color:var(--nm-rule)}
+body.nm.f-page .fx-cardproof img{border-color:var(--nm-rule)}
+body.nm.f-page .f-entry:target{background:var(--nm-white);border-left-color:var(--nm-gold)}
+/* Route Brief is a working document; retain the surrounding hero as dark anchor. */
+body.nm .rbf{--rb-bg:#E9EDEF;--rb-s:#F4F6F7;--rb-t:#111417;--rb-l:#C2CBD0;--rb-d:#4A555B}
+body.nm .rbf :is(.rb-out,.rb-pick,.rb-bar){background:var(--nm-white)}
+body.nm .rb-opt:hover span:not(.vh){border-color:#4A555B}
+/* About: keep the portrait hero dark, make the principles another readable page. */
+body.nm.about-palette .ab-method{background:var(--nm-white);color:var(--nm-ink)}
+body.nm.about-palette #main .ab-method :is(h2,p,li,b,.edu-s){color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+body.nm.about-palette .ab-method .bio-acc{background:var(--nm-paper);color:var(--nm-ink);border-color:var(--nm-rule)}
+body.nm.about-spectrum #main .ab-method .bio-acc .ch{color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+body.nm.about-spectrum .ab-method .bio-acc :is(.acc-chev,.acc-b,.acc-b li,.acc-b b){color:var(--nm-ink)}
+body.nm.about-palette .ab-method .beliefs li{border-color:var(--nm-rule)}
+/* A quiet grey canvas unifies existing white game panels; no game mechanics change. */
+body.nm.pg-arcade{background:var(--nm-paper);--bg:#F4F6F7;--tint:#E9EDEF}
+/* Underlines remain distinct against paper; hue is an additional action cue. */
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a,body.nm .rbf a.nm-inline{ text-decoration-color:currentColor }
+
+body.nm .f-strip small{color:var(--nm-muted)!important}
+body.nm .f-strip .f-stripstatus{color:var(--nm-brand)!important}
+body.nm .f-strip :is(.fx-prefs .f-k,.fx-home-empty){color:var(--nm-muted)!important}
+body.nm.f-page .fx-timeline h3{color:var(--nm-ink)!important}
+body.nm.f-page .fx-timeline p{color:var(--nm-muted)!important}
+body.nm .rbf{--rb-m:#B5237F}
+body.nm .rbf .rb-sti dt{color:var(--nm-muted)}
+
+body.nm .rb-opt span:not(.vh){border-color:#819097}
+body.nm :is(.fx-check,.wk-opt):focus-within,body.nm .rb-opt input:focus-visible+span{box-shadow:0 0 0 1px #111417!important}
+body.nm .f-striphead a,body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a,body.nm .rbf a.nm-inline{text-decoration-color:currentColor!important}
+
+body.nm .rbf .rb-sti dt{color:var(--nm-muted)!important}
+body.nm.f-page .fx-timeline summary,body.nm.f-page .fx-timeline summary strong{color:var(--nm-ink)!important}
+body.nm.f-page .fx-timeline summary span{color:var(--nm-muted)}
+
+/* Balance layer (Nov 9): fewer surface swaps, colour carries meaning.
+   Surfaces: one dark anchor (hero) + dark footer; otherwise white with one soft grey.
+   States: hover = sky, focus = gold, selected/success = mint, deadline/warning = coral, conversion = magenta.
+   Text on light never uses raw technicolor; darker ink variants keep AA. */
+body.nm{--nm-sky-ink:#2E5A96;--nm-mint-ink:#1C7148;--nm-gold-ink:#7D5B0E;--nm-coral-ink:#A8342B;--nm-fam:var(--nm-mint)}
+body.nm.f-page{--nm-fam:var(--nm-sky)}
+body.nm.pg-arcade{--nm-fam:var(--nm-coral)}
+body.nm:is(.pg-advisory,.pg-speaking,.pg-contact,.pg-writing){--nm-fam:var(--nm-gold)}
+/* Home: hero anchor, then grey research desk, white tool, grey band, white gallery. */
+body.nm .f-strip{background:var(--nm-paper)!important}
+body.nm .rbf{--rb-bg:#FFFFFF;--rb-s:#F4F6F7;background:#FFFFFF!important;border-top:1px solid var(--nm-rule)}
+body.nm .gal{background:#FFFFFF!important;border-top:1px solid var(--nm-rule)}
+/* About: dark portrait hero, grey field record, everything after it white with hairlines. */
+body.nm.about-palette .ab-evidence{background:var(--nm-paper)!important}
+body.nm.about-palette :is(.ab-method,.ab-archive,.ab-conf){background:#FFFFFF!important}
+body.nm.about-palette :is(.ab-archive,.ab-conf){border-top:1px solid var(--nm-rule)}
+body.nm.about-palette .ab-archive .vid{background:#FFFFFF;border-color:var(--nm-rule)}
+body.nm.about-palette .ab-evidence .pc{border-color:var(--nm-rule)}
+body.nm.about-palette .ab-evidence .pc:before{background:var(--nm-mint)!important}
+body.nm.about-palette .ab-evidence .pc-chips li{background:#FFFFFF!important;color:var(--nm-ink)!important;border:1px solid var(--nm-rule)!important}
+body.nm.about-palette .ab-method .bio-acc{background:#FFFFFF!important;border:1px solid var(--nm-rule)!important}
+body.nm.about-palette #main :is(.ab-method,.ab-archive,.ab-conf) .ab-label,body.nm.about-palette #main .ab-evidence .ab-label{color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+/* Section-family eyebrow keyline: one hue per family (people mint, research sky, practice gold, games coral). */
+body.nm .eyebrow.sx::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-fam)!important;color:transparent}
+body.nm.about-palette #main .ab-label:not(.pc *)::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-mint)}
+body.nm.f-page .f-hero{border-bottom:3px solid var(--nm-sky)!important}
+/* Tags tinted by meaning, ink text for AA. */
+body.nm .fx-impact[data-impact=deadline]{background:#FCE8E6!important;border-color:var(--nm-coral)!important;color:#111417!important}
+body.nm .fx-impact[data-impact="cost down"]{background:#E2F4EA!important;border-color:var(--nm-mint)!important;color:#111417!important}
+body.nm .fx-impact[data-impact=neutral]{background:#FFFFFF!important;border-color:var(--nm-rule)!important;color:#111417!important}
+/* Interactive cards only: sky keyline on hover/focus. */
+body.nm .f-stripitem:has(>a:hover){border-top-color:var(--nm-sky)}
+body.nm :is(.f-feedcard,.f-market):has(a:hover){border-color:var(--nm-sky)}
+/* Magenta is conversion only. Decorative rules/keylines take the page-family hue; counts/numbers go to ink. */
+body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2))::before{background:var(--nm-fam)!important}
+body.nm details.card.acc::before,body.nm .ticks li::before{background:var(--nm-fam)!important;border-color:var(--nm-fam)!important}
+body.nm .rt-line>i,body.nm .wk-settle>i{background:#8D999F!important}
+body.nm span.sn{color:var(--nm-ink)!important}
+body.nm :is(.rx-n,.rx-c,small.rx-c){color:var(--nm-muted)!important}
+body.nm .rbf :is(.rb-note,.rb-aside,.rb-proof){border-left-color:var(--nm-gold)!important}
+body.nm .rbf .rb-k{color:var(--nm-gold-ink)!important}
+body.nm :is(section.pband,section.intro2)::before,body.nm section.intro2::after{background:var(--nm-fam)!important}
+body.nm .tm-line>i{background:#8D999F!important}
+body.nm span.tm-d{border-color:var(--nm-fam)!important}
+body.nm .rb-r b::before{border-color:#4A555B!important}
+body.nm .rb-path .rb-arrow::before{background:#4A555B!important}
+body.nm .rb-path .rb-arrow::after{border-color:#4A555B!important}
+body.nm .rx-rp{border-top-color:var(--nm-fam)!important}
+body.nm :is(.rh small,.fronts .fl,.nextp>span,span.wk-no){color:var(--nm-muted)!important}
+body.nm.pg-index ol>li::before{color:var(--nm-ink)!important}
+body.nm p.note{border-left-color:var(--nm-fam)!important}
+body.nm .nextp a{border-bottom-color:var(--nm-fam)!important}
+
+/* Spacing gate (Nov 9). Shared edge 16 / 24 / 104 / 184 (capped, centred); section rhythm R = 64 / 96 / 120;
+   heading->body 16 mobile, 24 from tablet. Same surface: R between sections. Surface change: R each side. */
+body.nm{--R:64px;--E:16px;--HB:16px}
+@media(min-width:768px){body.nm{--R:96px;--E:24px;--HB:24px}}
+@media(min-width:1280px){body.nm{--R:120px}}
+/* Wraps: one R before the next surface, never doubled with a last section's own padding. */
+html body.nm main>.wrap{padding-bottom:var(--R)!important}
+html body.nm main>.wrap>section:last-child{padding-bottom:0!important}
+html body.nm main>.wrap:has(+.wrap){padding-bottom:0!important}
+html body.nm main>.wrap>:last-child,html body.nm main>.wrap>section>:last-child,html body.nm main>section:not(.hero):not(.ihero)>.wrap>:last-child,html body.nm main>section:not(.hero):not(.ihero)>:last-child{margin-bottom:0!important}
+/* Home: transparent sections share the page surface, so only the top carries R. */
+html body.nm.pg-index main>section:not(.hero):not(.f-strip):not(.band){padding-bottom:0!important}
+html body.nm.pg-index main>section:has(+:is(.f-strip,.band)),html body.nm.pg-index main>section:has(+.nextp),html body.nm.pg-index main>section:last-of-type{padding-bottom:var(--R)!important}
+body.nm .gal{border-top:0!important}
+/* Game panels are cards on the canvas, not sections: inner padding, R from the hero. */
+html body.nm main>.wrap>section.gm{padding:16px!important;margin-top:var(--R)!important}
+@media(min-width:768px){html body.nm main>.wrap>section.gm{padding:24px!important}}
+html body.nm main>.wrap>p:first-child{margin-top:var(--R)!important;margin-bottom:0!important}
+html body.nm main>.wrap>p:first-child+section.gm{margin-top:16px!important}
+html body.nm main>.wrap>.rt-hero:first-child{margin-top:var(--R)!important}
+html body.nm main>.wrap>section.gm+p.fine{margin:16px 0 0!important}
+/* About: shared edge at every width; R rhythm; one surface change (grey field record -> white). */
+html body.nm.about-clean #main>.ab-hero{padding-left:var(--E)!important;padding-right:var(--E)!important}
+@media(min-width:1024px){html body.nm.about-clean #main>.ab-hero{padding-left:24px!important;padding-right:24px!important}}
+html body.nm.about-clean #main>.ab-band>.ab-flow{padding:var(--R) var(--E)!important}
+@media(min-width:1024px){html body.nm.about-clean #main>.ab-band>.ab-flow{padding-left:24px!important;padding-right:24px!important}}
+html body.nm.about-clean #main>:is(.ab-archive,.ab-conf)>.ab-flow{padding-top:0!important}
+html body.nm.about-palette :is(.ab-archive,.ab-conf){border-top:0!important}
+html body.nm.about-clean main .ab-flow>:last-child,html body.nm.about-clean main .ab-flow>section:last-child>:last-child{margin-bottom:0!important;padding-bottom:0!important}
+html body.nm.about-clean main .ab-flow>:first-child{margin-top:0!important;padding-top:0!important}
+html body.nm.about-clean main .ab-flow>section+section{margin-top:var(--R)!important;padding-top:0!important}
+/* Section heading -> body. */
+html body.nm main h2:not(:is(article,li,details,.card,.f-entry,.pc,figure,form,.gm,dialog,table,.rt-hero) h2):has(+p){margin-bottom:var(--HB)!important}
+html body.nm main h2:not(:is(article,li,details,.card,.f-entry,.pc,figure,form,.gm,dialog,table,.rt-hero) h2)+p{margin-top:0!important}
+html body.nm main ul.ticks:last-child>li:last-child{margin-bottom:0!important}
+/* War room rounds carry a 24px internal top inset under their rule; keep content on R. */
+html body.nm.pg-warroom main .wrap>section.wg,html body.nm.pg-warroom main .wrap>section.wg:first-child{margin-top:calc(var(--R) - 24px)!important}
+/* Tablet tier is 96 site-wide (older layers switched to 120 at 1024). */
+@media(min-width:768px) and (max-width:1279px){:root,html body.nm,html body.nm *{--sec:96px!important}}
+html body.nm main>.wrap>section>:first-child,html body.nm main>section:not(.hero):not(.ihero)>:first-child{margin-top:0!important}
+/* Research desk: one reading column on one surface; components step by --C, label->card by --HB. */
+body.nm{--C:24px}
+@media(min-width:768px){body.nm{--C:32px}}
+html body.nm.f-page #f-main>*{margin-top:0!important;margin-bottom:0!important}
+html body.nm.f-page #f-main>*+*{margin-top:var(--C)!important}
+html body.nm.f-page #f-main>.fx-itemhero+*{margin-top:var(--HB)!important}
+html body.nm.f-page #f-main>section>:last-child{margin-bottom:0!important}
+/* Research nav: one row on phones (scrolls at 320 rather than orphaning a link). */
+@media(max-width:640px){html body.nm .f-header nav{flex-wrap:nowrap!important;max-width:none!important;width:100%;gap:0 12px!important;overflow-x:auto;scrollbar-width:none;justify-content:space-between}html body.nm .f-header nav a{white-space:nowrap}}
+html body.nm.f-page #f-main>:is(.fx-tools,.fx-itemhero,.f-feedgrid,.fx-digest){padding-top:0!important;padding-bottom:0!important}
+html body.nm.f-page #f-main>:is(.f-marketfeeds,.fx-digestarchive){padding-top:var(--C)!important;padding-bottom:0!important}
+html body.nm.f-page #f-main>.f-weekline{padding-top:0!important;padding-bottom:var(--C)!important}
+/* Leak ledger fits a 320 phone without breaching the card edge. */
+html body.nm .gm table.lk{width:100%!important;max-width:100%}
+@media(max-width:360px){html body.nm .gm table.lk{font-size:12px!important}html body.nm .gm table.lk :is(td,th){padding-left:4px!important;padding-right:4px!important}}
+html body.nm.about-clean main .ab-flow>section.edu-s{margin-top:var(--HB)!important}
+html body.nm main>.wrap>section>ul:not([class]):last-child>li:last-child{margin-bottom:0!important}
+/* Feed grid: one 16px gutter both ways (cards no longer add their own bottom margin). */
+html body.nm.f-page .f-feedgrid>.f-feedcard{margin:0!important}
+html body.nm main>.wrap>section>ol.wl:last-child>li:last-child{margin-bottom:0!important}

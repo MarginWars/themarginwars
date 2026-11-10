@@ -1,0 +1,266 @@
+{
+  "ca-rtr-launch": {
+    "impact": "deadline",
+    "so_what": "Check provider readiness for the scheduled RTR launch, not assumed availability.",
+    "rails": [
+      "instant",
+      "infrastructure"
+    ],
+    "source": "https://www.payments.ca/canadas-real-time-rail-launch-confirmed-budget-2026"
+  },
+  "eu-psr-position": {
+    "impact": "neutral",
+    "so_what": "Track the EU legislative process; this milestone is not an application date.",
+    "rails": [
+      "cards",
+      "bank",
+      "instant",
+      "authentication"
+    ],
+    "source": "https://data.consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf"
+  },
+  "eu-psd3-position": {
+    "impact": "neutral",
+    "so_what": "Track PSD3 separately from PSR; do not treat this vote as a go-live date.",
+    "rails": [
+      "cards",
+      "bank",
+      "instant",
+      "authentication"
+    ],
+    "source": "https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf"
+  },
+  "nz-commercial-cards": {
+    "impact": "cost down",
+    "so_what": "Lower regulated commercial-card interchange is coming; confirm what your acquirer passes through.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/"
+  },
+  "pix-dict-default": {
+    "impact": "neutral",
+    "so_what": "Check refund integrations that rely on implicit monitoring defaults.",
+    "rails": [
+      "instant"
+    ],
+    "source": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html"
+  },
+  "emv-3ds24": {
+    "impact": "neutral",
+    "so_what": "Watch the 3DS draft; do not schedule a mandatory migration on this source alone.",
+    "rails": [
+      "cards",
+      "authentication"
+    ],
+    "source": "https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/"
+  },
+  "au-network-disclosure": {
+    "impact": "deadline",
+    "so_what": "Use the new scheme-fee disclosures to challenge unexplained line items.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-acquirer-disclosure": {
+    "impact": "deadline",
+    "so_what": "Compare published acquirer fees with your own card mix and contract.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "uk-pricing-governance": {
+    "impact": "deadline",
+    "so_what": "Ask for evidence behind relevant UK scheme-fee decisions, not a savings promise.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/"
+  },
+  "ca-eu-interlink": {
+    "impact": "neutral",
+    "so_what": "Keep the proposed connection on your roadmap, not your live-route inventory.",
+    "rails": [
+      "instant",
+      "infrastructure",
+      "cross-border"
+    ],
+    "source": "https://www.payments.ca/payments-canada-welcomes-joint-canada-eu-commitment-interlink-real-time-payment-systems"
+  },
+  "au-surcharging": {
+    "impact": "neutral",
+    "so_what": "Recheck checkout pricing: designated card-network surcharge rules changed.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html"
+  },
+  "au-domestic-interchange": {
+    "impact": "cost down",
+    "so_what": "Lower domestic interchange caps make pass-through worth checking; net merchant savings depend on your terms.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-net-compensation": {
+    "impact": "neutral",
+    "so_what": "Check issuer incentives against the amended compensation rules.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-pass-through": {
+    "impact": "deadline",
+    "so_what": "Ask your acquirer how the interchange reduction reached your statement.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-foreign-cards": {
+    "impact": "deadline",
+    "so_what": "Review foreign-card pricing before the new caps apply.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-statements": {
+    "impact": "deadline",
+    "so_what": "Make sure the new statement detail reaches your reconciliation process.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "au-scheme-roadmap": {
+    "impact": "neutral",
+    "so_what": "Watch for the fee roadmap; it is not itself a price cap.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html"
+  },
+  "ach-same-day-limit": {
+    "impact": "deadline",
+    "so_what": "Check whether the larger Same Day ACH limit changes your payout routing.",
+    "rails": [
+      "bank"
+    ],
+    "source": "https://www.nacha.org/content/summary-upcoming-rule-changes"
+  },
+  "ach-availability": {
+    "impact": "deadline",
+    "so_what": "Check payout promises against the receiving bank’s 9am availability duty.",
+    "rails": [
+      "bank"
+    ],
+    "source": "https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries"
+  },
+  "ach-iat": {
+    "impact": "deadline",
+    "so_what": "Review how your ACH provider classifies international entries.",
+    "rails": [
+      "bank",
+      "cross-border"
+    ],
+    "source": "https://www.nacha.org/content/summary-upcoming-rule-changes"
+  },
+  "ach-availability-exceptions": {
+    "impact": "deadline",
+    "so_what": "Ask your bank which availability exceptions affect your credits.",
+    "rails": [
+      "bank"
+    ],
+    "source": "https://www.nacha.org/content/summary-upcoming-rule-changes"
+  },
+  "ach-iat-date-of-birth": {
+    "impact": "deadline",
+    "so_what": "Check how your IAT integration will handle the optional date-of-birth field.",
+    "rails": [
+      "bank",
+      "cross-border"
+    ],
+    "source": "https://www.nacha.org/content/summary-upcoming-rule-changes"
+  },
+  "ach-iat-contacts": {
+    "impact": "deadline",
+    "so_what": "Confirm ownership of IAT contact registration with your ACH provider.",
+    "rails": [
+      "bank",
+      "cross-border"
+    ],
+    "source": "https://www.nacha.org/content/summary-upcoming-rule-changes"
+  },
+  "uk-fee-transparency": {
+    "impact": "deadline",
+    "so_what": "Prepare to reconcile fee triggers with acquiring invoices.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/"
+  },
+  "uk-fee-logic-extension": {
+    "impact": "deadline",
+    "so_what": "Some fee logic arrives later; acquirers can request it during the extension.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-extensions-decision-aug-2026.pdf"
+  },
+  "uk-safeguarding": {
+    "impact": "neutral",
+    "so_what": "Check how your provider reconciles and safeguards customer funds.",
+    "rails": [
+      "bank",
+      "infrastructure"
+    ],
+    "source": "https://www.fca.org.uk/firms/emi-payment-institutions-safeguarding-requirements"
+  },
+  "uk-rtgs-delay": {
+    "impact": "neutral",
+    "so_what": "Remove the superseded November release from your implementation plan.",
+    "rails": [
+      "bank",
+      "infrastructure"
+    ],
+    "source": "https://www.bankofengland.co.uk/news/2026/august/delay-to-the-november-2026-rtgs-standards-release"
+  },
+  "pix-dict-rc": {
+    "impact": "neutral",
+    "so_what": "Review recovery API changes before implementation; a candidate release is not a deadline.",
+    "rails": [
+      "instant"
+    ],
+    "source": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html"
+  },
+  "emv-3ds-extensions": {
+    "impact": "neutral",
+    "so_what": "Ask your 3DS provider whether its product qualifies for the extension.",
+    "rails": [
+      "cards",
+      "authentication"
+    ],
+    "source": "https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/"
+  },
+  "emv-agentic-draft": {
+    "impact": "neutral",
+    "so_what": "Separate consumer-intent design work from deployed network requirements.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/"
+  },
+  "us-regii-watch": {
+    "impact": "neutral",
+    "so_what": "Monitor the official docket; do not price a new debit cap from this preview.",
+    "rails": [
+      "cards"
+    ],
+    "source": "https://www.federalreserve.gov/apps/proposals/FR-0000-0095-01/details"
+  }
+}

@@ -1,0 +1,108 @@
+/* Preview suite: brand conversion, sky affordance, mint selection, gold focus, coral correction. */
+body.nm{--nm-sky:#8FB0E0;--nm-mint:#3FBF85;--nm-gold:#D2A63A;--nm-coral:#EA6259;--nm-brand:#B5237F;--nm-ink:#111417;--nm-paper:#F4F6F7;--D:'Schibsted Grotesk',system-ui,sans-serif;--M:'Martian Mono',monospace}
+body.nm :is(button,input,select,textarea,summary,a){-webkit-tap-highlight-color:transparent;scroll-margin-block:100px}
+body.nm :is(button,select,summary,input:not([type=radio]):not([type=checkbox])){min-height:44px;box-sizing:border-box}
+body.nm button{min-width:44px;touch-action:manipulation}
+body.nm label:has(input[type=checkbox]),body.nm label:has(input[type=radio]){min-height:44px;display:flex;align-items:center;gap:8px;box-sizing:border-box;cursor:pointer}
+body.nm :is(input[type=checkbox],input[type=radio]){accent-color:var(--nm-mint);flex-shrink:0}
+body.nm a.nm-inline{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;line-height:1.4}
+body.nm :is(button,a,input,select,summary,textarea):focus-visible{outline:3px solid var(--nm-gold)!important;outline-offset:3px!important;box-shadow:0 0 0 1px #111417!important}
+body.nm a:not(.nm-primary):hover{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm :is(.btn,.rb-cta,.f-cta,.fx-actions>*,.rx-btn,.rb-print,.wk-router a){min-height:44px;padding:10px 16px!important;border-radius:3px!important;font:600 13px/1.4 'Schibsted Grotesk',system-ui,sans-serif!important;box-shadow:none!important;transform:none!important}
+body.nm .nm-primary{background:var(--nm-brand)!important;color:#FFFFFF!important;border:1px solid var(--nm-brand)!important;text-decoration:none!important;box-shadow:none!important}
+body.nm .nm-primary:hover{background:#8A1A61!important;border-color:#8A1A61!important;text-decoration:none!important}
+body.nm :is(.btn.alt,.rb-print,.fx-actions>*,.rx-btn){background:transparent!important;border:1px solid currentColor!important;color:inherit!important}
+body.nm :is(.fx-actions>*,.btn.alt,.rb-print,.rx-btn):hover{background:var(--nm-sky)!important;color:#111417!important;border-color:var(--nm-sky)!important;text-decoration:none!important}
+body.nm :is(.lk-seg,.wk-jack,.tg,.rx-chip,.rx-r,.fx-filter button,.f-filters button,.fx-actions button,button[data-mode]){min-height:44px;box-shadow:none!important;border-radius:3px!important;cursor:pointer}
+body.nm :is(button,[role=tab])[aria-selected=true],body.nm button[aria-pressed=true],body.nm :is(.rx-chip,.rx-r).on,body.nm .fx-check:has(input:checked){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important;box-shadow:none!important}
+body.nm :is(.rb-opt,.wk-opt):has(input:checked){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important}
+body.nm :is(.rb-opt,.wk-opt):has(input:checked) :is(span,b){color:#111417!important}
+body.nm details[open]>summary{border-left:3px solid var(--nm-gold)!important;padding-left:12px!important;box-sizing:border-box}
+body.nm summary{cursor:pointer;align-content:center}
+body.nm :is(button,[aria-disabled=true]):disabled,body.nm [aria-disabled=true]{box-shadow:none!important;transform:none!important;cursor:default;opacity:.65}
+body.nm :is(button.ok,button.correct){background:var(--nm-mint)!important;color:#111417!important;border-color:var(--nm-mint)!important;animation:none!important}
+body.nm :is(button.no,button.wrong){background:var(--nm-coral)!important;color:#111417!important;border-color:var(--nm-coral)!important;animation:none!important}
+/* Retain neutral relief. Remove the About experiment's full-color fields. */
+body.nm.about-spectrum .ab-evidence,body.nm.about-palette .ab-evidence{background:#F4F6F7}
+body.nm.about-spectrum .ab-archive,body.nm.about-palette .ab-archive{background:#E9EDEF}
+body.nm.about-spectrum .ab-conf,body.nm.about-palette .ab-conf{background:#F4F6F7}
+body.nm.about-spectrum .ab-evidence .pc:before{background:#C2CBD0}
+body.nm.about-spectrum .ab-method .bio-acc,body.nm.about-palette .ab-method .bio-acc{background:#171B1F;color:#F4F6F7;border-top:1px solid #39434A}
+body.nm.about-spectrum #main .ab-method .bio-acc .ch{color:#F4F6F7!important;-webkit-text-fill-color:#F4F6F7!important}
+body.nm.about-spectrum .ab-method .bio-acc :is(.acc-chev,.acc-b,.acc-b li,.acc-b b){color:#F4F6F7}
+body.nm.about-spectrum .ab-method .bio-acc .acc-b a{color:var(--nm-sky)}
+body.nm.about-palette #main .ab-method h2{border:0;padding-left:0}
+body.nm .ab-flow .ab-label{color:#4A555B!important;-webkit-text-fill-color:#4A555B!important}
+/* Header hit areas and calm navigation across both shells. */
+body.nm :is(header nav a,.f-top nav a){min-height:44px!important;padding:10px 8px!important;box-sizing:border-box;display:inline-flex;align-items:center}
+body.nm :is(header .brand,.f-brand){display:inline-flex;align-items:center;min-height:44px}
+body.nm :is(.ab-link,.rd,.f-item h2 a,.f-item h3 a){text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+/* Games inherit the suite type, neutral surfaces and actual answer states. */
+body.nm.pg-arcade{--D:'Schibsted Grotesk',system-ui,sans-serif;--card:#FFFFFF;--line:#C2CBD0;--ink:#111417}
+body.nm .gm{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box;font-family:'Schibsted Grotesk',system-ui,sans-serif}
+body.nm .gm :is(button,input){font-family:'Schibsted Grotesk',system-ui,sans-serif!important;border-radius:3px!important;box-shadow:none!important}
+body.nm .gm button:not(.ok):not(.no):not(.correct):not(.wrong):hover:not(:disabled){border-color:var(--nm-sky)!important;background:var(--nm-sky)!important;color:#111417!important;transform:none!important}
+body.nm .gm .dp{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+body.nm .gm .dp>*{min-width:0;width:auto!important;margin:0!important;padding:0!important;box-sizing:border-box}
+body.nm .rt-hero{background:#171B1F!important;border:1px solid #39434A;border-radius:3px!important;box-shadow:none!important}
+body.nm .rt-mini i{border-radius:3px!important}
+body.nm .gm tr[tabindex],body.nm .gm tr:has([role=button]){height:44px}
+body.nm .wk-jacks>:nth-child(7):last-child{grid-column:1/-1}
+body.nm .wk-jacks{padding:0!important}
+@media(min-width:1101px){body.nm .wk-jacks{grid-template-columns:repeat(7,minmax(0,1fr))}body.nm .wk-jacks>:nth-child(7):last-child{grid-column:auto}}
+@media(max-width:640px){body.nm .gm .dp{grid-template-columns:1fr!important;gap:8px!important}body.nm .gm .dp dd{padding-bottom:16px!important;border-bottom:1px solid #DDE3E6}body.nm .fx-actions{display:grid;grid-template-columns:1fr;gap:8px}}
+@media(prefers-reduced-motion:reduce){body.nm *,body.nm *:before,body.nm *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+body.nm a.nm-inline{min-width:44px}
+body.nm :is(a.rd,a.gc,a.f-brand,a.brand){min-height:44px;min-width:44px}
+/* Research: neutral reading surfaces, dark navigation/tools. Data stays untouched. */
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section){background:#F4F6F7;color:#111417;padding:24px!important;border:1px solid #C2CBD0;margin-bottom:16px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(h2,h3,h4,p,b,strong,dd,time,.f-datebig,.fx-so,.f-impact,.fx-impact){color:#111417!important}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(.f-meta,.f-tag,.f-k,dt,small,.fx-so>span,.fx-countdown,.fx-details>summary,.fx-copy-status,.f-path){color:#4A555B!important}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) a{color:#111417!important;text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) button{color:#111417;background:#FFFFFF;border:1px solid #4A555B;box-shadow:none;border-radius:3px}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) button:hover{background:var(--nm-sky);border-color:var(--nm-sky)}
+body.nm.f-page :is(.f-entry,.f-feedcard,.f-market,.fx-digest>section) :is(.fx-details,.fx-impact,.f-impact,.f-facts>div){border-color:#C2CBD0}
+body.nm.f-page .f-entry.fx-soon:before{background:var(--nm-coral)}
+body.nm :is(.f-tag,.f-strip small,.fx-visit,.fx-impact,.fx-copy-status,.fx-timeline h3,.fx-digestsignals strong,.fx-digestdates time,.f-weekline,.f-live){color:inherit!important}
+body.nm .fx-actions kbd{color:inherit}
+body.nm .f-striphead a{color:var(--nm-sky)!important}
+body.nm .f-stripitem>a:hover{color:var(--nm-sky)!important;text-decoration:underline!important}
+body.nm.f-page .f-header [aria-current]{border-color:var(--nm-mint)}
+body.nm :is(button,[role=tab])[aria-selected=true] :is(span,b,i,small),body.nm button[aria-pressed=true] :is(span,b,i,small){color:#111417!important}
+body.nm :is(button,[role=tab])[aria-selected=true] *,body.nm button[aria-pressed=true] *,body.nm :is(.rx-chip,.rx-r).on *{color:#111417!important}
+body.nm main>.hero{background-color:#101315!important}
+body.nm.f-page button:hover:not(:disabled){background:var(--nm-sky)!important;border-color:var(--nm-sky)!important;color:#111417!important}
+body.nm.f-page a:not(.nm-primary):hover{color:inherit!important}
+body.nm .fx-near{color:var(--nm-coral)!important;border-color:var(--nm-coral)!important}
+body.nm .f-preview b{color:#CDD5DA}
+body.nm button[aria-expanded=true]{border-color:var(--nm-gold)!important;box-shadow:inset 3px 0 var(--nm-gold)!important}
+body.nm button[data-prefs-reset]:hover{border-color:var(--nm-coral)!important;background:var(--nm-coral)!important;color:#111417!important}
+
+/* Non-interactive game facts are reading matter, never action-colored. */
+body.nm .gm .illus{background:#E9EDEF!important;color:#111417!important;border-left:3px solid #C2CBD0!important;padding:16px!important}
+body.nm .gm .dp dt{color:#111417!important}
+
+body.nm.f-page .fx-digestgrid article{background:#FFFFFF!important;border:1px solid #C2CBD0!important;color:#111417}
+
+body.nm a.nm-inline:not(.nm-primary):not(.btn){color:inherit!important;text-decoration:underline;text-decoration-color:var(--nm-sky);text-underline-offset:4px}
+body.nm .beat :is(.eyebrow,.cd),body.nm .wk-soon-k{color:#4A555B!important}
+body.nm .rt-mini i.b{background:var(--nm-sky);color:#111417}
+body.nm .rt-t.sel{background:var(--nm-mint);color:#111417}
+body.nm .rt-t.hd:not(.sel){box-shadow:inset 0 0 0 3px var(--nm-gold)}
+body.nm :is(.rt-stats span,.rt-sum b,.rt-no,.rt-cd){color:#111417;background:transparent}
+body.nm .rt-slot i.rv{color:#111417;box-shadow:inset 0 0 0 2px var(--nm-gold)}
+
+body.nm :is(header nav,.f-nav,.fx-actions) a.nm-inline{text-decoration:none!important}
+body.nm :is(header nav,.f-nav) a[aria-current]{border-bottom-color:var(--nm-mint)!important;color:inherit!important}
+
+/* Radio labels retain a single full-width face, not a small nested pill. */
+body.nm .rb-opt{display:block!important}
+body.nm .rb-opt span:not(.vh){width:100%;box-sizing:border-box;border-radius:3px}
+body.nm .rb-opt input:checked+span{background:var(--nm-mint)!important;border-color:var(--nm-mint)!important;color:#111417!important;box-shadow:none!important}
+body.nm .wk-opt{align-items:stretch!important;gap:12px!important}
+
+body.nm .rb-opt input:focus-visible+span,body.nm .wk-opt:focus-within{outline:3px solid var(--nm-gold)!important;outline-offset:3px}
+
+body.nm header nav a[aria-current]{box-shadow:inset 0 -3px 0 var(--nm-mint)!important}
+
+body.nm .fx-check:focus-within{outline:3px solid var(--nm-gold)!important;outline-offset:3px}

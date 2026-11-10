@@ -8,9 +8,9 @@
   "items": [
     {
       "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/us-bank-context-20261108",
-      "url": "https://calm.themarginwars.pages.dev/index.html#rb-us-bank",
+      "url": "https://calm.themarginwars.pages.dev/route-briefs/items/us-bank-context-20261108/",
       "title": "US BANK / rule context linked",
-      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+      "content_text": "[deadline] So what for merchants: Check payout promises against the receiving bank’s 9am availability duty. Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "US"
@@ -18,9 +18,9 @@
     },
     {
       "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/ukeu-card-context-20261108",
-      "url": "https://calm.themarginwars.pages.dev/index.html#rb-ukeu-card",
+      "url": "https://calm.themarginwars.pages.dev/route-briefs/items/ukeu-card-context-20261108/",
       "title": "UKEU CARD / rule context linked",
-      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf",
+      "content_text": "[neutral] So what for merchants: Track PSD3 separately from PSR; do not treat this vote as a go-live date. Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "UK / EU"
@@ -28,9 +28,9 @@
     },
     {
       "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/br-instant-context-20261108",
-      "url": "https://calm.themarginwars.pages.dev/index.html#rb-br-instant",
+      "url": "https://calm.themarginwars.pages.dev/route-briefs/items/br-instant-context-20261108/",
       "title": "BR INSTANT / rule context linked",
-      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+      "content_text": "[neutral] So what for merchants: Check refund integrations that rely on implicit monitoring defaults. Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Brazil"
@@ -38,9 +38,9 @@
     },
     {
       "id": "https://calm.themarginwars.pages.dev/feeds/id/route-briefs/anz-card-context-20261108",
-      "url": "https://calm.themarginwars.pages.dev/index.html#rb-anz-card",
+      "url": "https://calm.themarginwars.pages.dev/route-briefs/items/anz-card-context-20261108/",
       "title": "ANZ CARD / rule context linked",
-      "content_text": "Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+      "content_text": "[neutral] So what for merchants: Recheck checkout pricing: designated card-network surcharge rules changed. Preview, pending Avi’s review. Added a dated link from this Route Brief to the sourced Wire context. Route recommendations are unchanged. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"

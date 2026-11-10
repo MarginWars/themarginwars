@@ -1,0 +1,24 @@
+/* About-only multi-hue surface study. Source colors, no imported identity or motifs. */
+body.about-spectrum{--ab-sky:#8FB0E0;--ab-mint:#3FBF85;--ab-gold:#D2A63A;--ab-coral:#EA6259;--ab-ink:#111417}
+/* Field record: white evidence panels on a full-width mint ground. */
+body.about-spectrum .ab-evidence{background:var(--ab-mint)}
+body.about-spectrum #main .ab-evidence .ab-label{color:var(--ab-ink)!important;-webkit-text-fill-color:var(--ab-ink)!important}
+body.about-spectrum .ab-evidence .pc{border:1px solid #DDE3E6;border-radius:3px}
+body.about-spectrum .ab-evidence .pc:before{background:var(--ab-mint)}
+body.about-spectrum .ab-evidence .pc-wins li:before{color:#4A555B}
+body.about-spectrum .ab-evidence .pc a{color:#111417;text-decoration:underline;text-underline-offset:3px}
+body.about-spectrum .ab-evidence .pc-chips li{background:#F4F6F7;color:#111417;border-color:#DDE3E6}
+/* Method is the dark anchor; the warm openable surface gives it a second plane. */
+body.about-spectrum .ab-method .bio-acc{background:var(--ab-gold);border-top:0;color:var(--ab-ink)}
+body.about-spectrum #main .ab-method .bio-acc .ch{color:var(--ab-ink)!important;-webkit-text-fill-color:var(--ab-ink)!important}
+body.about-spectrum .ab-method .bio-acc .acc-chev{color:var(--ab-ink)}
+body.about-spectrum .ab-method .bio-acc .acc-b,body.about-spectrum .ab-method .bio-acc .acc-b li,body.about-spectrum .ab-method .bio-acc .acc-b b{color:var(--ab-ink)}
+body.about-spectrum .ab-method .bio-acc .acc-b a{color:#111417;text-decoration:underline}
+/* Stage archive: sky surface, black text, white video captions. */
+body.about-spectrum .ab-archive{background:var(--ab-sky)}
+body.about-spectrum .ab-archive .vid{border-color:#C2CBD0}
+body.about-spectrum .ab-archive .ab-flow a{color:#111417}
+body.about-spectrum .ab-archive .vid>noscript a{color:#111417}
+/* Confidentiality closes on coral, not a red alert or a status indicator. */
+body.about-spectrum .ab-conf{background:var(--ab-coral)}
+body.about-spectrum .ab-conf .ab-flow>section:not(.ppl),body.about-spectrum .ab-conf p{color:#111417}

@@ -1,0 +1,52 @@
+/* Balance layer (Nov 9): fewer surface swaps, colour carries meaning.
+   Surfaces: one dark anchor (hero) + dark footer; otherwise white with one soft grey.
+   States: hover = sky, focus = gold, selected/success = mint, deadline/warning = coral, conversion = magenta.
+   Text on light never uses raw technicolor; darker ink variants keep AA. */
+body.nm{--nm-sky-ink:#2E5A96;--nm-mint-ink:#1C7148;--nm-gold-ink:#7D5B0E;--nm-coral-ink:#A8342B;--nm-fam:var(--nm-mint)}
+body.nm.f-page{--nm-fam:var(--nm-sky)}
+body.nm.pg-arcade{--nm-fam:var(--nm-coral)}
+body.nm:is(.pg-advisory,.pg-speaking,.pg-contact,.pg-writing){--nm-fam:var(--nm-gold)}
+/* Home: hero anchor, then grey research desk, white tool, grey band, white gallery. */
+body.nm .f-strip{background:var(--nm-paper)!important}
+body.nm .rbf{--rb-bg:#FFFFFF;--rb-s:#F4F6F7;background:#FFFFFF!important;border-top:1px solid var(--nm-rule)}
+body.nm .gal{background:#FFFFFF!important;border-top:1px solid var(--nm-rule)}
+/* About: dark portrait hero, grey field record, everything after it white with hairlines. */
+body.nm.about-palette .ab-evidence{background:var(--nm-paper)!important}
+body.nm.about-palette :is(.ab-method,.ab-archive,.ab-conf){background:#FFFFFF!important}
+body.nm.about-palette :is(.ab-archive,.ab-conf){border-top:1px solid var(--nm-rule)}
+body.nm.about-palette .ab-archive .vid{background:#FFFFFF;border-color:var(--nm-rule)}
+body.nm.about-palette .ab-evidence .pc{border-color:var(--nm-rule)}
+body.nm.about-palette .ab-evidence .pc:before{background:var(--nm-mint)!important}
+body.nm.about-palette .ab-evidence .pc-chips li{background:#FFFFFF!important;color:var(--nm-ink)!important;border:1px solid var(--nm-rule)!important}
+body.nm.about-palette .ab-method .bio-acc{background:#FFFFFF!important;border:1px solid var(--nm-rule)!important}
+body.nm.about-palette #main :is(.ab-method,.ab-archive,.ab-conf) .ab-label,body.nm.about-palette #main .ab-evidence .ab-label{color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
+/* Section-family eyebrow keyline: one hue per family (people mint, research sky, practice gold, games coral). */
+body.nm .eyebrow.sx::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-fam)!important;color:transparent}
+body.nm.about-palette #main .ab-label:not(.pc *)::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-mint)}
+body.nm.f-page .f-hero{border-bottom:3px solid var(--nm-sky)!important}
+/* Tags tinted by meaning, ink text for AA. */
+body.nm .fx-impact[data-impact=deadline]{background:#FCE8E6!important;border-color:var(--nm-coral)!important;color:#111417!important}
+body.nm .fx-impact[data-impact="cost down"]{background:#E2F4EA!important;border-color:var(--nm-mint)!important;color:#111417!important}
+body.nm .fx-impact[data-impact=neutral]{background:#FFFFFF!important;border-color:var(--nm-rule)!important;color:#111417!important}
+/* Interactive cards only: sky keyline on hover/focus. */
+body.nm .f-stripitem:has(>a:hover){border-top-color:var(--nm-sky)}
+body.nm :is(.f-feedcard,.f-market):has(a:hover){border-color:var(--nm-sky)}
+/* Magenta is conversion only. Decorative rules/keylines take the page-family hue; counts/numbers go to ink. */
+body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2))::before{background:var(--nm-fam)!important}
+body.nm details.card.acc::before,body.nm .ticks li::before{background:var(--nm-fam)!important;border-color:var(--nm-fam)!important}
+body.nm .rt-line>i,body.nm .wk-settle>i{background:#8D999F!important}
+body.nm span.sn{color:var(--nm-ink)!important}
+body.nm :is(.rx-n,.rx-c,small.rx-c){color:var(--nm-muted)!important}
+body.nm .rbf :is(.rb-note,.rb-aside,.rb-proof){border-left-color:var(--nm-gold)!important}
+body.nm .rbf .rb-k{color:var(--nm-gold-ink)!important}
+body.nm :is(section.pband,section.intro2)::before,body.nm section.intro2::after{background:var(--nm-fam)!important}
+body.nm .tm-line>i{background:#8D999F!important}
+body.nm span.tm-d{border-color:var(--nm-fam)!important}
+body.nm .rb-r b::before{border-color:#4A555B!important}
+body.nm .rb-path .rb-arrow::before{background:#4A555B!important}
+body.nm .rb-path .rb-arrow::after{border-color:#4A555B!important}
+body.nm .rx-rp{border-top-color:var(--nm-fam)!important}
+body.nm :is(.rh small,.fronts .fl,.nextp>span,span.wk-no){color:var(--nm-muted)!important}
+body.nm.pg-index ol>li::before{color:var(--nm-ink)!important}
+body.nm p.note{border-left-color:var(--nm-fam)!important}
+body.nm .nextp a{border-bottom-color:var(--nm-fam)!important}

@@ -17,7 +17,7 @@ DESCRIPTION:Effective. eftpos\, Mastercard and Visa no-surcharge rules appl
  ficial source: https://www.rba.gov.au/payments-and-infrastructure/review-o
  f-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html\nPr
  eview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-surcharging
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-surcharging/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -33,7 +33,8 @@ DESCRIPTION:Effective. Revised interchange regulation applies to domestic-i
  ww.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regula
  tion/2026-03/conclusions-paper/impact-and-implementation.html\nPreview\, p
  ending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-domestic-interchange
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-domestic-interch
+ ange/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -49,7 +50,8 @@ DESCRIPTION:Effective. The amended net-compensation regime starts\, with tr
  .au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-
  03/conclusions-paper/impact-and-implementation.html\nPreview\, pending Avi
  ’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-net-compensation
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-net-compensation
+ /
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -65,7 +67,8 @@ DESCRIPTION:Publication deadline. First quarterly aggregate fee publication
  fficial source: https://www.rba.gov.au/payments-and-infrastructure/review-
  of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-impleme
  ntation.html\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-network-disclosure
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-network-disclosu
+ re/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -81,7 +84,8 @@ DESCRIPTION:Publication deadline. Qualifying large acquirers must publish m
   https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payme
  nts-regulation/2026-03/conclusions-paper/impact-and-implementation.html\nP
  review\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-acquirer-disclosure
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-acquirer-disclos
+ ure/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -97,7 +101,7 @@ DESCRIPTION:Publication deadline. First publication of large acquirers’ i
   source: https://www.rba.gov.au/payments-and-infrastructure/review-of-reta
  il-payments-regulation/2026-03/conclusions-paper/impact-and-implementation
  .html\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-pass-through
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-pass-through/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -113,7 +117,7 @@ DESCRIPTION:Effective. Interchange caps extend to foreign-issued card trans
  yments-and-infrastructure/review-of-retail-payments-regulation/2026-03/con
  clusions-paper/impact-and-implementation.html\nPreview\, pending Avi’s r
  eview
-URL:https://calm.themarginwars.pages.dev/calendar/#au-foreign-cards
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-foreign-cards/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -129,7 +133,7 @@ DESCRIPTION:Effective. More statement detail is required from the first ful
  /www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regu
  lation/2026-03/conclusions-paper/impact-and-implementation.html\nPreview\,
   pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-statements
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-statements/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -145,7 +149,7 @@ DESCRIPTION:Policy expectation. The RBA expects a scheme-fee roadmap by 1 A
  ://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-re
  gulation/2026-03/conclusions-paper/impact-and-implementation.html\nPreview
  \, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#au-scheme-roadmap
+URL:https://calm.themarginwars.pages.dev/calendar/items/au-scheme-roadmap/
 TRANSP:TRANSPARENT
 STATUS:TENTATIVE
 SEQUENCE:0
@@ -160,7 +164,8 @@ DESCRIPTION:Effective. The 22 October decision introduces commercial credit
  -card interchange limits on Mastercard and Visa.\nOfficial source: https:/
  /www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulati
  on/\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#nz-commercial-cards
+URL:https://calm.themarginwars.pages.dev/calendar/items/nz-commercial-cards
+ /
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -175,7 +180,7 @@ DESCRIPTION:Effective. Nacha lists an increase of the Same Day ACH dollar l
  imit to $10 million for 17 September 2027.\nOfficial source: https://www.n
  acha.org/content/summary-upcoming-rule-changes\nPreview\, pending Avi’s 
  review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-same-day-limit
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-same-day-limit/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -190,7 +195,7 @@ DESCRIPTION:Effective. Non-Same Day ACH credits must be available by 9am in
   the receiving bank’s local time on settlement date.\nOfficial source: h
  ttps://www.nacha.org/rules/funds-availability-requirements-non-same-day-cr
  edit-entries\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-availability
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-availability/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -205,7 +210,7 @@ DESCRIPTION:Effective. Nacha lists its revised definition of International
  ACH Transactions among the September changes.\nOfficial source: https://ww
  w.nacha.org/content/summary-upcoming-rule-changes\nPreview\, pending Avi
  ’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-iat/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -220,8 +225,8 @@ DESCRIPTION:Effective. Nacha lists changes to funds-availability exceptions
   for Non-Same Day credit entries. Check the rule text before changing cont
  rols.\nOfficial source: https://www.nacha.org/content/summary-upcoming-rul
  e-changes\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-availability-excepti
- ons
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-availability-ex
+ ceptions/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -235,7 +240,8 @@ SUMMARY:[PREVIEW] IAT: optional date-of-birth field
 DESCRIPTION:Effective. Nacha lists the optional date-of-birth field for IAT
   entries for 19 March 2027.\nOfficial source: https://www.nacha.org/conten
  t/summary-upcoming-rule-changes\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat-date-of-birth
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-iat-date-of-bir
+ th/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -249,7 +255,7 @@ SUMMARY:[PREVIEW] ACH: register IAT contacts
 DESCRIPTION:Effective. Registration of IAT contacts in the ACH Contact Regi
  stry is listed for 1 January 2027.\nOfficial source: https://www.nacha.org
  /content/summary-upcoming-rule-changes\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ach-iat-contacts
+URL:https://calm.themarginwars.pages.dev/calendar/items/ach-iat-contacts/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -266,7 +272,8 @@ DESCRIPTION:Effective. Relevant scheme-fee decisions must comply with the P
  eview-of-card-scheme-and-processing-fees-final-decision-information-transp
  arency-and-complexity-remedy-pricing-governance-remedy/\nPreview\, pending
   Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#uk-pricing-governance
+URL:https://calm.themarginwars.pages.dev/calendar/items/uk-pricing-governan
+ ce/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -283,7 +290,8 @@ DESCRIPTION:Effective. Substantive information\, transparency and complexit
  olicy-statements/ps261-market-review-of-card-scheme-and-processing-fees-fi
  nal-decision-information-transparency-and-complexity-remedy-pricing-govern
  ance-remedy/\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#uk-fee-transparency
+URL:https://calm.themarginwars.pages.dev/calendar/items/uk-fee-transparency
+ /
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -299,7 +307,8 @@ DESCRIPTION:Effective. ITC Standard B is deferred for qualifying fee lines
  sion\, acquirers can request that information without charge.\nOfficial so
  urce: https://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-e
  xtensions-decision-aug-2026.pdf\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#uk-fee-logic-extension
+URL:https://calm.themarginwars.pages.dev/calendar/items/uk-fee-logic-extens
+ ion/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -315,7 +324,7 @@ DESCRIPTION:Effective. Daily reconciliations\, monthly reports and resoluti
  ents have exceptions.\nOfficial source: https://www.fca.org.uk/firms/emi-p
  ayment-institutions-safeguarding-requirements\nPreview\, pending Avi’s r
  eview
-URL:https://calm.themarginwars.pages.dev/calendar/#uk-safeguarding
+URL:https://calm.themarginwars.pages.dev/calendar/items/uk-safeguarding/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -332,7 +341,7 @@ DESCRIPTION:Legislative milestone. The Council voting record documents adop
  \; no implementation date is asserted here.\nOfficial source: https://data
  .consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf\nPreview\, pen
  ding Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#eu-psr-position
+URL:https://calm.themarginwars.pages.dev/calendar/items/eu-psr-position/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -347,7 +356,7 @@ DESCRIPTION:Scheduled launch. Payments Canada confirms a scheduled 9 Novemb
  er launch. This preview does not describe the service as already live.\nOf
  ficial source: https://www.payments.ca/canadas-real-time-rail-launch-confi
  rmed-budget-2026\nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#ca-rtr-launch
+URL:https://calm.themarginwars.pages.dev/calendar/items/ca-rtr-launch/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -363,7 +372,7 @@ DESCRIPTION:Legislative milestone. The Council voting record documents its
  ive on 29 October. This is not an implementation deadline.\nOfficial sourc
  e: https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf
  \nPreview\, pending Avi’s review
-URL:https://calm.themarginwars.pages.dev/calendar/#eu-psd3-position
+URL:https://calm.themarginwars.pages.dev/calendar/items/eu-psd3-position/
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 SEQUENCE:0

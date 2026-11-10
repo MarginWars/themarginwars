@@ -1,0 +1,625 @@
+[
+  {
+    "file": "about.html",
+    "route": "/about",
+    "family": "core",
+    "controls": 3,
+    "links": 19
+  },
+  {
+    "file": "advisory.html",
+    "route": "/advisory",
+    "family": "core",
+    "controls": 12,
+    "links": 48
+  },
+  {
+    "file": "arcade.html",
+    "route": "/arcade",
+    "family": "games",
+    "controls": 1,
+    "links": 24
+  },
+  {
+    "file": "bp-watch/index.html",
+    "route": "/bp-watch/",
+    "family": "bp-watch",
+    "controls": 27,
+    "links": 28
+  },
+  {
+    "file": "bp-watch/items/au-pass-through-test/index.html",
+    "route": "/bp-watch/items/au-pass-through-test/",
+    "family": "bp-watch",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "bp-watch/items/nz-commercial-readiness/index.html",
+    "route": "/bp-watch/items/nz-commercial-readiness/",
+    "family": "bp-watch",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "bp-watch/items/uk-fee-evidence/index.html",
+    "route": "/bp-watch/items/uk-fee-evidence/",
+    "family": "bp-watch",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/index.html",
+    "route": "/calendar/",
+    "family": "calendar",
+    "controls": 95,
+    "links": 139
+  },
+  {
+    "file": "calendar/items/ach-availability/index.html",
+    "route": "/calendar/items/ach-availability/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ach-availability-exceptions/index.html",
+    "route": "/calendar/items/ach-availability-exceptions/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ach-iat/index.html",
+    "route": "/calendar/items/ach-iat/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ach-iat-contacts/index.html",
+    "route": "/calendar/items/ach-iat-contacts/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ach-iat-date-of-birth/index.html",
+    "route": "/calendar/items/ach-iat-date-of-birth/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ach-same-day-limit/index.html",
+    "route": "/calendar/items/ach-same-day-limit/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-acquirer-disclosure/index.html",
+    "route": "/calendar/items/au-acquirer-disclosure/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-domestic-interchange/index.html",
+    "route": "/calendar/items/au-domestic-interchange/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-foreign-cards/index.html",
+    "route": "/calendar/items/au-foreign-cards/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-net-compensation/index.html",
+    "route": "/calendar/items/au-net-compensation/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-network-disclosure/index.html",
+    "route": "/calendar/items/au-network-disclosure/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-pass-through/index.html",
+    "route": "/calendar/items/au-pass-through/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-scheme-roadmap/index.html",
+    "route": "/calendar/items/au-scheme-roadmap/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-statements/index.html",
+    "route": "/calendar/items/au-statements/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/au-surcharging/index.html",
+    "route": "/calendar/items/au-surcharging/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/ca-rtr-launch/index.html",
+    "route": "/calendar/items/ca-rtr-launch/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/eu-psd3-position/index.html",
+    "route": "/calendar/items/eu-psd3-position/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/eu-psr-position/index.html",
+    "route": "/calendar/items/eu-psr-position/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/nz-commercial-cards/index.html",
+    "route": "/calendar/items/nz-commercial-cards/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/uk-fee-logic-extension/index.html",
+    "route": "/calendar/items/uk-fee-logic-extension/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/uk-fee-transparency/index.html",
+    "route": "/calendar/items/uk-fee-transparency/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/uk-pricing-governance/index.html",
+    "route": "/calendar/items/uk-pricing-governance/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "calendar/items/uk-safeguarding/index.html",
+    "route": "/calendar/items/uk-safeguarding/",
+    "family": "calendar",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "contact.html",
+    "route": "/contact",
+    "family": "core",
+    "controls": 0,
+    "links": 18
+  },
+  {
+    "file": "daily.html",
+    "route": "/daily",
+    "family": "games",
+    "controls": 0,
+    "links": 14
+  },
+  {
+    "file": "deal.html",
+    "route": "/deal",
+    "family": "games",
+    "controls": 0,
+    "links": 14
+  },
+  {
+    "file": "digest/2026-11-08/index.html",
+    "route": "/digest/2026-11-08/",
+    "family": "digest",
+    "controls": 3,
+    "links": 26
+  },
+  {
+    "file": "digest/index.html",
+    "route": "/digest/",
+    "family": "digest",
+    "controls": 3,
+    "links": 26
+  },
+  {
+    "file": "ep1.html",
+    "route": "/ep1",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep2.html",
+    "route": "/ep2",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep3.html",
+    "route": "/ep3",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep4.html",
+    "route": "/ep4",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep5.html",
+    "route": "/ep5",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep6.html",
+    "route": "/ep6",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep7.html",
+    "route": "/ep7",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep8.html",
+    "route": "/ep8",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "ep9.html",
+    "route": "/ep9",
+    "family": "games",
+    "controls": 0,
+    "links": 16
+  },
+  {
+    "file": "feeds/index.html",
+    "route": "/feeds/",
+    "family": "feeds",
+    "controls": 34,
+    "links": 65
+  },
+  {
+    "file": "index.html",
+    "route": "/",
+    "family": "core",
+    "controls": 76,
+    "links": 102
+  },
+  {
+    "file": "leak.html",
+    "route": "/leak",
+    "family": "games",
+    "controls": 0,
+    "links": 14
+  },
+  {
+    "file": "quiz.html",
+    "route": "/quiz",
+    "family": "games",
+    "controls": 1,
+    "links": 14
+  },
+  {
+    "file": "route-briefs/items/anz-card-context-20261108/index.html",
+    "route": "/route-briefs/items/anz-card-context-20261108/",
+    "family": "route-briefs",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "route-briefs/items/br-instant-context-20261108/index.html",
+    "route": "/route-briefs/items/br-instant-context-20261108/",
+    "family": "route-briefs",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "route-briefs/items/ukeu-card-context-20261108/index.html",
+    "route": "/route-briefs/items/ukeu-card-context-20261108/",
+    "family": "route-briefs",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "route-briefs/items/us-bank-context-20261108/index.html",
+    "route": "/route-briefs/items/us-bank-context-20261108/",
+    "family": "route-briefs",
+    "controls": 20,
+    "links": 16
+  },
+  {
+    "file": "speaking.html",
+    "route": "/speaking",
+    "family": "core",
+    "controls": 6,
+    "links": 18
+  },
+  {
+    "file": "tracewire.html",
+    "route": "/tracewire",
+    "family": "games",
+    "controls": 0,
+    "links": 14
+  },
+  {
+    "file": "warroom.html",
+    "route": "/warroom",
+    "family": "core",
+    "controls": 8,
+    "links": 36
+  },
+  {
+    "file": "wire/index.html",
+    "route": "/wire/",
+    "family": "wire",
+    "controls": 114,
+    "links": 137
+  },
+  {
+    "file": "wire/items/ach-availability/index.html",
+    "route": "/wire/items/ach-availability/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ach-availability-exceptions/index.html",
+    "route": "/wire/items/ach-availability-exceptions/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ach-iat/index.html",
+    "route": "/wire/items/ach-iat/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ach-iat-contacts/index.html",
+    "route": "/wire/items/ach-iat-contacts/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ach-iat-date-of-birth/index.html",
+    "route": "/wire/items/ach-iat-date-of-birth/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ach-same-day-limit/index.html",
+    "route": "/wire/items/ach-same-day-limit/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-acquirer-disclosure/index.html",
+    "route": "/wire/items/au-acquirer-disclosure/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-domestic-interchange/index.html",
+    "route": "/wire/items/au-domestic-interchange/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-foreign-cards/index.html",
+    "route": "/wire/items/au-foreign-cards/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-net-compensation/index.html",
+    "route": "/wire/items/au-net-compensation/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-network-disclosure/index.html",
+    "route": "/wire/items/au-network-disclosure/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-pass-through/index.html",
+    "route": "/wire/items/au-pass-through/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-scheme-roadmap/index.html",
+    "route": "/wire/items/au-scheme-roadmap/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-statements/index.html",
+    "route": "/wire/items/au-statements/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/au-surcharging/index.html",
+    "route": "/wire/items/au-surcharging/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ca-eu-interlink/index.html",
+    "route": "/wire/items/ca-eu-interlink/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/ca-rtr-launch/index.html",
+    "route": "/wire/items/ca-rtr-launch/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/emv-3ds-extensions/index.html",
+    "route": "/wire/items/emv-3ds-extensions/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/emv-3ds24/index.html",
+    "route": "/wire/items/emv-3ds24/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/emv-agentic-draft/index.html",
+    "route": "/wire/items/emv-agentic-draft/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/eu-psd3-position/index.html",
+    "route": "/wire/items/eu-psd3-position/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/eu-psr-position/index.html",
+    "route": "/wire/items/eu-psr-position/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/nz-commercial-cards/index.html",
+    "route": "/wire/items/nz-commercial-cards/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/pix-dict-default/index.html",
+    "route": "/wire/items/pix-dict-default/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/pix-dict-rc/index.html",
+    "route": "/wire/items/pix-dict-rc/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/uk-fee-logic-extension/index.html",
+    "route": "/wire/items/uk-fee-logic-extension/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/uk-fee-transparency/index.html",
+    "route": "/wire/items/uk-fee-transparency/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/uk-pricing-governance/index.html",
+    "route": "/wire/items/uk-pricing-governance/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/uk-rtgs-delay/index.html",
+    "route": "/wire/items/uk-rtgs-delay/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/uk-safeguarding/index.html",
+    "route": "/wire/items/uk-safeguarding/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "wire/items/us-regii-watch/index.html",
+    "route": "/wire/items/us-regii-watch/",
+    "family": "wire",
+    "controls": 20,
+    "links": 15
+  },
+  {
+    "file": "writing.html",
+    "route": "/writing",
+    "family": "core",
+    "controls": 1,
+    "links": 16
+  }
+]

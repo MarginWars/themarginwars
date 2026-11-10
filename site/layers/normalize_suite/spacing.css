@@ -1,0 +1,60 @@
+/* Spacing gate (Nov 9). Shared edge 16 / 24 / 104 / 184 (capped, centred); section rhythm R = 64 / 96 / 120;
+   heading->body 16 mobile, 24 from tablet. Same surface: R between sections. Surface change: R each side. */
+body.nm{--R:64px;--E:16px;--HB:16px}
+@media(min-width:768px){body.nm{--R:96px;--E:24px;--HB:24px}}
+@media(min-width:1280px){body.nm{--R:120px}}
+/* Wraps: one R before the next surface, never doubled with a last section's own padding. */
+html body.nm main>.wrap{padding-bottom:var(--R)!important}
+html body.nm main>.wrap>section:last-child{padding-bottom:0!important}
+html body.nm main>.wrap:has(+.wrap){padding-bottom:0!important}
+html body.nm main>.wrap>:last-child,html body.nm main>.wrap>section>:last-child,html body.nm main>section:not(.hero):not(.ihero)>.wrap>:last-child,html body.nm main>section:not(.hero):not(.ihero)>:last-child{margin-bottom:0!important}
+/* Home: transparent sections share the page surface, so only the top carries R. */
+html body.nm.pg-index main>section:not(.hero):not(.f-strip):not(.band){padding-bottom:0!important}
+html body.nm.pg-index main>section:has(+:is(.f-strip,.band)),html body.nm.pg-index main>section:has(+.nextp),html body.nm.pg-index main>section:last-of-type{padding-bottom:var(--R)!important}
+body.nm .gal{border-top:0!important}
+/* Game panels are cards on the canvas, not sections: inner padding, R from the hero. */
+html body.nm main>.wrap>section.gm{padding:16px!important;margin-top:var(--R)!important}
+@media(min-width:768px){html body.nm main>.wrap>section.gm{padding:24px!important}}
+html body.nm main>.wrap>p:first-child{margin-top:var(--R)!important;margin-bottom:0!important}
+html body.nm main>.wrap>p:first-child+section.gm{margin-top:16px!important}
+html body.nm main>.wrap>.rt-hero:first-child{margin-top:var(--R)!important}
+html body.nm main>.wrap>section.gm+p.fine{margin:16px 0 0!important}
+/* About: shared edge at every width; R rhythm; one surface change (grey field record -> white). */
+html body.nm.about-clean #main>.ab-hero{padding-left:var(--E)!important;padding-right:var(--E)!important}
+@media(min-width:1024px){html body.nm.about-clean #main>.ab-hero{padding-left:24px!important;padding-right:24px!important}}
+html body.nm.about-clean #main>.ab-band>.ab-flow{padding:var(--R) var(--E)!important}
+@media(min-width:1024px){html body.nm.about-clean #main>.ab-band>.ab-flow{padding-left:24px!important;padding-right:24px!important}}
+html body.nm.about-clean #main>:is(.ab-archive,.ab-conf)>.ab-flow{padding-top:0!important}
+html body.nm.about-palette :is(.ab-archive,.ab-conf){border-top:0!important}
+html body.nm.about-clean main .ab-flow>:last-child,html body.nm.about-clean main .ab-flow>section:last-child>:last-child{margin-bottom:0!important;padding-bottom:0!important}
+html body.nm.about-clean main .ab-flow>:first-child{margin-top:0!important;padding-top:0!important}
+html body.nm.about-clean main .ab-flow>section+section{margin-top:var(--R)!important;padding-top:0!important}
+/* Section heading -> body. */
+html body.nm main h2:not(:is(article,li,details,.card,.f-entry,.pc,figure,form,.gm,dialog,table,.rt-hero) h2):has(+p){margin-bottom:var(--HB)!important}
+html body.nm main h2:not(:is(article,li,details,.card,.f-entry,.pc,figure,form,.gm,dialog,table,.rt-hero) h2)+p{margin-top:0!important}
+html body.nm main ul.ticks:last-child>li:last-child{margin-bottom:0!important}
+/* War room rounds carry a 24px internal top inset under their rule; keep content on R. */
+html body.nm.pg-warroom main .wrap>section.wg,html body.nm.pg-warroom main .wrap>section.wg:first-child{margin-top:calc(var(--R) - 24px)!important}
+/* Tablet tier is 96 site-wide (older layers switched to 120 at 1024). */
+@media(min-width:768px) and (max-width:1279px){:root,html body.nm,html body.nm *{--sec:96px!important}}
+html body.nm main>.wrap>section>:first-child,html body.nm main>section:not(.hero):not(.ihero)>:first-child{margin-top:0!important}
+/* Research desk: one reading column on one surface; components step by --C, label->card by --HB. */
+body.nm{--C:24px}
+@media(min-width:768px){body.nm{--C:32px}}
+html body.nm.f-page #f-main>*{margin-top:0!important;margin-bottom:0!important}
+html body.nm.f-page #f-main>*+*{margin-top:var(--C)!important}
+html body.nm.f-page #f-main>.fx-itemhero+*{margin-top:var(--HB)!important}
+html body.nm.f-page #f-main>section>:last-child{margin-bottom:0!important}
+/* Research nav: one row on phones (scrolls at 320 rather than orphaning a link). */
+@media(max-width:640px){html body.nm .f-header nav{flex-wrap:nowrap!important;max-width:none!important;width:100%;gap:0 12px!important;overflow-x:auto;scrollbar-width:none;justify-content:space-between}html body.nm .f-header nav a{white-space:nowrap}}
+html body.nm.f-page #f-main>:is(.fx-tools,.fx-itemhero,.f-feedgrid,.fx-digest){padding-top:0!important;padding-bottom:0!important}
+html body.nm.f-page #f-main>:is(.f-marketfeeds,.fx-digestarchive){padding-top:var(--C)!important;padding-bottom:0!important}
+html body.nm.f-page #f-main>.f-weekline{padding-top:0!important;padding-bottom:var(--C)!important}
+/* Leak ledger fits a 320 phone without breaching the card edge. */
+html body.nm .gm table.lk{width:100%!important;max-width:100%}
+@media(max-width:360px){html body.nm .gm table.lk{font-size:12px!important}html body.nm .gm table.lk :is(td,th){padding-left:4px!important;padding-right:4px!important}}
+html body.nm.about-clean main .ab-flow>section.edu-s{margin-top:var(--HB)!important}
+html body.nm main>.wrap>section>ul:not([class]):last-child>li:last-child{margin-bottom:0!important}
+/* Feed grid: one 16px gutter both ways (cards no longer add their own bottom margin). */
+html body.nm.f-page .f-feedgrid>.f-feedcard{margin:0!important}
+html body.nm main>.wrap>section>ol.wl:last-child>li:last-child{margin-bottom:0!important}

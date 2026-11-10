@@ -1,0 +1,32 @@
+/* Page-scoped; no global theme decision. */
+.about-clean main{background:#101315;color:#F4F6F7;overflow:hidden}
+.about-clean .ab-hero,.about-clean .ab-flow{max-width:1120px;margin:0 auto;padding-left:24px;padding-right:24px}
+.about-clean .ab-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:56px;min-height:0}
+.ab-k,.ab-label{font:500 11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:#CDD5DA}
+.about-clean h1{font:700 clamp(36px,4.3vw,60px)/1.05 var(--sans);letter-spacing:-.045em;margin:16px 0 24px;color:#F4F6F7;max-width:none}
+.ab-eight{font:600 clamp(20px,2vw,26px)/1.25 var(--sans);max-width:24ch;margin:0 0 12px}
+.ab-lede{font-size:16px;line-height:1.5;color:#CDD5DA;max-width:32ch;margin:0 0 24px}.ab-link{color:#E9A6CF!important;font-size:13px;text-underline-offset:5px}
+.ab-portraits{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}.ab-portraits figure{margin:0;min-width:0}.ab-portraits img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;filter:grayscale(1)}
+.ab-portraits figcaption{font-size:17px;font-weight:600;padding:12px 0 0;color:#F4F6F7}.ab-portraits figcaption span{display:block;color:#CDD5DA;font:400 11px/1.6 var(--mono);margin-top:4px}
+.about-clean .ab-label{margin:0;padding:24px 0 0;border-top:1px solid #39434A}
+.about-clean .ppl{margin:0}.about-clean .ppl-grid{margin-top:20px;gap:24px}.about-clean .pc{padding:24px}.about-clean .pc-top{display:block}.about-clean .pc-top h3{font-size:28px}.about-clean .pc-k{display:none}.about-clean .pc-who{font-size:18px;margin-top:16px;min-height:72px}.about-clean .pc-sl{margin-top:24px}.about-clean .pc-ww{font-size:13px}.about-clean .pc-chips li{font-size:10px;padding:7px 8px}
+.about-clean .ab-flow>section:not(.ppl){margin:0;padding:56px 0;border-bottom:1px solid #39434A;max-width:none;background:none;color:#F4F6F7}
+.about-clean h2,.about-clean h3{color:#F4F6F7}.about-clean .ab-flow h2:not(.ab-label){font:600 28px/1.2 var(--sans);margin:0 0 24px;letter-spacing:-.025em}.about-clean .ab-flow h3{font-size:20px}
+.about-clean .beliefs{display:block;columns:1;padding:0;margin:0;list-style:none}.about-clean .beliefs li{padding:14px 0;border-top:1px solid #39434A;margin:0;line-height:1.5;color:#CDD5DA}.about-clean .beliefs b{color:#F4F6F7}.about-clean .beliefs li:last-child{margin:0}
+.about-clean .bio-acc{margin-top:24px;background:#171B1F;border-color:#39434A;color:#F4F6F7}.about-clean .bio-acc .ch{color:#F4F6F7}.about-clean .acc-b{color:#CDD5DA}
+.about-clean .ab-flow .edu-s{padding:24px 0}.about-clean .edu{margin:0;color:#CDD5DA}.about-clean .ab-flow .split{display:block}.about-clean .ab-flow .split>*{max-width:70ch}.about-clean .ab-flow p{line-height:1.5}
+.about-clean .ab-flow a{color:#E9A6CF}.about-clean .vids{display:grid;grid-template-columns:1fr 1fr;gap:24px}.about-clean .vid figcaption{color:#CDD5DA;font-size:13px}.about-clean .vid{margin:0;min-width:0}.about-clean .ab-flow .eyebrow{display:none}.about-clean .ab-flow>section:last-child{border:0}
+@media(max-width:899px){.about-clean .ab-hero{grid-template-columns:1fr;gap:28px;padding-top:36px;padding-bottom:32px}.about-clean .ab-hero,.about-clean .ab-flow{padding-left:20px;padding-right:20px}.about-clean h1{margin:12px 0 20px;font-size:42px}.ab-eight{max-width:none;font-size:23px}.ab-lede{max-width:32ch}.ab-portraits{gap:16px;max-width:520px;width:100%}.about-clean .pc-who{min-height:0}.about-clean .ab-flow>section:not(.ppl){padding:36px 0}.about-clean .vids{grid-template-columns:1fr}.about-clean .pc{padding:20px}}
+@media(prefers-reduced-motion:reduce){.about-clean main *{animation:none!important;transition:none!important}}
+/* Override legacy light-page heading rules, locally only. */
+body.about-clean main h1,body.about-clean main h2,body.about-clean main h3{color:#F4F6F7!important;-webkit-text-fill-color:#F4F6F7!important}
+body.about-clean main .ab-label{font:500 12px/1.5 var(--mono)!important;letter-spacing:.12em!important;text-transform:uppercase}
+@media(min-width:700px) and (max-width:899px){.about-clean .ab-hero{grid-template-columns:1fr 1fr;gap:24px;align-items:center}.about-clean h1{font-size:42px}.about-clean .ab-eight{font-size:22px}.about-clean .ab-portraits{max-width:none}.about-clean .ab-portraits figcaption span{font-size:10px}}
+body.about-clean main .ab-hero,body.about-clean main .ab-flow{max-width:1120px!important;margin-left:auto!important;margin-right:auto!important;padding-left:24px!important;padding-right:24px!important;box-sizing:border-box}
+body.about-clean main .ab-hero{padding-top:56px!important;padding-bottom:40px!important}
+body.about-clean main .ab-k{margin:0!important}
+@media(max-width:899px){body.about-clean main .ab-hero,body.about-clean main .ab-flow{padding-left:20px!important;padding-right:20px!important}body.about-clean main .ab-hero{padding-top:28px!important;padding-bottom:28px!important}}
+/* Legacy spacing layer uses :not(#\#); match its ID specificity. */
+body.about-clean #main>.ab-hero,body.about-clean #main>.ab-flow{padding-left:24px!important;padding-right:24px!important}
+body.about-clean #main>.ab-hero{padding-top:56px!important;padding-bottom:40px!important}
+@media(max-width:899px){body.about-clean #main>.ab-hero,body.about-clean #main>.ab-flow{padding-left:20px!important;padding-right:20px!important}body.about-clean #main>.ab-hero{padding-top:28px!important;padding-bottom:28px!important}}

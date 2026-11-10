@@ -1,0 +1,43 @@
+/* About-only palette trial. Original layout/palette available through ABOUT_PALETTE=original. */
+body.about-palette{--ab-paper:#F4F6F7;--ab-white:#FFFFFF;--ab-soft:#E9EDEF;--ab-ink:#111417;--ab-muted:#4A555B;--ab-hair:#DDE3E6;--ab-rule:#C2CBD0;--ab-proof:#3D5C8C;--ab-proof-wash:#E8EEF6;--ab-method:#D2A63A;--ab-method-wash:#26200F;--ab-dark:#101315}
+body.about-palette #main>.ab-band{max-width:none!important;width:100%;padding:0!important;margin:0!important}
+body.about-palette #main>.ab-band>.ab-flow{max-width:1120px!important;margin:0 auto!important;padding:48px 24px!important;box-sizing:border-box}
+body.about-palette .ab-evidence{background:var(--ab-paper);color:var(--ab-ink)}
+body.about-palette #main .ab-evidence .ab-label{color:var(--ab-proof)!important;-webkit-text-fill-color:var(--ab-proof)!important;border:0;padding:0;margin:0}
+body.about-palette .ab-evidence .pc{background:var(--ab-white);border:1px solid var(--ab-hair);box-shadow:none}
+body.about-palette .ab-evidence .pc:before{background:var(--ab-proof);width:3px}
+body.about-palette #main .ab-evidence h3{color:var(--ab-ink)!important;-webkit-text-fill-color:var(--ab-ink)!important}
+body.about-palette .ab-evidence .pc-who,body.about-palette .ab-evidence .pc-wins b{color:var(--ab-ink)}
+body.about-palette .ab-evidence .pc-wins li{color:var(--ab-muted);border-color:var(--ab-hair)}
+body.about-palette .ab-evidence .pc-sl,body.about-palette .ab-evidence .pc-ww b{color:var(--ab-muted)}
+body.about-palette .ab-evidence .pc-wins li:before,body.about-palette .ab-evidence .pc a{color:var(--ab-proof)}
+body.about-palette .ab-evidence .pc-chips li{background:var(--ab-proof-wash);border-color:transparent;color:var(--ab-proof)}
+body.about-palette .ab-evidence .pc-ww{color:var(--ab-muted)}
+body.about-palette .ab-evidence .pc-ww span+span:before{color:var(--ab-muted)}
+/* Method takes the warm accent, not a status badge. */
+body.about-palette .ab-method{background:var(--ab-dark);color:#F4F6F7}
+body.about-palette .ab-method .ab-flow>section:not(.ppl){padding:0 0 32px;border:0}
+body.about-palette #main .ab-method h2{border-left:3px solid var(--ab-method);padding-left:16px}
+body.about-palette .ab-method .bio-acc{border-top:2px solid var(--ab-method);background:var(--ab-method-wash)}
+body.about-palette .ab-method .beliefs li{border-color:#39434A}
+body.about-palette .ab-method .ab-flow .edu-s{padding:0;border:0}
+/* Public stage evidence gets a cool, full-width surface; white media panels. */
+body.about-palette .ab-archive{background:var(--ab-proof-wash);color:var(--ab-ink)}
+body.about-palette #main .ab-archive h2,body.about-palette #main .ab-archive h3{color:var(--ab-ink)!important;-webkit-text-fill-color:var(--ab-ink)!important}
+body.about-palette .ab-archive .ab-flow>section:not(.ppl){color:var(--ab-ink);border:0;padding:0 0 32px}
+body.about-palette .ab-archive .ab-flow>section:last-child{padding:0}
+body.about-palette .ab-archive .vid{background:var(--ab-white);border:1px solid var(--ab-rule);padding:0;display:flex;flex-direction:column}
+body.about-palette .ab-archive .vid figcaption{color:var(--ab-muted);padding:16px;line-height:1.5;flex:1}
+body.about-palette .ab-archive .vframe{border:0}
+body.about-palette .ab-archive .ab-flow a{color:var(--ab-proof)}
+body.about-palette .ab-conf{background:var(--ab-soft);color:var(--ab-ink)}
+body.about-palette #main .ab-conf h2{color:var(--ab-ink)!important;-webkit-text-fill-color:var(--ab-ink)!important}
+body.about-palette .ab-conf .ab-flow>section:not(.ppl){padding:0;border:0;color:var(--ab-muted)}
+body.about-palette .ab-conf p{color:var(--ab-muted)}
+@media(max-width:899px){body.about-palette #main>.ab-band>.ab-flow{padding:32px 20px!important}}
+body.about-palette .ab-method .bio-acc .ch{border-top:0!important;padding-top:0!important}
+body.about-palette .ab-method .bio-acc>summary{padding:14px 16px}
+body.about-palette .ab-method .bio-acc>.acc-b{padding:0 16px 16px}
+/* Fallback links sit on the dark video frame, not the pale section. */
+body.about-palette .ab-archive .vframe noscript a{color:#8FB0E0!important}
+body.about-palette .ab-archive .vid>noscript a{display:block;padding:12px 16px;color:var(--ab-proof);background:var(--ab-white);text-decoration:underline}
