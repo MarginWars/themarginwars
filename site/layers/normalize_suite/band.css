@@ -31,13 +31,7 @@ html body.nm .lk-seg::after{background:var(--nm-band)!important}
 html body.nm .wk-jack[aria-selected=true]{background:var(--nm-band) left bottom/100% 3px no-repeat,#F4F6F7!important;color:#111417!important;border-color:#F4F6F7!important}
 html body.nm .wk-jack[aria-selected=true] *{color:#111417!important}
 html body.nm .wk-jack::after{background:transparent!important}
-/* 5. Six colours in turn across repeated items. */
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+1),html body.nm li.rt-s:nth-of-type(6n+1){--nm-c:#8FB0E0}
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+2),html body.nm li.rt-s:nth-of-type(6n+2){--nm-c:#3FBF85}
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+3),html body.nm li.rt-s:nth-of-type(6n+3){--nm-c:#D2A63A}
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+4),html body.nm li.rt-s:nth-of-type(6n+4){--nm-c:#EA6259}
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+5),html body.nm li.rt-s:nth-of-type(6n+5){--nm-c:#B7C1C9}
-html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n),html body.nm li.rt-s:nth-of-type(6n){--nm-c:#A08FE6}
+/* 5. Six colours in turn across repeated items: see polish_cycle.css (per-group offsets). */
 /* Research: colour by market, the same six everywhere a market appears. */
 html body.nm [data-market=us]{--nm-c:#8FB0E0}html body.nm [data-market=ukeu]{--nm-c:#A08FE6}html body.nm [data-market=anz]{--nm-c:#B7C1C9}
 html body.nm [data-market=br]{--nm-c:#D2A63A}html body.nm [data-market=ca-latam]{--nm-c:#3FBF85}html body.nm [data-market=global]{--nm-c:#EA6259}

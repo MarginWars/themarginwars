@@ -37,3 +37,47 @@ The final layer composes `relief.css` into `assets/suite.css` by default. It use
 
 ## Spectrum band (Nov 10)
 `band.css` is appended after `roles.css` (`SUITE_BAND=0` gives the fallback). It adds a six-segment band (sky, mint, gold, coral, grey #B7C1C9, violet #A08FE6), pinned to the top of every page at 6px, or 4px under 768px. The band also appears on eyebrow ticks, section keylines, hero edges, footers, the current nav item and selected controls (which now use an ink fill instead of mint). Repeated items take the six colours in turn. Research items are coloured by market. Report: `site_qa/band_1110/REPORT.md`.
+
+## Polish (10 Nov 2026)
+
+Layer order in `assets/suite.css`: suite, relief, balance, spacing, roles, band, **polish_cycle, polish**. Turn the layer off with `SUITE_POLISH=0`, which also skips `polish.js` and the polish HTML attributes.
+
+- `polish_cycle.css`: the role-colour cycle (sky, violet, mint, grey, gold, coral) with an offset per group. Coral comes last. The old cycle lines in band.css were removed.
+- `polish.css`, by section:
+  - 0 cross-engine normalize (text-size-adjust, color-scheme light, scroll-padding, text-wrap, form controls 16px, focus-visible)
+  - 1 card anatomy (index | heading | chevron)
+  - 2 hover only on fine pointers, with `:active` on touch
+  - 3 one heading and rule system, quiet notes
+  - 4 mobile nav strip
+  - 5 stacked tables under 640px
+  - 6 next-step block
+  - 7 images
+  - 8 footer
+  - 9 dvh
+  - 10 forced colors
+  - 11 print (reveal sections forced visible)
+  - 12 radii (containers 12px, controls 6px, top keylines)
+  - 13 Tracewire h1 on phones
+  - 14 research preview-strip CLS
+  - 15 one primary CTA per screen
+  - 16 in-sentence link tap height
+- `polish.js`: keeps the current nav item in view and toggles the edge fades (`nm-start` / `nm-mid` / `nm-end`).
+- `apply_normalize.py` (polish block, idempotent):
+  - landmark on `.f-preview`
+  - `article[role=tabpanel]` becomes `section`
+  - `aria-level=2` on an h3 that comes before the first h2
+  - `tabindex=-1` on `main` (for the skip link)
+  - `meta color-scheme` and `theme-color`
+- QA:
+  - `qa_matrix.py ENGINE core|devices PART PARTS`: Chromium, WebKit or Firefox. Core is every route at 375/390/768/1440. Devices is the named phones and tablets, plus landscape, 1280/1920/2560, dark, reduced motion, forced colors and 200% text, on 12 key templates.
+  - `qa_diff.py SHOTS OUT [pct]`: the cross-engine pixel-diff gate.
+  - `qa_journeys.py ENGINE WIDTH`: usability journeys.
+  - `qa_spacing.py`: now ignores visually-hidden (1px clipped) blocks.
+
+- Added after the first QA pass:
+  - 17: two-row header at 768–1099px; non-sticky header when the screen is 500px or less tall in landscape
+  - 18: reserved height for game panels until they mount (CLS)
+  - in-text link detection (`a.nm-intext`), set in `apply_normalize.py`
+  - `aria-level=2` on game-panel h3s in `assets/games.js`
+  - Tracewire hidden hero uses id-level specificity, to beat wk.css `:not(#\#)`
+- Final calm deployment: 345476f1.

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/wire/",
+    "result": "200 text/html; charset=utf-8"
+  },
+  {
+    "path": "/bp-watch/",
+    "result": "200 text/html; charset=utf-8"
+  },
+  {
+    "path": "/calendar/",
+    "result": "200 text/html; charset=utf-8"
+  },
+  {
+    "path": "/feeds/",
+    "result": "200 text/html; charset=utf-8"
+  },
+  {
+    "path": "/feeds/wire.xml",
+    "result": "200 application/rss+xml; charset=utf-8"
+  },
+  {
+    "path": "/feeds/wire.atom",
+    "result": "200 application/atom+xml; charset=utf-8"
+  },
+  {
+    "path": "/feeds/wire.json",
+    "result": "200 application/feed+json; charset=utf-8"
+  },
+  {
+    "path": "/feeds/dates.ics",
+    "result": "200 text/calendar; charset=utf-8"
+  },
+  {
+    "path": "/feeds/route-briefs.xml",
+    "result": "200 application/rss+xml; charset=utf-8"
+  }
+]

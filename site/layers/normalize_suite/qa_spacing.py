@@ -10,7 +10,7 @@ WIDTHS=[int(x) for x in os.environ.get('SP_WIDTHS','320,375,390,430,768,1024,128
 JS=r'''()=>{
 const W=innerWidth;const E=W<=330?16:W<768?16:W<1280?24:W<1440?104:W<1920?184:(W-1072)/2;
 const R=W<768?64:W<1280?96:120;const HB=W<768?16:24;
-const vis=e=>{const s=getComputedStyle(e);if(s.visibility=='hidden'||s.display=='none'||+s.opacity==0)return false;const r=e.getBoundingClientRect();return r.width>0&&r.height>0};
+const vis=e=>{const s=getComputedStyle(e);if(s.visibility=='hidden'||s.display=='none'||+s.opacity==0)return false;if(s.position=='absolute'&&s.clip!='auto'&&e.getBoundingClientRect().width<=1)return false;const r=e.getBoundingClientRect();return r.width>0&&r.height>0};
 const inScroller=e=>{let x=e;while(x=x.parentElement){if(x===document.body)return false;const o=getComputedStyle(x).overflowX;if(o=='auto'||o=='scroll'||o=='hidden'&&x.scrollWidth>x.clientWidth+1)return true}return false};
 const skip='[aria-hidden=true],svg,.vh,.sr-only,.skip,.f-skip,dialog:not([open]),[hidden],noscript';
 const content=[...document.querySelectorAll('body *')].filter(e=>!e.closest(skip)&&(e.matches('img,video,iframe,button,input,select,textarea')||[...e.childNodes].some(n=>n.nodeType==3&&n.textContent.trim().length>1))&&vis(e)&&getComputedStyle(e).position!='fixed');

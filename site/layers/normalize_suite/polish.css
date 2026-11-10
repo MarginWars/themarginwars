@@ -1,0 +1,151 @@
+/* Polish layer (Nov 10): cross-engine normalization, card anatomy, mobile nav, states, a11y, print.
+   Applied last. Neutral surfaces, six-colour band as signature, magenta only for Contact CTAs. */
+
+/* ---------- 0. Normalize across engines ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;color-scheme:light only;scroll-padding-top:96px}
+@media(max-width:767px){html{scroll-padding-top:136px}}
+html body.nm{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-wrap:break-word}
+html body.nm :is(h1,h2,h3,h4){text-wrap:balance}
+html body.nm :is(p,li,dd,figcaption,blockquote){text-wrap:pretty}
+html body.nm img,html body.nm video{max-width:100%;height:auto}
+html body.nm :is(button,input,select,textarea){font:inherit;color:inherit;letter-spacing:inherit}
+html body.nm :is(input[type=text],input[type=email],input[type=search],input[type=url],input[type=tel],textarea){-webkit-appearance:none;appearance:none;border-radius:3px;font-size:max(16px,1rem)}
+html body.nm select{font-size:max(16px,1rem)}
+html body.nm button{-webkit-appearance:none;appearance:none}
+html body.nm :is(a,button,summary,[role=button],label){touch-action:manipulation}
+html body.nm :focus:not(:focus-visible){outline:none}
+
+/* ---------- 1. Card anatomy (accordion cards: index | heading | chevron) ---------- */
+html body.nm .cards:not(.wk-ledger)>details.card.acc{position:relative;padding:24px 20px!important;border:1px solid #DDE1E4!important;border-radius:12px!important;
+ background-image:linear-gradient(var(--nm-c),var(--nm-c))!important;background-size:100% 3px!important;background-repeat:no-repeat!important;background-position:left top!important;background-color:#FFFFFF!important;box-shadow:0 1px 2px rgba(17,20,23,.06)!important}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>summary{display:grid!important;grid-template-columns:32px minmax(0,1fr) 20px!important;column-gap:12px!important;align-items:baseline!important;padding:0!important;border:0!important;margin:0;list-style:none}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>summary::-webkit-details-marker{display:none}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>summary::before{grid-column:1;margin:0!important;justify-self:start;white-space:nowrap}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>summary>h3{grid-column:2;font-size:clamp(1.125rem,1rem + .9vw,1.5rem)!important;line-height:1.2!important;margin:0!important;padding:0!important;border:0!important;min-width:0}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>summary>.acc-chev{display:block!important;grid-column:3;justify-self:end;align-self:start;margin-top:.45em;width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s ease}
+html body.nm .cards:not(.wk-ledger)>details.card.acc[open]>summary>.acc-chev{transform:translateY(4px) rotate(-135deg)}
+html body.nm .cards:not(.wk-ledger)>details.card.acc>.acc-b{padding:12px 0 0 44px!important;margin:0}
+@media(max-width:430px){html body.nm .cards:not(.wk-ledger)>details.card.acc>.acc-b{padding-left:0!important}}
+/* Open disclosures: no layout-shifting left keyline; the chevron carries the state. */
+html body.nm details[open]>summary{border-left:0!important;padding-left:0!important}
+html body.nm details.fx-details[open]>summary,html body.nm details.bio-acc[open]>summary{padding-left:0!important}
+/* Other cards: one anatomy for radii, borders and shadows. */
+html body.nm :is(.card,.band>div:not(.bh),.steps li,.gc,.f-feedcard,.f-market,.st){border-radius:12px!important}
+
+/* ---------- 2. Hover only where hover exists; no stray glows; tap feedback ---------- */
+html body.nm :is(.card,.steps li,.rx-t,.wg .wl a,.wrl a,.band>div:not(.bh),.pst,.gc):hover{border-color:#DDE1E4!important;transform:none!important;box-shadow:0 1px 2px rgba(17,20,23,.06)!important}
+@media(hover:hover) and (pointer:fine){
+ html body.nm :is(.card,.steps li,.rx-t,.band>div:not(.bh),.pst,.gc,.f-feedcard,.f-market):hover{border-color:#C2CBD0!important;box-shadow:0 6px 16px rgba(17,20,23,.08)!important}
+ html body.nm :is(.card,.band>div:not(.bh),.pst,.gc):hover{transform:translateY(-1px)!important}
+}
+@media(hover:none){html body.nm .plate:hover .plate-frame{transform:none!important}}
+html body.nm :is(.btn,button,.rb-cta,.gc,summary):active{transform:translateY(1px)}
+html body.nm :is(.btn,button,a.nm-primary,.rx-chip,.rx-r,.lk-seg,.wk-jack){transition:background-color .15s ease,border-color .15s ease,color .15s ease,box-shadow .15s ease}
+
+/* ---------- 3. Section headings and rules: one system ---------- */
+html body.nm main h2{border-left:0!important;padding-left:0!important}
+html body.nm .wrap>section::before,html body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2))::before{display:none!important}
+/* Notes / asides: quiet, readable; no thick accent rule, no heavy bold mid-sentence. */
+html body.nm p.note{border-left:0!important;border-top:1px solid #DDE1E4;padding:16px 0 0!important;margin-top:24px;color:#4A555B;font-size:.95rem;max-width:62ch}
+html body.nm p.note :is(b,strong){font-weight:600;color:#111417}
+
+/* ---------- 4. Header and nav on mobile and tablet ---------- */
+@media(max-width:1099px){
+ html body.nm header nav{scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding-bottom:0!important;margin-bottom:0!important;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);scroll-padding-inline:16px}
+ html body.nm header nav.nm-end{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
+ html body.nm header nav.nm-start.nm-end{-webkit-mask-image:none;mask-image:none}
+ html body.nm header nav.nm-mid{-webkit-mask-image:linear-gradient(90deg,transparent,#000 32px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 32px,#000 calc(100% - 40px),transparent)}
+ html body.nm header nav::-webkit-scrollbar{display:none}
+ html body.nm header nav a{flex:none;padding-bottom:12px!important}
+}
+@media(max-width:767px){html body.nm header{padding-left:max(16px,env(safe-area-inset-left))!important;padding-right:max(16px,env(safe-area-inset-right))!important}}
+html body.nm header nav a[aria-current]{background-position:left 8px bottom 0!important;background-size:calc(100% - 16px) 3px!important}
+
+/* ---------- 5. Tables on mobile: stacked rows (Speaking: Past stages) ---------- */
+@media(max-width:640px){
+ html body.nm .table-wrap{border:0!important;overflow:visible!important}
+ html body.nm .table-wrap table,html body.nm .table-wrap tbody,html body.nm .table-wrap tr,html body.nm .table-wrap td{display:block;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box}
+ html body.nm .table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+ html body.nm .table-wrap tr{border:1px solid #DDE1E4;border-radius:12px;padding:16px;margin:0 0 12px;background:#FFFFFF}
+ html body.nm .table-wrap tr:last-child{margin-bottom:0}
+ html body.nm .table-wrap td{border:0!important;padding:2px 0!important;text-align:left!important}
+ html body.nm .table-wrap td:first-child{font:500 .75rem/1.4 'Martian Mono',ui-monospace,monospace;letter-spacing:.08em;color:#4A555B;padding-bottom:6px!important}
+ html body.nm .table-wrap td:nth-child(2){font-weight:600;color:#111417}
+ html body.nm .table-wrap td:nth-child(3),html body.nm .table-wrap td:nth-child(4){color:#4A555B;font-size:.95rem}
+}
+
+/* ---------- 6. Next-step block ---------- */
+html body.nm .nextp{align-items:center!important;gap:16px 24px!important}
+html body.nm .nextp>span{color:#4A555B!important;font:500 .75rem/1.2 'Martian Mono',ui-monospace,monospace!important;letter-spacing:.14em}
+html body.nm .nextp a:hover{color:#111417!important}
+@media(max-width:640px){html body.nm .nextp .plate-thumb{flex:0 0 112px;max-width:112px}html body.nm .nextp .plate-thumb .plate-cap{display:none}}
+
+/* ---------- 7. Images ---------- */
+html body.nm .plate-frame img{display:block;width:100%;height:auto;image-rendering:auto}
+
+/* ---------- 8. Footer ---------- */
+html body.nm body>footer,html body.nm>footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+html body.nm footer a{display:inline-flex;align-items:center;min-height:44px}
+
+/* ---------- 9. Viewport units ---------- */
+@supports(height:100dvh){html body.nm .nm-full{min-height:100dvh}}
+
+/* ---------- 10. Forced colors / high contrast ---------- */
+@media(forced-colors:active){
+ html body.nm::before{display:none}
+ html body.nm :is(:is(button,[role=tab])[aria-selected=true],button[aria-pressed=true],.rx-chip.on,.rx-r.on,.wk-jack[aria-selected=true]){outline:3px solid Highlight!important;outline-offset:-3px}
+ html body.nm header nav a[aria-current]{text-decoration:underline 3px!important}
+ html body.nm :focus-visible{outline:3px solid Highlight!important}
+}
+
+/* ---------- 11. Print ---------- */
+@media print{
+ html body.nm::before,html body.nm header nav,html body.nm .hcta,html body.nm .skip,html body.nm .sold,html body.nm .vframe button,html body.nm dialog{display:none!important}
+ html body.nm,html body.nm *{background:transparent!important;color:#000!important;box-shadow:none!important;text-shadow:none!important}
+ html body.nm header{position:static!important;border:0!important}
+ html body.nm :is(.card,article,tr,figure,.st){break-inside:avoid}
+ html body.nm details>*:not(summary){display:block!important}
+ html body.nm :is(.rv,.rv-in,[class*=reveal]){opacity:1!important;transform:none!important;filter:none!important}
+ html body.nm main a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;word-break:break-all}
+}
+
+/* 12. Normalized radii and keylines: containers 12px, controls 6px, keyline always on the top edge */
+html body.nm main :is(.band .bh,.pb,.gal,.terrain,.eng,.stg,.arc-band,section,div) h2{border-left:0!important;padding-left:0!important}
+html body.nm :is(article.pc,details.bio-acc,figure.vid,form.rb-pick,.rb-out,.rb-node,.rb-foot,details.rg.rx-g,.sold.inline,.f-card,.f-panel){border-radius:12px!important;overflow:hidden}
+html body.nm figure.vid .vframe{border-radius:0!important;border-left:0!important;border-right:0!important;border-top:0!important}
+html body.nm :is(.btn,a.btn,button:not(.rx-r):not(.acc-chev),.rb-cta,.rb-print,.rx-btn,.rx-chip,input:not([type=radio]):not([type=checkbox]),select,textarea,label.rx-search){border-radius:6px!important}
+html body.nm.about-palette .ab-evidence .pc{position:relative}
+html body.nm.about-palette .ab-evidence .pc:before{top:0!important;left:0!important;right:0!important;bottom:auto!important;width:auto!important;height:3px!important}
+html body.nm :is(p.rb-aside,p.rb-note,p.rb-proof){border-left:0!important;padding-left:0!important;border-top:1px solid #DDE1E4;padding-top:12px!important;color:#4A555B}
+@media (min-width:641px){html body.nm .table-wrap{border:1px solid #DDE1E4!important;border-radius:12px!important;overflow:auto!important;background:#FFFFFF}
+ html body.nm .table-wrap th{background:#F5F7F8;color:#4A555B}}
+/* 13. Tracewire hero: visually hidden on phones (was display:none, which dropped the page's h1) */
+@media(max-width:700px){html body.nm.pg-tracewire .ihero{display:block!important;position:absolute!important;width:1px!important;height:1px!important;min-width:0!important;max-width:1px!important;min-height:0!important;max-height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;margin:0!important;padding:0!important;border:0!important}}
+/* 14. CLS: research preview strip always stacks on phones, so the web-font swap cannot re-wrap it */
+@media(max-width:600px){html body.nm .f-preview>*{flex-basis:100%}}
+html body.nm form.wk-route fieldset{border-radius:12px!important;overflow:hidden}
+html body.nm main[tabindex="-1"]:focus{outline:0}
+/* 15. One primary CTA per screen: when the hero already carries the magenta primary, the header CTA steps down to the ink outline */
+html body.nm:has(main :is(.hero,.ihero,section:first-of-type,.wrap>section:first-of-type) .nm-primary) header :is(a.btn,a.nm-primary){background:#FFFFFF!important;color:#111417!important;border:1px solid #111417!important;box-shadow:none!important}
+@media(hover:hover) and (pointer:fine){html body.nm:has(main :is(.hero,.ihero,section:first-of-type,.wrap>section:first-of-type) .nm-primary) header :is(a.btn,a.nm-primary):hover{background:#F5F7F8!important}}
+/* 16. In-sentence links: 44px tap height from inline padding, so the link no longer forces a tall line box */
+html body.nm main a.nm-intext{display:inline!important;min-height:0!important;padding-top:calc(22px - .45em)!important;padding-bottom:calc(22px - .45em)!important;line-height:inherit!important}
+
+/* 17. Tablet and landscape-phone header (768-1099px): brand + CTA on row one, nav as a scroll strip on row two (was three rows, 193px tall) */
+@media(min-width:768px) and (max-width:1099px){
+ html body.nm header{flex-wrap:wrap!important;align-items:center}
+ html body.nm header>.brand{order:0}
+ html body.nm header>:is(a.hcta,a.btn){order:1;margin-left:auto!important;margin-top:0!important}
+ html body.nm header>nav{order:2;flex:1 0 100%!important;max-width:100%!important;margin-left:0!important;overflow-x:auto!important;flex-wrap:nowrap!important}
+ html body.nm header>:not(.brand):not(nav):not(a){order:3}
+}
+/* Short landscape screens: the header scrolls away instead of covering a third of the screen */
+@media(orientation:landscape) and (max-height:500px){html body.nm header{position:relative!important;top:auto!important}html{scroll-padding-top:16px!important}}
+@media(max-width:700px){html body.nm.pg-tracewire main>section.ihero:not(#\#):not(#\#){padding:0!important;padding-inline:0!important;margin:0!important;border:0!important}}
+/* 18. CLS: reserve space for client-rendered game panels until they mount (removed by :empty as soon as content arrives) */
+html body.nm section.gm[data-game=daily]:empty{min-height:380px}
+html body.nm section.gm[data-game=ep]:empty{min-height:440px}
+html body.nm section.gm[data-game=deal]:empty{min-height:500px}
+html body.nm section.gm[data-game=leak]:empty{min-height:1000px}
+html body.nm section.gm[data-game=quiz]:empty{min-height:100px}

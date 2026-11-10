@@ -1,0 +1,128 @@
+[
+  {
+    "key": "rba",
+    "url": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+    "status": "200\thttps://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+    "exit": 0,
+    "bytes": 61265
+  },
+  {
+    "key": "rbafaq",
+    "url": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+    "status": "200\thttps://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+    "exit": 0,
+    "bytes": 48785
+  },
+  {
+    "key": "nacha",
+    "url": "https://www.nacha.org/content/summary-upcoming-rule-changes",
+    "status": "200\thttps://www.nacha.org/content/summary-upcoming-rule-changes",
+    "exit": 0,
+    "bytes": 134059
+  },
+  {
+    "key": "funds",
+    "url": "https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+    "status": "200\thttps://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+    "exit": 0,
+    "bytes": 141439
+  },
+  {
+    "key": "phase2",
+    "url": "https://www.nacha.org/rules/risk-management-topics-fraud-monitoring-phase-2",
+    "status": "200\thttps://www.nacha.org/rules/risk-management-topics-fraud-monitoring-phase-2",
+    "exit": 0,
+    "bytes": 199332
+  },
+  {
+    "key": "psr",
+    "url": "https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/",
+    "status": "200\thttps://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/",
+    "exit": 0,
+    "bytes": 114502
+  },
+  {
+    "key": "psrext",
+    "url": "https://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-extensions-decision-aug-2026.pdf",
+    "status": "200\thttps://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-extensions-decision-aug-2026.pdf",
+    "exit": 0,
+    "bytes": 133152
+  },
+  {
+    "key": "psd",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf",
+    "status": "200\thttps://data.consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf",
+    "exit": 0,
+    "bytes": 241906
+  },
+  {
+    "key": "fca",
+    "url": "https://www.fca.org.uk/firms/emi-payment-institutions-safeguarding-requirements",
+    "status": "200\thttps://www.fca.org.uk/firms/emi-payment-institutions-safeguarding-requirements",
+    "exit": 0,
+    "bytes": 184573
+  },
+  {
+    "key": "emv",
+    "url": "https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+    "status": "200\thttps://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+    "exit": 0,
+    "bytes": 182376
+  },
+  {
+    "key": "pix",
+    "url": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+    "status": "200\thttps://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+    "exit": 0,
+    "bytes": 34804
+  },
+  {
+    "key": "ca",
+    "url": "https://www.payments.ca/canadas-real-time-rail-launch-confirmed-budget-2026",
+    "status": "200\thttps://www.payments.ca/canadas-real-time-rail-launch-confirmed-budget-2026",
+    "exit": 0,
+    "bytes": 71066
+  },
+  {
+    "key": "caeu",
+    "url": "https://www.payments.ca/payments-canada-welcomes-joint-canada-eu-commitment-interlink-real-time-payment-systems",
+    "status": "200\thttps://www.payments.ca/payments-canada-welcomes-joint-canada-eu-commitment-interlink-real-time-payment-systems",
+    "exit": 0,
+    "bytes": 63485
+  },
+  {
+    "key": "nz",
+    "url": "https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+    "status": "403\thttps://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+    "exit": 0,
+    "bytes": 919
+  },
+  {
+    "key": "boe",
+    "url": "https://www.bankofengland.co.uk/news/2026/august/delay-to-the-november-2026-rtgs-standards-release",
+    "status": "200\thttps://www.bankofengland.co.uk/news/2026/august/delay-to-the-november-2026-rtgs-standards-release",
+    "exit": 0,
+    "bytes": 74425
+  },
+  {
+    "key": "regii",
+    "url": "https://www.federalreserve.gov/apps/proposals/FR-0000-0095-01/details",
+    "status": "200\thttps://www.federalreserve.gov/apps/proposals/FR-0000-0095-01/details",
+    "exit": 0,
+    "bytes": 56188
+  },
+  {
+    "key": "aus",
+    "url": "https://auspaynet.com.au/sites/default/files/2026-06/IAC%20Volume%207%20V18%20-%20Effective%2030%20June%202026%20-%20public%20version.pdf",
+    "status": "200\thttps://auspaynet.com.au/sites/default/files/2026-06/IAC%20Volume%207%20V18%20-%20Effective%2030%20June%202026%20-%20public%20version.pdf",
+    "exit": 0,
+    "bytes": 437225
+  },
+  {
+    "key": "psd3",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-15152-2026-INIT/en/pdf",
+    "status": "200",
+    "exit": 0,
+    "bytes": 247244
+  }
+]

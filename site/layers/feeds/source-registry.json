@@ -1,0 +1,31 @@
+{
+  "checked": "2026-11-08",
+  "sources": {
+    "rba": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+    "rbafaq": "https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+    "nacha": "https://www.nacha.org/content/summary-upcoming-rule-changes",
+    "funds": "https://www.nacha.org/rules/funds-availability-requirements-non-same-day-credit-entries",
+    "phase2": "https://www.nacha.org/rules/risk-management-topics-fraud-monitoring-phase-2",
+    "psr": "https://www.psr.org.uk/publications/policy-statements/ps261-market-review-of-card-scheme-and-processing-fees-final-decision-information-transparency-and-complexity-remedy-pricing-governance-remedy/",
+    "psrext": "https://www.psr.org.uk/media/nqoettxg/ps26-1-sp-fees-market-review-extensions-decision-aug-2026.pdf",
+    "psd": "https://data.consilium.europa.eu/doc/document/ST-15154-2026-INIT/en/pdf",
+    "fca": "https://www.fca.org.uk/firms/emi-payment-institutions-safeguarding-requirements",
+    "emv": "https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+    "pix": "https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+    "ca": "https://www.payments.ca/canadas-real-time-rail-launch-confirmed-budget-2026",
+    "caeu": "https://www.payments.ca/payments-canada-welcomes-joint-canada-eu-commitment-interlink-real-time-payment-systems",
+    "nz": "https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+    "boe": "https://www.bankofengland.co.uk/news/2026/august/delay-to-the-november-2026-rtgs-standards-release",
+    "regii": "https://www.federalreserve.gov/apps/proposals/FR-0000-0095-01/details",
+    "aus": "https://auspaynet.com.au/sites/default/files/2026-06/IAC%20Volume%207%20V18%20-%20Effective%2030%20June%202026%20-%20public%20version.pdf"
+  },
+  "exclusions": [
+    "Non-primary commentary excluded",
+    "Unconfirmed deadlines omitted",
+    "Prohibited organisations excluded"
+  ],
+  "notes": [
+    "Wire includes recent changes, upcoming dates and explicitly marked implementation baselines. Not 30 separate breaking-news announcements.",
+    "No PSD3 implementation deadline, global 3DS mandate, or Reg II final rate asserted."
+  ]
+}
