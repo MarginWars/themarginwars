@@ -354,3 +354,60 @@ html body.nm a.nm-primary:not([href*="contact"]):hover{background:var(--nm-sky)!
 /* 'New' tag on the Arcade flagship: coral tick, readable light text. */
 html body.nm .rt-hero .rt-k{color:#F4F6F7!important}
 html body.nm .rt-hero .rt-k::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-coral)}
+
+/* Spectrum band (Nov 10): the site's signature motif. Six equal segments:
+   sky, mint, gold, coral, grey, violet. Surfaces stay neutral; the band marks edges, headings and position.
+   Repeated items take the six colours in turn (by position, or by market on research pages).
+   Accent text uses the -ink shades for WCAG AA. Gold is otherwise only the focus ring; coral also marks deadlines. */
+body.nm{--nm-grey-b:#B7C1C9;--nm-violet:#A08FE6;--nm-violet-ink:#5250D8;
+ --nm-band:linear-gradient(90deg,#8FB0E0 0 16.667%,#3FBF85 16.667% 33.333%,#D2A63A 33.333% 50%,#EA6259 50% 66.667%,#B7C1C9 66.667% 83.333%,#A08FE6 83.333% 100%)}
+/* 1. Top band on every page, pinned to the top edge. */
+html body.nm::before{content:"";position:fixed;top:0;left:0;right:0;height:6px;background:var(--nm-band);z-index:2147483000;pointer-events:none}
+@media(max-width:767px){html body.nm::before{height:4px}}
+/* 2. Short band on eyebrow ticks, section keylines, hero underline, dark anchors. */
+html body.nm .eyebrow.sx::before,html body.nm.about-palette #main .ab-label:not(.pc *)::before{width:36px!important;background:var(--nm-band)!important}
+html body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2),.wrap>section)::before{background:var(--nm-band)!important}
+html body.nm :is(section.pband,section.intro2)::before,html body.nm section.intro2::after,html body.nm .i2x::after{background:var(--nm-band)!important}
+html body.nm .hero h1:after{background:var(--nm-band)!important}
+html body.nm section.ihero::before{background:var(--nm-band)!important}
+html body.nm :is(section.ihero,.f-hero){border-image:var(--nm-band) 1!important}
+html body.nm :is(body>footer,.f-footer){background-image:var(--nm-band)!important;background-size:100% 4px!important;background-repeat:no-repeat!important;background-position:left top!important}
+html body.nm .rt-line i{background:var(--nm-band)!important}
+/* 3. Current page in the nav: band underline (replaces the mint marker). */
+html body.nm :is(header nav,.f-nav,.f-header) a[aria-current]{box-shadow:none!important;border-bottom-color:transparent!important;background:var(--nm-band) left bottom/100% 3px no-repeat!important}
+/* 4. Selected controls: ink fill with a band underline (mint is kept for success and live states). */
+html body.nm :is(:is(button,[role=tab])[aria-selected=true],button[aria-pressed=true],:is(.rx-chip,.rx-r).on,.fx-check:has(input:checked),.lk-seg[aria-selected=true]):not(.gm *):not(.wk-jack),
+html body.nm .rb-opt input:checked+span{background:var(--nm-band) left bottom/100% 3px no-repeat,#111417!important;color:#FFFFFF!important;border-color:#111417!important;box-shadow:none!important}
+html body.nm :is(:is(button,[role=tab])[aria-selected=true],button[aria-pressed=true],:is(.rx-chip,.rx-r).on,.fx-check:has(input:checked)):not(.gm *):not(.wk-jack) *,html body.nm .rb-opt input:checked+span *{color:#FFFFFF!important}
+html body.nm :is(.rb-opt,.wk-opt):has(input:checked){background:transparent!important;border-color:transparent!important}
+html body.nm .wk-opt:has(input:checked){background:#111417!important;color:#FFFFFF!important;box-shadow:inset 0 -3px 0 #8FB0E0!important}
+html body.nm .wk-opt:has(input:checked) *{color:#FFFFFF!important}
+html body.nm .rx-rp.on{border-color:#111417!important}
+html body.nm .lk-seg::after{background:var(--nm-band)!important}
+/* Terrain tabs sit on a dark bar: selected is the light face, band underneath. */
+html body.nm .wk-jack[aria-selected=true]{background:var(--nm-band) left bottom/100% 3px no-repeat,#F4F6F7!important;color:#111417!important;border-color:#F4F6F7!important}
+html body.nm .wk-jack[aria-selected=true] *{color:#111417!important}
+html body.nm .wk-jack::after{background:transparent!important}
+/* 5. Six colours in turn across repeated items. */
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+1),html body.nm li.rt-s:nth-of-type(6n+1){--nm-c:#8FB0E0}
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+2),html body.nm li.rt-s:nth-of-type(6n+2){--nm-c:#3FBF85}
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+3),html body.nm li.rt-s:nth-of-type(6n+3){--nm-c:#D2A63A}
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+4),html body.nm li.rt-s:nth-of-type(6n+4){--nm-c:#EA6259}
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n+5),html body.nm li.rt-s:nth-of-type(6n+5){--nm-c:#B7C1C9}
+html body.nm :is(.st,.f-stripitem,.band>div,ol.steps>li,.gg>.gc,.wk-jack,.pc,details.card.acc,ul.ticks>li,ol.wl>li,.hl>li,.f-feedcard,li.tm-s,.cards>*,.fx-digestgrid>article):nth-child(6n),html body.nm li.rt-s:nth-of-type(6n){--nm-c:#A08FE6}
+/* Research: colour by market, the same six everywhere a market appears. */
+html body.nm [data-market=us]{--nm-c:#8FB0E0}html body.nm [data-market=ukeu]{--nm-c:#A08FE6}html body.nm [data-market=anz]{--nm-c:#B7C1C9}
+html body.nm [data-market=br]{--nm-c:#D2A63A}html body.nm [data-market=ca-latam]{--nm-c:#3FBF85}html body.nm [data-market=global]{--nm-c:#EA6259}
+/* Apply: 3px top keyline inside the block (no layout change). */
+html body.nm :is(.st,.band>div:not(.bh),ol.steps>li,.gg>.gc,.f-feedcard,.f-market[data-market],article.f-entry[data-market],.fx-digestgrid>article,.cards:not(.wk-ledger)>.card:not(details)){background-image:linear-gradient(var(--nm-c),var(--nm-c))!important;background-size:100% 3px!important;background-repeat:no-repeat!important;background-position:left top!important}
+html body.nm .wk-jack:not([aria-selected=true]){background-image:linear-gradient(var(--nm-c),var(--nm-c))!important;background-size:100% 3px!important;background-repeat:no-repeat!important;background-position:left top!important}
+html body.nm .f-stripitem{border-top-color:var(--nm-c)!important}
+html body.nm :is(details.card.acc,ul.ticks>li,.hl>li)::before{background:var(--nm-c)!important;border-color:var(--nm-c)!important}
+html body.nm .card.acc summary>h3{border-top-color:var(--nm-c)!important}
+html body.nm ol.wl>li>a{text-decoration-color:var(--nm-c)!important}
+html body.nm.pg-warroom ol.wl>li .wt{border-left-color:var(--nm-c)!important}
+html body.nm.about-palette .ab-evidence .pc:before{background:var(--nm-c)!important}
+html body.nm li.tm-s .tm-d{border-color:var(--nm-c)!important}
+html body.nm .wk-board li.tm-s .tm-d,html body.nm :is(.tm-lane:hover,.tm-lane:focus-visible,.tm-lane.tm-hl) li.tm-s .tm-d{background:var(--nm-c)!important}
+html body.nm li.rt-s .rt-plate{border-color:var(--nm-c)!important}
+html body.nm li.rt-s.rt-act .rt-plate{border-color:var(--nm-c)!important;box-shadow:0 0 0 4px #FFFFFF,0 0 0 6px var(--nm-c)!important}

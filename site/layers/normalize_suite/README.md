@@ -34,3 +34,6 @@ The final layer composes `relief.css` into `assets/suite.css` by default. It use
 
 ## Accent roles (Nov 10)
 `roles.css` is appended last (`SUITE_ROLES=0` gives the fallback). Per-page-family accents (`--nm-fam`) are removed. On every page: sky for links, hover, keylines, eyebrow ticks and open disclosures; mint for selected, current, success and live; gold for focus (and `.nm-featured`); coral for deadlines, alerts and new; magenta only for CTAs to Contact. Census: `qa_accents.py`. Report: `site_qa/roles_1110/REPORT.md`.
+
+## Spectrum band (Nov 10)
+`band.css` is appended after `roles.css` (`SUITE_BAND=0` gives the fallback). It adds a six-segment band (sky, mint, gold, coral, grey #B7C1C9, violet #A08FE6), pinned to the top of every page at 6px, or 4px under 768px. The band also appears on eyebrow ticks, section keylines, hero edges, footers, the current nav item and selected controls (which now use an ink fill instead of mint). Repeated items take the six colours in turn. Research items are coloured by market. Report: `site_qa/band_1110/REPORT.md`.
