@@ -31,3 +31,6 @@ The final step also rebuilds `review_deploy/functions/api/_knowledge.js` from th
 
 ## White/grey refinement
 The final layer composes `relief.css` into `assets/suite.css` by default. It uses neutral reading surfaces, preserving the existing action hierarchy. `SUITE_RELIEF=0` is the prior-surface fallback. Latest rationale/release: `RELIEF_REPORT.md`; artifacts: `site_qa/relief_1108`. QA scripts accept `QA_OUT` for separate release evidence.
+
+## Accent roles (Nov 10)
+`roles.css` is appended last (`SUITE_ROLES=0` gives the fallback). Per-page-family accents (`--nm-fam`) are removed. On every page: sky for links, hover, keylines, eyebrow ticks and open disclosures; mint for selected, current, success and live; gold for focus (and `.nm-featured`); coral for deadlines, alerts and new; magenta only for CTAs to Contact. Census: `qa_accents.py`. Report: `site_qa/roles_1110/REPORT.md`.

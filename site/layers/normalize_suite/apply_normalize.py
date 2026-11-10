@@ -17,7 +17,7 @@ for f in sorted(D.rglob('*.html')):
  f.write_text(str(s))
  rel=str(f.relative_to(D));family=rel.split('/')[0] if '/' in rel else ('games' if f.stem in ['arcade','daily','deal','leak','quiz','tracewire'] or f.stem.startswith('ep') else 'core')
  routes.append({'file':rel,'route':'/'+('' if rel=='index.html' else rel[:-10] if rel.endswith('index.html') else rel[:-5]),'family':family,'controls':len(s.select('button,input,select,summary')),'links':len(s.select('a[href]'))})
-(D/asset).write_text((H/'suite.css').read_text()+('\n'+(H/'relief.css').read_text() if os.environ.get('SUITE_RELIEF','1')!='0' else '')+('\n'+(H/'balance.css').read_text() if os.environ.get('SUITE_BALANCE','1')!='0' else '')+'\n'+(H/'spacing.css').read_text())
+(D/asset).write_text((H/'suite.css').read_text()+('\n'+(H/'relief.css').read_text() if os.environ.get('SUITE_RELIEF','1')!='0' else '')+('\n'+(H/'balance.css').read_text() if os.environ.get('SUITE_BALANCE','1')!='0' else '')+'\n'+(H/'spacing.css').read_text()+('\n'+(H/'roles.css').read_text() if os.environ.get('SUITE_ROLES','1')!='0' else ''))
 (H/'routes.json').write_text(json.dumps(routes,indent=2))
 (H/'ROUTES.md').write_text('# Actual HTML route inventory\n\n'+ '\n'.join('- '+x['route']+' (`'+x['file']+'`) — '+x['family'] for x in routes)+'\n')
 # The server assistant's old snapshot still contained the removed CV/colleague copy.

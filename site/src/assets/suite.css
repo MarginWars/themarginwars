@@ -174,10 +174,7 @@ body.nm.f-page .fx-timeline summary span{color:var(--nm-muted)}
    Surfaces: one dark anchor (hero) + dark footer; otherwise white with one soft grey.
    States: hover = sky, focus = gold, selected/success = mint, deadline/warning = coral, conversion = magenta.
    Text on light never uses raw technicolor; darker ink variants keep AA. */
-body.nm{--nm-sky-ink:#2E5A96;--nm-mint-ink:#1C7148;--nm-gold-ink:#7D5B0E;--nm-coral-ink:#A8342B;--nm-fam:var(--nm-mint)}
-body.nm.f-page{--nm-fam:var(--nm-sky)}
-body.nm.pg-arcade{--nm-fam:var(--nm-coral)}
-body.nm:is(.pg-advisory,.pg-speaking,.pg-contact,.pg-writing){--nm-fam:var(--nm-gold)}
+body.nm{--nm-sky-ink:#2E5A96;--nm-mint-ink:#1C7148;--nm-gold-ink:#7D5B0E;--nm-coral-ink:#A8342B}
 /* Home: hero anchor, then grey research desk, white tool, grey band, white gallery. */
 body.nm .f-strip{background:var(--nm-paper)!important}
 body.nm .rbf{--rb-bg:#FFFFFF;--rb-s:#F4F6F7;background:#FFFFFF!important;border-top:1px solid var(--nm-rule)}
@@ -188,13 +185,13 @@ body.nm.about-palette :is(.ab-method,.ab-archive,.ab-conf){background:#FFFFFF!im
 body.nm.about-palette :is(.ab-archive,.ab-conf){border-top:1px solid var(--nm-rule)}
 body.nm.about-palette .ab-archive .vid{background:#FFFFFF;border-color:var(--nm-rule)}
 body.nm.about-palette .ab-evidence .pc{border-color:var(--nm-rule)}
-body.nm.about-palette .ab-evidence .pc:before{background:var(--nm-mint)!important}
+body.nm.about-palette .ab-evidence .pc:before{background:var(--nm-sky)!important}
 body.nm.about-palette .ab-evidence .pc-chips li{background:#FFFFFF!important;color:var(--nm-ink)!important;border:1px solid var(--nm-rule)!important}
 body.nm.about-palette .ab-method .bio-acc{background:#FFFFFF!important;border:1px solid var(--nm-rule)!important}
 body.nm.about-palette #main :is(.ab-method,.ab-archive,.ab-conf) .ab-label,body.nm.about-palette #main .ab-evidence .ab-label{color:var(--nm-ink)!important;-webkit-text-fill-color:var(--nm-ink)!important}
-/* Section-family eyebrow keyline: one hue per family (people mint, research sky, practice gold, games coral). */
-body.nm .eyebrow.sx::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-fam)!important;color:transparent}
-body.nm.about-palette #main .ab-label:not(.pc *)::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-mint)}
+/* Eyebrow keyline: sky on every page (roles, Nov 10). */
+body.nm .eyebrow.sx::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-sky)!important;color:transparent}
+body.nm.about-palette #main .ab-label:not(.pc *)::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-sky)}
 body.nm.f-page .f-hero{border-bottom:3px solid var(--nm-sky)!important}
 /* Tags tinted by meaning, ink text for AA. */
 body.nm .fx-impact[data-impact=deadline]{background:#FCE8E6!important;border-color:var(--nm-coral)!important;color:#111417!important}
@@ -203,25 +200,25 @@ body.nm .fx-impact[data-impact=neutral]{background:#FFFFFF!important;border-colo
 /* Interactive cards only: sky keyline on hover/focus. */
 body.nm .f-stripitem:has(>a:hover){border-top-color:var(--nm-sky)}
 body.nm :is(.f-feedcard,.f-market):has(a:hover){border-color:var(--nm-sky)}
-/* Magenta is conversion only. Decorative rules/keylines take the page-family hue; counts/numbers go to ink. */
-body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2))::before{background:var(--nm-fam)!important}
-body.nm details.card.acc::before,body.nm .ticks li::before{background:var(--nm-fam)!important;border-color:var(--nm-fam)!important}
+/* Magenta is conversion only. Decorative rules/keylines are sky on every page; counts/numbers go to ink. */
+body.nm :is(section.route,section.rbf,section.tstrip,section.split,section.watch,section.rv:not(.ihero):not(.pband):not(.intro2))::before{background:var(--nm-sky)!important}
+body.nm details.card.acc::before,body.nm .ticks li::before{background:var(--nm-sky)!important;border-color:var(--nm-sky)!important}
 body.nm .rt-line>i,body.nm .wk-settle>i{background:#8D999F!important}
 body.nm span.sn{color:var(--nm-ink)!important}
 body.nm :is(.rx-n,.rx-c,small.rx-c){color:var(--nm-muted)!important}
-body.nm .rbf :is(.rb-note,.rb-aside,.rb-proof){border-left-color:var(--nm-gold)!important}
-body.nm .rbf .rb-k{color:var(--nm-gold-ink)!important}
-body.nm :is(section.pband,section.intro2)::before,body.nm section.intro2::after{background:var(--nm-fam)!important}
+body.nm .rbf :is(.rb-note,.rb-aside,.rb-proof){border-left-color:var(--nm-sky)!important}
+body.nm .rbf .rb-k{color:var(--nm-sky-ink)!important}
+body.nm :is(section.pband,section.intro2)::before,body.nm section.intro2::after{background:var(--nm-sky)!important}
 body.nm .tm-line>i{background:#8D999F!important}
-body.nm span.tm-d{border-color:var(--nm-fam)!important}
+body.nm span.tm-d{border-color:var(--nm-sky)!important}
 body.nm .rb-r b::before{border-color:#4A555B!important}
 body.nm .rb-path .rb-arrow::before{background:#4A555B!important}
 body.nm .rb-path .rb-arrow::after{border-color:#4A555B!important}
-body.nm .rx-rp{border-top-color:var(--nm-fam)!important}
+body.nm .rx-rp{border-top-color:var(--nm-sky)!important}
 body.nm :is(.rh small,.fronts .fl,.nextp>span,span.wk-no){color:var(--nm-muted)!important}
 body.nm.pg-index ol>li::before{color:var(--nm-ink)!important}
-body.nm p.note{border-left-color:var(--nm-fam)!important}
-body.nm .nextp a{border-bottom-color:var(--nm-fam)!important}
+body.nm p.note{border-left-color:var(--nm-sky)!important}
+body.nm .nextp a{border-bottom-color:var(--nm-sky)!important}
 
 /* Spacing gate (Nov 9). Shared edge 16 / 24 / 104 / 184 (capped, centred); section rhythm R = 64 / 96 / 120;
    heading->body 16 mobile, 24 from tablet. Same surface: R between sections. Surface change: R each side. */
@@ -283,3 +280,77 @@ html body.nm main>.wrap>section>ul:not([class]):last-child>li:last-child{margin-
 /* Feed grid: one 16px gutter both ways (cards no longer add their own bottom margin). */
 html body.nm.f-page .f-feedgrid>.f-feedcard{margin:0!important}
 html body.nm main>.wrap>section>ol.wl:last-child>li:last-child{margin-bottom:0!important}
+
+/* Roles layer (Nov 10): one job per accent on every page. No per-page-family hues.
+   Sky   #8FB0E0  links, hover, section keylines, eyebrow ticks, open disclosures (default accent).
+   Mint  #3FBF85  selected / active / current, success, live / open states.
+   Gold  #D2A63A  keyboard focus ring and featured markers only.
+   Coral #EA6259  deadlines, alerts, new / time-sensitive tags only.
+   Magenta        start-a-conversation CTAs only.
+   Accents are keylines, fills and rings; accent-coloured text uses the -ink shades for WCAG AA. */
+body.nm{--nm-sky-ink:#2E5A96;--nm-mint-ink:#1C7148;--nm-coral-ink:#A8342B}
+/* Open disclosures: sky keyline (gold is reserved for focus). */
+html body.nm details[open]>summary{border-left-color:var(--nm-sky)!important}
+html body.nm button[aria-expanded=true]{border-color:var(--nm-sky)!important;box-shadow:inset 3px 0 var(--nm-sky)!important}
+html body.nm.f-page .f-entry:target{border-left-color:var(--nm-mint)}
+html body.nm .rt-t.hd:not(.sel){box-shadow:inset 0 0 0 3px var(--nm-sky)}
+html body.nm .rt-slot i.rv{box-shadow:inset 0 0 0 2px var(--nm-sky)}
+/* Featured marker utility (gold), for genuinely featured items only. */
+html body.nm .nm-featured{box-shadow:inset 0 3px 0 var(--nm-gold)}
+/* How we work: neutral step circles with a sky keyline; current step ink with sky ring. */
+html body.nm .rt-plate{background:#FFFFFF!important;border-color:#C2CBD0!important;color:var(--nm-ink)!important;box-shadow:none!important}
+html body.nm .rt-done .rt-plate,html:not(.rt-js) body.nm .rt-plate{border-color:var(--nm-sky)!important;color:var(--nm-ink)!important}
+html body.nm .rt-s.rt-act .rt-plate,html:not(.rt-js) body.nm .rt-s.rt-act .rt-plate{background:var(--nm-ink)!important;border-color:var(--nm-sky)!important;color:#FFFFFF!important;box-shadow:0 0 0 4px rgba(143,176,224,.35)!important}
+html body.nm .rt-line i{background:var(--nm-sky)!important;box-shadow:none!important}
+html body.nm .rt-act h3{color:var(--nm-ink)!important}
+html body.nm .rt-cta a{color:var(--nm-ink)!important}
+/* Keylines and ticks that were decorative magenta: sky. */
+html body.nm .hero h1:after{background:var(--nm-sky)!important}
+html body.nm .i2x::after{background:var(--nm-sky)!important}
+html body.nm section.ihero::before{background:var(--nm-sky)!important}
+html body.nm .hn{border-top-color:var(--nm-sky)!important}
+html body.nm .hl li::before{background:var(--nm-sky)!important}
+html body.nm .tm-d{border-color:var(--nm-sky)!important}
+html body.nm :is(.tm-lane:hover,.tm-lane:focus-visible,.tm-lane.tm-hl) .tm-d,html body.nm span.tm-d{background:#FFFFFF}
+html body.nm :is(.tm-lane:hover,.tm-lane:focus-visible,.tm-lane.tm-hl) .tm-d{background:var(--nm-sky)!important}
+html body.nm .lk-line svg{stroke:var(--nm-sky)!important}
+html body.nm.nm .lk-js .lk-line{background:var(--nm-sky)!important}
+html body.nm .lk-js .lk-h .lk-g{color:var(--nm-muted,#4A555B)!important}
+html body.nm.pg-warroom .wl .wt{border-left-color:var(--nm-sky)!important}
+html body.nm .card.acc summary>h3{border-top-color:var(--nm-sky)!important}
+/* Active tab indicators: mint (selected/current). */
+html body.nm .lk-seg::after,html body.nm .wk-jack::after{background:var(--nm-mint)!important}
+html body.nm .wk-jack em::before{background:transparent!important;border-color:currentColor!important}
+/* Labels, counters and numbers that were magenta text: ink / muted. */
+html body.nm :is(.lk-n,.pf-p>b,.pf-m>b,.gc>b,.gc>span,.wl b,.wn){color:inherit!important}
+html body.nm .rt-mini i.a{color:var(--nm-ink)!important}
+html body.nm .band>div:not(.bh)::before{color:var(--nm-muted,#4A555B)!important}
+html body.nm .card.acc>summary::before{color:var(--nm-muted,#4A555B)!important}
+html body.nm .f-stripstatus{color:var(--nm-muted,#4A555B)!important}
+html body.nm .cmd:after{color:transparent!important}
+html body.nm :is(.plate-cap,.hart-plate,.pp-cap) .pl-n,html body.nm .nextp .plate-cap .pl-n{color:var(--nm-sky)!important}
+/* Region chips: neutral labels, not colour. */
+html body.nm .rp{background:#FFFFFF!important;color:var(--nm-ink)!important;border:1px solid var(--nm-rule,#C2CBD0)}
+/* Illustration frames and game panels: neutral depth, no magenta glow. */
+html body.nm .plate-frame{box-shadow:inset 0 1px 0 #ffffff14,0 30px 60px -30px #000!important}
+html body.nm section.gm{box-shadow:none!important}
+html body.nm .vframe .yt:after{background:#111417!important;opacity:.35!important}
+/* Arcade: open/live = mint ink text; list rules neutral. */
+html body.nm .em .es{color:var(--nm-mint-ink)!important}
+html body.nm ol.wl.em>li{border-bottom-color:var(--nm-rule,#C2CBD0)!important}
+html body.nm ol.wl.em>li>a{box-shadow:none!important}
+/* Research live status: success/live = mint ink. */
+html body.nm .f-live:not(:empty){color:var(--nm-mint-ink)!important}
+html body.nm .f-strip .f-stripstatus{color:var(--nm-muted,#4A555B)!important}
+html body.nm .wk-board .tm-d{background:var(--nm-sky)!important}
+html body.nm a.gc{color:var(--nm-ink)!important}
+html body.nm a.gc:is(:hover,:focus){background:var(--nm-sky)!important;color:var(--nm-ink)!important}
+html body.nm .wk-opt:has(input:checked){box-shadow:inset 0 -3px 0 var(--nm-mint)}
+/* Section keylines inside .wrap also render without the reveal class (reduced motion / no-JS). */
+html body.nm .wrap>section::before{background:var(--nm-sky)!important}
+/* Magenta is for start-a-conversation CTAs only (links to Contact). Other solid CTAs become outline buttons. */
+html body.nm a.nm-primary:not([href*="contact"]){background:transparent!important;color:inherit!important;border:1px solid currentColor!important}
+html body.nm a.nm-primary:not([href*="contact"]):hover{background:var(--nm-sky)!important;border-color:var(--nm-sky)!important;color:#111417!important}
+/* 'New' tag on the Arcade flagship: coral tick, readable light text. */
+html body.nm .rt-hero .rt-k{color:#F4F6F7!important}
+html body.nm .rt-hero .rt-k::before{content:"";display:inline-block;width:24px;height:3px;margin:0 10px .25em 0;vertical-align:middle;background:var(--nm-coral)}
