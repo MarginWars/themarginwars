@@ -3,7 +3,7 @@
 // internal mailer Worker (MAILER service binding -> Email Routing send_email to the verified
 // owner address). Never sends anything to the visitor.
 import { limited, ipOf } from "./_rl.js";
-import { notify, envTag, isQa } from "./_notify.js";
+import { notify, envTag, isQa, delivered } from "./_notify.js";
 import { turnstile } from "./_ts.js";
 import { cleanAttr, dims, count, countable } from "./_mk.js";
 
@@ -86,8 +86,8 @@ export async function onRequestPost(ctx) {
   const md = dims(attr, request.headers.get("referer") || "/contact");
   if (countable(isTest, md)) ctx.waitUntil(count(env, v.topic === "Briefing invitation" ? "form_briefing" : "form_contact", md));
   ctx.waitUntil((async () => {
-    const res = await notify(env, { kind: v.topic === "Briefing invitation" ? "Briefing request" : "Contact request", store: "D1 themarginwars" + (envTag(env) ? "-dev" : "") + "-contact", id, created_at, host, test: !!isTest, ...v });
-    const ok = res.length && res.every(s => s.endsWith(":ok")) ? 1 : 0;
+    const res = await notify(env, { kind: v.topic === "Briefing invitation" ? "Briefing request" : "Contact request", store: "D1 themarginwars" + (envTag(env) ? "-dev" : "") + "-contact", id, created_at, host, test: !!isTest, ...v }, { form: v.topic === "Briefing invitation" ? "briefing" : "contact", page: md.page, attribution: attr });
+    const ok = delivered(res) ? 1 : 0;
     try { await env.CONTACT_DB.prepare("UPDATE submissions SET notified = ?1, notify_error = ?2 WHERE id = ?3").bind(ok, res.length ? res.join(" ") : "no-notifier", id).run(); } catch {}
   })());
   return wantsJson ? json({ ok: true, id }) : back("sent");

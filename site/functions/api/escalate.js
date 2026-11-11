@@ -27,7 +27,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   const key = `esc:${ts}:${id}`;
   await env.ESC_KV.put(key, JSON.stringify(rec));
   waitUntil((async () => {
-    const res = await notify(env, { kind: "Assistant escalation", topic: "Question for the team", store: "KV ESC_KV " + key, id, created_at: ts, host: new URL(request.url).hostname, test, name, email, company, message: question + (turns.length ? "\n\nRecent assistant turns:\n" + turns.map(t => "Q: " + t.q + "\nA: " + t.a).join("\n") : "") });
+    const res = await notify(env, { kind: "Assistant escalation", topic: "Question for the team", store: "KV ESC_KV " + key, id, created_at: ts, host: new URL(request.url).hostname, test, name, email, company, message: question + (turns.length ? "\n\nRecent assistant turns:\n" + turns.map(t => "Q: " + t.q + "\nA: " + t.a).join("\n") : "") }, { form: "escalation", page: md.page, attribution: attr });
     rec.notify = res.join(" ") || "no-notifier";
     try { await env.ESC_KV.put(key, JSON.stringify(rec)); } catch {}
   })());
