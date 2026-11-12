@@ -1,5 +1,12 @@
 [
   {
+    "file": "404.html",
+    "route": "/404",
+    "family": "core",
+    "controls": 0,
+    "links": 18
+  },
+  {
     "file": "about.html",
     "route": "/about",
     "family": "core",
@@ -220,22 +227,22 @@
     "file": "contact.html",
     "route": "/contact",
     "family": "core",
-    "controls": 0,
-    "links": 18
+    "controls": 12,
+    "links": 21
   },
   {
     "file": "daily.html",
     "route": "/daily",
     "family": "games",
     "controls": 0,
-    "links": 14
+    "links": 15
   },
   {
     "file": "deal.html",
     "route": "/deal",
     "family": "games",
     "controls": 0,
-    "links": 14
+    "links": 15
   },
   {
     "file": "digest/2026-11-08/index.html",
@@ -256,63 +263,63 @@
     "route": "/ep1",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep2.html",
     "route": "/ep2",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep3.html",
     "route": "/ep3",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep4.html",
     "route": "/ep4",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep5.html",
     "route": "/ep5",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep6.html",
     "route": "/ep6",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep7.html",
     "route": "/ep7",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep8.html",
     "route": "/ep8",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "ep9.html",
     "route": "/ep9",
     "family": "games",
     "controls": 0,
-    "links": 16
+    "links": 17
   },
   {
     "file": "feeds/index.html",
@@ -333,14 +340,14 @@
     "route": "/leak",
     "family": "games",
     "controls": 0,
-    "links": 14
+    "links": 15
   },
   {
     "file": "quiz.html",
     "route": "/quiz",
     "family": "games",
     "controls": 1,
-    "links": 14
+    "links": 15
   },
   {
     "file": "route-briefs/items/anz-card-context-20261108/index.html",
@@ -382,7 +389,7 @@
     "route": "/tracewire",
     "family": "games",
     "controls": 0,
-    "links": 14
+    "links": 15
   },
   {
     "file": "warroom.html",

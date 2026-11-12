@@ -4,7 +4,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup as BS
 from PIL import Image,ImageDraw,ImageFont
 import json,html,datetime as dt,re,random,subprocess,urllib.parse,hashlib,shutil
-H=Path(__file__).parent;D=H.parent/'site_calm';A=D/'assets/feeds';BASE='https://calm.themarginwars.pages.dev';TODAY='2026-11-08'
+H=Path(__file__).parent;D=H.parent/'site_calm';A=D/'assets/feeds';BASE=__import__('os').environ.get('FEED_BASE_URL','https://themarginwars.com').rstrip('/');TODAY='2026-11-08'
 MARKETS={'us':'US','ukeu':'UK / EU','br':'Brazil','ca-latam':'Canada & LATAM','anz':'AU & NZ','global':'Global'}
 RAILS={'cards':'Cards','bank':'Bank / ACH','instant':'Instant / A2A','authentication':'Authentication','cross-border':'Cross-border','infrastructure':'Infrastructure'}
 e=html.escape
@@ -90,8 +90,8 @@ def apply():
    lead=ann['so_what'] if kind!='bp-watch' else x['move']
    rec=dict(key=kind+':'+x['id'],id=x['id'],kind=kind,title=x['title'],market=x['market'],market_label=MARKETS[x['market']],rails=ann['rails'],rail_labels=[RAILS[r] for r in ann['rails']],impact=ann['impact'],lead=lead,source=x['source'],date=x['date'],published=x.get('published',x.get('added',x['date']))+'T14:00:00Z',effective=x.get('effective') if kind=='wire' else x['date'] if kind=='calendar' else None,url=itemurl(kind,x['id']),source_date=x.get('source_date'))
    rec['text']=' '.join(str(x.get(k,'')) for k in ['changed','description','hits','method','impact','move'])
-   rec['linkedin']=f"{x['title']}\n\nSo what for merchants: {lead}\n\nOfficial source: {x['source']}\nRead the brief: {BASE+rec['url']}\n\nPreview, pending Avi’s review."
-   rec['email']=f"Subject: Payments watch — {x['title']}\n\n{lead}\n\nOfficial source: {x['source']}\nBrief: {BASE+rec['url']}\n\nPreview, pending Avi’s review."
+   rec['linkedin']=f"{x['title']}\n\nSo what for merchants: {lead}\n\nOfficial source: {x['source']}\nRead the brief: {BASE+rec['url']}"
+   rec['email']=f"Subject: Payments watch — {x['title']}\n\n{lead}\n\nOfficial source: {x['source']}\nBrief: {BASE+rec['url']}"
    index.append(rec);allitems.append((kind,x,ann,rec))
  (A/'search-index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n');(D/'assets/feeds-index.js').write_text('window.MWFeedIndex='+json.dumps(index,ensure_ascii=False).replace('</','<\\/')+';\n')
  for f in ['feeds-ux.css','feeds-ux.js']:shutil.copy(H/f,D/'assets'/f)
@@ -106,21 +106,24 @@ def apply():
    else:line=test
   if line:out.append(line)
   return out
+ import sys as _s;_s.path.insert(0,'@MW_ROOT@/linkedin_page_1110');import gen as _g
+ BRAND_MARK=_g.render_mark(scale=8).convert('RGB').resize((36,36),Image.Resampling.LANCZOS)  # approved logo C
  for kind,x,ann,r in allitems:
-  cp=carddir/f'{kind}-{x["id"]}.png';finger=hashlib.sha256(('impact-card-v2'+json.dumps(r,sort_keys=True)).encode()).hexdigest();fp=cp.with_suffix('.sha256')
+  cp=carddir/f'{kind}-{x["id"]}.png';finger=hashlib.sha256(('impact-card-v4-brand'+json.dumps(r,sort_keys=True)).encode()).hexdigest();fp=cp.with_suffix('.sha256')
   if cp.exists() and fp.exists() and fp.read_text()==finger:continue
-  im=Image.new('RGB',(1200,630),'#101315');draw=ImageDraw.Draw(im)
+  im=Image.new('RGB',(1200,630),'#111417');draw=ImageDraw.Draw(im)
   rng=random.Random(31)
   for _ in range(9000):
-   px=rng.randrange(1200);py=rng.randrange(630);draw.point((px,py),fill=rng.choice(['#121518','#14171A','#0F1214']))
+   px=rng.randrange(1200);py=rng.randrange(630);draw.point((px,py),fill=rng.choice(['#13161A','#15181B','#0F1215']))
   draw.rectangle((24,24,1175,605),outline='#62666A',width=1);draw.line((64,104,1136,104),fill='#B5237F',width=4)
-  draw.text((64,55),'THE MARGIN WARS',font=font(28,True),fill='#F4F6F7');draw.text((1136,55),kind.upper(),font=font(20,True),fill='#F3A5D6',anchor='ra')
+  for i,c in enumerate(['#8FB0E0','#A08FE6','#3FBF85','#B7C1C9','#D2A63A','#EA6259']):draw.rectangle((i*200,0,i*200+199,7),fill=c)
+  im.paste(BRAND_MARK,(64,46));draw.text((112,55),'THE MARGIN WARS',font=font(28,True),fill='#F4F6F7');draw.text((1136,55),kind.upper(),font=font(20,True),fill='#F3A5D6',anchor='ra')
   draw.text((64,134),r['market_label'].upper()+' / '+ann['impact'].upper(),font=font(26,True),fill='#F3A5D6')
   lines=wrap(x['title'],font(61),1065);y=180
   for ln in lines:draw.text((64,y),ln,font=font(61),fill='#F4F6F7');y+=70
   y=max(y+24,345)
   for ln in wrap(r['lead'],font(40),1060):draw.text((64,y),ln,font=font(40),fill='#CFD5DA');y+=48
-  host=urllib.parse.urlparse(x['source']).netloc.removeprefix('www.');draw.line((64,534,1136,534),fill='#62666A');draw.text((64,554),'SOURCE / '+host,font=font(18,True),fill='#CFD5DA');draw.text((1136,554),'PREVIEW · PENDING REVIEW',font=font(12,True),fill='#F3A5D6',anchor='ra');im.save(cp);fp.write_text(finger)
+  host=urllib.parse.urlparse(x['source']).netloc.removeprefix('www.');draw.line((64,534,1136,534),fill='#62666A');draw.text((64,554),'SOURCE / '+host,font=font(18,True),fill='#CFD5DA');im.save(cp);fp.write_text(finger)
  # Modify only generated feed pages; Home changes remain inside the marked strip.
  for slug,kind,items in [('wire','wire',wire),('calendar','calendar',cal),('bp-watch','bp-watch',bp),('feeds','route-briefs',routes)]:
   path=D/slug/'index.html';soup=BS(path.read_text(),'html.parser');scripts(soup)
@@ -175,8 +178,8 @@ def apply():
   parent_slug='feeds' if kind=='route-briefs' else kind
   parent=BS((D/parent_slug/'index.html').read_text(),'html.parser');article=parent.find(id=('update-' if kind=='route-briefs' else '')+x['id']);assert article
   article.select_one('details')['open']='';article.find(['h2','h3']).name='h1';article['class']=article.get('class',[])+['fx-single']
-  new=BS((D/parent_slug/'index.html').read_text(),'html.parser');main=new.select_one('#f-main');main.clear();main.append(node(f'<p class="fx-back"><a href="/{parent_slug}/">← Back to {kind.replace("-"," ")}</a></p>'));main.append(node(toolbar('item')));main.append(node(f'<section class="fx-itemhero"><p class="f-k">{e(kind)} / sourced decision brief</p></section>'));main.append(article);main.append(node(f'<figure class="fx-cardproof"><img src="/assets/feeds/cards/{kind}-{x["id"]}.png" alt="Share card: {e(x["title"])}" width="1200" height="630"><figcaption>Preview share artwork. Copy text only; nothing posts automatically.</figcaption></figure>'));main.append(node('<p class="f-live" aria-live="polite"></p>'))
-  new.title.string=x['title']+' | The Margin Wars — Preview'
+  new=BS((D/parent_slug/'index.html').read_text(),'html.parser');main=new.select_one('#f-main');main.clear();main.append(node(f'<p class="fx-back"><a href="/{parent_slug}/">← Back to {kind.replace("-"," ")}</a></p>'));main.append(node(toolbar('item')));main.append(node(f'<section class="fx-itemhero"><p class="f-k">{e(kind)} / sourced decision brief</p></section>'));main.append(article);main.append(node(f'<figure class="fx-cardproof"><img src="/assets/feeds/cards/{kind}-{x["id"]}.png" alt="Share card: {e(x["title"])}" width="1200" height="630"><figcaption>Share artwork. Copy text only; nothing posts automatically.</figcaption></figure>'));main.append(node('<p class="f-live" aria-live="polite"></p>'))
+  new.title.string=x['title']+' | The Margin Wars'
   for t in new.select('meta[property^="og:"],meta[name^="twitter:"],link[rel="canonical"]'):t.decompose()
   for prop,value in [('og:type','article'),('og:title',x['title']),('og:description',r['lead']),('og:url',BASE+r['url']),('og:image',BASE+f'/assets/feeds/cards/{kind}-{x["id"]}.png'),('og:image:width','1200'),('og:image:height','630'),('og:image:alt',x['title'])]:new.head.append(node(f'<meta property="{prop}" content="{e(value)}">'))
   new.head.append(node(f'<meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="{BASE+r["url"]}">'))
@@ -200,14 +203,14 @@ def apply():
  week_wire=[x for x in wire if week_start.isoformat()<=x['date']<=latest]
  weekly_bp=[x for x in bp if week_start.isoformat()<=x['date']<=latest]
  top=sorted(week_wire,key=lambda x:x.get('rank',100))[:5];upcoming=sorted([x for x in cal if x['date']>=latest and x.get('added',latest)<=latest],key=lambda x:x['date'])[:3]
- dig=f'<article class="fx-digest"><header class="fx-digesthead"><p class="f-k">The Margin Wars / Weekly signal / {latest}</p><h1>The week. The moves.</h1><p>{week_start.strftime("%d %b")}–{week_end.strftime("%d %b %Y")} · Preview, pending Avi’s review</p><button type="button" hidden data-print>Save as PDF</button><span class="fx-printhelp">Choose Save as PDF in the print dialog.</span></header><section><h2>Three moves to own</h2><div class="fx-digestgrid">'
+ dig=f'<article class="fx-digest"><header class="fx-digesthead"><p class="f-k">The Margin Wars / Weekly signal / {latest}</p><h1>The week. The moves.</h1><p>{week_start.strftime("%d %b")}–{week_end.strftime("%d %b %Y")}</p><button type="button" hidden data-print>Save as PDF</button><span class="fx-printhelp">Choose Save as PDF in the print dialog.</span></header><section><h2>Three moves to own</h2><div class="fx-digestgrid">'
  for x in weekly_bp:dig+=f'<article><h3>{e(x["title"])}</h3><p>{e(x["move"])}</p><small>{e(x["impact"])}</small><a href="{e(x["source"])}">Official source ↗</a></article>'
  dig+='</div></section><section><h2>Five signals worth opening</h2><ol class="fx-digestsignals">'
  for x in top:dig+=f'<li><strong>{e(MARKETS[x["market"]])}</strong><a href="{itemurl("wire",x["id"])}">{e(x["title"])}</a><a class="fx-digestsource" href="{e(x["source"])}">Source ↗</a></li>'
  dig+='</ol></section><section><h2>Next on the calendar</h2><ul class="fx-digestdates">'
  for x in upcoming:dig+=f'<li><time>{x["date"]}</time><a href="{itemurl("calendar",x["id"])}">{e(x["title"])}</a></li>'
  dig+='</ul></section><footer>Primary sources. No automatic savings claims. Full source links remain clickable in the PDF.</footer></article>'
- template=BS((D/'wire/index.html').read_text(),'html.parser');template.title.string='Weekly Digest | The Margin Wars — Preview';template.body['class']=['f-page','fx-digestpage'];main=template.select_one('#f-main');main.clear();main.append(node(dig));(D/'digest').mkdir(exist_ok=True)
+ template=BS((D/'wire/index.html').read_text(),'html.parser');template.title.string='Weekly Digest | The Margin Wars';template.body['class']=['f-page','fx-digestpage'];main=template.select_one('#f-main');main.clear();main.append(node(dig));(D/'digest').mkdir(exist_ok=True)
  archives=sorted({p.name for p in (D/'digest').iterdir() if p.is_dir() and re.fullmatch(r'\d{4}-\d{2}-\d{2}',p.name)}|{latest},reverse=True)
  archive='<nav class="fx-digestarchive" aria-label="Digest archive"><span class="f-k">Dated editions</span>'+''.join(f'<a href="/digest/{d}/">{d}</a>' for d in archives)+'</nav>';main.append(node(archive));(D/'digest/index.html').write_text(str(template));ap=D/'digest'/latest;ap.mkdir(exist_ok=True);(ap/'index.html').write_text(str(template))
  print(f'Feed UX: {len(allitems)} OG item pages/cards; shared markets/rails; timeline; search; digest',latest)

@@ -13,5 +13,22 @@ https://:hash.themarginwars.pages.dev/*
   Content-Type: application/feed+json; charset=utf-8
 /feeds/dates.ics
   Content-Type: text/calendar; charset=utf-8
-  Content-Disposition: inline; filename="margin-wars-dates-preview.ics"
+  Content-Disposition: inline; filename="margin-wars-dates.ics"
 # /feeds-headers
+
+# bo-headers
+# Non-production hosts are never indexed (production themarginwars.com has no X-Robots-Tag).
+https://themarginwars.pages.dev/*
+  X-Robots-Tag: noindex
+https://themarginwars-dev.pages.dev/*
+  X-Robots-Tag: noindex
+https://:sub.themarginwars-dev.pages.dev/*
+  X-Robots-Tag: noindex
+/assets/b/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+/api/*
+  X-Robots-Tag: noindex
+# /bo-headers

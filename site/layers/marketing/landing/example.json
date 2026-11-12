@@ -1,0 +1,47 @@
+{
+ "slug": "example-margin-teardown",
+ "title": "Find the margin in your payment stack",
+ "description": "A fixed-scope Margin Teardown: where your payment cost goes, and the three moves that win it back.",
+ "eyebrow": "Campaign template",
+ "lede": "Bring us one payment cost number. In two weeks you get the teardown, the evidence and a short list of moves your team can run.",
+ "cta_label": "Request a Margin Teardown",
+ "cta_topic": "margin-teardown",
+ "plate": 2,
+ "stats": [
+  [
+   "2",
+   "weeks, fixed scope"
+  ],
+  [
+   "10",
+   "markets covered"
+  ],
+  [
+   "12",
+   "moves in the Playbook"
+  ],
+  [
+   "1",
+   "named owner on our side"
+  ]
+ ],
+ "steps": [
+  [
+   "Bring the number",
+   "Share the cost line that keeps you up at night."
+  ],
+  [
+   "We trace the route",
+   "Scheme, acquirer, processor: every hop, priced."
+  ],
+  [
+   "We size the moves",
+   "Each move ranked by size of win and effort to run."
+  ],
+  [
+   "You run the plan",
+   "A one-page plan your team can start on Monday."
+  ]
+ ],
+ "proof": "Terrain, not relationships. Every claim is sourced to a public rule or your own data."
+}

@@ -360,7 +360,7 @@ html body.nm .rt-hero .rt-k::before{content:"";display:inline-block;width:24px;h
    Repeated items take the six colours in turn (by position, or by market on research pages).
    Accent text uses the -ink shades for WCAG AA. Gold is otherwise only the focus ring; coral also marks deadlines. */
 body.nm{--nm-grey-b:#B7C1C9;--nm-violet:#A08FE6;--nm-violet-ink:#5250D8;
- --nm-band:linear-gradient(90deg,#8FB0E0 0 16.667%,#3FBF85 16.667% 33.333%,#D2A63A 33.333% 50%,#EA6259 50% 66.667%,#B7C1C9 66.667% 83.333%,#A08FE6 83.333% 100%)}
+ --nm-band:linear-gradient(90deg,#8FB0E0 0 16.667%,#A08FE6 16.667% 33.333%,#3FBF85 33.333% 50%,#B7C1C9 50% 66.667%,#D2A63A 66.667% 83.333%,#EA6259 83.333% 100%)}
 /* 1. Top band on every page, pinned to the top edge. */
 html body.nm::before{content:"";position:fixed;top:0;left:0;right:0;height:6px;background:var(--nm-band);z-index:2147483000;pointer-events:none}
 @media(max-width:767px){html body.nm::before{height:4px}}
@@ -656,3 +656,59 @@ html body.nm section.gm[data-game=ep]:empty{min-height:440px}
 html body.nm section.gm[data-game=deal]:empty{min-height:500px}
 html body.nm section.gm[data-game=leak]:empty{min-height:1000px}
 html body.nm section.gm[data-game=quiz]:empty{min-height:100px}
+/* buildout: contact form, 404, next blocks */
+form.cform{margin-top:32px;border:1px solid #101315;border-radius:12px;overflow:hidden;background:#fff;color:#111417}
+form.cform[hidden]{display:none!important}
+form.cform fieldset{border:0!important;border-radius:0!important;margin:0;padding:0;background:#fff;min-width:0}
+form.cform .wk-opts{grid-template-columns:repeat(3,1fr)}
+form.cform .cf-topic.cf-bad .wk-opts{box-shadow:inset 0 0 0 2px #B5237F}
+form.cform .cf-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 24px;padding:24px;border-top:1px solid #C9D0D4}
+form.cform .cf-f{display:flex;flex-direction:column;gap:8px;min-width:0}
+form.cform .cf-f.cf-wide{grid-column:1/-1}
+form.cform label.cf-l{font:600 14px/1.4 'Schibsted Grotesk',system-ui,sans-serif;color:#111417;min-height:0!important;display:block!important;cursor:default}
+form.cform .cf-opt{font-weight:400;color:#4A545B}
+form.cform input.cf-i,form.cform textarea.cf-i{width:100%;box-sizing:border-box;margin:0;min-height:48px;padding:12px 14px;border:1px solid #5A646B;border-radius:8px;background:#fff;color:#111417;font:400 16px/1.5 'Schibsted Grotesk',system-ui,sans-serif}
+form.cform textarea.cf-i{min-height:160px;resize:vertical}
+form.cform .cf-i:focus-visible{outline:3px solid #B5237F;outline-offset:2px;border-color:#111417}
+form.cform .cf-i[aria-invalid=true]{border:2px solid #B5237F;padding:11px 13px}
+form.cform .cf-err{margin:0;font:500 14px/1.45 'Schibsted Grotesk',system-ui,sans-serif;color:#9A1C6B}
+form.cform .cf-topic .cf-err{padding:12px 16px 0}
+form.cform .cf-err[hidden]{display:none}
+form.cform .cf-hp{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+form.cform .cf-ts{grid-column:1/-1}form.cform .cf-ts:empty{display:none}
+form.cform .cf-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+form.cform .cf-alt{margin:0;font:400 15px/1.5 'Schibsted Grotesk',system-ui,sans-serif;color:#4A545B}
+form.cform .cf-send{min-height:48px;min-width:180px;justify-content:center;cursor:pointer;border:0}
+form.cform .cf-send[disabled]{opacity:.7;cursor:progress}
+form.cform .cf-status{grid-column:1/-1;margin:0;padding:12px 16px;border-radius:8px;background:#F4F6F7;font:500 15px/1.5 'Schibsted Grotesk',system-ui,sans-serif;color:#111417}
+form.cform .cf-status.cf-error{background:#FBEAF3;color:#7A1655;box-shadow:inset 3px 0 0 #B5237F}
+form.cform .cf-status[hidden]{display:none}
+form.cform .cf-status:focus{outline:3px solid #B5237F;outline-offset:2px}
+form.cform .cf-done{padding:32px 24px}
+form.cform .cf-done[hidden],form.cform .cf-body[hidden]{display:none}
+form.cform .cf-done:focus{outline:none}
+form.cform .cf-done h3{margin:0 0 8px;font:700 24px/1.25 'Schibsted Grotesk',system-ui,sans-serif}
+form.cform .cf-done p{margin:0 0 16px;font:400 16px/1.6 'Schibsted Grotesk',system-ui,sans-serif;color:#4A545B}
+form.cform .cf-done .cf-ref{font:400 13px/1.5 'Martian Mono',ui-monospace,monospace;color:#5A646B}
+form.cform .cf-again{cursor:pointer}
+.cf-nojs{margin-top:24px}
+@media(max-width:900px){form.cform .wk-opts{grid-template-columns:repeat(2,1fr)}form.cform .cf-fields{grid-template-columns:repeat(2,minmax(0,1fr))}form.cform .cf-f.cf-co{grid-column:1/-1}}
+@media(max-width:560px){form.cform .cf-fields{grid-template-columns:1fr;padding:20px 16px}form.cform .cf-actions{flex-direction:column;align-items:stretch}form.cform .cf-send{width:100%}form.cform .cf-alt{text-align:center}}
+@media(max-width:480px){form.cform .wk-opts{grid-template-columns:1fr}}
+/* 404 */
+.nf-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:32px 0 0!important;padding:0!important;list-style:none!important}
+.nf-links li{margin:0!important;padding:0!important;max-width:none!important}
+.nf-links li::before{content:none!important}
+.nf-links a{display:flex;flex-direction:column;gap:8px;min-height:112px;height:100%;box-sizing:border-box;padding:20px;border:1px solid #C9D0D4;border-radius:12px;background:#fff;color:#111417;text-decoration:none}
+.nf-links a:hover{border-color:#111417}
+.nf-links a:focus-visible{outline:3px solid #B5237F;outline-offset:3px}
+.nf-links b{font:700 19px/1.25 'Schibsted Grotesk',system-ui,sans-serif}
+.nf-links span{font:400 15px/1.5 'Schibsted Grotesk',system-ui,sans-serif;color:#4A545B}
+@media(max-width:900px){.nf-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.nf-links{grid-template-columns:1fr}.nf-links a{min-height:0}}
+html body.nm.pg-about nav.nextp>span{color:#8A949A!important}
+/* brand: pink ledger rule on the header wordmark (approved lockup), footer tagline */
+html body a.brand[data-logo="current"]{border-left:3px solid #B5237F;padding-left:10px;line-height:1.2}
+footer .foot-tag{font:400 13px/1.5 'Martian Mono',ui-monospace,monospace;letter-spacing:.01em;margin-bottom:12px}
+/* assistant escalation: human check slot */
+.sold form.esc .ts:empty{display:none}.sold form.esc .ts{margin:8px 0 4px;min-height:65px}

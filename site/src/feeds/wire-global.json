@@ -1,36 +1,36 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "The Margin Wars | The Rulebook Wire / Global [Preview]",
-  "home_page_url": "https://calm.themarginwars.pages.dev/wire/?market=global",
-  "feed_url": "https://calm.themarginwars.pages.dev/feeds/wire-global.json",
-  "description": "Preview, pending Avi’s review",
+  "title": "The Margin Wars | The Rulebook Wire / Global",
+  "home_page_url": "https://themarginwars.com/wire/?market=global",
+  "feed_url": "https://themarginwars.com/feeds/wire-global.json",
+  "description": "Official sources, practical moves.",
   "language": "en-US",
   "items": [
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/emv-3ds24",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/emv-3ds24/",
+      "id": "https://themarginwars.com/feeds/id/wire/emv-3ds24",
+      "url": "https://themarginwars.com/wire/items/emv-3ds24/",
       "title": "3DS 2.4: draft, not a mandate",
-      "content_text": "[neutral] So what for merchants: Watch the 3DS draft; do not schedule a mandatory migration on this source alone. Preview, pending Avi’s review. EMVCo reports that draft Protocol and Core Functions v2.4 is available for Associate and Subscriber review. No global migration deadline is asserted. Who: 3DS servers, SDK providers and authentication teams. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+      "content_text": "[neutral] So what for merchants: Watch the 3DS draft; do not schedule a mandatory migration on this source alone. EMVCo reports that draft Protocol and Core Functions v2.4 is available for Associate and Subscriber review. No global migration deadline is asserted. Who: 3DS servers, SDK providers and authentication teams. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Global"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/emv-3ds-extensions",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/emv-3ds-extensions/",
+      "id": "https://themarginwars.com/feeds/id/wire/emv-3ds-extensions",
+      "url": "https://themarginwars.com/wire/items/emv-3ds-extensions/",
       "title": "3DS approvals: conditional extension",
-      "content_text": "[neutral] So what for merchants: Ask your 3DS provider whether its product qualifies for the extension. Preview, pending Avi’s review. EMVCo’s Q3 update reports conditional approval extensions for eligible products intending to migrate to v2.4.0.0. Confirm product-specific eligibility. Who: 3DS product providers. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+      "content_text": "[neutral] So what for merchants: Ask your 3DS provider whether its product qualifies for the extension. EMVCo’s Q3 update reports conditional approval extensions for eligible products intending to migrate to v2.4.0.0. Confirm product-specific eligibility. Who: 3DS product providers. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Global"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/emv-agentic-draft",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/emv-agentic-draft/",
+      "id": "https://themarginwars.com/feeds/id/wire/emv-agentic-draft",
+      "url": "https://themarginwars.com/wire/items/emv-agentic-draft/",
       "title": "Agentic payments: intent framework draft",
-      "content_text": "[neutral] So what for merchants: Separate consumer-intent design work from deployed network requirements. Preview, pending Avi’s review. EMVCo’s draft framework introduces Intent Services for consumer-authorised intent. It is a specification-development step, not a deployed network mandate. Who: Agentic checkout and payment product teams. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
+      "content_text": "[neutral] So what for merchants: Separate consumer-intent design work from deployed network requirements. EMVCo’s draft framework introduces Intent Services for consumer-authorised intent. It is a specification-development step, not a deployed network mandate. Who: Agentic checkout and payment product teams. Effective: Not confirmed / not applicable. Official source: https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Global"

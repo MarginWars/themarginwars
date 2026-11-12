@@ -1,5 +1,6 @@
 # Actual HTML route inventory
 
+- /404 (`404.html`) — core
 - /about (`about.html`) — core
 - /advisory (`advisory.html`) — core
 - /arcade (`arcade.html`) — games

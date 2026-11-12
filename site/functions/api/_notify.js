@@ -2,11 +2,10 @@
 //  1. Primary: the signed alert route (MW_ALERT_URL, HMAC-SHA256 with MW_ALERT_SECRET over `${ts}.${body}`,
 //     headers X-MW-Timestamp / X-MW-Signature, 25 s timeout). It posts the summary to private #margin-wars and
 //     emails the full record to the team. Same id is deduped on the receiving side.
-//  2. Fallback (only for a channel the primary did not deliver): the old path below, kept as backup.
-//     - Email: MAILER service binding -> Worker themarginwars-contact-mailer -> Email Routing send_email.
-//       Recipients from the NOTIFY_EMAILS secret. Full details go to the team only. Never to the visitor.
-//     - Slack: SLACK_WEBHOOK_URL (private #margin-wars). Summary only: kind, topic, name, company, record id.
-//       Never the visitor's email address or message body.
+//  2. Email fallback (only when the primary did not report mail delivered):
+//     MAILER service binding -> Worker themarginwars-contact-mailer -> Email Routing send_email.
+//     Recipients from the NOTIFY_EMAILS secret. Full details go to the team only. Never to the visitor.
+//     There is no Slack fallback: the old SLACK_WEBHOOK_URL path was retired on 10 Nov 2026.
 // SITE_ENV="dev" prefixes [DEV]; test submissions are prefixed [TEST].
 export const envTag = env => (String(env.SITE_ENV || "").toLowerCase() === "dev" ? "DEV" : "");
 export const isQa = (env, request) => !!env.QA_TOKEN && request.headers.get("x-tmw-qa") === env.QA_TOKEN;
@@ -62,7 +61,6 @@ async function viaHarness(env, payload) {
 // s: the record the form already builds; extra: {form, page, attribution} (attribution in site shape, first + last touch).
 export async function notify(env, s, extra = {}) {
   const tag = envTag(env), res = [];
-  const pre = `${tag ? "[" + tag + "] " : ""}${s.test ? "[TEST] " : ""}`;
 
   const payload = { ...s, tag, env: tag === "DEV" ? "dev" : "prod" };
   if (extra.form) payload.form = extra.form;
@@ -84,16 +82,11 @@ export async function notify(env, s, extra = {}) {
       const d = await r.json().catch(() => ({})); res.push(d.ok ? "mail:ok" : "mail:" + String(d.summary || d.error || r.status).slice(0, 240));
     } catch (x) { res.push("mail:" + short(x)); }
   }
-  if (h.slack) res.push("slack:ok(harness)");
-  else if (env.SLACK_WEBHOOK_URL) {
-    try {
-      const text = `${pre}${s.kind}: ${s.topic}\nName: ${s.name}\nCompany: ${s.company || "(not given)"}\nRecord: ${s.id} (${s.store}, ${s.host})`;
-      const r = await fetch(env.SLACK_WEBHOOK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) });
-      res.push(r.ok ? "slack:ok" : "slack:" + r.status);
-    } catch (x) { res.push("slack:" + short(x)); }
-  }
+  // Slack has no fallback since 10 Nov 2026 (old "Margin Wars Alerts" webhook retired per Avi 5:27 PM PT).
+  // A Slack failure on the route is recorded (and the email fallback still carries the full record).
+  res.push(h.slack ? "slack:ok(harness)" : "slack-fail:no-fallback");
   return res;
 }
 
-// Delivered when every non-diagnostic entry succeeded.
-export const delivered = res => { const r = res.filter(x => !x.startsWith("harness-fail:")); return r.length > 0 && r.every(x => /:ok/.test(x)); };
+// Delivered when the email reached the team (route or fallback); a Slack-only miss is recorded in notify_error.
+export const delivered = res => res.includes("harness:ok") || res.some(x => x.startsWith("mail:ok"));

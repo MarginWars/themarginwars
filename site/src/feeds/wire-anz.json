@@ -1,106 +1,106 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "The Margin Wars | The Rulebook Wire / AU & NZ [Preview]",
-  "home_page_url": "https://calm.themarginwars.pages.dev/wire/?market=anz",
-  "feed_url": "https://calm.themarginwars.pages.dev/feeds/wire-anz.json",
-  "description": "Preview, pending Avi’s review",
+  "title": "The Margin Wars | The Rulebook Wire / AU & NZ",
+  "home_page_url": "https://themarginwars.com/wire/?market=anz",
+  "feed_url": "https://themarginwars.com/feeds/wire-anz.json",
+  "description": "Official sources, practical moves.",
   "language": "en-US",
   "items": [
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/nz-commercial-cards",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/nz-commercial-cards/",
+      "id": "https://themarginwars.com/feeds/id/wire/nz-commercial-cards",
+      "url": "https://themarginwars.com/wire/items/nz-commercial-cards/",
       "title": "NZ moves on commercial cards",
-      "content_text": "[cost down] So what for merchants: Lower regulated commercial-card interchange is coming; confirm what your acquirer passes through. Preview, pending Avi’s review. The 22 October decision introduces commercial credit-card interchange limits on Mastercard and Visa. Who: New Zealand merchants and acquirers. Effective: 2027-04-22. Official source: https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
+      "content_text": "[cost down] So what for merchants: Lower regulated commercial-card interchange is coming; confirm what your acquirer passes through. The 22 October decision introduces commercial credit-card interchange limits on Mastercard and Visa. Who: New Zealand merchants and acquirers. Effective: 2027-04-22. Official source: https://www.comcom.govt.nz/regulated-industries/projects/interchange-fee-regulation/",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-network-disclosure",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-network-disclosure/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-network-disclosure",
+      "url": "https://themarginwars.com/wire/items/au-network-disclosure/",
       "title": "Scheme fees come into view",
-      "content_text": "[deadline] So what for merchants: Use the new scheme-fee disclosures to challenge unexplained line items. Preview, pending Avi’s review. First quarterly aggregate fee publications by designated card networks were due for the July–September period. Who: Card networks; acquiring teams. Effective: 2026-10-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[deadline] So what for merchants: Use the new scheme-fee disclosures to challenge unexplained line items. First quarterly aggregate fee publications by designated card networks were due for the July–September period. Who: Card networks; acquiring teams. Effective: 2026-10-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-acquirer-disclosure",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-acquirer-disclosure/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-acquirer-disclosure",
+      "url": "https://themarginwars.com/wire/items/au-acquirer-disclosure/",
       "title": "Acquirer fee disclosures begin",
-      "content_text": "[deadline] So what for merchants: Compare published acquirer fees with your own card mix and contract. Preview, pending Avi’s review. Qualifying large acquirers must publish merchant service fee data by merchant size and card type. Who: Large acquirers and merchants. Effective: 2026-10-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[deadline] So what for merchants: Compare published acquirer fees with your own card mix and contract. Qualifying large acquirers must publish merchant service fee data by merchant size and card type. Who: Large acquirers and merchants. Effective: 2026-10-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-surcharging",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-surcharging/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-surcharging",
+      "url": "https://themarginwars.com/wire/items/au-surcharging/",
       "title": "Australia: card surcharge reset",
-      "content_text": "[neutral] So what for merchants: Recheck checkout pricing: designated card-network surcharge rules changed. Preview, pending Avi’s review. eftpos, Mastercard and Visa no-surcharge rules apply from 1 October after the RBA removed its prohibition on those rules. Who: Australian merchants and acquirers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
+      "content_text": "[neutral] So what for merchants: Recheck checkout pricing: designated card-network surcharge rules changed. eftpos, Mastercard and Visa no-surcharge rules apply from 1 October after the RBA removed its prohibition on those rules. Who: Australian merchants and acquirers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-domestic-interchange",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-domestic-interchange/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-domestic-interchange",
+      "url": "https://themarginwars.com/wire/items/au-domestic-interchange/",
       "title": "Domestic interchange: lower caps",
-      "content_text": "[cost down] So what for merchants: Lower domestic interchange caps make pass-through worth checking; net merchant savings depend on your terms. Preview, pending Avi’s review. Revised interchange regulation applies to domestic-issued card transactions acquired in Australia. Who: Australian acquirers and issuers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[cost down] So what for merchants: Lower domestic interchange caps make pass-through worth checking; net merchant savings depend on your terms. Revised interchange regulation applies to domestic-issued card transactions acquired in Australia. Who: Australian acquirers and issuers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-net-compensation",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-net-compensation/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-net-compensation",
+      "url": "https://themarginwars.com/wire/items/au-net-compensation/",
       "title": "Issuer compensation rules change",
-      "content_text": "[neutral] So what for merchants: Check issuer incentives against the amended compensation rules. Preview, pending Avi’s review. The amended net-compensation regime starts, with transitional arrangements for 2026/27. Who: Card networks and issuers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[neutral] So what for merchants: Check issuer incentives against the amended compensation rules. The amended net-compensation regime starts, with transitional arrangements for 2026/27. Who: Card networks and issuers. Effective: 2026-10-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-pass-through",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-pass-through/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-pass-through",
+      "url": "https://themarginwars.com/wire/items/au-pass-through/",
       "title": "Next: prove interchange pass-through",
-      "content_text": "[deadline] So what for merchants: Ask your acquirer how the interchange reduction reached your statement. Preview, pending Avi’s review. First publication of large acquirers’ interchange pass-through measures covers October–December 2026. Who: Large acquirers and merchant finance teams. Effective: 2027-01-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[deadline] So what for merchants: Ask your acquirer how the interchange reduction reached your statement. First publication of large acquirers’ interchange pass-through measures covers October–December 2026. Who: Large acquirers and merchant finance teams. Effective: 2027-01-30. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-foreign-cards",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-foreign-cards/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-foreign-cards",
+      "url": "https://themarginwars.com/wire/items/au-foreign-cards/",
       "title": "Foreign-issued cards get a cap",
-      "content_text": "[deadline] So what for merchants: Review foreign-card pricing before the new caps apply. Preview, pending Avi’s review. Interchange caps extend to foreign-issued card transactions acquired in Australia. Who: Cross-border acquiring teams. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[deadline] So what for merchants: Review foreign-card pricing before the new caps apply. Interchange caps extend to foreign-issued card transactions acquired in Australia. Who: Cross-border acquiring teams. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-statements",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-statements/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-statements",
+      "url": "https://themarginwars.com/wire/items/au-statements/",
       "title": "Merchant statements get sharper",
-      "content_text": "[deadline] So what for merchants: Make sure the new statement detail reaches your reconciliation process. Preview, pending Avi’s review. More statement detail is required from the first full statement period starting on or after 1 April. Who: Australian acquirers and merchants. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[deadline] So what for merchants: Make sure the new statement detail reaches your reconciliation process. More statement detail is required from the first full statement period starting on or after 1 April. Who: Australian acquirers and merchants. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/au-scheme-roadmap",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/au-scheme-roadmap/",
+      "id": "https://themarginwars.com/feeds/id/wire/au-scheme-roadmap",
+      "url": "https://themarginwars.com/wire/items/au-scheme-roadmap/",
       "title": "Scheme-fee roadmap expected",
-      "content_text": "[neutral] So what for merchants: Watch for the fee roadmap; it is not itself a price cap. Preview, pending Avi’s review. The RBA expects a scheme-fee roadmap by 1 April; this is an expectation, not a new fee cap. Who: Card networks and acquiring teams. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
+      "content_text": "[neutral] So what for merchants: Watch for the fee roadmap; it is not itself a price cap. The RBA expects a scheme-fee roadmap by 1 April; this is an expectation, not a new fee cap. Who: Card networks and acquiring teams. Effective: 2027-04-01. Official source: https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/impact-and-implementation.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "AU & NZ"

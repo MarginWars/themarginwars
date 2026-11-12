@@ -15,7 +15,7 @@ M=ns2['M'];CON=ns2['CONTRAST']
 TARGET=(H/'qa_suite.py').read_text().split("TARGET=r'''")[1].split("'''")[0]
 eng,pset,part,parts=sys.argv[1],sys.argv[2],int(sys.argv[3]),int(sys.argv[4])
 routes=json.loads((H/'routes.json').read_text())
-KEY=['index.html','about.html','advisory.html','speaking.html','contact.html','writing.html','warroom.html','arcade.html','daily.html','ep1.html','calendar/index.html','wire/items/uk-fee-transparency/index.html']
+KEY=['index.html','about.html','advisory.html','speaking.html','contact.html','writing.html','warroom.html','arcade.html','daily.html','ep1.html','calendar/index.html','wire/items/uk-fee-transparency/index.html','404.html']
 def profiles(p):
   if pset=='core':return [('w375',{'viewport':{'width':375,'height':812}}),('w390',{'viewport':{'width':390,'height':844}}),('w768',{'viewport':{'width':768,'height':1024}}),('w1440',{'viewport':{'width':1440,'height':900}})]
   D=p.devices;mob=lambda n:{k:v for k,v in D[n].items() if not (eng=='firefox' and k=='is_mobile')}
@@ -46,9 +46,13 @@ with sync_playwright() as p:
    P.evaluate("async()=>{const h=document.body.scrollHeight;for(let y=0;y<h;y+=600){scrollTo(0,y);await new Promise(r=>setTimeout(r,25))}scrollTo({top:0,behavior:'instant'})}");P.wait_for_timeout(250)
    if name=='zoom200':P.evaluate("document.documentElement.style.fontSize='200%'");P.wait_for_timeout(150)
    base=f.replace('/','_').replace('.html','')
-   for state in ('default','expanded'):
+   for state in (('default','expanded','formerror','formsuccess') if f=='contact.html' else ('default','expanded')):
     if state=='expanded':
      P.evaluate("""()=>{document.querySelectorAll('details').forEach(d=>d.open=true);document.querySelectorAll('[data-fx-tools],.fx-prefs').forEach(d=>d.hidden=false);let j=document.querySelectorAll('.wk-jack');if(j.length)j[j.length-1].click()}""");P.wait_for_timeout(120)
+    if state=='formerror':
+     P.evaluate("()=>{const f=document.getElementById('contact-form');f.querySelector('.cf-send').click()}");P.wait_for_timeout(200)
+    if state=='formsuccess':
+     P.evaluate("()=>{const f=document.getElementById('contact-form');f.querySelector('.cf-body').hidden=true;const d=document.getElementById('cf-done');d.hidden=false;d.querySelector('.cf-ref').textContent='Reference: 00000000'}");P.wait_for_timeout(150)
     k=f'{f}|{name}|{state}'
     try:
      sp=P.evaluate(SPJS) if not name.startswith('zoom') else {}
@@ -58,8 +62,8 @@ with sync_playwright() as p:
     elif sp:r2['spacing_info']={x:sp[x] for x in ('edgeDev','nIntr') if sp.get(x)}
     if errs:r2['errors']=list(dict.fromkeys(errs))
     res[k]={a:v for a,v in r2.items() if v}
-    if state=='default':
-     try:P.screenshot(path=str(SHOTS/f'{eng}_{name}_{base}.png'),full_page=(pset=='core'))
+    if state in ('default','formerror','formsuccess'):
+     try:P.screenshot(path=str(SHOTS/f'{eng}_{name}_{base}{"" if state=="default" else "_"+state}.png'),full_page=(pset=='core'))
      except Exception as e:res[k]['shoterr']=str(e)[:100]
    c.close()
   print('DONE',eng,name,flush=True)

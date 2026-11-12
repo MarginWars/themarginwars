@@ -18,20 +18,20 @@ with sync_playwright() as p:
   return {'ok':P.url.endswith('contact.html') and len(mails)>0,'cta':txt,'href':href,'landed':P.url.split('/')[-1],'mail_links':mails,'linkedin_links':li,'clicks':1}
  def contact_picker(P):
   P.goto(B+'contact.html',wait_until='networkidle')
-  f=P.locator('form.wk-route');n=f.count()
-  if not n:return {'ok':True,'note':'no form on page'}
-  opts=f.locator('label.wk-opt');k=opts.count();res=[]
+  f=P.locator('form#contact-form');n=f.count()
+  if not n:return {'ok':False,'note':'no contact form'}
+  opts=f.locator('label.wk-opt');k=opts.count();sel=[]
   for i in range(k):
-   opts.nth(i).click();P.wait_for_timeout(80)
-   a=f.locator('a').last;res.append(a.get_attribute('href')[:60] if a.count() else None)
-  lab=P.evaluate("()=>[...document.querySelectorAll('form.wk-route input')].every(i=>i.closest('label')||document.querySelector('label[for=\"'+i.id+'\"]')||i.getAttribute('aria-label'))")
-  legend=P.evaluate("()=>!!document.querySelector('form.wk-route fieldset legend')")
-  return {'ok':lab and legend and all(res),'options':k,'labelled':lab,'legend':legend,'cta_hrefs':res,'server_submit':False}
+   opts.nth(i).click();P.wait_for_timeout(60);sel.append(P.evaluate("(document.querySelector('#contact-form input[name=topic]:checked')||{}).value"))
+  lab=P.evaluate("()=>[...document.querySelectorAll('#contact-form input:not([type=hidden]),#contact-form textarea')].filter(i=>i.name!=='website').every(i=>i.closest('label')||document.querySelector('label[for=\"'+i.id+'\"]')||i.getAttribute('aria-label'))")
+  legend=P.evaluate("()=>!!document.querySelector('#contact-form fieldset legend')")
+  mail=P.evaluate("()=>!!document.querySelector('#contact-form a[href^=\"mailto:\"]')")
+  return {'ok':lab and legend and mail and len(set(sel))==k==6,'options':k,'selected':sel,'labelled':lab,'legend':legend,'mailto_fallback':mail,'server_submit':True}
  def briefing(P):
   P.goto(B+'writing.html',wait_until='networkidle')
   a=P.locator('main a:has-text("invitation"), main a:has-text("Request")').first
   if not a.count():return {'ok':False,'note':'no invite link'}
-  t=a.inner_text();a.click();P.wait_for_load_state('networkidle');return {'ok':P.url.endswith('contact.html'),'link':t,'landed':P.url.split('/')[-1]}
+  t=a.inner_text();a.click();P.wait_for_load_state('networkidle');P.wait_for_timeout(300);chk=P.evaluate("(document.querySelector('#contact-form input[name=topic]:checked')||{}).value||null");return {'ok':'contact' in P.url and chk=='Briefing invitation','link':t,'landed':P.url.split('/')[-1],'preselected':chk}
  def browse(P):
   out={}
   for pg in ('advisory.html','speaking.html','warroom.html'):

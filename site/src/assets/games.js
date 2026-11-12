@@ -10,7 +10,7 @@ function shuffle(arr,r){arr=arr.slice();for(var i=arr.length-1;i>0;i--){var j=Ma
 function pick(seed,n,pool){return shuffle(pool||QB,rng(seed)).slice(0,n)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function base(){return location.protocol==='file:'?'https://review.themarginwars.pages.dev/':location.origin+location.pathname.replace(/[^/]*$/,'')}
-function liURL(path){return 'https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(base()+path)}
+function liURL(path){return 'https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(base()+path+(path.indexOf('?')<0?'?':'&')+'utm_source=linkedin&utm_medium=social&utm_campaign=visitor-share&utm_content='+path.replace(/[^a-z0-9]+/gi,'-'))}
 window.MW={ptDate:ptDate,pick:pick,hash:hash,liURL:liURL,get:get,set:set,dealRange:dealRange};
 /* quiz runner */
 function runQs(el,qs,seed,opt,done){

@@ -1,26 +1,26 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "The Margin Wars | The Rulebook Wire / Brazil [Preview]",
-  "home_page_url": "https://calm.themarginwars.pages.dev/wire/?market=br",
-  "feed_url": "https://calm.themarginwars.pages.dev/feeds/wire-br.json",
-  "description": "Preview, pending Avi’s review",
+  "title": "The Margin Wars | The Rulebook Wire / Brazil",
+  "home_page_url": "https://themarginwars.com/wire/?market=br",
+  "feed_url": "https://themarginwars.com/feeds/wire-br.json",
+  "description": "Official sources, practical moves.",
   "language": "en-US",
   "items": [
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/pix-dict-default",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/pix-dict-default/",
+      "id": "https://themarginwars.com/feeds/id/wire/pix-dict-default",
+      "url": "https://themarginwars.com/wire/items/pix-dict-default/",
       "title": "Pix DICT: refund monitoring default",
-      "content_text": "[neutral] So what for merchants: Check refund integrations that rely on implicit monitoring defaults. Preview, pending Avi’s review. DICT 2.13.0 changes the default value of Refund MonitorAccount to false. Review integrations for implicit defaults. Who: Pix participants and refund engineering teams. Effective: Not confirmed / not applicable. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+      "content_text": "[neutral] So what for merchants: Check refund integrations that rely on implicit monitoring defaults. DICT 2.13.0 changes the default value of Refund MonitorAccount to false. Review integrations for implicit defaults. Who: Pix participants and refund engineering teams. Effective: Not confirmed / not applicable. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Brazil"
       ]
     },
     {
-      "id": "https://calm.themarginwars.pages.dev/feeds/id/wire/pix-dict-rc",
-      "url": "https://calm.themarginwars.pages.dev/wire/items/pix-dict-rc/",
+      "id": "https://themarginwars.com/feeds/id/wire/pix-dict-rc",
+      "url": "https://themarginwars.com/wire/items/pix-dict-rc/",
       "title": "Pix DICT: recovery API clarifications",
-      "content_text": "[neutral] So what for merchants: Review recovery API changes before implementation; a candidate release is not a deadline. Preview, pending Avi’s review. The September release candidate adds FundsRecoveryId path-parameter documentation and clarifies refund-request restrictions. A release candidate is not a compliance deadline. Who: Pix participants and fraud operations. Effective: Not confirmed / not applicable. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
+      "content_text": "[neutral] So what for merchants: Review recovery API changes before implementation; a candidate release is not a deadline. The September release candidate adds FundsRecoveryId path-parameter documentation and clarifies refund-request restrictions. A release candidate is not a compliance deadline. Who: Pix participants and fraud operations. Effective: Not confirmed / not applicable. Official source: https://www.bcb.gov.br/content/estabilidadefinanceira/pix/changelog.html",
       "date_published": "2026-11-08T14:00:00Z",
       "tags": [
         "Brazil"

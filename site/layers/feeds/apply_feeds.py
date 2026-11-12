@@ -7,9 +7,11 @@ import datetime as dt,html,json,os,re,shutil,urllib.parse,xml.etree.ElementTree 
 from email.utils import format_datetime
 from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parent/'site_calm';DATA=ROOT/'assets/feeds';OUT=ROOT/'feeds'
-BASE=os.environ.get('FEED_BASE_URL','https://calm.themarginwars.pages.dev').rstrip('/')
-assert 'themarginwars.pages.dev' in BASE and BASE!='https://themarginwars.pages.dev','Preview feed base required'
-NOW='2026-11-08';STAMP=NOW+'T14:00:00Z';PREVIEW='Preview, pending Avi’s review'
+# Production block (Avi approved 10 Nov 2026, 9:47 AM PT): feeds and links use the production origin
+# and carry no preview label. FEED_BASE_URL may override for dev only (must still be a Margin Wars host).
+BASE=os.environ.get('FEED_BASE_URL','https://themarginwars.com').rstrip('/')
+assert BASE in ('https://themarginwars.com',) or BASE.endswith('.themarginwars.pages.dev') or BASE.endswith('themarginwars-dev.pages.dev'),'Unexpected feed base'
+NOW='2026-11-08';STAMP=NOW+'T14:00:00Z'
 MARKETS={'us':'US','ukeu':'UK / EU','br':'Brazil','ca-latam':'Canada & LATAM','anz':'AU & NZ','global':'Global'}
 TYPES=['network rule','regulation','policy'];e=html.escape
 OUT.mkdir(exist_ok=True);DATA.mkdir(exist_ok=True)
@@ -33,9 +35,9 @@ def day(d):return dt.date.fromisoformat(d).strftime('%d %b %Y').lstrip('0')
 def href(path):return BASE+path
 AT='http://www.w3.org/2005/Atom';ET.register_namespace('atom',AT)
 def desc(x,kind):
- if kind=='wire':return f"{PREVIEW}. {x['changed']} Who: {x['hits']}. Effective: {x.get('effective') or 'Not confirmed / not applicable'}. Official source: {x['source']}"
- if kind=='bp-watch':return f"{PREVIEW}. {x['impact']} Method: {x['method']} The move: {x['move']} Official source: {x['source']}"
- return f"{PREVIEW}. {x.get('description','')} Official source: {x['source']}"
+ if kind=='wire':return f"{x['changed']} Who: {x['hits']}. Effective: {x.get('effective') or 'Not confirmed / not applicable'}. Official source: {x['source']}"
+ if kind=='bp-watch':return f"{x['impact']} Method: {x['method']} The move: {x['move']} Official source: {x['source']}"
+ return f"{x.get('description','')} Official source: {x['source']}"
 # Share the reviewed impact annotations with RSS/Atom/JSON, not only the web view.
 from apply_feed_ux import prepare_annotations
 FEED_ANNOTATIONS=prepare_annotations(wire)
@@ -51,17 +53,17 @@ def tag(p,name,text=None,**attrs):
  if text is not None:q.text=str(text)
  return q
 def rss(name,title,items,kind,page):
- r=ET.Element('rss',{'version':'2.0'});c=tag(r,'channel');tag(c,'title','The Margin Wars | '+title+' [Preview]');tag(c,'link',href(page));tag(c,'description',PREVIEW+' — official sources, practical moves.');tag(c,'language','en-us');tag(c,'lastBuildDate',format_datetime(dt.datetime.fromisoformat(STAMP.replace('Z','+00:00'))));tag(c,'{'+AT+'}link',href=href('/feeds/'+name+'.xml'),rel='self',type='application/rss+xml')
+ r=ET.Element('rss',{'version':'2.0'});c=tag(r,'channel');tag(c,'title','The Margin Wars | '+title);tag(c,'link',href(page));tag(c,'description','Official sources, practical moves.');tag(c,'language','en-us');tag(c,'lastBuildDate',format_datetime(dt.datetime.fromisoformat(STAMP.replace('Z','+00:00'))));tag(c,'{'+AT+'}link',href=href('/feeds/'+name+'.xml'),rel='self',type='application/rss+xml')
  for x in items:
   i=tag(c,'item');tag(i,'title',x['title']);tag(i,'link',url(x,kind));tag(i,'guid',href('/feeds/id/'+kind+'/'+x['id']),isPermaLink='false');tag(i,'pubDate',format_datetime(dt.datetime.fromisoformat((x.get('published',x.get('added',x['date'])))+'T14:00:00+00:00')));tag(i,'description',desc(x,kind));tag(i,'category',MARKETS[x['market']])
  ET.ElementTree(r).write(OUT/(name+'.xml'),encoding='utf-8',xml_declaration=True)
 def atom(name,title,items,kind,page):
- ns='{'+AT+'}';a=ET.Element(ns+'feed');tag(a,ns+'title','The Margin Wars | '+title+' [Preview]');tag(a,ns+'id',href('/feeds/'+name+'.atom'));tag(a,ns+'updated',STAMP);tag(a,ns+'subtitle',PREVIEW);tag(a,ns+'link',href=href('/feeds/'+name+'.atom'),rel='self',type='application/atom+xml');tag(a,ns+'link',href=href(page));author=tag(a,ns+'author');tag(author,ns+'name','The Margin Wars')
+ ns='{'+AT+'}';a=ET.Element(ns+'feed');tag(a,ns+'title','The Margin Wars | '+title);tag(a,ns+'id',href('/feeds/'+name+'.atom'));tag(a,ns+'updated',STAMP);tag(a,ns+'subtitle','Official sources, practical moves.');tag(a,ns+'link',href=href('/feeds/'+name+'.atom'),rel='self',type='application/atom+xml');tag(a,ns+'link',href=href(page));author=tag(a,ns+'author');tag(author,ns+'name','The Margin Wars')
  for x in items:
   q=tag(a,ns+'entry');tag(q,ns+'title',x['title']);tag(q,ns+'id',href('/feeds/id/'+kind+'/'+x['id']));tag(q,ns+'updated',(x.get('published',x.get('added',x['date'])))+'T14:00:00Z');tag(q,ns+'link',href=url(x,kind));tag(q,ns+'summary',desc(x,kind));tag(q,ns+'category',term=x['market'])
  ET.ElementTree(a).write(OUT/(name+'.atom'),encoding='utf-8',xml_declaration=True)
 def jsonfeed(name,title,items,kind,page):
- obj=dict(version='https://jsonfeed.org/version/1.1',title='The Margin Wars | '+title+' [Preview]',home_page_url=href(page),feed_url=href('/feeds/'+name+'.json'),description=PREVIEW,language='en-US',items=[dict(id=href('/feeds/id/'+kind+'/'+x['id']),url=url(x,kind),title=x['title'],content_text=desc(x,kind),date_published=x.get('published',x.get('added',x['date']))+'T14:00:00Z',tags=[MARKETS[x['market']]]) for x in items]);(OUT/(name+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+ obj=dict(version='https://jsonfeed.org/version/1.1',title='The Margin Wars | '+title,home_page_url=href(page),feed_url=href('/feeds/'+name+'.json'),description='Official sources, practical moves.',language='en-US',items=[dict(id=href('/feeds/id/'+kind+'/'+x['id']),url=url(x,kind),title=x['title'],content_text=desc(x,kind),date_published=x.get('published',x.get('added',x['date']))+'T14:00:00Z',tags=[MARKETS[x['market']]]) for x in items]);(OUT/(name+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
 def bundle(name,title,items,kind,page):
  rss(name,title,items,kind,page);atom(name,title,items,kind,page);jsonfeed(name,title,items,kind,page)
 # Current research batch: publication timestamps describe this briefing, not the source's announcement.
@@ -79,12 +81,12 @@ def fold(s):
   if n+b>75:lines.append(cur);cur=' '+c;n=1+b
   else:cur+=c;n+=b
  lines.append(cur);return '\r\n'.join(lines)
-ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The Margin Wars//Effective Dates Preview//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:The Margin Wars — Preview dates','X-WR-CALDESC:'+icaltext(PREVIEW+'; all-day source-calendar dates, not Pacific-time deadlines. Past milestones retained for context.')]
+ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The Margin Wars//Effective Dates//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:The Margin Wars — Effective dates','X-WR-CALDESC:'+icaltext('All-day source-calendar dates, not Pacific-time deadlines. Past milestones retained for context.')]
 for x in dates:
  start=dt.date.fromisoformat(x['date']);end=start+dt.timedelta(days=1)
- ics+=['BEGIN:VEVENT','UID:'+x['id']+'@themarginwars.com','DTSTAMP:20261108T140000Z','DTSTART;VALUE=DATE:'+start.strftime('%Y%m%d'),'DTEND;VALUE=DATE:'+end.strftime('%Y%m%d'),'SUMMARY:'+icaltext('[PREVIEW] '+x['title']),'DESCRIPTION:'+icaltext(x['kind']+'. '+x['description']+'\nOfficial source: '+x['source']+'\n'+PREVIEW),'URL:'+url(x,'calendar'),'TRANSP:TRANSPARENT',('STATUS:TENTATIVE' if x['kind']=='Policy expectation' else 'STATUS:CONFIRMED'),'SEQUENCE:0','END:VEVENT']
+ ics+=['BEGIN:VEVENT','UID:'+x['id']+'@themarginwars.com','DTSTAMP:20261108T140000Z','DTSTART;VALUE=DATE:'+start.strftime('%Y%m%d'),'DTEND;VALUE=DATE:'+end.strftime('%Y%m%d'),'SUMMARY:'+icaltext(x['title']),'DESCRIPTION:'+icaltext(x['kind']+'. '+x['description']+'\nOfficial source: '+x['source']),'URL:'+url(x,'calendar'),'TRANSP:TRANSPARENT',('STATUS:TENTATIVE' if x['kind']=='Policy expectation' else 'STATUS:CONFIRMED'),'SEQUENCE:0','END:VEVENT']
 ics+=['END:VCALENDAR'];(OUT/'dates.ics').write_bytes(('\r\n'.join(fold(s) for s in ics)+'\r\n').encode())
-AUTO='<!--feeds-discovery-->'+''.join(f'<link rel="alternate" type="{typ}" title="{e(title)} [Preview]" href="/feeds/{file}">' for typ,title,file in [('application/rss+xml','The Rulebook Wire','wire.xml'),('application/atom+xml','The Rulebook Wire — Atom','wire.atom'),('application/feed+json','The Rulebook Wire — JSON','wire.json'),('application/rss+xml','Basis-Point Watch','bp-watch.xml'),('application/rss+xml','Effective Dates','calendar.xml'),('text/calendar','Effective Dates — calendar','dates.ics'),('application/rss+xml','Route Brief Updates','route-briefs.xml')])+'<!--/feeds-discovery-->'
+AUTO='<!--feeds-discovery-->'+''.join(f'<link rel="alternate" type="{typ}" title="{e(title)}" href="/feeds/{file}">' for typ,title,file in [('application/rss+xml','The Rulebook Wire','wire.xml'),('application/atom+xml','The Rulebook Wire — Atom','wire.atom'),('application/feed+json','The Rulebook Wire — JSON','wire.json'),('application/rss+xml','Basis-Point Watch','bp-watch.xml'),('application/rss+xml','Effective Dates','calendar.xml'),('text/calendar','Effective Dates — calendar','dates.ics'),('application/rss+xml','Route Brief Updates','route-briefs.xml')])+'<!--/feeds-discovery-->'
 def subscribe(name,label='Copy RSS URL'):
  return f'<div class="f-subscribe"><a href="/feeds/{name}.xml">RSS</a><a href="/feeds/{name}.atom">Atom</a><a href="/feeds/{name}.json">JSON</a><button hidden type="button" data-copy="/feeds/{name}.xml">{label}</button></div>'
 def flag(x):
@@ -96,7 +98,7 @@ def filters(types=True):
  return '<form class="f-filter" hidden aria-label="Filter entries"><label for="f-market">Market<select id="f-market"><option value="">All markets</option>'+opts+'</select></label>'+('<label for="f-type">Type<select id="f-type"><option value="">All types</option>'+ts+'</select></label>' if types else '')+'<output id="f-count" aria-live="polite"></output></form><noscript><p class="f-note">All items are shown. Use your browser’s Find command to locate a market.</p></noscript>'
 def shell(slug,title,deck,body,n,kicker):
  nav=''.join(f'<a href="/{s}/"'+(' aria-current="page"' if s==slug else '')+f'>{t}</a>' for s,t in [('wire','Wire'),('bp-watch','BP Watch'),('calendar','Calendar'),('feeds','Subscribe')])
- text=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(title)} | The Margin Wars — Preview</title><meta name="robots" content="noindex,nofollow"><meta name="feed-base" content="{e(BASE)}"><meta name="description" content="{e(deck)}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Martian+Mono:wght@300..600&display=swap"><link rel="stylesheet" href="/assets/feeds.css"><script src="/assets/feeds.js" defer></script>{AUTO}</head><body class="f-page"><a class="f-skip" href="#f-main">Skip to content</a><div class="f-shell"><header class="f-header"><a class="f-brand" href="/index.html">The Margin Wars</a><nav aria-label="Payments intelligence">{nav}</nav></header><div class="f-preview f-k"><b>{PREVIEW}</b><span>Research desk / {day(NOW)}</span></div><main id="f-main"><section class="f-hero" data-n="{n}"><p class="f-k">{e(kicker)}</p><h1>{e(title)}</h1><p class="f-deck">{e(deck)}</p><div class="f-jumps"><a href="/wire/">The rule</a><a href="/bp-watch/">The margin</a><a href="/calendar/">The deadline</a><a href="/index.html#route-brief">The route</a></div></section>{body}<p class="f-live" aria-live="polite"></p></main><footer class="f-footer"><span>Rules change. Own the line item.</span><a href="/index.html">Back to The Margin Wars ↗</a><a href="/contact.html">Bring us a margin problem</a></footer></div></body></html>'''
+ text=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(title)} | The Margin Wars</title><meta name="robots" content="index,follow"><meta name="feed-base" content="{e(BASE)}"><meta name="description" content="{e(deck)}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Martian+Mono:wght@300..600&display=swap"><link rel="stylesheet" href="/assets/feeds.css"><script src="/assets/feeds.js" defer></script>{AUTO}</head><body class="f-page"><a class="f-skip" href="#f-main">Skip to content</a><div class="f-shell"><header class="f-header"><a class="f-brand" href="/index.html">The Margin Wars</a><nav aria-label="Payments intelligence">{nav}</nav></header><div class="f-preview f-k"><span>Research desk / {day(NOW)}</span></div><main id="f-main"><section class="f-hero" data-n="{n}"><p class="f-k">{e(kicker)}</p><h1>{e(title)}</h1><p class="f-deck">{e(deck)}</p><div class="f-jumps"><a href="/wire/">The rule</a><a href="/bp-watch/">The margin</a><a href="/calendar/">The deadline</a><a href="/index.html#route-brief">The route</a></div></section>{body}<p class="f-live" aria-live="polite"></p></main><footer class="f-footer"><span>Rules change. Own the line item.</span><a href="/index.html">Back to The Margin Wars ↗</a><a href="/contact.html">Bring us a margin problem</a></footer></div></body></html>'''
  p=ROOT/slug/'index.html';p.parent.mkdir(exist_ok=True);p.write_text(text)
  # Screen-reader label without relying on another stylesheet.
  text=p.read_text().replace('</head>','<style>.f-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style></head>');p.write_text(text)
@@ -129,7 +131,7 @@ for x in wire:
  seen_markets.add(x['market'])
  if len(stripitems)>=3:break
  stripitems.append(f'<article class="f-stripitem"><small>{e(MARKETS[x["market"]])} / {e(x["type"])}</small><a href="/wire/#{x["id"]}">{e(x["title"])}</a></article>')
-strip='<!--feeds-home--><section class="f-strip" aria-labelledby="f-latest"><div class="f-striphead"><h2 id="f-latest">Latest from the Wire</h2><a href="/wire/">Open the research desk ↗</a></div><div class="f-stripgrid">'+''.join(stripitems)+'</div><p class="f-stripstatus">'+PREVIEW+'</p></section><!--/feeds-home-->'
+strip='<!--feeds-home--><section class="f-strip" aria-labelledby="f-latest"><div class="f-striphead"><h2 id="f-latest">Latest from the Wire</h2><a href="/wire/">Open the research desk ↗</a></div><div class="f-stripgrid">'+''.join(stripitems)+'</div></section><!--/feeds-home-->'
 for p in ROOT.rglob('*.html'):
  if p.parent.name in ['wire','bp-watch','calendar','feeds']:continue
  s=p.read_text();s=re.sub(r'<!--feeds-discovery-->.*?<!--/feeds-discovery-->','',s,flags=re.S);s=s.replace('</head>',AUTO+'</head>',1)
@@ -140,7 +142,7 @@ for p in ROOT.rglob('*.html'):
   if '/assets/feeds.js' not in s:s=s.replace('</head>','<script src="/assets/feeds.js" defer></script></head>',1)
   for x in routes:
    pat=r'(<article class="rb-brief" id="rb-'+re.escape(x['route_id'])+r'".*?<div class="rb-bh">.*?</h3>)'
-   badge='<!--feeds-badge--><span class="f-update">Updated '+day(x['date'])+' · Preview · <a href="/wire/#'+x['wire_id']+'">Linked rule context ↗</a></span><!--/feeds-badge-->'
+   badge='<!--feeds-badge--><span class="f-update">Updated '+day(x['date'])+' · <a href="/wire/#'+x['wire_id']+'">Linked rule context ↗</a></span><!--/feeds-badge-->'
    s=re.sub(pat,lambda m:m.group(1)+badge,s,count=1,flags=re.S)
  if p.name=='index.html' and p.parent==ROOT:
   end=s.find('</section>',s.find('<section class="hero"'))
@@ -148,7 +150,7 @@ for p in ROOT.rglob('*.html'):
  p.write_text(s)
 # Publish only our MIME rules, preserving all prior header policy.
 hp=ROOT/'_headers';hs=hp.read_text() if hp.exists() else '';hs=re.sub(r'\n# feeds-headers.*?# /feeds-headers\n','\n',hs,flags=re.S)
-hs=hs.rstrip()+'\n';hs+='\n# feeds-headers\n/feeds/*.xml\n  Content-Type: application/rss+xml; charset=utf-8\n  Cache-Control: public, max-age=300\n/feeds/*.atom\n  Content-Type: application/atom+xml; charset=utf-8\n/feeds/*.json\n  Content-Type: application/feed+json; charset=utf-8\n/feeds/dates.ics\n  Content-Type: text/calendar; charset=utf-8\n  Content-Disposition: inline; filename="margin-wars-dates-preview.ics"\n# /feeds-headers\n';hp.write_text(hs)
+hs=hs.rstrip()+'\n';hs+='\n# feeds-headers\n/feeds/*.xml\n  Content-Type: application/rss+xml; charset=utf-8\n  Cache-Control: public, max-age=300\n/feeds/*.atom\n  Content-Type: application/atom+xml; charset=utf-8\n/feeds/*.json\n  Content-Type: application/feed+json; charset=utf-8\n/feeds/dates.ics\n  Content-Type: text/calendar; charset=utf-8\n  Content-Disposition: inline; filename="margin-wars-dates.ics"\n# /feeds-headers\n';hp.write_text(hs)
 print('FEEDS:',len(wire),'Wire;',len(bp),'BP Watch;',len(dates),'calendar;',len(routes),'route updates;',len(list(OUT.glob('*.xml'))),'RSS feeds')
 
 # Feed-owned UX layer runs last, after all generated content.
