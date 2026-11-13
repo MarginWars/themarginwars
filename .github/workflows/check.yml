@@ -1,0 +1,132 @@
+name: check
+# Every PR and push. Job names are the required status checks in ops/github/ruleset-main.json.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  merge_group:
+permissions:
+  contents: read
+concurrency:
+  group: check-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+env:
+  PYTHONHASHSEED: "0"
+jobs:
+  compliance:
+    name: compliance
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Private terms (optional extra list from a secret; never printed)
+        env: { EXTRA: "${{ secrets.COMPLIANCE_EXTRA_TERMS }}" }
+        run: |
+          if [ -n "$EXTRA" ]; then printf '%s\n' "$EXTRA" > "$RUNNER_TEMP/extra.txt"; echo "COMPLIANCE_EXTRA_TERMS_FILE=$RUNNER_TEMP/extra.txt" >> "$GITHUB_ENV"; fi
+      - run: python3 qa/compliance/check_content.py
+  frontmatter-limits:
+    name: frontmatter-limits
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: python3 qa/check_frontmatter.py ${{ github.event_name == 'pull_request' && format('--changed origin/{0}', github.base_ref) || '' }}
+  claims:
+    name: claims
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: python3 qa/check_claims.py
+  links-docs:
+    name: links-docs
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: python3 qa/check_links.py --docs
+  secrets:
+    name: secrets
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: gitleaks (full history, redacted)
+        run: |
+          V=8.28.0; SHA=a65b5253807a68ac0cafa4414031fd740aeb55f54fb7e55f386acb52e6a840eb
+          curl -sSL -o gl.tgz https://github.com/gitleaks/gitleaks/releases/download/v$V/gitleaks_${V}_linux_x64.tar.gz
+          echo "$SHA  gl.tgz" | sha256sum -c - && tar xzf gl.tgz gitleaks
+          ./gitleaks git --config .gitleaks.toml --redact --no-banner --exit-code 1 .
+  standards-lock:
+    name: standards-lock
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 qa/check_standards_lock.py
+  functions:
+    name: functions
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - name: Assistant contract tests (guard from secrets when available)
+        env:
+          MW_GUARD: "${{ secrets.MW_GUARD }}"
+          MW_GUARD_TESTS: "${{ secrets.MW_GUARD_TESTS }}"
+        run: |
+          if [ -n "$MW_GUARD" ]; then printf '%s' "$MW_GUARD" > "$RUNNER_TEMP/g.json"; export MW_GUARD_FILE="$RUNNER_TEMP/g.json"; fi
+          if [ -n "$MW_GUARD_TESTS" ]; then printf '%s' "$MW_GUARD_TESTS" > "$RUNNER_TEMP/t.json"; export MW_GUARD_TESTS_FILE="$RUNNER_TEMP/t.json"; fi
+          node qa/functions/test_soldier.mjs
+          for f in site/functions/api/*.js site/functions/api/mk/*.js site/functions/*.js; do node --check "$f"; done
+  site-build:
+    name: site-build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Build site/dist and compare with the committed manifest (byte-identical)
+        run: |
+          bash site/build.sh dist
+          diff -u site/dist.md5 qa-out/dist.md5 && echo "dist matches site/dist.md5"
+      - name: Layers fixed point (site/src is what the layers produce)
+        run: bash site/build.sh check
+      - run: python3 qa/check_links.py --dist site/dist
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: site-build, path: "qa-out/", retention-days: 14 }
+  site-gates:
+    name: site-gates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Only when the site, functions or gates change
+        id: f
+        run: |
+          base="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ] || git diff --name-only "$base" HEAD | grep -qE '^(site/|qa/|requirements.txt)'; then echo "run=1" >> "$GITHUB_OUTPUT"; else echo "run=0" >> "$GITHUB_OUTPUT"; echo "No site changes: gate passes without a browser run."; fi
+      - uses: actions/setup-python@v5
+        if: steps.f.outputs.run == '1'
+        with: { python-version: "3.13", cache: pip }
+      - if: steps.f.outputs.run == '1'
+        run: pip install -r requirements.txt && python3 -m playwright install --with-deps chromium
+      - name: Text overflow (6 widths), spacing (9 widths), symmetry/contrast/targets (Chromium core)
+        if: steps.f.outputs.run == '1'
+        env: { QA_SHARDS: "4" }
+        run: qa/run_gates.sh browser
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.f.outputs.run == '1'
+        with: { name: site-gates, path: "qa-out/browser/", retention-days: 14 }

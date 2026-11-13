@@ -1,0 +1,93 @@
+name: deploy
+# dev:        every push to main (= every merged PR) -> Cloudflare Pages project themarginwars-dev (branch main)
+# production: the same build, promoted to project themarginwars after Avi approves the `production` environment.
+#             Requires the latest nightly run on main to be green. Manual re-run: Actions -> deploy -> Run workflow.
+# Secrets: CLOUDFLARE_API_TOKEN (per environment, Pages:Edit on the account only). Variable: CLOUDFLARE_ACCOUNT_ID.
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "requirements.txt", ".github/workflows/deploy.yml"]
+  workflow_dispatch:
+    inputs:
+      target: { description: "dev or production", required: true, default: dev, type: choice, options: [dev, production] }
+permissions:
+  contents: read
+  actions: read
+env:
+  PYTHONHASHSEED: "0"
+  WRANGLER: "wrangler@4"
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    if: github.ref == 'refs/heads/main'
+    outputs:
+      md5: ${{ steps.b.outputs.md5 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - id: b
+        run: |
+          bash site/build.sh dist
+          diff -u site/dist.md5 qa-out/dist.md5
+          echo "md5=$(md5sum < qa-out/dist.md5 | cut -c1-32)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with: { name: site-dist, path: "site/dist/", retention-days: 30 }
+  dev:
+    needs: build
+    if: github.event_name == 'push' || inputs.target == 'dev' || inputs.target == 'production'
+    runs-on: ubuntu-24.04
+    environment: { name: dev, url: "https://themarginwars-dev.pages.dev" }
+    concurrency: { group: deploy-dev, cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: site-dist, path: site/dist }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - name: Deploy to themarginwars-dev (functions from site/functions)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "CLOUDFLARE_API_TOKEN is not set for the dev environment"; exit 1; }
+          cd site && npx --yes $WRANGLER pages deploy dist --project-name themarginwars-dev --branch main \
+            --commit-hash "$GITHUB_SHA" --commit-message "${GITHUB_SHA::12} dist ${{ needs.build.outputs.md5 }}" | tee ../deploy.log
+      - name: Smoke (dev)
+        run: |
+          for p in / /about /contact /speaking /briefing /ops-check-no-such-page; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://themarginwars-dev.pages.dev$p"); echo "$p $c"; done
+      - run: echo "dev deployed $GITHUB_SHA (dist ${{ needs.build.outputs.md5 }})" >> "$GITHUB_STEP_SUMMARY"
+  production:
+    needs: [build, dev]
+    if: (github.event_name == 'push' || inputs.target == 'production') && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: { name: production, url: "https://themarginwars.com" }
+    concurrency: { group: deploy-production, cancel-in-progress: true }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Latest nightly on main must be green
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          c=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow nightly.yml --branch main --limit 1 --json conclusion --jq '.[0].conclusion')
+          echo "latest nightly: ${c:-none}"; [ "$c" = success ] || { echo "Run the nightly (Actions -> nightly -> Run workflow) and fix it first."; exit 1; }
+      - uses: actions/download-artifact@v4
+        with: { name: site-dist, path: site/dist }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - name: Record the rollback target, then deploy to themarginwars
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "CLOUDFLARE_API_TOKEN is not set for the production environment"; exit 1; }
+          prev=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/themarginwars/deployments?env=production&per_page=1" \
+            | python3 -c 'import json,sys;r=json.load(sys.stdin).get("result") or [{}];print(r[0].get("id",""))')
+          echo "rollback target (previous production deployment): ${prev:-unknown}" | tee -a "$GITHUB_STEP_SUMMARY"
+          cd site && npx --yes $WRANGLER pages deploy dist --project-name themarginwars --branch main \
+            --commit-hash "$GITHUB_SHA" --commit-message "${GITHUB_SHA::12} dist ${{ needs.build.outputs.md5 }}"
+      - name: Live check (production)
+        run: bash ops/ops_check.sh || true
+      - run: echo "production deployed $GITHUB_SHA (dist ${{ needs.build.outputs.md5 }}); rollback with ops/runbooks/rollback.md" >> "$GITHUB_STEP_SUMMARY"

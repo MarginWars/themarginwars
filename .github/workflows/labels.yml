@@ -1,0 +1,21 @@
+name: labels
+on:
+  push:
+    branches: [main]
+    paths: [".github/labels.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          python3 - <<'P'
+          import subprocess, yaml
+          for l in yaml.safe_load(open('.github/labels.yml')):
+              subprocess.run(['gh','label','create',l['name'],'--repo','${{ github.repository }}','--color',str(l['color']),'--description',l.get('description',''),'--force'],check=True)
+          P

@@ -1,0 +1,42 @@
+name: nightly
+# 2 AM Pacific. GitHub cron is UTC: 10:00 UTC = 2 AM PST (3 AM during PDT).
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  PYTHONHASHSEED: "0"
+jobs:
+  matrix:
+    name: matrix-full
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt && python3 -m playwright install --with-deps chromium webkit firefox
+      - name: Chromium, WebKit and Firefox x core widths and named devices
+        env: { QA_SHARDS: "4" }
+        run: qa/run_gates.sh matrix-full
+      - name: Text overflow and spacing at every width
+        if: always()
+        run: qa/run_gates.sh browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: nightly-matrix, path: "qa-out/", retention-days: 14 }
+  live:
+    name: live-smoke
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Production and dev health (read-only)
+        run: bash ops/ops_check.sh
+      - name: External links
+        continue-on-error: true
+        run: bash site/build.sh dist && python3 qa/check_links.py --external
