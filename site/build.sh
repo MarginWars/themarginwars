@@ -24,17 +24,17 @@ stage() {
   grep -rlE '@MW_ROOT@|@MW_FONTS@' "$ST" --include='*.py' --include='*.sh' | while read -r f; do
     sed -i "s#@MW_ROOT@#$ST#g; s#@MW_FONTS@#$FONTS#g" "$f"; done
 }
-run_layers() {
-  ( cd "$ST"
-    python3 copy_weekend/apply_copy_weekend.py
-    python3 ui_weekend/apply_ui.py
-    python3 route_brief/apply_rb.py
-    python3 copy_tighten/apply_tighten.py
-    python3 about_rethink_1108/apply_about.py
-    python3 feeds/apply_feeds.py
-    python3 normalize_suite/apply_normalize.py
-    python3 buildout/apply_buildout.py
-    python3 marketing/apply_marketing.py
+run_layers() {  # any layer error fails the build (&& chain: set -e is off inside "( ) || ...")
+  ( cd "$ST" &&
+    python3 copy_weekend/apply_copy_weekend.py &&
+    python3 ui_weekend/apply_ui.py &&
+    python3 route_brief/apply_rb.py &&
+    python3 copy_tighten/apply_tighten.py &&
+    python3 about_rethink_1108/apply_about.py &&
+    python3 feeds/apply_feeds.py &&
+    python3 normalize_suite/apply_normalize.py &&
+    python3 buildout/apply_buildout.py &&
+    python3 marketing/apply_marketing.py &&
     python3 buildout/apply_esc_ts.py ) > "$REPO/qa-out/layers.log" 2>&1 || { tail -40 "$REPO/qa-out/layers.log"; exit 1; }
 }
 make_dist() {
