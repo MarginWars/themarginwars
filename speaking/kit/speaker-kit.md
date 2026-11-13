@@ -61,27 +61,13 @@ Every talk uses the same tactic card format as The Margin Wars Playbook (the Cro
 
 For organiser forms: "Recent stages include Snowflake Summit 2025 (keynote), Money20/20 USA 2024, Fiserv Forum 2024 and MRC Las Vegas 2024 (host)."
 
-## 4. Fee sheet
+## 4. Fees
 
-All fees are in USD, exclude travel and accommodation (billed at cost), and are per engagement. They anchor on Avi's **$5,000/day** rate and **$3,500/day floor**, priced as day-equivalents (preparation plus delivery), and match the offer ladder in 10_Standout_Strategy. "Sourced" figures come from 04_Market_Rates_Scan and the Market Rates tab of 03; anything else is labelled **[Assumption]**.
+Fees on request, as the site says. The fee sheet is internal and is not kept in this public repo; Speaking & Media
+holds it.
 
-| Format | Standard fee | Floor | Day-equivalent check | Basis | Sources |
-|---|---|---|---|---|---|
-| Keynote, in person (30-45 min + Q&A), incl. headlining a vendor-hosted customer event | $12,500 (range $10,000-$15,000) | $10,000 | 2.5 days x $5K = $12.5K; floor = about 3 days at $3.5K | Sourced range; level within it is an assumption | Speakers Corner fintech bands D GBP5-10K, C GBP10-15K (~$6.7K-$20K); Washington Speakers Bureau fintech "Under $25,000"; offer ladder rung 5 $10K-$15K |
-| Moderating, hosting or fireside at a vendor-hosted customer event (Fiserv Forum style) | $7,500 | $5,000 | 1.5 days x $5K = $7.5K; floor = 1.5 days at $3.5K, rounded | **[Assumption]**: no direct moderator-fee benchmark found | Bracketed by Speakers Corner E GBP2-5K and D GBP5-10K bands |
-| Private executive briefing or board session (closed-door, up to half a day) | $12,500 (range $10,000-$15,000) | $10,000 | 2.5 days x $5K | Sourced | Async Advisor executive briefing half day $10,000; Silicon Valley Speakers Bureau half day $8K-$15K; offer ladder rung 5 |
-| Half-day workshop (working session for one leadership team) | $12,500 | $10,000 | 2.5 days x $5K | Sourced | SVSB half day $8K-$15K; Async Advisor half day $10,000 |
-| Full-day workshop (executive or board) | $20,000 (range $15,000-$30,000) | $15,000 ($12,500 for a first reference client only) | 4 days x $5K | Sourced | SVSB full day $15K-$30K; Async Advisor full day $15K-$20K; McKinsey management workshop $56,100 (NCPA 2021) as the ceiling; model A22 |
-| Virtual session (keynote or briefing, 45-60 min) | $5,000 | $3,500 | 1 day x $5K; floor = 1 day at $3.5K | **[Assumption]**: no virtual-fee benchmark in 04 | Day-rate anchor only |
-| The Margin Wars Working Session (closed-door, 8-12 peers, one lever) | $10,000-$15,000 sponsored or hosted; or $750-$1,500 per seat | $10,000 per session | 2 days of curation and hosting; venue extra | Offer-ladder price (assumption) checked against sourced comps | Offer ladder rung 1; ACG Denver roundtable dinner sponsor $5,000; managed executive dinners $5K-$15K (Cura); City & Financial VIP dinner GBP25,000+VAT |
-
-**Related offers (not speaking, for the follow-up conversation):** Margin Teardown $17,500 (2 days, the merchant's own data); Cross-Market Expansion or Stablecoin Cost Sprint $30,000-$40,000 (6-8 days). Both from the offer ladder in 10.
-
-**Terms**
-- Conference CFP slots pay nothing (and Nacha speakers pay $525-$675); Avi takes them for distribution, not fees.
-- Bookings through a bureau: the fee above is the gross fee; bureaus usually keep 25-30% (Futurists Speakers).
-- Discounts: none below the floor. For non-profit or regional events (for example in Africa or Southeast Asia, where local rates are far lower), change the format (virtual, or tied to a Margin Wars Working Session) rather than the price.
-- Recording and slides: recording is allowed for the organiser's internal use; public release needs Avi's approval. No employer or client data appears in any material.
+- Recording and slides: recording is allowed for the organiser's internal use; public release needs Avi's approval.
+  No employer or client data appears in any material.
 
 ## 5. Logistics for organisers
 
@@ -89,21 +75,3 @@ All fees are in USD, exclude travel and accommodation (billed at cost), and are 
 - Avi needs a 30-minute prep call, the audience profile (titles, not names), and the session length two weeks before the event.
 - Every session ends with one take-away tactic card per attendee (a PDF from The Margin Wars Playbook).
 - Headshot, short bio and talk abstracts: this kit. A recorded reel is pending (model cost C08) [CONFIRM WITH AVI].
-
-## 6. Sources used
-
-| Source | Used for | URL |
-|---|---|---|
-| Speakers Corner - fintech speakers (accessed 21 Oct 2026) | Keynote and moderating bands | https://www.speakerscorner.co.uk/fintech-speakers |
-| Washington Speakers Bureau - fintech (accessed 21 Oct 2026) | Keynote ceiling | https://www.wsb.com/topics/financial-speakers/fintech/ |
-| Futurists Speakers - bureau commission | Bureau terms | https://www.futuristsspeakers.com/what-percentage-do-speakers-bureaus-take/ |
-| Silicon Valley Speakers Bureau - workshop pricing (2026) | Workshops, briefings | https://www.svsb.ai/blog/workshop-pricing |
-| Async Advisor - executive briefing | Briefings, workshops | https://asyncadvisor.com/executive-briefing |
-| McKinsey price quotation to NCPA (22 Jan 2021) | Workshop ceiling | https://dam.assets.ohio.gov/image/upload/procure.ohio.gov/pricelist/RS901320McKinseypricelist.pdf |
-| EY price information, Sourcewell 101718-EYG | $5K/day anchor check ($625/hour x 8) | 04_Market_Rates_Scan section 2 |
-| Nacha SFP 2027 Call for Presentations | Speakers pay $525-$675 | https://payments.nacha.org/call-presentations |
-| ACG 2026 Sponsorship Opportunities | Working Session comp | https://www.acg.org/sites/default/files/2026-02/2026%20Sponsorship%20Opportunities%20-%20Annual%20Events%20%282%29.pdf |
-| Cura - executive dinners (accessed 21 Oct 2026) | Working Session comp | https://choosecura.com/events/executive-dinners |
-| City & Financial Global - TOK26 sponsorship options | Working Session comp | https://www.cityandfinancialglobal.com/the-tokenisation-summit-2026/sponsorship-options |
-
-The last four comps were added to the Market Rates tab of 03 on 21 Oct 2026 (rows 42-46).

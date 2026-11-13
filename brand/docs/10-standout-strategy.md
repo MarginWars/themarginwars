@@ -50,15 +50,17 @@
 - Each tactic gets one card: **lever → mechanics → US / UK-EU / Africa / APAC differences → typical margin impact range (from public sources only) → failure modes → "what I'd do Monday"**.
 - Launch with 12 cards: debit/least-cost routing, network tokens, retry/dunning logic, IC++ versus blended pricing, chargeback/representment, Visa CEDP and commercial-card data [25], FX markup and local acquiring, PayFac/sub-merchant economics, marketplace payouts, APMs/pay-by-bank, orchestration lock-in, stablecoin settlement as a cost line.
 
-### Offer ladder (anchored on $5K/day; all prices are [Assumption] to test)
+### Offer ladder
+
+Public prices are the ones on the live advisory page. Internal pricing is not kept in this public repo.
 | Rung | Offer | Price |
 |---|---|---|
-| 0 | **The Margin Wars Briefing**: invite-only, monthly, one tactic per issue, capped at about 150 operators | Free by invitation (paid membership in year two of about $1.5K/yr is an option) |
-| 1 | **The Margin Wars Working Session**: closed-door, about 8 to 12 peers, one lever, Chatham House rule | $750–$1,500 per seat; $10K–$15K for a sponsored or hosted session |
-| 2 | **Margin Teardown**: 2 days, the merchant's own data, a prioritised 90-day list | $17.5K (2 days) |
-| 3 | **Cross-Market Expansion or Stablecoin Cost Sprint**: 6–8 days | $30K–$40K |
-| 4 | **Advisory retainer**: 2 days/month, quarterly playbook refresh | $10K/mo (minimum 6 months) |
-| 5 | **Keynotes and board sessions** | $10K–$15K (2–3 day equivalent) |
+| 0 | **The Margin Wars Briefing**: invite-only, monthly, one tactic per issue, capped at about 150 operators | Free by invitation |
+| 1 | **The Margin Wars Working Session**: closed-door, about 8 to 12 peers, one lever, Chatham House rule | By proposal |
+| 2 | **Margin Teardown**: 2 days, the merchant's own data, a prioritised 90-day list | $17,500 (2 days, as on the site) |
+| 3 | **Cross-Market Expansion or Stablecoin Cost Sprint**: 6–8 days | $30,000–$40,000 (as on the site) |
+| 4 | **Advisory retainer**: 2 days/month, quarterly playbook refresh | By proposal (as on the site) |
+| 5 | **Keynotes and board sessions** | Fees on request (as on the site) |
 
 ### Proof points needed (within 90 days)
 1. Twelve published Playbook cards with sources, which act as the portfolio.

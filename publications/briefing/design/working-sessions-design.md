@@ -422,7 +422,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 - Calculator built in Sheets/Excel; tested before each session
 - Source re-verification the week before each session (regulatory figures move)
 - Sponsor rules if any: one seat, no pitch, no contact list (07 §6)
-- Budget and pricing: $750–$1,500/seat or $10K–$15K hosted [Assumption] (07/10)
+- Budget and pricing: by proposal (internal pricing is kept off the public repo)
 
 ## Top open questions for Avi
 

@@ -140,6 +140,32 @@ rules:
   - media/**
   - site/**
   category: private
+- id: private:cv-source
+  # CV citation keys (CV21, CV26, KCV) and CV quotes: CV content is private.
+  pattern: \bK?CV\s?(?:1[89]|2\d)\b|\bKCV\b|\b(?:his|her|avi'?s|anitha'?s)\s+(?:cv|r[eé]sum[eé])\b
+  category: private
+- id: private:confidential-source
+  # Pointers into confidential personal folders or private evidence banks.
+  pattern: Employment \(Confidential\)|\bMac INDEX\b|achievements-bank|\bERC Supporting\b
+  category: private
+- id: private:vault-id
+  # Password-manager item ids and numbered vault items.
+  pattern: \bvault\s+(?:item\s*)?#?\d{4,}\b|\b(?=[a-z0-9]{26}\b)(?=[a-z]*\d)(?=\d*[a-z])[a-z0-9]{26}\b|\bop://
+  ignore_case: false
+  category: private
+- id: private:persona
+  pattern: \bpersonas?\s+(?:sessions?|accounts?|profiles?|windows?)\b|\bpen[- ]names?\b
+  category: private
+- id: private:rate-card
+  # Internal pricing: day or hourly rates, floors, per-seat prices, retainer and fee-sheet figures.
+  # Public prices are the ones on the live advisory page (a package price, or "per person per day").
+  pattern: \$\s?\d[\d,.]*\s?[kK]?\s?(?:/\s?|per\s+|an?\s+)(?:hr|hour|day|seat|60 minutes)\b|\b(?:day|hourly)[- ]rate\b|\$\s?\d[\d,.]*\s?[kK]?\s?(?:/\s?day\s+)?floor\b|retainer[^|\n]{0,60}\$\s?\d|\bfee sheet\b[^|\n]{0,80}\$\s?\d
+  category: private
+- id: private:box-path
+  # Paths on the agents' working machine never belong in the public repo.
+  pattern: (?:^|[\s`'"(])/(?:workspace|home/box)/
+  category: private
+  mask: false
 gated:
 - id: paypal
   pattern: \bpay\s?pal\b
