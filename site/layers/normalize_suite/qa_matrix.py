@@ -10,6 +10,7 @@ H=Path(__file__).parent;OUT=Path(os.environ.get('QA_OUT',str(H.parent/'site_qa/p
 SHOTS=OUT/'shots';SHOTS.mkdir(exist_ok=True)
 BASE=os.environ.get('QA_BASE','http://localhost:8817/')
 ns={};src=(H/'qa_spacing.py').read_text();SPJS=src.split("JS=r'''")[1].split("'''")[0]
+SPJS=SPJS.replace('const TO=(__TO_JS__);','const TO=('+(H/'text_overflow_check.js').read_text().strip()+')();')
 ns2={'__file__':str(H.parent/'site_qa/about_full_1108/qa.py')};exec((H.parent/'site_qa/about_full_1108/qa.py').read_text().split('res={}')[0],ns2)
 M=ns2['M'];CON=ns2['CONTRAST']
 TARGET=(H/'qa_suite.py').read_text().split("TARGET=r'''")[1].split("'''")[0]
