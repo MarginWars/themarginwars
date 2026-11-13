@@ -31,7 +31,7 @@ All generated surfaces are labelled Preview, pending Avi’s review. Feed autodi
 ## Daily append
 Read `feeds/README.md` for schemas. Append official-source-backed records under `site_calm/assets/feeds/`: `wire.json`, optional `calendar.json`, weekly `bp-watch.json`, and genuine context changes in `route-briefs.json`. Add/review the matching `ux.json` annotation: concise `so_what`, sourced impact tag, relevant rails and matching official URL. New unreviewed annotations default neutral, not savings. Verify official URLs and the source text/status; do not turn drafts into mandates or unknown dates into calendar events.
 
-From `/workspace/deliverables/brand`, run:
+From the build workspace, run:
 ```sh
 python3 copy_weekend/apply_copy_weekend.py
 python3 copy_tighten/apply_tighten.py
@@ -56,13 +56,6 @@ python3 feeds/qa_feed_ux_extra.py
 - Excluded unsupported final PSD3/PSR application dates, a final Reg II rate/deadline, a universal 3DS migration mandate, unverified current scheme implementation dates and a Pix refund change incorrectly attributed to October 2026. Older implementation context is labelled, not presented as breaking news.
 
 ## Requested screenshots (live preview)
-- wire-mymarkets: `/workspace/deliverables/brand/feeds/qa-ux/live/wire-mymarkets-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/wire-mymarkets-1440.png`
-- wire-expanded: `/workspace/deliverables/brand/feeds/qa-ux/live/wire-expanded-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/wire-expanded-1440.png`
-- share-card: `/workspace/deliverables/brand/feeds/qa-ux/live/share-card-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/share-card-1440.png`
-- calendar-countdown: `/workspace/deliverables/brand/feeds/qa-ux/live/calendar-countdown-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/calendar-countdown-1440.png`
-- digest-print: `/workspace/deliverables/brand/feeds/qa-ux/live/digest-print-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/digest-print-1440.png`
-- search: `/workspace/deliverables/brand/feeds/qa-ux/live/search-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/search-1440.png`
-
-Additional: `/workspace/deliverables/brand/feeds/qa-ux/live/home-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/home-1440.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/calendar-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/calendar-1440.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/feeds-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/feeds-1440.png`; digest PDFs `/workspace/deliverables/brand/feeds/qa-ux/live/digest-375.pdf`, `/workspace/deliverables/brand/feeds/qa-ux/live/digest-1440.pdf`.
+- Screenshots (375 and 1440 for each surface: wire-mymarkets, wire-expanded, share-card, calendar-countdown, digest-print, search, home and more) are QA artefacts kept off the repo.
 
 QA artifacts: `qa-ux/results.json`, `qa-ux/additional-results.json`, `qa-ux/idempotence.json`, `qa-ux/live/results.json`, `qa-ux/live-checks.json`, `qa-ux/w3c-wire-xml.html`, `qa-ux/w3c-wire-atom.html`, `final-deploy.json`.

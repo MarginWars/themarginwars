@@ -67,7 +67,7 @@
       "id": "marginwars/compliance-config",
       "local": "qa/compliance/banned.yml",
       "mode": "adopted",
-      "sha256": "fe494a8215b497af882c543221dee52124868c9d69bf320d6a116634fb1ce156"
+      "sha256": "c0e26ffa94b3370477cdfa9634b7515831a9c6ba6c958508e8f0a1fb95a0fe28"
     },
     {
       "id": "marginwars/branch-ruleset",

@@ -23,7 +23,7 @@ Existing order retained: copy_weekend → ui → rb → tighten → about → fe
 Compared with the previous release, the only changed publish/bundle files are `about.html`, `assets/suite.css`, and the derived public assistant knowledge. Feed datasets, links, game scripts, forms and server submission/send handlers are unchanged.
 
 ## QA and release
-Final coverage/results and deployment URL are recorded below. Full artifacts are under `/workspace/deliverables/brand/site_qa/relief_1108/`. Route inventory remains `ROUTES.md`; per-route coverage is `COVERAGE.md`.
+Final coverage/results and deployment URL are recorded below. Full artefacts are QA screenshots kept off the repo. Route inventory remains `ROUTES.md`; per-route coverage is `COVERAGE.md`.
 
 Representative captures: `home_wire_375.png` / `home_wire_1440.png`, `wire_first_375.png` / `wire_first_1440.png`, `wire_reading_375.png` / `wire_reading_1440.png`, `about_first_375.png` / `about_first_1440.png`, `about_full_375.png` / `about_full_1440.png`, `anitha_375.png` / `anitha_1440.png`. Captures prefixed `live_` are from the final unique deployment. Component-only captures hide the sticky global header to avoid screenshot stitching artifacts; full-page and first-fold captures include the real header.
 

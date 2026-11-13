@@ -11,6 +11,7 @@ MODE="${1:-all}"; SHARDS="${QA_SHARDS:-4}"
 ST="$REPO/site/.build"
 static() {
   python3 qa/compliance/check_content.py
+  python3 qa/compliance/tests/test_private_rules.py
   python3 qa/check_frontmatter.py ${QA_CHANGED:+--changed "$QA_CHANGED"}
   python3 qa/check_claims.py
   python3 qa/check_links.py --docs
