@@ -1,0 +1,6 @@
+# Launch week (Mon 16 - Sun 22 Nov 2026). Content Studio fills `items` in the launch calendar PR; merging it with
+# status: approved is Avi's approval of every listed item at its listed time (see ops/publish/scheduler-spec.md).
+week: 2026-W47
+status: draft
+standing_permission: null
+items: []

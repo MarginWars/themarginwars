@@ -1,0 +1,34 @@
+# Approved facts. Every number in outbound copy must map to an entry here (by id in `sources:`), to a source file,
+# or be labelled [Assumption] with an entry in facts/assumptions.yml. Seeded 12 Nov 2026 ONLY with facts already
+# published on the live site (approved with its production deploys). Research & Intel adds entries by PR; Avi signs.
+facts:
+  - id: turnaround
+    claim: "Turned a loss-making acquiring platform profitable: a billion-dollar transaction-margin swing."
+    numbers: []
+    source: site/src/about.html
+    status: approved
+  - id: data-latency
+    claim: "96 hours to 12."
+    numbers: ["96", "12"]
+    source: site/src/about.html
+    status: approved
+  - id: past-stages
+    claim: "Has spoken at Snowflake Summit 2025, Money20/20 USA 2024, Fiserv Forum 2024 and MRC Las Vegas 2024."
+    numbers: ["2025", "2024", "20/20"]
+    source: site/src/speaking.html
+    status: approved
+  - id: together-years
+    claim: "Avi and Anitha: eight years working side by side."
+    numbers: []
+    source: site/src/about.html
+    status: approved
+  - id: briefing-audience
+    claim: "The Briefing is a private monthly briefing for about 150 senior payments operators."
+    numbers: ["150"]
+    source: site/src/writing.html
+    status: approved
+  - id: experience-years
+    claim: "19 years of industry experience (speaker forms)."
+    numbers: ["19"]
+    source: "Avi's instruction for speaker forms, recorded in the Speaking & Media agent profile (not on the site)"
+    status: approved

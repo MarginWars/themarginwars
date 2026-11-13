@@ -1,0 +1,12 @@
+# Shape of a lead or invite candidate as the Pipeline agent handles it. Records themselves NEVER enter git:
+# they live in the CRM store (Cloudflare D1 / Notion). This file documents the fields so batches can be reviewed
+# as counts and criteria in PRs.
+fields:
+  id:           {type: string, example: "lead-0000"}
+  segment:      {type: string, enum: [acquirer, issuer, processor, merchant, platform, advisor, other]}
+  role_level:   {type: string, enum: [c-suite, vp, director, manager, ic]}
+  region:       {type: string}
+  source:       {type: string, description: "where the public signal came from (URL or publication)"}
+  fit_reason:   {type: string, description: "which criterion in pipeline/playbooks matched"}
+  status:       {type: string, enum: [candidate, approved-to-invite, invited, declined, removed]}
+  # Name, email, phone, employer and profile URL are stored only in the CRM store, never here.

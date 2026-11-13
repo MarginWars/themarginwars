@@ -1,0 +1,3 @@
+# Labelled assumptions. A number may appear in outbound copy as an assumption only if it is listed here AND the
+# sentence carries the marker [Assumption]. Format: {id, statement, numbers: [], basis, owner, review_by (PT date)}
+assumptions: []
