@@ -1,0 +1,58 @@
+name: Speaker opportunity
+description: A CFP, speaker form or speaking pitch
+title: 'Speaking: '
+labels:
+- ws:speaking
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: input
+  id: event
+  attributes:
+    label: Event and dates
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: deadline
+  attributes:
+    label: Deadline (PT)
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: fee
+  attributes:
+    label: Fee or spend (or "none")
+    description: ''
+  validations:
+    required: true
+- type: dropdown
+  id: cospeaker
+  attributes:
+    label: Co-speaker
+    options:
+    - Anitha
+    - none
+    - other (decision needed)
+  validations:
+    required: true
+- type: dropdown
+  id: route
+  attributes:
+    label: Route
+    options:
+    - web form
+    - email pitch (draft card)
+    - contact form
+    - invite only
+  validations:
+    required: true
+- type: textarea
+  id: fit
+  attributes:
+    label: Talk fit and source URLs
+    description: ''
+  validations:
+    required: true

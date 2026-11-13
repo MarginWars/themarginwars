@@ -1,0 +1,43 @@
+name: Content request
+description: A post, thread, issue or landing page for the calendar
+title: 'Content: '
+labels:
+- ws:content
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: dropdown
+  id: channel
+  attributes:
+    label: Channel
+    options:
+    - linkedin-personal
+    - linkedin-company
+    - x
+    - substack
+    - briefing
+    - site
+  validations:
+    required: true
+- type: textarea
+  id: tactic
+  attributes:
+    label: The one margin tactic
+    description: Mechanics, metric, failure mode, owner, Monday action.
+  validations:
+    required: true
+- type: input
+  id: slot
+  attributes:
+    label: Calendar slot (week, PT)
+    description: ''
+  validations:
+    required: true
+- type: textarea
+  id: sources
+  attributes:
+    label: Sources for every number
+    description: facts/approved.yml ids or research files
+  validations:
+    required: true

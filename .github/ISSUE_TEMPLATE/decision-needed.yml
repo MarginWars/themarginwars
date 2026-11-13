@@ -1,0 +1,54 @@
+name: Decision needed
+description: A decision only Avi (or Anitha) can make
+title: 'Decision: '
+labels:
+- needs:avi
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: textarea
+  id: decision
+  attributes:
+    label: The decision
+    description: One question, answerable yes/no or by picking an option.
+  validations:
+    required: true
+- type: textarea
+  id: options
+  attributes:
+    label: Options and the recommendation
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: by
+  attributes:
+    label: Needed by (PT)
+    description: ''
+  validations:
+    required: true
+- type: dropdown
+  id: ws
+  attributes:
+    label: Workstream
+    options:
+    - site
+    - channels
+    - content
+    - publications
+    - speaking
+    - media
+    - pipeline
+    - research
+    - launch
+    - ops
+  validations:
+    required: true
+- type: textarea
+  id: impact
+  attributes:
+    label: What is blocked until then
+    description: ''
+  validations:
+    required: false

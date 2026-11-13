@@ -1,0 +1,30 @@
+name: Login needed
+description: A login or token is missing (routes to Passwords & Vaults)
+title: 'Login: '
+labels:
+- needs:login
+body:
+- type: markdown
+  attributes:
+    value: Never paste or ask for a password here. Passwords & Vaults supplies logins from 1Password.
+- type: input
+  id: service
+  attributes:
+    label: Service
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: scope
+  attributes:
+    label: Least scope needed
+    description: ''
+  validations:
+    required: true
+- type: textarea
+  id: why
+  attributes:
+    label: What it unblocks
+    description: ''
+  validations:
+    required: true

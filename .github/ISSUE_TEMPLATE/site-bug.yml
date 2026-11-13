@@ -1,0 +1,53 @@
+name: Site bug
+description: Something wrong on themarginwars.com or dev
+title: 'Site: '
+labels:
+- ws:site
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: input
+  id: url
+  attributes:
+    label: Page URL
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: width
+  attributes:
+    label: Viewport width(s)
+    description: ''
+  validations:
+    required: true
+- type: dropdown
+  id: engine
+  attributes:
+    label: Engine / device
+    options:
+    - Chromium
+    - WebKit / Safari
+    - Firefox
+    - real iPhone
+    - real Android
+    - other
+  validations:
+    required: true
+- type: textarea
+  id: what
+  attributes:
+    label: What is wrong (screenshot welcome)
+    description: ''
+  validations:
+    required: true
+- type: dropdown
+  id: env
+  attributes:
+    label: Environment
+    options:
+    - production
+    - dev
+    - both
+  validations:
+    required: true

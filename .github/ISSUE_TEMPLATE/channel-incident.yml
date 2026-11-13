@@ -1,0 +1,44 @@
+name: Channel incident
+description: A failed, wrong or withdrawn publish
+title: 'Incident: '
+labels:
+- ws:channels
+- status:failed
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: input
+  id: item
+  attributes:
+    label: Item id
+    description: ''
+  validations:
+    required: true
+- type: dropdown
+  id: channel
+  attributes:
+    label: Channel
+    options:
+    - linkedin-personal
+    - linkedin-company
+    - x
+    - substack
+    - briefing
+    - site
+  validations:
+    required: true
+- type: textarea
+  id: what
+  attributes:
+    label: What happened, when (PT), and the ledger entry
+    description: ''
+  validations:
+    required: true
+- type: textarea
+  id: fix
+  attributes:
+    label: Proposed fix (withdraw only on Avi's word)
+    description: ''
+  validations:
+    required: true

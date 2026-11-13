@@ -1,0 +1,22 @@
+# Code owners. Enforced: the `main` ruleset requires a code-owner review.
+# Avi (AviShip-Type0) signs everything. Agents author as the bot account and can never approve.
+# Optional second reviewer for content, publications and speaking (decision D5): add Anitha's handle per area.
+
+*                       @AviShip-Type0
+
+# Site, functions, workers, gates and CI: Site & Release prepares, Avi signs
+/site/                  @AviShip-Type0
+/qa/                    @AviShip-Type0
+/.github/               @AviShip-Type0
+
+# Outbound channels and the weekly calendar (merge = the OK for every post in it, SP-1)
+/content/               @AviShip-Type0
+/publications/          @AviShip-Type0
+/speaking/              @AviShip-Type0
+/media/                 @AviShip-Type0
+
+# Facts, approvals and standing permissions: only Avi
+/facts/                 @AviShip-Type0
+/ops/approvals.md       @AviShip-Type0
+/ops/standing-permissions.md @AviShip-Type0
+/qa/compliance/         @AviShip-Type0

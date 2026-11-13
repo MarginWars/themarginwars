@@ -1,0 +1,30 @@
+name: Research question
+description: A question for Research & Intel
+title: 'Research: '
+labels:
+- ws:research
+body:
+- type: markdown
+  attributes:
+    value: 'Public repo: no personal data, secrets or private names. Use first names and `{{profile.*}}` placeholders.'
+- type: textarea
+  id: q
+  attributes:
+    label: Question
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: by
+  attributes:
+    label: Needed by (PT)
+    description: ''
+  validations:
+    required: false
+- type: textarea
+  id: use
+  attributes:
+    label: What it feeds (post, issue, pack)
+    description: ''
+  validations:
+    required: false

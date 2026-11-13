@@ -1,0 +1,9 @@
+Copyright (c) 2026 The Margin Wars. All rights reserved.
+
+This repository is public so that its content can be read. No licence is granted to copy, modify, publish,
+distribute or create derivative works from any part of it (site copy, publications, brand assets, code)
+without prior written permission from The Margin Wars.
+
+Third-party components keep their own licences:
+- Fonts in site/layers/brand_logo/fonts and site/layers/buildout/fonts_src (Schibsted Grotesk, Martian Mono)
+  are licensed under the SIL Open Font License 1.1 by their authors.

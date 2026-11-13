@@ -1,0 +1,37 @@
+name: Lead batch
+description: An outreach batch (anonymised in git)
+title: 'Lead batch: '
+labels:
+- ws:pipeline
+body:
+- type: markdown
+  attributes:
+    value: '**No names, emails or phones here.** Records live in the CRM store; this issue holds the segment, count and message only.'
+- type: input
+  id: segment
+  attributes:
+    label: Segment
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: count
+  attributes:
+    label: Approximate count
+    description: ''
+  validations:
+    required: true
+- type: textarea
+  id: message
+  attributes:
+    label: Message text or link to the draft
+    description: ''
+  validations:
+    required: true
+- type: input
+  id: sp
+  attributes:
+    label: Standing permission (SP-3) or "one card per email"
+    description: ''
+  validations:
+    required: false
