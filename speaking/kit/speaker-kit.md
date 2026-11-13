@@ -1,14 +1,10 @@
-# Speaker Kit - Avi Reddy (The Margin Wars)
+# Speaker kit: Avi Reddy (The Margin Wars)
 
 Draft for Avi's review, prepared 21 Oct 2026 (PT). Nothing here has been sent or published. Positioning follows 10_Standout_Strategy: **"The operator's playbook for winning back payment margin, one tactic at a time, in every market you sell in."** Every stage, session and fee below is tactical: one specific lever, how it works and what it is worth, never a trend talk. Speaking is distribution; the revenue lines it feeds are private briefings, The Margin Wars Working Sessions, teardowns and advisory (see 03). Invitation to The Margin Wars Briefing (invite-only, monthly) is offered to every room.
-
 
 ## 1. Bios
 
 **One-liner (for programmes and lower thirds).** Avi Reddy - payments operator; tactics for winning back payment margin across the US, UK/Europe, Africa and APAC.
-
-
-
 
 ## 2. Four signature talks
 
@@ -44,11 +40,9 @@ Every talk uses the same tactic card format as The Margin Wars Playbook (the Cro
 
 **Format.** 30-minute talk or co-presented case session. Builds on the Snowflake Summit 2025 keynote co-presented with Fiserv's VP Product, the Money20/20 USA 2024 session on merchant cloud data sharing with Snowflake, and the Data Cloud Now interview.
 
-
 **Target audience.** Merchant payments, data and finance teams; processor and acquirer data-product leaders; data-platform partner teams.
 
 ### Also available as a private briefing: Stablecoin settlement as a cost line for acquirers and merchants
-
 
 ## 3. Past stages
 

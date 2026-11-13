@@ -12,7 +12,6 @@ body:
   id: item
   attributes:
     label: Item id
-    description: ''
   validations:
     required: true
 - type: dropdown
@@ -32,13 +31,11 @@ body:
   id: what
   attributes:
     label: What happened, when (PT), and the ledger entry
-    description: ''
   validations:
     required: true
 - type: textarea
   id: fix
   attributes:
     label: Proposed fix (withdraw only on Avi's word)
-    description: ''
   validations:
     required: true

@@ -1,1 +1,8 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Security or privacy problem
+    url: https://github.com/MarginWars/themarginwars/blob/main/SECURITY.md#reporting-a-problem
+    about: Never open a public issue for a leaked secret or personal data. Follow the security policy.
+  - name: Work with The Margin Wars
+    url: https://themarginwars.com/contact
+    about: Advisory, speaking and Briefing requests go through the site, not this repo.

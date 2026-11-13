@@ -1,4 +1,5 @@
-# Code owners. Enforced: the `main` ruleset requires a code-owner review.
+# Code owners. Code-owner review is temporarily OFF in the `main` ruleset while the bot account's login is being set
+# up. It goes back on once the bot authors pull requests for Avi to approve.
 # Avi (AviShip-Type0) signs everything. Agents author as the bot account and can never approve.
 # Optional second reviewer for content, publications and speaking (decision D5): add Anitha's handle per area.
 

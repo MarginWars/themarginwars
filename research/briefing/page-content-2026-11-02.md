@@ -1,4 +1,4 @@
-# Margin Wars Briefing: Public Signals & Approach
+# The Margin Wars Briefing: public signals and approach
 
 *Week of 2 November 2026 · Run #2 · Public sources only, all accessed 2 Nov 2026*
 
@@ -30,6 +30,7 @@
 The approach itself is unchanged: one tactic per issue, four markets side by side, primary sources first, and gaps left visible. This week's read is that the most useful material for operators is in rule text that peers are not covering. Agentic commerce, stablecoin theses and earnings recaps are crowded. The TLID requirement, the Visa verification changes, the stacking of fees on non-tokenised traffic and Australia's published fee averages are open. We will put these into the existing drafts rather than start new pieces.
 
 **Issue 01 (dual-network and multi-acquirer routing, sends 1 December 2026)**
+
 - Add one sentence to the US column saying that the 21-cent cap still applies until the 8th Circuit's mandate issues, that no replacement has been set, and that the routing rule in §235.7 is unaffected. The issue should not promise any new rate.
 - Replace the "[CONFIRM]" retry citation with the Visa rules (24 October 2026 edition, Table 7-2).
 - Add the Mastercard TLID requirement as a prerequisite for routing merchant-initiated payments across acquirers.
@@ -38,6 +39,7 @@ The approach itself is unchanged: one tactic per issue, four markets side by sid
 - Re-read the EU interchange caps before sending. They were last checked more than 30 days before the send date.
 
 **Issue 02 (network tokens, sends 5 January 2027)**
+
 - Keep Visa's 4.8% approval uplift and 39.4% fraud reduction, which are still on Visa's site.
 - Drop the older 3% and 28% figures, and label the 4.3% CEMEA figure as 2023 data.
 - Add a "cost of not tokenising" line by region: Europe 7.5 bps, Asia Pacific 4 bps, UAE 5 bps, cited to the acquirer notice.
@@ -46,6 +48,7 @@ The approach itself is unchanged: one tactic per issue, four markets side by sid
 - Leave the Mastercard Europe card-on-file fee as a gap. The only figures we found trace back to a source we exclude.
 
 **Issue 03 (retries and decline codes, sends 2 February 2027)**
+
 - Add 12, R0, R1 and R3 to the Category 1 list, and cite Table 7-2 of the 24 October 2026 edition (pages 547–549).
 - Add three rules from the new edition:
   - code 51 on a $0 account verification is an issuer error, not a retry signal;
@@ -57,6 +60,7 @@ The approach itself is unchanged: one tactic per issue, four markets side by sid
 - Find a primary RBI source for the e-mandate rules.
 
 **Playbook cards**
+
 - Card 05 (chargebacks): add the AVS liability shift in parts of Asia Pacific, Europe and Latin America.
 - Card 07 (FX and DCC): add the regulation's mid-market-rate rule, marked "adopted, not yet applicable".
 - Card 08 (PayFac): remove Visa's CEMEA PayFac certification, which Visa has dropped.
@@ -64,6 +68,7 @@ The approach itself is unchanged: one tactic per issue, four markets side by sid
 - Card 11 (portability): add TLID portability.
 
 **Working sessions**
+
 - WS4: flag the coming change of currency-conversion benchmark.
 - WS3: find the source document for the £150–200m UK figure before the session.
 
@@ -91,6 +96,7 @@ Run 1 made five calls. One has resolved and four are too early to score.
 | Visa's next public rules edition after October 2026 keeps the 20-in-30 limit and the Category 1 ban | 85% | 31 May 2027 |
 
 **What we're watching:**
+
 - the 16 November settlement hearing;
 - any petition for rehearing in the 8th Circuit case, due around 10 December;
 - the European Parliament plenary, indicatively 14 December;
@@ -107,6 +113,7 @@ Run 1 made five calls. One has resolved and four are too early to score.
 ## Sources
 
 All accessed 2 Nov 2026:
+
 - [Visa Core Rules and Visa Product and Service Rules, 24 Oct 2026](https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf)
 - [8th Circuit opinion, Corner Post v. Board of Governors, No. 25-3000](https://ecf.ca8.uscourts.gov/opndir/26/10/253000P.pdf)
 - [Payments Dive: Fed loses debit card cap appeal](https://www.paymentsdive.com/news/fed-loses-debit-card-cap-appeal/872785/)

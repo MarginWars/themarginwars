@@ -1,4 +1,4 @@
-# Margin Wars Briefing: Public Signals & Approach
+# The Margin Wars Briefing: public signals and approach
 
 *Week of 26 October 2026 · Run #1 · Public sources only, all accessed 26 Oct 2026*
 
@@ -49,6 +49,7 @@ Run 1 is the baseline, so there were no earlier calls to score. From the next ru
 ## Sources
 
 All accessed 26 Oct 2026:
+
 - [Visa Core Rules (public edition, 18 Apr 2026)](https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf)
 - [Checkout.com: Mastercard Europe token roadmap](https://support.checkout.com/hc/en-us/articles/39223370002962-What-is-Mastercard-s-network-token-roadmap-for-Europe)
 - [Checkout.com: Visa DCAP](https://support.checkout.com/hc/en-us/articles/34456715799570-What-is-Visa-s-Digital-Commerce-Authentication-Program-DCAP)

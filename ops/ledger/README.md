@@ -4,7 +4,7 @@
 performed. It is **not** reviewed like `main`: only the bot account may push to it (ruleset `ledger-bot-only`),
 force-pushes and deletion are blocked, and every line validates against `schemas/ledger-entry.schema.json`.
 
-```
+```text
 ledger/
   published.jsonl          # append-only, one entry per publish attempt (scheduled / published / failed / withdrawn)
   metrics/YYYY-MM-DD.jsonl # daily totals per item and campaign (no personal data)

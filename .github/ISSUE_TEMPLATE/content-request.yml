@@ -31,7 +31,6 @@ body:
   id: slot
   attributes:
     label: Calendar slot (week, PT)
-    description: ''
   validations:
     required: true
 - type: textarea

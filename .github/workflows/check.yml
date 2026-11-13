@@ -55,6 +55,15 @@ jobs:
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - run: python3 qa/check_links.py --docs
+  markdown:
+    name: markdown
+    # Markdown style (.markdownlint-cli2.jsonc). Not yet a required check in ops/github/ruleset-main.json.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - run: npx --yes markdownlint-cli2@0.18.1
   secrets:
     name: secrets
     runs-on: ubuntu-24.04

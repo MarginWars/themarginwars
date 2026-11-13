@@ -1,4 +1,4 @@
-# Margin Wars Working Sessions: Session Design
+# The Margin Wars Working Sessions: session design
 
 ## Overview
 
@@ -6,12 +6,12 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 | # | Date | Conference | City | Tactic | Source |
 |---|---|---|---|---|---|
-| 1 | Feb 2027 (Fintech Meetup runs 22–24 Feb 2027) | Fintech Meetup 2027 | Las Vegas, US (The Venetian) | Issue 3 / Card 03: soft-decline retry schedule | 07 §6 calendar row 1; 02 Conference Map row 10 (dates, https://fintechmeetup.com/hotel) |
-| 2 | Mar 2027 (MRC Vegas runs 15–18 Mar 2027) | MRC Vegas 2027 | Las Vegas, US (ARIA) | Issue 5 / Card 05: chargeback representment triage | 07 §6 calendar row 2; 02 row 23 (https://merchantriskcouncil.org/events/2027/mrc-vegas-2027) |
-| 3 | Apr 2027 (MRC London runs 26–28 Apr 2027) | MRC London 2027 | London, UK (InterContinental O2) | Issue 4 / Card 04: IC++ renegotiation, UK/EU edition | 07 §6 calendar row 3; 02 row 17 (https://merchantriskcouncil.org/events/2027/mrc-london-2027) |
-| 4 | Jun 2027 (Money20/20 Europe runs 8–10 Jun 2027) | Money20/20 Europe 2027 | Amsterdam, NL (RAI) | Issue 7 / Card 07: FX markup placement and when to go local | 07 §6 calendar row 4; 02 row 6 (https://europe.money2020.com/) |
-| 5 | Sep 2027 (Sibos runs 20–23 Sep 2027) | Sibos 2027 | Singapore (Marina Bay Sands) | Issue 12 / Card 12: stablecoin settlement on one payout corridor as a cost line | 07 §6 calendar row 6 (flags conflict check); 02 row 1 (https://www.sibos.com/about/future-sibos) |
-| 6 | Oct 2027 (Seamless Africa runs 25–26 Oct 2027) — proposed | Seamless Africa 2027 | Johannesburg, South Africa (Sandton Convention Centre) | Issue 10 / Card 10: steer one high-cost segment to pay-by-bank or a local APM | 07 §6 calendar row 8 (date/venue left [CONFIRM WITH AVI]); anchor event from 02 row 3 (https://www.terrapinn.com/exhibition/seamless-africa/index.stm) |
+| 1 | Feb 2027 (Fintech Meetup runs 22–24 Feb 2027) | Fintech Meetup 2027 | Las Vegas, US (The Venetian) | Issue 3 / Card 03: soft-decline retry schedule | 07 §6 calendar row 1; 02 Conference Map row 10 (dates, <https://fintechmeetup.com/hotel>) |
+| 2 | Mar 2027 (MRC Vegas runs 15–18 Mar 2027) | MRC Vegas 2027 | Las Vegas, US (ARIA) | Issue 5 / Card 05: chargeback representment triage | 07 §6 calendar row 2; 02 row 23 (<https://merchantriskcouncil.org/events/2027/mrc-vegas-2027>) |
+| 3 | Apr 2027 (MRC London runs 26–28 Apr 2027) | MRC London 2027 | London, UK (InterContinental O2) | Issue 4 / Card 04: IC++ renegotiation, UK/EU edition | 07 §6 calendar row 3; 02 row 17 (<https://merchantriskcouncil.org/events/2027/mrc-london-2027>) |
+| 4 | Jun 2027 (Money20/20 Europe runs 8–10 Jun 2027) | Money20/20 Europe 2027 | Amsterdam, NL (RAI) | Issue 7 / Card 07: FX markup placement and when to go local | 07 §6 calendar row 4; 02 row 6 (<https://europe.money2020.com/>) |
+| 5 | Sep 2027 (Sibos runs 20–23 Sep 2027) | Sibos 2027 | Singapore (Marina Bay Sands) | Issue 12 / Card 12: stablecoin settlement on one payout corridor as a cost line | 07 §6 calendar row 6 (flags conflict check); 02 row 1 (<https://www.sibos.com/about/future-sibos>) |
+| 6 | Oct 2027 (Seamless Africa runs 25–26 Oct 2027) — proposed | Seamless Africa 2027 | Johannesburg, South Africa (Sandton Convention Centre) | Issue 10 / Card 10: steer one high-cost segment to pay-by-bank or a local APM | 07 §6 calendar row 8 (date/venue left [CONFIRM WITH AVI]); anchor event from 02 row 3 (<https://www.terrapinn.com/exhibition/seamless-africa/index.stm>) |
 
 **Alternates**
 
@@ -39,7 +39,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Feb 2027 (Fintech Meetup runs 22–24 Feb 2027)
 - **Conference / city:** Fintech Meetup 2027, Las Vegas, US (The Venetian)
-- **Source:** 07 §6 calendar row 1; 02 Conference Map row 10 (dates, https://fintechmeetup.com/hotel)
+- **Source:** 07 §6 calendar row 1; 02 Conference Map row 10 (dates, <https://fintechmeetup.com/hotel>)
 - **Objective:** Agree a retry policy that never retries hard declines and schedules soft declines inside scheme limits.
 - **Decision attendees leave with:** Each attendee leaves with a signed-off retry rule set (blocked codes, schedule for category 2, data fixes for category 3) and a 30-day holdout plan.
 - **Ideal attendees:** Payments engineering leads, subscription/billing owners, payments product heads at recurring-revenue merchants and platforms; 8–12 seats, at least 3 non-US.
@@ -58,9 +58,9 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 |---|---|---|---|
 | 1 | Title + Chatham House rules | None | — |
 | 2 | The move in one sentence | Card 03 summary | Sourced (Issue 3) |
-| 3 | Decline categories 1–4 with example codes | Code table | Sourced: https://developers.tabapay.com/docs/network-authorization-best-practices ; https://chargebacks911.com/visa-excessive-reattempts-rule/ (confirm vs Visa Rules) [CONFIRM WITH AVI] |
-| 4 | Scheme limits: 20 reattempts / 30 days, none on category 1 | Rule summary + change date 19 May 2025 | Sourced: https://support.checkout.com/hc/en-us/articles/25482040901394-When-can-I-retry-a-declined-transaction |
-| 5 | Fee exposure math | $0.10 domestic / $0.25 cross-border per feeable attempt × your attempt counts | Fees sourced (secondary): https://chargebacks911.com/visa-excessive-reattempts-rule/ ; volumes [Assumption] |
+| 3 | Decline categories 1–4 with example codes | Code table | Sourced: <https://developers.tabapay.com/docs/network-authorization-best-practices> ; <https://chargebacks911.com/visa-excessive-reattempts-rule/> (confirm vs Visa Rules) [CONFIRM WITH AVI] |
+| 4 | Scheme limits: 20 reattempts / 30 days, none on category 1 | Rule summary + change date 19 May 2025 | Sourced: <https://support.checkout.com/hc/en-us/articles/25482040901394-When-can-I-retry-a-declined-transaction> |
+| 5 | Fee exposure math | $0.10 domestic / $0.25 cross-border per feeable attempt × your attempt counts | Fees sourced (secondary): <https://chargebacks911.com/visa-excessive-reattempts-rule/> ; volumes [Assumption] |
 | 6 | Mastercard equivalent | Merchant Advice Codes and retry rules | [GAP] |
 | 7 | Schedule design: pay-cycle timing, spacing, CIT vs MIT counters | Illustrative timeline | Illustrative [Assumption] |
 | 8 | Measuring recovery: holdout design | Metric: recovered approvals per 100 soft declines | Method only; no benchmark [GAP] |
@@ -100,7 +100,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Mar 2027 (MRC Vegas runs 15–18 Mar 2027)
 - **Conference / city:** MRC Vegas 2027, Las Vegas, US (ARIA)
-- **Source:** 07 §6 calendar row 2; 02 row 23 (https://merchantriskcouncil.org/events/2027/mrc-vegas-2027)
+- **Source:** 07 §6 calendar row 2; 02 row 23 (<https://merchantriskcouncil.org/events/2027/mrc-vegas-2027>)
 - **Objective:** Decide which disputes to fight, which to accept, and which to prevent, by reason code and net value.
 - **Decision attendees leave with:** Each attendee leaves with a fight / accept / prevent matrix by reason code and a target ratio headroom under Visa's monitoring program.
 - **Ideal attendees:** Heads of disputes, risk and fraud leads, marketplace trust & safety, finance partners at high-CNP merchants; 8–12, mixed regions.
@@ -119,7 +119,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 |---|---|---|---|
 | 1 | Title + rules | None | — |
 | 2 | The move | Card 05 summary | [GAP] Card 05 not yet drafted |
-| 3 | Why now: Visa VAMP ratio and thresholds | Formula + thresholds: merchant Excessive ≥150 bps from 1 Apr 2026 (AP, Canada, EU, US), ≥220 bps CEMEA; min 1,500 counts | Sourced: https://corporate.visa.com/content/dam/VCOM/corporate/visa-perspectives/security-and-trust/documents/visa-acquirer-monitoring-program-fact-sheet-2025.pdf ; https://support.checkout.com/hc/en-us/articles/26990138066450-Update-to-the-Visa-Acquirer-Monitoring-Program-VAMP |
+| 3 | Why now: Visa VAMP ratio and thresholds | Formula + thresholds: merchant Excessive ≥150 bps from 1 Apr 2026 (AP, Canada, EU, US), ≥220 bps CEMEA; min 1,500 counts | Sourced: <https://corporate.visa.com/content/dam/VCOM/corporate/visa-perspectives/security-and-trust/documents/visa-acquirer-monitoring-program-fact-sheet-2025.pdf> ; <https://support.checkout.com/hc/en-us/articles/26990138066450-Update-to-the-Visa-Acquirer-Monitoring-Program-VAMP> |
 | 4 | What's excluded: pre-dispute resolutions, CE 3.0-qualified fraud | Program rules | Sourced (same Visa fact sheet) |
 | 5 | Net recovery math | Win rate × value − handling cost, by reason code | Method; inputs [Assumption] |
 | 6 | Fight / accept / prevent matrix | 2×2 template | Template |
@@ -159,7 +159,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Apr 2027 (MRC London runs 26–28 Apr 2027)
 - **Conference / city:** MRC London 2027, London, UK (InterContinental O2)
-- **Source:** 07 §6 calendar row 3; 02 row 17 (https://merchantriskcouncil.org/events/2027/mrc-london-2027)
+- **Source:** 07 §6 calendar row 3; 02 row 17 (<https://merchantriskcouncil.org/events/2027/mrc-london-2027>)
 - **Objective:** Decompose the effective rate into interchange, scheme fees and acquirer markup, and set a renegotiation ask.
 - **Decision attendees leave with:** Each attendee leaves with a fee decomposition of one statement, a target markup, and a negotiation one-pager.
 - **Ideal attendees:** Finance and procurement leads, heads of payments at UK/EU merchants selling cross-border; 8–12.
@@ -179,9 +179,9 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 | 1 | Title + rules | None | — |
 | 2 | The move | Card 04 summary | [GAP] Card 04 not drafted |
 | 3 | Anatomy of the effective rate | IC + scheme + markup stack | Concept |
-| 4 | EU caps: 0.2% debit, 0.3% credit (consumer) | IFR 2015/751 Arts 3–4 | Sourced: https://eur-lex.europa.eu/eli/reg/2015/751/oj/eng |
-| 5 | UK–EEA CNP: 1.15% debit / 1.5% credit; PSR estimates £150–200m/yr extra cost | PSR market review | Sourced: https://www.psr.org.uk/our-work/market-reviews/market-review-into-cross-border-interchange-fees/ |
-| 6 | Cap status: interim cap dropped; High Court upheld PSR powers 15 Jan 2026 | Timeline | Sourced: https://www.psr.org.uk/news-and-updates/latest-news/news/high-court-backs-psr-s-powers-to-cap-cross-border-card-fees/ (re-check status before session) |
+| 4 | EU caps: 0.2% debit, 0.3% credit (consumer) | IFR 2015/751 Arts 3–4 | Sourced: <https://eur-lex.europa.eu/eli/reg/2015/751/oj/eng> |
+| 5 | UK–EEA CNP: 1.15% debit / 1.5% credit; PSR estimates £150–200m/yr extra cost | PSR market review | Sourced: <https://www.psr.org.uk/our-work/market-reviews/market-review-into-cross-border-interchange-fees/> |
+| 6 | Cap status: interim cap dropped; High Court upheld PSR powers 15 Jan 2026 | Timeline | Sourced: <https://www.psr.org.uk/news-and-updates/latest-news/news/high-court-backs-psr-s-powers-to-cap-cross-border-card-fees/> (re-check status before session) |
 | 7 | Scheme fees: the line nobody audits | Example lines | [GAP] public scheme fee schedules |
 | 8 | Blended → IC++ break-even | Calculator walkthrough | Inputs [Assumption] |
 | 9 | Negotiation levers and contract traps | Volume tiers, minimums, notice periods | Practice [Assumption] |
@@ -221,7 +221,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Jun 2027 (Money20/20 Europe runs 8–10 Jun 2027)
 - **Conference / city:** Money20/20 Europe 2027, Amsterdam, NL (RAI)
-- **Source:** 07 §6 calendar row 4; 02 row 6 (https://europe.money2020.com/)
+- **Source:** 07 §6 calendar row 4; 02 row 6 (<https://europe.money2020.com/>)
 - **Objective:** Decide where FX margin sits (DCC, multi-currency pricing, settlement conversion) and the trigger for local acquiring.
 - **Decision attendees leave with:** Each attendee leaves with an FX placement choice per top corridor and a volume trigger for local acquiring.
 - **Ideal attendees:** Treasury leads, cross-border payments product heads, finance at merchants selling in 3+ currencies; 8–12, at least 2 APAC/Africa.
@@ -241,10 +241,10 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 | 1 | Title + rules | None | — |
 | 2 | The move | Card 07 summary | [GAP] Card 07 not drafted |
 | 3 | Three places FX margin can sit | DCC vs MCP vs settlement conversion diagram | Concept |
-| 4 | EU disclosure: conversion charges as % markup over ECB reference rate | Reg 2019/518 Art 3a | Sourced: https://eur-lex.europa.eu/eli/reg/2019/518/oj |
+| 4 | EU disclosure: conversion charges as % markup over ECB reference rate | Reg 2019/518 Art 3a | Sourced: <https://eur-lex.europa.eu/eli/reg/2019/518/oj> |
 | 5 | Measuring spread vs a reference rate | Method: compare executed rate to ECB / mid-market | Method; data [Assumption] |
 | 6 | Conversion and approval effects of local-currency pricing | Benchmark | [GAP] |
-| 7 | Local vs cross-border acquiring cost | Interchange differences; UK–EEA CNP example 1.15%/1.5% vs 0.2%/0.3% | Sourced: https://www.psr.org.uk/our-work/market-reviews/market-review-into-cross-border-interchange-fees/ |
+| 7 | Local vs cross-border acquiring cost | Interchange differences; UK–EEA CNP example 1.15%/1.5% vs 0.2%/0.3% | Sourced: <https://www.psr.org.uk/our-work/market-reviews/market-review-into-cross-border-interchange-fees/> |
 | 8 | Local-acquiring trigger model | Volume threshold calculator | Inputs [Assumption] |
 | 9 | Failure modes | DCC complaints, hedging gaps, entity/licensing costs | Practice [Assumption] |
 | 10 | Cross-market | US / UK-EU / Africa (FX controls) / APAC | [GAP] Africa FX-control and APAC sources |
@@ -280,7 +280,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Sep 2027 (Sibos runs 20–23 Sep 2027)
 - **Conference / city:** Sibos 2027, Singapore (Marina Bay Sands)
-- **Source:** 07 §6 calendar row 6 (flags conflict check); 02 row 1 (https://www.sibos.com/about/future-sibos)
+- **Source:** 07 §6 calendar row 6 (flags conflict check); 02 row 1 (<https://www.sibos.com/about/future-sibos>)
 - **Objective:** Compare the all-in cost of one cross-border payout corridor on the current rail vs stablecoin settlement, as a cost line only.
 - **Decision attendees leave with:** Each attendee leaves with a filled cost-comparison sheet for one corridor and a go / no-go test design.
 - **Ideal attendees:** Treasury and payouts leads at banks, marketplaces and payroll/payout platforms with APAC/Africa corridors; compliance lead in the room; 8–12.
@@ -338,7 +338,7 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 
 - **Date:** Oct 2027 (Seamless Africa runs 25–26 Oct 2027) — proposed
 - **Conference / city:** Seamless Africa 2027, Johannesburg, South Africa (Sandton Convention Centre)
-- **Source:** 07 §6 calendar row 8 (date/venue left [CONFIRM WITH AVI]); anchor event from 02 row 3 (https://www.terrapinn.com/exhibition/seamless-africa/index.stm)
+- **Source:** 07 §6 calendar row 8 (date/venue left [CONFIRM WITH AVI]); anchor event from 02 row 3 (<https://www.terrapinn.com/exhibition/seamless-africa/index.stm>)
 - **Objective:** Pick one high-cost checkout segment and design a steering test to a local instant-payment or APM rail.
 - **Decision attendees leave with:** Each attendee leaves with a chosen segment, rail, incentive design and cost/conversion test plan.
 - **Ideal attendees:** Checkout owners, payments product heads and finance at merchants and platforms in South Africa, Nigeria, Kenya plus UK/EU and APAC peers; 8–12.
@@ -358,8 +358,8 @@ The files list eight candidate Working Sessions (07 §6 calendar), while 03 mode
 | 1 | Title + rules | None | — |
 | 2 | The move | Card 10 summary | [GAP] Card 10 not drafted |
 | 3 | Cost per transaction: card vs pay-by-bank | Segment cost comparison | Inputs [Assumption] |
-| 4 | South Africa: PayShap limit raised to R50,000 by BankservAfrica; bank-set pricing | Rail facts | Sourced: https://techcentral.co.za/payshap-payment-limit-raised-to-r50-000/254663/ |
-| 5 | Bank pricing varies: e.g. free under R5,000 then R7 (one bank) | Example tariffs | Sourced: https://gotyme.co.za/personal/media/money-skills-landing/what-are-the-transaction-limits-for-payshap (consumer tariff; merchant pricing [GAP]) |
+| 4 | South Africa: PayShap limit raised to R50,000 by BankservAfrica; bank-set pricing | Rail facts | Sourced: <https://techcentral.co.za/payshap-payment-limit-raised-to-r50-000/254663/> |
+| 5 | Bank pricing varies: e.g. free under R5,000 then R7 (one bank) | Example tariffs | Sourced: <https://gotyme.co.za/personal/media/money-skills-landing/what-are-the-transaction-limits-for-payshap> (consumer tariff; merchant pricing [GAP]) |
 | 6 | Other markets: UK open banking, India UPI, Nigeria, Kenya M-Pesa | Comparison | [GAP] |
 | 7 | Steering levers: default order, incentives, surcharging rules | Rules by market | [GAP] surcharging law sources |
 | 8 | Test design and metrics | Cost per txn, conversion, refunds/disputes | Template |

@@ -1,9 +1,8 @@
-# The Margin Wars: Bios (v1)
+# The Margin Wars: bios (v1)
 
 **DRAFT FOR REVIEW** · v1 · 24 Oct 2026 (PT) · nothing here has been published or sent.
 
 Every fact below comes from the approved site copy in `build/build_site_v2.py` (`AVI_INTRO`, `AVI_LINE`, `AVI_HL`, `AVI_CAREER`, `AVI_EDU`, `ANITHA_BIO`, `ANITHA_INTRO`, `ANITHA_BG`, `ANITHA_HL`) or from the verified stages in 08. Nothing has been added.
-
 
 ---
 
@@ -58,6 +57,4 @@ Every fact below comes from the approved site copy in `build/build_site_v2.py` (
 
 ---
 
-
 >
-
