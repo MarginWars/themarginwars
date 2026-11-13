@@ -1,7 +1,8 @@
 name: deploy
 # dev:        every push to main (= every merged PR) -> Cloudflare Pages project themarginwars-dev (branch main)
-# production: the same build, promoted to project themarginwars after Avi approves the `production` environment.
-#             Requires the latest nightly run on main to be green. Manual re-run: Actions -> deploy -> Run workflow.
+# production: manual only (Actions -> deploy -> Run workflow -> production). Builds main, deploys dev, then waits for
+#             Avi's approval on the `production` environment. Requires the latest nightly run on main to be green.
+#             A push to main never starts a production deployment.
 # Secrets: CLOUDFLARE_API_TOKEN (per environment, Pages:Edit on the account only). Variable: CLOUDFLARE_ACCOUNT_ID.
 on:
   push:
@@ -61,7 +62,7 @@ jobs:
       - run: echo "dev deployed $GITHUB_SHA (dist ${{ needs.build.outputs.md5 }})" >> "$GITHUB_STEP_SUMMARY"
   production:
     needs: [build, dev]
-    if: (github.event_name == 'push' || inputs.target == 'production') && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'production' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     environment: { name: production, url: "https://themarginwars.com" }
     concurrency: { group: deploy-production, cancel-in-progress: true }
