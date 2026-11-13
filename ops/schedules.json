@@ -1,0 +1,140 @@
+{
+  "schema": "marginwars.agent-schedules/v1",
+  "timezone": "America/Los_Angeles",
+  "note": "Staged. Every entry stays enabled:false until Avi approves the agent suite routines; Launch Command flips them by PR.",
+  "schedules": [
+    {
+      "agent": "launch-command",
+      "id": "board-sweep",
+      "cron": "30 7 * * *",
+      "what": "Board sweep and one Slack digest",
+      "enabled": false
+    },
+    {
+      "agent": "launch-command",
+      "id": "weekly-plan",
+      "cron": "0 8 * * 1",
+      "what": "Weekly plan",
+      "enabled": false
+    },
+    {
+      "agent": "launch-command",
+      "id": "weekly-review",
+      "cron": "0 16 * * 5",
+      "what": "Weekly review",
+      "enabled": false
+    },
+    {
+      "agent": "site-release",
+      "id": "nightly-matrix",
+      "cron": "0 2 * * *",
+      "what": "Full cross-engine matrix (also the GitHub nightly workflow)",
+      "enabled": false
+    },
+    {
+      "agent": "site-release",
+      "id": "ops-check",
+      "cron": "0 8 * * *",
+      "what": "ops/ops_check.sh against prod and dev",
+      "enabled": false
+    },
+    {
+      "agent": "channels",
+      "id": "publish-due",
+      "cron": "*/15 7-19 * * *",
+      "what": "Publish due merged items (ops/publish/scheduler-spec.md)",
+      "enabled": false
+    },
+    {
+      "agent": "channels",
+      "id": "ledger-metrics",
+      "cron": "0 18 * * *",
+      "what": "Ledger and metrics write-back",
+      "enabled": false
+    },
+    {
+      "agent": "channels",
+      "id": "reply-triage",
+      "cron": "0 9,15 * * 1-5",
+      "what": "Reply triage, drafts only",
+      "enabled": false
+    },
+    {
+      "agent": "content-studio",
+      "id": "calendar-pr",
+      "cron": "0 10 * * 1",
+      "what": "Next week calendar PR",
+      "enabled": false
+    },
+    {
+      "agent": "content-studio",
+      "id": "slot-drafts",
+      "cron": "0 11 * * *",
+      "what": "Draft PRs for calendar slots",
+      "enabled": false
+    },
+    {
+      "agent": "publications",
+      "id": "briefing-issue",
+      "cron": "0 10 20 * *",
+      "what": "Monthly Briefing issue PR by the 20th",
+      "enabled": false
+    },
+    {
+      "agent": "publications",
+      "id": "weekly-essay",
+      "cron": "0 10 * * 3",
+      "what": "Weekly essay PR",
+      "enabled": false
+    },
+    {
+      "agent": "speaking",
+      "id": "cfp-scan",
+      "cron": "0 9 * * 1,4",
+      "what": "CFP and pass scan (union-based)",
+      "enabled": false
+    },
+    {
+      "agent": "speaking",
+      "id": "deadline-check",
+      "cron": "0 10 * * *",
+      "what": "Deadline check; file merged packs on the day",
+      "enabled": false
+    },
+    {
+      "agent": "pipeline",
+      "id": "inbound-triage",
+      "cron": "30 8 * * *",
+      "what": "Inbound triage from alerts",
+      "enabled": false
+    },
+    {
+      "agent": "pipeline",
+      "id": "prospect-batch",
+      "cron": "0 10 * * 2,5",
+      "what": "Prospect batch PR (drafts)",
+      "enabled": false
+    },
+    {
+      "agent": "pipeline",
+      "id": "weekly-report",
+      "cron": "0 9 * * 1",
+      "what": "Anonymised pipeline report",
+      "enabled": false
+    },
+    {
+      "agent": "research",
+      "id": "daily-scan",
+      "cron": "0 6 * * *",
+      "what": "News and regulatory scan into a research PR",
+      "enabled": false
+    },
+    {
+      "agent": "research",
+      "id": "fact-refresh",
+      "cron": "0 9 * * 4",
+      "what": "Fact register refresh",
+      "enabled": false
+    }
+  ]
+}

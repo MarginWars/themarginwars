@@ -1,0 +1,12 @@
+{
+  "name": "ledger-bot-only",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": { "ref_name": { "include": ["refs/heads/ledger"], "exclude": [] } },
+  "bypass_actors": [ { "actor_id": "<BOTS_TEAM_ID>", "actor_type": "Team", "bypass_mode": "always" } ],
+  "rules": [
+    { "type": "deletion" },
+    { "type": "non_fast_forward" },
+    { "type": "update" }
+  ]
+}
