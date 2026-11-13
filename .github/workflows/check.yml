@@ -17,7 +17,7 @@ jobs:
     name: compliance
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
@@ -31,7 +31,7 @@ jobs:
     name: frontmatter-limits
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
@@ -41,7 +41,7 @@ jobs:
     name: claims
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
@@ -50,7 +50,7 @@ jobs:
     name: links-docs
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
@@ -60,7 +60,7 @@ jobs:
     # Markdown style (.markdownlint-cli2.jsonc). Not yet a required check in ops/github/ruleset-main.json.
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with: { node-version: "24" }
       - run: npx --yes markdownlint-cli2@0.18.1
@@ -68,7 +68,7 @@ jobs:
     name: secrets
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - name: gitleaks (full history, redacted)
         run: |
@@ -80,13 +80,13 @@ jobs:
     name: standards-lock
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: python3 qa/check_standards_lock.py
   functions:
     name: functions
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with: { node-version: "24" }
       - name: Assistant contract tests (guard from secrets when available)
@@ -103,7 +103,7 @@ jobs:
     name: site-build
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
@@ -122,7 +122,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - name: Only when the site, functions or gates change
         id: f
