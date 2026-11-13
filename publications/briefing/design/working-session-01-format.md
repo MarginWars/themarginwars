@@ -24,7 +24,7 @@ Anonymised one-page notes (titles not companies) to attendees within 48h; update
 
 ## Commercials ([Assumption], from 07/10)
 
-$750–$1,500/seat or $10K–$15K hosted/sponsored. Venue/host TBD.
+By proposal (internal pricing is kept off the public repo). Venue/host TBD.
 
 ## Open
 

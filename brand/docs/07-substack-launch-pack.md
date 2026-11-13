@@ -20,10 +20,10 @@ Draft for Avi's review, revised 21 Oct 2026 (PT). **No account has been created,
 
 | Product | Name | Offer-ladder rung (10) |
 |---|---|---|
-| Invite-only monthly briefing | **The Margin Wars Briefing** | 0: free by invitation; optional paid membership of about $1.5K/yr in year two |
-| Closed-door peer sessions | **The Margin Wars Working Sessions** | 1: $750-$1,500 per seat, or $10K-$15K per sponsored or hosted session |
+| Invite-only monthly briefing | **The Margin Wars Briefing** | 0: free by invitation |
+| Closed-door peer sessions | **The Margin Wars Working Sessions** | 1: by proposal (internal pricing is kept off the public repo) |
 | Tactic library | **The Margin Wars Playbook** (the Cross-Market Margin Playbook, 12 cards) | The portfolio for every rung |
-| Flagship keynote | **Payment tactics for margin wars** (09_Speaker_Kit, Talk 1) | 5: $10K-$15K |
+| Flagship keynote | **Payment tactics for margin wars** (09_Speaker_Kit, Talk 1) | 5: fees on request |
 
 **Working tagline:** *Payment tactics for margin wars. One move at a time, in every market you sell in.*
 
@@ -107,7 +107,7 @@ Order can change to match Working Session dates (Section 6). Issues 1-3 fall ins
 
 **Run of show (2.5 hours).** Avi presents the tactic card (10 minutes); each attendee gives their current number and what blocks them (40 minutes); the group works through the failure modes and the cross-market differences (60 minutes); each attendee commits to one Monday action (20 minutes); dinner.
 
-**Commercials (10_Standout_Strategy rung 1; [Assumption] prices to test).** $750-$1,500 per seat, or $10K-$15K per session when a vendor sponsors or hosts. Sponsor rules: one seat for the sponsor, no pitch, no attendee contact list (introductions only where attendees opt in), and the tactic and attendee list are Avi's choice. The model line is R15 in 03: Base 4 sessions in Year 1 from Jan 2027 and 6 in Year 2, at $12,500 each; Avi pays the venue (C17) unless the host does.
+**Commercials (10_Standout_Strategy rung 1).** Priced by proposal; internal pricing and the session model are not kept in this public repo. Sponsor rules: one seat for the sponsor, no pitch, no attendee contact list (introductions only where attendees opt in), and the tactic and attendee list are Avi's choice. Avi pays the venue unless the host does.
 
 **First-year calendar (dates from 02_Conference_Map; to confirm with venues; nothing booked)**
 

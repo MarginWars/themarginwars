@@ -21,7 +21,7 @@ Source of truth is `site_calm/assets/feeds/`:
 4. For the weekly top three, update `bp-watch.json`: `id`, `date`, `title`, `market`, `impact`, `method`, `move`, `source`, `wire_id`. Preserve past IDs if retaining the archive. A numeric estimate requires a visible method and inputs. Current seed has no numeric savings claims.
 5. For a genuine Route Brief change, append to `route-briefs.json`: `id`, `date`, `market`, `route_id` (existing rb.json scenario), `wire_id`, `title`, `description`, `source`. Current four entries explicitly describe context links, not changed recommendations.
 6. Obtain Avi’s editorial approval before any production publication. No unattended publish step is configured.
-7. Start the local QA server in a separate terminal if needed: `python3 -m http.server 8957 --directory /workspace/deliverables/brand/site_calm`. Rebuild in order from `/workspace/deliverables/brand`:
+7. Start the local QA server in a separate terminal if needed: `python3 -m http.server 8957 --directory site/dist`. Rebuild in order from the build workspace:
 
    ```sh
    python3 copy_weekend/apply_copy_weekend.py

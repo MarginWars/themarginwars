@@ -26,6 +26,7 @@ jobs:
         run: |
           if [ -n "$EXTRA" ]; then printf '%s\n' "$EXTRA" > "$RUNNER_TEMP/extra.txt"; echo "COMPLIANCE_EXTRA_TERMS_FILE=$RUNNER_TEMP/extra.txt" >> "$GITHUB_ENV"; fi
       - run: python3 qa/compliance/check_content.py
+      - run: python3 qa/compliance/tests/test_private_rules.py
   frontmatter-limits:
     name: frontmatter-limits
     runs-on: ubuntu-24.04
