@@ -1,4 +1,4 @@
-# The Margin Wars: Core Narrative (v1)
+# The Margin Wars: core narrative (v1)
 
 **DRAFT FOR REVIEW** · v1 · 24 Oct 2026 (PT) · for Avi and Anitha · nothing here has been published, posted or sent.
 
@@ -56,6 +56,7 @@ Each point is drawn from 01 (niche thesis) and 10 (competitive landscape). These
 ## 5. Who it's for
 
 **Primary readers and rooms** (06 Briefing page; 09 target audiences):
+
 - Heads of payments, and payments product and pricing leads at acquirers and PSPs
 - Merchant payments and finance leads (including CFOs) at enterprise and cross-border merchants
 - Risk, disputes and treasury leads

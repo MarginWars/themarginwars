@@ -1,9 +1,13 @@
-# Content PR (posts, threads, issues, calendar)
+<!-- Title: a Conventional Commit, at most 72 characters. It becomes the squash commit. Link the issue below. -->
+
+## Summary
+
+<!-- Content: posts, threads, issues or the weekly calendar. What ships and why. Closes #… -->
 
 ## Items
 
-| id | channel | schedule (PT) | status | sources |
-|---|---|---|---|---|
+| Id | Channel | Schedule (PT) | Status | Sources |
+| --- | --- | --- | --- | --- |
 | | | | | |
 
 ## Checklist
@@ -15,4 +19,7 @@
 - [ ] UTM links come from the link registry (`links:` ids)
 - [ ] For a weekly calendar PR: merging is the explicit OK for every post listed (SP-1, once granted)
 
-Standing permission: <!-- SP-1 or none -->
+## Approval
+
+- Standing permission: <!-- SP-1 or none -->
+- Approvals rows: <!-- A-### or none -->

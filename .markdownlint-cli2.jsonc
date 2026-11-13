@@ -1,0 +1,37 @@
+{
+  // Markdown style for The Margin Wars. Adapted from the group standard (instip .markdownlint-cli2.jsonc).
+  "config": {
+    "default": true,
+    // Prose wraps where the author wraps it; tables and links stay on one line.
+    "MD013": false,
+    "MD024": { "siblings_only": true },
+    // A numbered list may carry on its numbering after a paragraph.
+    "MD029": false,
+    // README banners and badges need <picture>, <img>, <p> and <a>.
+    "MD033": { "allowed_elements": ["picture", "source", "img", "p", "a", "br", "sub", "sup", "details", "summary", "kbd"] },
+    // Pull request templates and some briefs open with a comment or a picture, not a heading.
+    "MD041": false,
+    // House style: bold run-in labels ("**Status:** ...") are not headings.
+    "MD036": false
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    ".git/**",
+    "node_modules/**",
+    "qa-out/**",
+    // Generated source of record: byte-identical builds, never reformatted.
+    "site/src/**",
+    // Outbound items (qa/limits.yml item_globs): the file body is the exact approved text a channel publishes,
+    // so formatting is set by the channel, not by this linter.
+    "content/linkedin/**",
+    "content/x/**",
+    "content/substack/**",
+    "content/_templates/**",
+    "publications/briefing/issue-*.md",
+    "publications/essays/**",
+    "publications/route-briefs/**",
+    "speaking/events/*/pack.md",
+    "media/pitches/**",
+    "media/passes/**"
+  ]
+}

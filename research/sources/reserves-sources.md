@@ -1,9 +1,12 @@
 # Reserves & Airdrops: source table
+
 Draft 31 Oct 2026 (PT). Every name on the section traces to a row here. Source keys:
+
 - **SITE** = approved site copy: `deliverables/brand/collateral/bios.md`, `_backup_teardown_20261027/build_site_v2.py` (read only, not run; ANITHA_CAREER/ANITHA_HL/AVI_HL), live `site_v2/about.html`.
 - **CHAT** = Avi, chat 2026-10-31 12:06–12:07 PT (relayed): names acquirer/partner banks and gives OK to name them publicly: "We missing all the acquirer partners we've worked with MVB Pathward, FIS, NAB, Fiserv, JPM etc"; plus Deutsche Bank, Merrick Bank, Moneris (12:06) and Fifth Third (12:07). At 12:07 PT he also named Cielo, Rede and Santander, and said Merrick, Fifth Third and Deutsche Bank are acquirer partners.
 
 ## On the draft (publicly safe)
+
 | Name | Category | Person | Source | Evidence quote |
 |---|---|---|---|---|
 | Card networks | Networks | Avi | LI; RP | "Network Pricing"; "strategic partner ecosystem (Fiserv, Snowflake, the card networks, and all bank…" |
@@ -48,6 +51,7 @@ Draft 31 Oct 2026 (PT). Every name on the section traces to a row here. Source k
 | Hyperwallet (extended: "payout network connectivity") | Wallets & platforms | Avi | RQ #27; CHAT 12:23 PT | Avi named the Hyperwallet connectivity work; CV26 l.40 "push-to-card & push-to-wallet payouts" |
 
 ## Regions (Airdrops)
+
 | Region | Person | Source | Evidence |
 |---|---|---|---|
 | United States | Avi | LI; CV26 | "California, Chicago, … New York, Austin"; "ACH, RTP, FedNow, push-to-card & push-to-wallet disbursements, and domestic & international wires" |
@@ -61,6 +65,7 @@ Draft 31 Oct 2026 (PT). Every name on the section traces to a row here. Source k
 | South Africa & Africa | Avi | LI; CV26 | FNB, RMB, Momentum, Rentoza, Effectus (Johannesburg); VEON "expansion across Europe, Asia, the Russian Federation and Africa" |
 
 ## Held pending Avi's OK (NOT on the draft)
+
 | Name | Category | Source | Why held |
 |---|---|---|---|
 | Visa | Network | BANK #16; RIF l.99 | Only evidence is an internal incident flagged CONFIRMED-confidential ("network name") |
@@ -78,6 +83,7 @@ Draft 31 Oct 2026 (PT). Every name on the section traces to a row here. Source k
 | Local schemes (RuPay, UPI, Interac, eftpos, Carnet, Mir, Pix, BankAxept) | Networks | none found | No work-relationship source |
 
 ## Regulators & schemes group (added 2026-11-01)
+
 Listed as terrain: name + public one-line role. No claim that the team was licensed by, worked for or with any of these bodies. No personal attribution. Market tag = jurisdiction.
 Named list source: Avi chat 2026-11-01 7:59 PM PT ("FCA, EBA, BaFin, AusPayNet, EftPos etc"); widening per Avi 8:00 PM PT (infer from the Braintree work, markets already on the site).
 
@@ -97,4 +103,5 @@ Named list source: Avi chat 2026-11-01 7:59 PM PT ("FCA, EBA, BaFin, AusPayNet, 
 | RBA, ASIC, APRA, AUSTRAC | AU | REGIONS "Australia & APAC" (NAB; Australia unified onto one platform) |
 | SARB, PASA | ZA | REGIONS "South Africa & Africa" (FNB, RMB, Rentoza, Effectus) |
 | EMVCo, PCI SSC | Global | CV21 "Global lead for 3DS and SCA"; 01_Brand brief l.135 (card-brand relationships, PSD2) |
+
 Not added: Visa, Mastercard, Interac, Pix, UPI, RuPay (held above; no change). MAS (Singapore not a sourced market).

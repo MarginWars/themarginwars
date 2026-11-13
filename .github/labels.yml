@@ -1,82 +1,123 @@
+# Labels, synced by .github/workflows/labels.yml on merge. Colours come from the brand palette (brand/README.md):
+# sky = workstream, violet = channel, magenta = needs a person, gold = login or fee, coral = blocked or critical,
+# mint = live or routed, greys = status and housekeeping.
 - name: ws:site
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: site'
 - name: ws:channels
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: channels'
 - name: ws:content
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: content'
 - name: ws:publications
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: publications'
 - name: ws:speaking
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: speaking'
 - name: ws:media
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: media'
 - name: ws:pipeline
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: pipeline'
 - name: ws:research
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: research'
 - name: ws:launch
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: launch'
 - name: ws:ops
-  color: 1d76db
+  color: 8FB0E0
   description: 'Workstream: ops'
 - name: ch:linkedin-personal
-  color: 5319e7
+  color: A08FE6
   description: 'Channel: linkedin-personal'
 - name: ch:linkedin-company
-  color: 5319e7
+  color: A08FE6
   description: 'Channel: linkedin-company'
 - name: ch:x
-  color: 5319e7
+  color: A08FE6
   description: 'Channel: x'
 - name: ch:substack
-  color: 5319e7
+  color: A08FE6
   description: 'Channel: substack'
 - name: ch:briefing
-  color: 5319e7
+  color: A08FE6
   description: 'Channel: briefing'
 - name: needs:avi
-  color: d93f0b
+  color: B5237F
   description: Waiting on a decision from Avi
 - name: needs:anitha
-  color: d93f0b
+  color: B5237F
   description: Waiting on Anitha
 - name: needs:login
-  color: fbca04
+  color: D2A63A
   description: Login or token needed (Passwords & Vaults)
 - name: needs:fee
-  color: fbca04
+  color: D2A63A
   description: 'Involves a fee or spend: explicit OK required'
 - name: gate:approval-name
-  color: b60205
-  description: 'Names an approval-gated company: needs an approved ops/approvals.md
-    row'
+  color: EA6259
+  description: 'Names an approval-gated company: needs an approved ops/approvals.md row'
 - name: blocked
-  color: b60205
+  color: EA6259
   description: Blocked
 - name: launch-critical
-  color: b60205
+  color: EA6259
   description: On the Mon 16 Nov launch critical path
 - name: for-grokbot
-  color: 0e8a16
+  color: 3FBF85
   description: Route to the Grok Bot agents
 - name: standing-permission
-  color: c5def5
+  color: DDE1E4
   description: Covered by a standing permission (cite SP-n)
 - name: status:scheduled
-  color: bfdadc
+  color: B7C1C9
   description: 'Publish status: scheduled'
 - name: status:published
-  color: bfdadc
+  color: 3FBF85
   description: 'Publish status: published'
 - name: status:failed
-  color: bfdadc
+  color: EA6259
   description: 'Publish status: failed'
+- name: dependencies
+  color: B7C1C9
+  description: Dependency update (Dependabot)
+- name: github_actions
+  color: B7C1C9
+  description: GitHub Actions update (Dependabot)
+- name: python
+  color: B7C1C9
+  description: Python dependency update (Dependabot)
+- name: bug
+  color: EA6259
+  description: Something isn't working
+- name: enhancement
+  color: 3FBF85
+  description: New feature or request
+- name: documentation
+  color: 8FB0E0
+  description: Improvements or additions to documentation
+- name: accessibility
+  color: A08FE6
+  description: Barrier affecting people with disabilities
+- name: question
+  color: 8FB0E0
+  description: Further information is requested
+- name: help wanted
+  color: D2A63A
+  description: Extra attention is needed
+- name: good first issue
+  color: A08FE6
+  description: Good for newcomers
+- name: duplicate
+  color: DDE1E4
+  description: This issue or pull request already exists
+- name: invalid
+  color: DDE1E4
+  description: This doesn't seem right
+- name: wontfix
+  color: DDE1E4
+  description: This will not be worked on

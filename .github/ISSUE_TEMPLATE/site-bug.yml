@@ -11,20 +11,18 @@ body:
   id: url
   attributes:
     label: Page URL
-    description: ''
   validations:
     required: true
 - type: input
   id: width
   attributes:
     label: Viewport width(s)
-    description: ''
   validations:
     required: true
 - type: dropdown
   id: engine
   attributes:
-    label: Engine / device
+    label: Engine or device
     options:
     - Chromium
     - WebKit / Safari
@@ -38,7 +36,6 @@ body:
   id: what
   attributes:
     label: What is wrong (screenshot welcome)
-    description: ''
   validations:
     required: true
 - type: dropdown

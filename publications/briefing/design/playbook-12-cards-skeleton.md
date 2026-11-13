@@ -1,4 +1,5 @@
-# The Margin Wars Playbook — Cross-Market Margin Playbook (12-card skeleton, DRAFT)
+# Cross-Market Margin Playbook: 12-card skeleton (draft)
+
 Card format (10_Standout_Strategy §2 / 07 §4): The move · Mechanics · Prerequisites · Metrics & impact (sourced or [Assumption]) · Failure modes · Owner · US / UK-EU / Africa / APAC · War story [CONFIRM WITH AVI] · Monday actions.
 
 | # | Issue date | Card | Key metric | Owner | Sourced anchors so far | Status / gaps |
@@ -15,4 +16,3 @@ Card format (10_Standout_Strategy §2 / 07 §4): The move · Mechanics · Prereq
 | 10 | 7 Sep 2027 | Steer a segment to pay-by-bank / local APM | Cost per txn; conversion | Checkout owner | — | UK open banking, PayShap/SA, UPI, Pix-like comps |
 | 11 | 5 Oct 2027 | Orchestration exit terms: token portability, dual-acquirer | Time/cost to move 20% volume | Head of payments / legal | — | — |
 | 12 | 2 Nov 2027 | Stablecoin settlement on one payout corridor as a cost line | All-in cost per payout vs current rail | Treasury / compliance | — | **Conflict check required**; no employer references; cost-line only |
-

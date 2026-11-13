@@ -1,14 +1,10 @@
-# Speaker Kit - Avi Reddy (The Margin Wars)
+# Speaker kit: Avi Reddy (The Margin Wars)
 
 Draft for Avi's review, prepared 21 Oct 2026 (PT). Nothing here has been sent or published. Positioning follows 10_Standout_Strategy: **"The operator's playbook for winning back payment margin, one tactic at a time, in every market you sell in."** Every stage, session and fee below is tactical: one specific lever, how it works and what it is worth, never a trend talk. Speaking is distribution; the revenue lines it feeds are private briefings, The Margin Wars Working Sessions, teardowns and advisory (see 03). Invitation to The Margin Wars Briefing (invite-only, monthly) is offered to every room.
-
 
 ## 1. Bios
 
 **One-liner (for programmes and lower thirds).** Avi Reddy - payments operator; tactics for winning back payment margin across the US, UK/Europe, Africa and APAC.
-
-
-
 
 ## 2. Four signature talks
 
@@ -44,11 +40,9 @@ Every talk uses the same tactic card format as The Margin Wars Playbook (the Cro
 
 **Format.** 30-minute talk or co-presented case session. Builds on the Snowflake Summit 2025 keynote co-presented with Fiserv's VP Product, the Money20/20 USA 2024 session on merchant cloud data sharing with Snowflake, and the Data Cloud Now interview.
 
-
 **Target audience.** Merchant payments, data and finance teams; processor and acquirer data-product leaders; data-platform partner teams.
 
 ### Also available as a private briefing: Stablecoin settlement as a cost line for acquirers and merchants
-
 
 ## 3. Past stages
 
@@ -78,6 +72,7 @@ All fees are in USD, exclude travel and accommodation (billed at cost), and are 
 **Related offers (not speaking, for the follow-up conversation):** Margin Teardown $17,500 (2 days, the merchant's own data); Cross-Market Expansion or Stablecoin Cost Sprint $30,000-$40,000 (6-8 days). Both from the offer ladder in 10.
 
 **Terms**
+
 - Conference CFP slots pay nothing (and Nacha speakers pay $525-$675); Avi takes them for distribution, not fees.
 - Bookings through a bureau: the fee above is the gross fee; bureaus usually keep 25-30% (Futurists Speakers).
 - Discounts: none below the floor. For non-profit or regional events (for example in Africa or Southeast Asia, where local rates are far lower), change the format (virtual, or tied to a Margin Wars Working Session) rather than the price.
@@ -94,16 +89,16 @@ All fees are in USD, exclude travel and accommodation (billed at cost), and are 
 
 | Source | Used for | URL |
 |---|---|---|
-| Speakers Corner - fintech speakers (accessed 21 Oct 2026) | Keynote and moderating bands | https://www.speakerscorner.co.uk/fintech-speakers |
-| Washington Speakers Bureau - fintech (accessed 21 Oct 2026) | Keynote ceiling | https://www.wsb.com/topics/financial-speakers/fintech/ |
-| Futurists Speakers - bureau commission | Bureau terms | https://www.futuristsspeakers.com/what-percentage-do-speakers-bureaus-take/ |
-| Silicon Valley Speakers Bureau - workshop pricing (2026) | Workshops, briefings | https://www.svsb.ai/blog/workshop-pricing |
-| Async Advisor - executive briefing | Briefings, workshops | https://asyncadvisor.com/executive-briefing |
-| McKinsey price quotation to NCPA (22 Jan 2021) | Workshop ceiling | https://dam.assets.ohio.gov/image/upload/procure.ohio.gov/pricelist/RS901320McKinseypricelist.pdf |
+| Speakers Corner - fintech speakers (accessed 21 Oct 2026) | Keynote and moderating bands | <https://www.speakerscorner.co.uk/fintech-speakers> |
+| Washington Speakers Bureau - fintech (accessed 21 Oct 2026) | Keynote ceiling | <https://www.wsb.com/topics/financial-speakers/fintech/> |
+| Futurists Speakers - bureau commission | Bureau terms | <https://www.futuristsspeakers.com/what-percentage-do-speakers-bureaus-take/> |
+| Silicon Valley Speakers Bureau - workshop pricing (2026) | Workshops, briefings | <https://www.svsb.ai/blog/workshop-pricing> |
+| Async Advisor - executive briefing | Briefings, workshops | <https://asyncadvisor.com/executive-briefing> |
+| McKinsey price quotation to NCPA (22 Jan 2021) | Workshop ceiling | <https://dam.assets.ohio.gov/image/upload/procure.ohio.gov/pricelist/RS901320McKinseypricelist.pdf> |
 | EY price information, Sourcewell 101718-EYG | $5K/day anchor check ($625/hour x 8) | 04_Market_Rates_Scan section 2 |
-| Nacha SFP 2027 Call for Presentations | Speakers pay $525-$675 | https://payments.nacha.org/call-presentations |
-| ACG 2026 Sponsorship Opportunities | Working Session comp | https://www.acg.org/sites/default/files/2026-02/2026%20Sponsorship%20Opportunities%20-%20Annual%20Events%20%282%29.pdf |
-| Cura - executive dinners (accessed 21 Oct 2026) | Working Session comp | https://choosecura.com/events/executive-dinners |
-| City & Financial Global - TOK26 sponsorship options | Working Session comp | https://www.cityandfinancialglobal.com/the-tokenisation-summit-2026/sponsorship-options |
+| Nacha SFP 2027 Call for Presentations | Speakers pay $525-$675 | <https://payments.nacha.org/call-presentations> |
+| ACG 2026 Sponsorship Opportunities | Working Session comp | <https://www.acg.org/sites/default/files/2026-02/2026%20Sponsorship%20Opportunities%20-%20Annual%20Events%20%282%29.pdf> |
+| Cura - executive dinners (accessed 21 Oct 2026) | Working Session comp | <https://choosecura.com/events/executive-dinners> |
+| City & Financial Global - TOK26 sponsorship options | Working Session comp | <https://www.cityandfinancialglobal.com/the-tokenisation-summit-2026/sponsorship-options> |
 
 The last four comps were added to the Market Rates tab of 03 on 21 Oct 2026 (rows 42-46).

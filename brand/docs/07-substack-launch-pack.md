@@ -51,14 +51,16 @@ Draft for Avi's review, revised 21 Oct 2026 (PT). **No account has been created,
 **Readers:** about 150 named senior operators who own payment cost or loss: heads of payments, payments product and pricing leads at acquirers and PSPs, merchant payments and finance leads (enterprise and cross-border), risk and chargeback leads, and treasury people. Mix target: US, UK/EU, Africa and APAC, matching the cross-market column [CONFIRM WITH AVI: network by region].
 
 **Invitation rules**
+
 - Avi invites each founding reader personally (about 40 at launch from his own network; drafted invitation in Section 7). After that, readers can nominate one peer; Avi approves each nomination.
 - Criteria: operating responsibility for a payment cost, approval-rate, loss or FX line. No vendors' sales teams, no investors without an operating role, no press.
 - Chatham House rule for replies and sessions. Issues contain no employer, client or confidential data, so a forwarded issue cannot cause harm. Assume it will be forwarded.
 - Reader count stops at about 150. Inactive readers (no opens in six months) are removed so the room stays senior [Assumption].
 
 **Tool (decide at G4; no account created)**
-- **Substack in Private mode** works: readers must request access and Avi approves or declines each request. Two limits: the publication's welcome page can still appear in web search, and recipients can forward emails (Substack Support, updated 17 Dec 2025: https://support.substack.com/hc/en-us/articles/360044389731-Can-I-make-a-private-Substack-publication).
-- **Alternative: Ghost** with Subscription access set to "Only people I invite" (no public sign-up; members are added by Avi) (Ghost help, https://ghost.org/help/setup-members/).
+
+- **Substack in Private mode** works: readers must request access and Avi approves or declines each request. Two limits: the publication's welcome page can still appear in web search, and recipients can forward emails (Substack Support, updated 17 Dec 2025: <https://support.substack.com/hc/en-us/articles/360044389731-Can-I-make-a-private-Substack-publication>).
+- **Alternative: Ghost** with Subscription access set to "Only people I invite" (no public sign-up; members are added by Avi) (Ghost help, <https://ghost.org/help/setup-members/>).
 - Either way: no Substack recommendations network, no Notes, no paid promotion, and the only public call to action is "Request an invitation".
 
 ## 4. Format: one tactic per issue
@@ -153,6 +155,7 @@ Avi
 **Public footprint (just enough to be checked):** one excerpted tactic card per quarter on the website's Writing page and as a single LinkedIn post (mechanics and the cross-market column only, with the full card kept for readers), plus the "Request an invitation" link. No weekly LinkedIn essays, no X threads, no podcast circuit (kill criterion 6).
 
 **Does press accreditation still work with a private letter? Mostly no. Speaker passes are the better route.** From the Conference Map (02):
+
 - **Not achievable:** Point Zero Forum, Singapore FinTech Festival and Sibos give media passes to accredited editorial press only.
 - **Possible but conditional:** Stablecon EMEA and USA accept newsletters, but on a barter basis: deliverables are agreed and shared two weeks before the show. That needs public coverage, so it would mean a public post-event excerpt.
 - **Unlikely:** Fintech Meetup requires independent creators to have an established audience. A 150-reader private list will probably not qualify.
@@ -184,6 +187,7 @@ Avi
 **Why it is a margin lever.** Approval rates and costs are not uniform across issuers. Acquirers differ in how their traffic is treated by particular issuers, in their local presence, and in their pricing. A narrow, measured re-route can win back approvals and basis points without renegotiating the whole contract. [WAR STORY: CONFIRM WITH AVI - a sanitised example of a BIN-level approval or cost gap and what re-routing did or did not fix]
 
 **Mechanics**
+
 1. Pull 90 days of authorisation data by BIN (first 6-8 digits), issuer country, card type (debit, credit, commercial, prepaid), channel (card-on-file, customer-initiated, recurring) and decline code.
 2. Rank BIN groups by lost approvals (volume x approval gap against your portfolio average) and by cost per approved transaction.
 3. Pick one group large enough to measure but small enough to be safe. A single issuer's debit range is a typical first candidate.
@@ -192,6 +196,7 @@ Avi
 6. If the result holds, move the full group; if not, roll back and record why.
 
 **Prerequisites**
+
 - A signed second acquirer with a live merchant ID in the right country, and pricing you understand line by line.
 - Card credentials that work on both acquirers: network tokens or a vault you control, not tokens locked to the primary acquirer (see Issue 11).
 - The same 3-D Secure and SCA set-up on both paths, the same merchant category code and a consistent descriptor.
@@ -199,11 +204,13 @@ Avi
 - A check of the primary acquirer contract for volume commitments or tiered pricing that the move could break.
 
 **Metrics and expected impact**
+
 - Primary: approval rate on the moved BIN group, test arm against holdout.
 - Secondary: cost per approved transaction (basis points, interchange + scheme + markup), fraud and chargeback rates, and the share of first-try approvals.
 - **Expected impact: [Assumption]**. It depends on the size of the gap in your own data, so it is sized in step 2 rather than taken from a benchmark. No public benchmark is used here, and no employer or client figures.
 
 **Failure modes**
+
 - **Lost volume tier at the primary acquirer.** The saving on one BIN group is wiped out by a price step-up on everything else. Early sign: the contract's volume bands. Fix: model it before you move.
 - **Fraud moves with the traffic.** The new merchant ID starts with no history and may trip the acquirer's or the scheme's monitoring thresholds. Early sign: fraud-to-sales ratio on the new MID in week one. Fix: start small and ramp.
 - **Token or credential mismatch.** Stored cards fail on the second path. Early sign: a spike in "invalid card" declines. Fix: test tokens end to end before launch.
@@ -213,12 +220,14 @@ Avi
 **Owner.** Head of payments decides; payments engineering builds the rule; finance tracks cost per approval; risk watches fraud and chargebacks on the new MID; the partner manager handles both acquirer contracts.
 
 **Cross-market column [CONFIRM sources before publishing]**
+
 - **US:** large domestic issuer base and many debit networks; debit routing rules under the Federal Reserve's Regulation II apply. Check them before changing debit routing.
 - **UK/EU:** interchange on consumer cards is capped in the EEA and the UK; the gain usually comes from approval rates and acquirer markup rather than interchange. SCA exemptions differ between acquirers, so compare exemption rates as well.
 - **Africa:** acquirer choice is narrower, and local acquiring versus cross-border acquiring often matters more than BIN-level routing. Test local acquiring first [CONFIRM WITH AVI: South Africa experience].
 - **APAC:** markets differ widely, with domestic schemes and local acquiring needs in several countries. Route by market before routing by BIN.
 
 **What I'd do Monday**
+
 1. Ask for 90 days of auth data by BIN and decline code (a direct data share with your processor is the cleanest way to get it).
 2. Find the three BIN groups with the largest lost-approval value.
 3. Read your primary acquirer contract for volume commitments.

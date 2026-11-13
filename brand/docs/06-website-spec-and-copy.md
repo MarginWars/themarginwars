@@ -1,5 +1,4 @@
-# Website Build Spec and Draft Copy - The Margin Wars / Avi Reddy Advisory
-
+# The Margin Wars website: build spec and draft copy
 
 ## 1. Purpose and tone
 

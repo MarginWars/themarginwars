@@ -17,3 +17,14 @@ trim_trailing_whitespace = false
 insert_final_newline = false
 indent_style = unset
 indent_size = unset
+
+[*.md]
+# Markdown style is checked by markdownlint-cli2 (.markdownlint-cli2.jsonc); keep lines as the author wrapped them.
+max_line_length = off
+
+[*.{png,jpg,ico,woff2,ttf,pdf}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset

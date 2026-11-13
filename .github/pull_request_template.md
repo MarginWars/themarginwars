@@ -1,10 +1,8 @@
-# Pull request
-
-<!-- Title: a Conventional Commit, at most 72 characters. It becomes the squash commit. -->
+<!-- Title: a Conventional Commit, at most 72 characters. It becomes the squash commit. Link the issue below. -->
 
 ## Summary
 
-<!-- One paragraph: what this changes and why. Link the issue. -->
+<!-- One paragraph: what this changes and why. Closes #… -->
 
 ## Workstream and channel
 
@@ -12,7 +10,7 @@
 - Channel(s): <!-- linkedin-personal | linkedin-company | x | substack | briefing | site | speaking-form | email-draft | none -->
 - Scheduled times (PT): <!-- every schedule in the PR, or "none" -->
 
-## Rules
+## Checklist
 
 - [ ] No secrets, tokens, webhook URLs or personal data (phones, addresses, private emails, lead records, submissions)
 - [ ] Nothing on the private denylist; approval-gated names carry an `approvals:` row that is approved in `ops/approvals.md`
@@ -24,9 +22,9 @@
 
 ## Approval
 
-<!-- Merging = Avi's approval of record for exactly what is in this PR.
-If a standing permission applies, cite it (SP-n from ops/standing-permissions.md).
-Fees, spend or new public claims need a row in ops/approvals.md. -->
+<!-- Merging is Avi's approval of record for exactly what is in this PR. If a standing permission applies,
+cite it (SP-n from ops/standing-permissions.md). Fees, spend or new public claims need a row in ops/approvals.md.
+Specific templates: ?template=content.md, site.md, speaking.md or outreach.md -->
 
 - Standing permission: <!-- SP-n or none -->
 - Approvals rows: <!-- A-### or none -->

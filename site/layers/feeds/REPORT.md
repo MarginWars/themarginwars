@@ -2,10 +2,11 @@
 
 Built and verified Nov 08, 2026, 07:01 AM PST.
 
-Preview: https://f537a984.themarginwars.pages.dev (alias https://calm.themarginwars.pages.dev).
+Preview: <https://f537a984.themarginwars.pages.dev> (alias <https://calm.themarginwars.pages.dev>).
 Deployment: `f537a984-97f1-465b-89ab-c11bb78f545c`; environment Preview; branch calm. No production deployment, external post, email, newsletter or new routine.
 
 ## Six upgrades
+
 1. Impact first: merchant-action lead, reviewed tag, native collapsible details. Source-backed cost-down tags only; no fabricated savings ranges. Includes Route Brief context updates, which explicitly leave recommendations unchanged.
 2. My markets: market + rail/controls preferences persist locally across Wire, calendar, BP Watch, subscription hub and Home. No-JS shows all. Preferences do not alter the contents of downloaded RSS subscriptions.
 3. Calendar: Pacific-calendar-day countdowns, next-90-day highlights, per-market timelines. The summary recomputes the nearest matching future event after rail changes or clock changes. Actual source dates remain the no-JS fallback.
@@ -14,24 +15,27 @@ Deployment: `f537a984-97f1-465b-89ab-c11bb78f545c`; environment Preview; branch 
 6. Search: full client-side index, `/`, arrows, Enter and Escape, native dialog focus containment/restoration, My markets integration, and session-stable since-last-visit counts.
 
 ## Pages and feeds
-- https://f537a984.themarginwars.pages.dev/wire/ — 31 Wire records.
-- https://f537a984.themarginwars.pages.dev/bp-watch/ — 3 weekly moves.
-- https://f537a984.themarginwars.pages.dev/calendar/ — 23 dated milestones: 12 upcoming and 11 historical in this edition.
-- https://f537a984.themarginwars.pages.dev/feeds/ — hub + 4 Route Brief context updates.
-- https://f537a984.themarginwars.pages.dev/digest/ and https://f537a984.themarginwars.pages.dev/digest/2026-11-08/.
-- https://f537a984.themarginwars.pages.dev/ — corrected shared-edge, unclipped Home strip.
+
+- <https://f537a984.themarginwars.pages.dev/wire/> — 31 Wire records.
+- <https://f537a984.themarginwars.pages.dev/bp-watch/> — 3 weekly moves.
+- <https://f537a984.themarginwars.pages.dev/calendar/> — 23 dated milestones: 12 upcoming and 11 historical in this edition.
+- <https://f537a984.themarginwars.pages.dev/feeds/> — hub + 4 Route Brief context updates.
+- <https://f537a984.themarginwars.pages.dev/digest/> and <https://f537a984.themarginwars.pages.dev/digest/2026-11-08/>.
+- <https://f537a984.themarginwars.pages.dev/> — corrected shared-edge, unclipped Home strip.
 - RSS: `/feeds/wire.xml`, `/feeds/wire-{us,ukeu,br,ca-latam,anz,global}.xml`, `/feeds/bp-watch.xml`, `/feeds/calendar.xml`, `/feeds/route-briefs.xml`. Each also has Atom `.atom` and JSON Feed `.json`: 30 collections total.
-- Calendar subscription: https://f537a984.themarginwars.pages.dev/feeds/dates.ics.
-- Example OG item: https://f537a984.themarginwars.pages.dev/wire/items/nz-commercial-cards/.
-- Example Route Brief update: https://f537a984.themarginwars.pages.dev/route-briefs/items/us-bank-context-20261108/.
-- Example card: https://f537a984.themarginwars.pages.dev/assets/feeds/cards/wire-nz-commercial-cards.png.
+- Calendar subscription: <https://f537a984.themarginwars.pages.dev/feeds/dates.ics>.
+- Example OG item: <https://f537a984.themarginwars.pages.dev/wire/items/nz-commercial-cards/>.
+- Example Route Brief update: <https://f537a984.themarginwars.pages.dev/route-briefs/items/us-bank-context-20261108/>.
+- Example card: <https://f537a984.themarginwars.pages.dev/assets/feeds/cards/wire-nz-commercial-cards.png>.
 
 All generated surfaces are labelled Preview, pending Avi’s review. Feed autodiscovery remains in all page heads. New styles are feed-owned; no wk.css/global tokens changed.
 
 ## Daily append
+
 Read `feeds/README.md` for schemas. Append official-source-backed records under `site_calm/assets/feeds/`: `wire.json`, optional `calendar.json`, weekly `bp-watch.json`, and genuine context changes in `route-briefs.json`. Add/review the matching `ux.json` annotation: concise `so_what`, sourced impact tag, relevant rails and matching official URL. New unreviewed annotations default neutral, not savings. Verify official URLs and the source text/status; do not turn drafts into mandates or unknown dates into calendar events.
 
 From `/workspace/deliverables/brand`, run:
+
 ```sh
 python3 copy_weekend/apply_copy_weekend.py
 python3 copy_tighten/apply_tighten.py
@@ -43,9 +47,11 @@ feeds/.venv/bin/python feeds/validate.py
 python3 feeds/qa_feed_ux.py
 python3 feeds/qa_feed_ux_extra.py
 ```
+
 `apply_feeds.py` invokes `apply_feed_ux.py`. Consecutive runs produce no changed site files. Review first; deploy only the approved calm preview using the exact README command. No automated publishing configured.
 
 ## QA and caveats
+
 - Seven widths: 375 / 390 / 430 / 768 / 1024 / 1280 / 1440, default + expanded, JavaScript + no-JS + reduced motion: 252 render checks.
 - No feed-owned overflow, asymmetric rows or browser script errors. Native keyboard controls, persisted preferences across five surfaces, clock changes, filtered timeline summaries, clipboard fallback, all 61 OG pages/images and mobile >=44px targets passed.
 - Separate Home strip check: 14 passes for shared edge, 64/96/120 rhythm, preview-label/bottom clearance, no-JS and Chrome iPhone emulation.
@@ -56,6 +62,7 @@ python3 feeds/qa_feed_ux_extra.py
 - Excluded unsupported final PSD3/PSR application dates, a final Reg II rate/deadline, a universal 3DS migration mandate, unverified current scheme implementation dates and a Pix refund change incorrectly attributed to October 2026. Older implementation context is labelled, not presented as breaking news.
 
 ## Requested screenshots (live preview)
+
 - wire-mymarkets: `/workspace/deliverables/brand/feeds/qa-ux/live/wire-mymarkets-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/wire-mymarkets-1440.png`
 - wire-expanded: `/workspace/deliverables/brand/feeds/qa-ux/live/wire-expanded-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/wire-expanded-1440.png`
 - share-card: `/workspace/deliverables/brand/feeds/qa-ux/live/share-card-375.png`, `/workspace/deliverables/brand/feeds/qa-ux/live/share-card-1440.png`

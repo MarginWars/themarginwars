@@ -1,0 +1,17 @@
+/* Repo brand assets. Tokens mirror site/src/assets/suite.css (body.nm) and calm.css. */
+@font-face{font-family:"Schibsted Grotesk";src:url("../../../site/layers/buildout/fonts_src/schibsted-grotesk-latin-f5ed7f02.woff2") format("woff2");font-weight:400 900}
+@font-face{font-family:"Martian Mono";src:url("../../../site/layers/buildout/fonts_src/martian-mono-latin-ecb642bf.woff2") format("woff2");font-weight:100 800;font-stretch:75% 112.5%}
+:root{--ink:#111417;--paper:#F4F6F7;--white:#FFFFFF;--rule:#DDE1E4;--muted:#4A555B;--grey-b:#B7C1C9;--magenta:#B5237F;
+ --band:linear-gradient(90deg,#8FB0E0 0 16.667%,#A08FE6 16.667% 33.333%,#3FBF85 33.333% 50%,#B7C1C9 50% 66.667%,#D2A63A 66.667% 83.333%,#EA6259 83.333% 100%)}
+*{margin:0;box-sizing:border-box}
+html,body{background:transparent}
+body{font-family:"Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:var(--bh,6px);background:var(--band)}
+.light{background:var(--white);color:var(--ink);border:1px solid var(--rule)}
+.dark{background:var(--ink);color:var(--paper);border:1px solid #2A3036}
+.word{font-weight:600;letter-spacing:-.02em;line-height:1;border-left:var(--rw,6px) solid var(--magenta);padding-left:.28em}
+.eyebrow{font-family:"Martian Mono",ui-monospace,monospace;font-weight:500;text-transform:uppercase;letter-spacing:.14em;display:flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";display:inline-block;width:2.6em;height:.32em;background:var(--band)}
+.light .eyebrow{color:var(--muted)} .dark .eyebrow{color:var(--grey-b)}
+.mono{font-family:"Martian Mono",ui-monospace,monospace;font-weight:400;letter-spacing:.04em}
