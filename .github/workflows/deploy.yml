@@ -43,7 +43,7 @@ jobs:
     concurrency: { group: deploy-dev, cancel-in-progress: false }
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with: { name: site-dist, path: site/dist }
       - uses: actions/setup-node@v7
         with: { node-version: "24" }
@@ -76,7 +76,7 @@ jobs:
         run: |
           c=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow nightly.yml --branch main --limit 1 --json conclusion --jq '.[0].conclusion')
           echo "latest nightly: ${c:-none}"; [ "$c" = success ] || { echo "Run the nightly (Actions -> nightly -> Run workflow) and fix it first."; exit 1; }
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with: { name: site-dist, path: site/dist }
       - uses: actions/setup-node@v7
         with: { node-version: "24" }
