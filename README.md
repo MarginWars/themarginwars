@@ -71,15 +71,11 @@ npx markdownlint-cli2         # Markdown style (config in .markdownlint-cli2.jso
 
 ## How changes flow
 
-```mermaid
-flowchart LR
-  A["Branch<br/>feat/ fix/ content/ …"] --> B["Pull request<br/>from the template"]
-  B --> C{"Required checks"}
-  C -- pass --> D["Avi reviews<br/>squash-merge = approval"]
-  D --> E["Dev deploy<br/>themarginwars-dev"]
-  E --> F["Production<br/>manual run, Avi approves"]
-  D --> G["Channels publish<br/>at the scheduled PT time"]
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/flow-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset=".github/assets/flow-light.png">
+  <img alt="How a change ships: branch, pull request, required checks, Avi approves with a squash-merge, dev deploy, then production started by hand and approved by Avi" src=".github/assets/flow-light.png" width="100%">
+</picture>
 
 1. An agent (the bot account) opens a pull request from a short-lived branch: `feat/`, `fix/`, `content/`,
    `speaking/`, `pub/`, `chore/` or `ops/`.

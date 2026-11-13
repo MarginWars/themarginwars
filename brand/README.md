@@ -59,7 +59,7 @@ Africa, APAC). No hype, no predictions for applause, and no invented facts: ever
 
 ## Repo assets
 
-[`.github/assets/`](../.github/assets) holds the README banners (light and dark), the band divider, the GitHub
+[`.github/assets/`](../.github/assets) holds the README banners and change-flow diagram (light and dark), the band divider, the GitHub
 social preview (1280×640) and the organisation avatar (500×500). They are rendered from
 [`.github/assets/src/`](../.github/assets/src) with the site's fonts and tokens:
 `python3 .github/assets/src/render.py`.

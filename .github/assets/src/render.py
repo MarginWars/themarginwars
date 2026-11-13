@@ -14,6 +14,8 @@ JOBS = [  # (page, query, width, height, scale, output, transparent)
     ("banner.html", "?mode=light", 1280, 300, 2, "banner-light.png", True),
     ("banner.html", "?mode=dark", 1280, 300, 2, "banner-dark.png", True),
     ("social.html", "", 1280, 640, 1, "social-preview.png", False),
+    ("flow.html", "?mode=light", 1280, 520, 2, "flow-light.png", True),
+    ("flow.html", "?mode=dark", 1280, 520, 2, "flow-dark.png", True),
 ]
 
 async def main() -> None:
