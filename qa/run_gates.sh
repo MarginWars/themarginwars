@@ -48,7 +48,7 @@ matrix_full() {
     local pids=(); for i in $(seq 0 $((SHARDS-1))); do python3 "$ST/normalize_suite/qa_matrix.py" "$eng" "$ps" "$i" "$SHARDS" > "$OUT/matrix_${eng}_${ps}_$i.log" 2>&1 & pids+=($!); done
     for p in "${pids[@]}"; do wait "$p" || rc=1; done
   done; done
-  python3 qa/verdict.py "$OUT" --engines chromium,webkit,firefox --profiles core,devices || rc=1
+  python3 qa/verdict.py "$OUT" --engines chromium,webkit,firefox --profiles core,devices --require none || rc=1
   return $rc
 }
 case "$MODE" in

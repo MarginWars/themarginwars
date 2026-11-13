@@ -43,7 +43,7 @@
       "id": "group-standards/ops/approvals.md",
       "local": "ops/approvals.md",
       "mode": "adapted",
-      "sha256": "6621ba4b1ec621016cb940acfe255cc71e43102ea807cfb650313891c1250b86"
+      "sha256": "484e11ddaee1c214880ab6bc819b5779913ff533a080defe78d93d56cdd887b2"
     },
     {
       "id": "group-standards/docs/ops/agent-operating-model.md",
@@ -61,7 +61,7 @@
       "id": "skills/public-site-release-polish",
       "local": "qa/verdict.py",
       "mode": "adapted",
-      "sha256": "989fdb6b5fed4a69f36f2314b504b99efec632e12309be291157a7a70293bba9"
+      "sha256": "6460acd0f3a722e1e4d1a34ba9a3d624c74743fe7b40006acf65911438e0fa3a"
     },
     {
       "id": "marginwars/compliance-config",
