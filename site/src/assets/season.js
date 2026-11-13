@@ -6,7 +6,7 @@ if(locked)h.classList.add('s1-on');
 function fmt(s){return Math.floor(s/86400)+'d '+Math.floor(s%86400/3600)+'h '+Math.floor(s%3600/60)+'m'}
 function ready(){var m=d.querySelector('main'),t=d.getElementById('s1-lock');
  if(locked){if(t&&m){[].slice.call(m.children).forEach(function(c){if(c!==t)m.removeChild(c)});m.insertBefore(t.content.cloneNode(true),t);m.removeChild(t)}
-  var cd=d.querySelector('[data-s1-cd]');if(cd&&S.force!=='locked')(function tick(){var s=(L-Date.now())/1000;if(s<=0){cd.textContent='Live now';setTimeout(function(){location.reload()},15000);return}cd.textContent=fmt(s);setTimeout(tick,30000)})();return}
+  var cd=d.querySelector('[data-s1-cd]');if(cd&&S.force!=='locked')(function tick(){var s=(L-Date.now())/1000;if(s<=0){cd.textContent='Live now';setTimeout(function(){location.reload()},15000);return}cd.textContent='in '+fmt(s);setTimeout(tick,30000)})();return}
  if(t)t.parentNode.removeChild(t);
  [].forEach.call(d.querySelectorAll('[data-s1-open]'),function(e){if((PV||Date.now()>=Date.parse(e.getAttribute('data-s1-open')))&&!/^Cleared/.test(e.textContent))e.textContent='Open'})}
 if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',ready);else ready()})();

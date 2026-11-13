@@ -34,7 +34,7 @@ export async function onRequest(ctx) {
     },
   });
   if (locked) {
-    rw.on("main > *:not(#s1-lock)", { element(e) { e.remove(); } })
+    rw.on("main > *:not(.s1-lock)", { element(e) { e.remove(); } })
       .on("template#s1-lock", { element(e) { e.removeAndKeepContent(); } });
   } else {
     rw.on("template#s1-lock", { element(e) { e.remove(); } })
