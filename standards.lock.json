@@ -1,0 +1,79 @@
+{
+  "schema": "marginwars.standards-lock/v1",
+  "about": "Group standards adopted by this repository (ADR-0002). id = group-standards/<path in the source repos (instip, predicated)>; mode adopted|adapted. Check: python3 qa/check_standards_lock.py. Re-record after a reviewed change: python3 qa/check_standards_lock.py --write.",
+  "syncedAt": "2026-11-12",
+  "entries": [
+    {
+      "id": "group-standards/CONTRIBUTING.md",
+      "local": "CONTRIBUTING.md",
+      "mode": "adapted",
+      "sha256": "f8078d6b05cafd94f0b8db53eef32147423a56e144a9920af1a2622dabd72181"
+    },
+    {
+      "id": "group-standards/SECURITY.md",
+      "local": "SECURITY.md",
+      "mode": "adapted",
+      "sha256": "2b0cfd65a76a05e09c43c014df1827f60dae68bc856fc51c011ae2b2ba6b0a9d"
+    },
+    {
+      "id": "group-standards/.github/CODEOWNERS",
+      "local": ".github/CODEOWNERS",
+      "mode": "adapted",
+      "sha256": "7c4c7703a4e0d1e2e0afe4e6f26664f9f57b000974b0a732cd2606f1427f0521"
+    },
+    {
+      "id": "group-standards/.github/PULL_REQUEST_TEMPLATE.md",
+      "local": ".github/pull_request_template.md",
+      "mode": "adapted",
+      "sha256": "c80589b43860400951b73e87f8d51abbddee3fbf3c7d621b5735063ec97afe1d"
+    },
+    {
+      "id": "group-standards/.github/ISSUE_TEMPLATE/decision-needed.md",
+      "local": ".github/ISSUE_TEMPLATE/decision-needed.yml",
+      "mode": "adapted",
+      "sha256": "f86ce2322ba26a10dfb6cb1b1a2a7dbcb2d8408fd9ba4abf15a24c0f4a8f1b2a"
+    },
+    {
+      "id": "group-standards/scripts/check-claims.mjs",
+      "local": "qa/check_claims.py",
+      "mode": "adapted",
+      "sha256": "45a29281b8fe4a449f8c9a08fd9e55445592a4852a7cc31deb733d073511ce6a"
+    },
+    {
+      "id": "group-standards/ops/approvals.md",
+      "local": "ops/approvals.md",
+      "mode": "adapted",
+      "sha256": "786c6fb4b79df1170e0cb511f0376d830beb19713214c4edbec85e8bf799d2bc"
+    },
+    {
+      "id": "group-standards/docs/ops/agent-operating-model.md",
+      "local": "AGENTS.md",
+      "mode": "adapted",
+      "sha256": "6f3d35b7ded534b1573a480a41c4a4ea0bf6fd9e47f6c1cb64ec3986c46e43e6"
+    },
+    {
+      "id": "group-standards/.editorconfig",
+      "local": ".editorconfig",
+      "mode": "adopted",
+      "sha256": "2567d7fe4b66caf7c7d9316021090810243f49385a2c7990ecb22aaa048efcc1"
+    },
+    {
+      "id": "skills/public-site-release-polish",
+      "local": "qa/verdict.py",
+      "mode": "adapted",
+      "sha256": "989fdb6b5fed4a69f36f2314b504b99efec632e12309be291157a7a70293bba9"
+    },
+    {
+      "id": "marginwars/compliance-config",
+      "local": "qa/compliance/banned.yml",
+      "mode": "adopted",
+      "sha256": "0fe00e8f454bf77bd4001a7caf7a088ccc0a7541b6d95a9eea60873a6c581585"
+    },
+    {
+      "id": "marginwars/branch-ruleset",
+      "local": "ops/github/ruleset-main.json",
+      "mode": "adopted",
+      "sha256": "4a0721a0965869d1828b1c0fc54131115dadfec349562a150a7472d126938dfe"
+    }
+  ]
+}
