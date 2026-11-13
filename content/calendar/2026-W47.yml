@@ -1,6 +1,45 @@
 # Launch week (Mon 16 - Sun 22 Nov 2026). Content Studio fills `items` in the launch calendar PR; merging it with
 # status: approved is Avi's approval of every listed item at its listed time (see ops/publish/scheduler-spec.md).
 week: 2026-W47
-status: draft
+status: in-review
 standing_permission: null
-items: []
+items:
+- file: content/linkedin/company/2026-11-16-launch.md
+  schedule: '2026-11-16T08:30:00-08:00'
+  channel: linkedin-company
+- file: content/linkedin/personal/avi/2026-11-16-reshare.md
+  schedule: '2026-11-16T08:45:00-08:00'
+  channel: linkedin-personal
+- file: content/x/2026-11-16-launch-thread.md
+  schedule: '2026-11-16T09:00:00-08:00'
+  channel: x
+- file: content/x/2026-11-16-pinned-intro.md
+  schedule: '2026-11-16T09:05:00-08:00'
+  channel: x
+- file: content/substack/2026-11-16-welcome.md
+  schedule: '2026-11-16T09:30:00-08:00'
+  channel: substack
+- file: content/linkedin/company/2026-11-17-interchange.md
+  schedule: '2026-11-17T08:30:00-08:00'
+  channel: linkedin-company
+- file: content/x/2026-11-17-tracewire.md
+  schedule: '2026-11-17T09:00:00-08:00'
+  channel: x
+- file: content/linkedin/company/2026-11-18-scheme-fees.md
+  schedule: '2026-11-18T08:30:00-08:00'
+  channel: linkedin-company
+- file: content/x/2026-11-18-fx.md
+  schedule: '2026-11-18T09:00:00-08:00'
+  channel: x
+- file: content/linkedin/company/2026-11-19-speaking.md
+  schedule: '2026-11-19T08:30:00-08:00'
+  channel: linkedin-company
+- file: content/x/2026-11-19-routing.md
+  schedule: '2026-11-19T09:00:00-08:00'
+  channel: x
+- file: content/linkedin/company/2026-11-20-teardown.md
+  schedule: '2026-11-20T08:30:00-08:00'
+  channel: linkedin-company
+- file: content/x/2026-11-20-teardown.md
+  schedule: '2026-11-20T09:00:00-08:00'
+  channel: x

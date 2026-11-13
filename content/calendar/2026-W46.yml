@@ -1,0 +1,12 @@
+# Launch eve (Sun 15 Nov 2026, PT). Avi's profile refresh and Sunday teaser. Anitha's own drafts are under
+# content/linkedin/personal/anitha/ and are NOT listed: she approves and posts them herself.
+week: 2026-W46
+status: in-review
+standing_permission: null
+items:
+- file: content/linkedin/personal/avi/2026-11-15-profile-refresh.md
+  schedule: '2026-11-15T17:30:00-08:00'
+  channel: linkedin-personal
+- file: content/linkedin/personal/avi/2026-11-15-teaser.md
+  schedule: '2026-11-15T18:00:00-08:00'
+  channel: linkedin-personal
