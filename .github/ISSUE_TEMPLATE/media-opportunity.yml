@@ -11,27 +11,23 @@ body:
   id: outlet
   attributes:
     label: Outlet or event
-    description: ''
   validations:
     required: true
 - type: input
   id: deadline
   attributes:
     label: Deadline (PT)
-    description: ''
   validations:
     required: true
 - type: textarea
   id: ask
   attributes:
     label: What we would ask for and offer
-    description: ''
   validations:
     required: true
 - type: input
   id: fee
   attributes:
     label: Fee or spend (or "none")
-    description: ''
   validations:
     required: true

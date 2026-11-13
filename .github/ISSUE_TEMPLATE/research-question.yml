@@ -11,20 +11,17 @@ body:
   id: q
   attributes:
     label: Question
-    description: ''
   validations:
     required: true
 - type: input
   id: by
   attributes:
     label: Needed by (PT)
-    description: ''
   validations:
     required: false
 - type: textarea
   id: use
   attributes:
     label: What it feeds (post, issue, pack)
-    description: ''
   validations:
     required: false

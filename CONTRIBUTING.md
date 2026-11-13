@@ -51,6 +51,15 @@ standing_permission: SP-1   # optional, from ops/standing-permissions.md
 - Private names and terms are blocked by hash (see `qa/compliance/banned.yml`). If the gate fires, remove the
   text; do not try to reword around it.
 
+## Markdown and presentation
+
+- One H1 per file, sentence-case headings, and "The Margin Wars" in full when naming the brand.
+- Code fences name their language; tables use leading and trailing pipes; links to files in this repo are relative.
+- `npx markdownlint-cli2` passes (config in `.markdownlint-cli2.jsonc`; the `markdown` check runs it). Outbound
+  items are exempt: their body is the exact text a channel publishes.
+- Colours, type, the six-colour band and voice follow [brand/README.md](brand/README.md). Repo images are rendered
+  from `.github/assets/src/`, never drawn by hand.
+
 ## Secrets and data
 
 No secrets, tokens, webhook URLs, personal data, lead records or form submissions in git. See [SECURITY.md](SECURITY.md).

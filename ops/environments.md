@@ -1,9 +1,8 @@
-# The Margin Wars — environments, promote and rollback
+# The Margin Wars: environments, promote and rollback
 
 Last updated 10 Nov 2026, 5:35 PM PT. Secrets are never written here; names only.
 
 ## One build, two places
-
 
 - `buildout/apply_buildout.py` — 404, contact form, Briefing links, next blocks, SEO, sitemap, robots, `_headers` (in place on `site_calm/`, idempotent)
 - `marketing/apply_marketing.py` — first-party measurement script, attribution on the assistant escalation form, registry-minted UTM tags on every outbound LinkedIn/Substack link (see MARKETING.md)
@@ -14,7 +13,7 @@ Last updated 10 Nov 2026, 5:35 PM PT. Secrets are never written here; names only
 | | Production | Dev |
 |---|---|---|
 | Pages project | `themarginwars` (branch `main`) | `themarginwars-dev` (branch `main`) |
-| URLs | https://themarginwars.com (www → 301 apex); themarginwars.pages.dev | https://themarginwars-dev.pages.dev (+ per-deploy hash URLs) |
+| URLs | <https://themarginwars.com> (www → 301 apex); themarginwars.pages.dev | <https://themarginwars-dev.pages.dev> (+ per-deploy hash URLs) |
 | Indexing | indexable; robots.txt allows + sitemap | `X-Robots-Tag: noindex` on every host (`_headers`), robots.txt `Disallow: /` (Function `functions/robots.txt.js` disallows every non-production host) |
 | Contact store (D1 `CONTACT_DB`) | `themarginwars-contact` <D1_ID> | `themarginwars-dev-contact` <D1_ID> |
 | KV `ESC_KV` / `SOLDIER_KV` | <KV_ID> / <KV_ID> (titles say "-review" but these ARE production) | `themarginwars-dev-escalations` <KV_ID> / `themarginwars-dev-soldier` <KV_ID> |
@@ -24,9 +23,7 @@ Last updated 10 Nov 2026, 5:35 PM PT. Secrets are never written here; names only
 | Mailer | service binding `MAILER` → Worker `themarginwars-contact-mailer` | same Worker (stateless), subjects tagged [DEV] |
 | Rate limit | `themarginwars-soldier-rl` Durable Object (needs prod RL_SECRET) + D1 cap 5/hour/IP | dev RL_SECRET is not accepted by the shared limiter, so dev falls back to the in-memory limiter + the dev D1 cap; never touches prod counters |
 
-
 ## Notifications (form)
-
 
 - `{ok:true}` → done; the old webhook and MAILER are skipped (no double post). Row/record notify field = `harness:ok`.
 - Non-2xx, timeout (25 s) or `ok:false` → logged (`harness-fail:<reason>` in `notify_error` / KV `notify`) and the MAILER email fallback runs if the route did not report mail delivered. **There is no Slack fallback** (recorded as `slack-fail:no-fallback`); `notified=1` means the email reached the team.
@@ -47,8 +44,7 @@ Spam protection: Contact/Briefing and the assistant escalation both require Clou
 
 ### Test submissions and the QA hook
 
-
-```
+```bash
 npx wrangler d1 execute themarginwars-contact --remote --command "DELETE FROM submissions WHERE is_test=1"
 ```
 
@@ -56,7 +52,7 @@ npx wrangler d1 execute themarginwars-contact --remote --command "DELETE FROM su
 
 `ops/ops_check.sh` (read-only, stores nothing, no visitor data): prod and dev uptime, every sitemap page = 200 on both hosts, 404 for unknown URLs, form endpoint health (GET 405, empty POST validation 422/400, nothing stored), sitemap, RSS/Atom/iCal 200 and production links with no preview labels, prod indexable / dev noindex, www → apex 301, SSL days left, live deployment ids (when wrangler is logged in). Prints a summary; exit 1 on any failure.
 
-```
+```bash
 OPS_SLACK_WEBHOOK_URL=… bash ops/ops_check.sh --slack          # also post the summary (no PII) to public #margin-wars-ops
 ```
 
@@ -79,7 +75,7 @@ Do not rebuild between the two deploys. Verify by comparing md5 of served files 
 
 Dashboard: Pages → themarginwars → Deployments → previous production deployment → "Rollback to this deployment". API:
 
-```
+```http
 POST /accounts/<CLOUDFLARE_ACCOUNT_ID>/pages/projects/themarginwars/deployments/<DEPLOYMENT_ID>/rollback
 ```
 
@@ -102,7 +98,7 @@ Rollback restores static files and Functions of that deployment; bindings/secret
 
 ## Retired test surfaces (10 Nov 2026, per Avi 9:47)
 
-- All 90 preview deployments of project `themarginwars` (branch `calm`) deleted; https://calm.themarginwars.pages.dev now 404. Production deployments kept as rollback targets.
+- All 90 preview deployments of project `themarginwars` (branch `calm`) deleted; <https://calm.themarginwars.pages.dev> now 404. Production deployments kept as rollback targets.
 - Local preview servers stopped: :8817 (site_dist), :8818 (site_calm backup), :8957 (site_calm), :8819 (about_rethink_1108), :8788 (wrangler pages dev).
 - Untouched: `themarginwars-soldier-rl` (production rate limiter), other brands' projects and servers.
 

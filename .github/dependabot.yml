@@ -4,8 +4,10 @@ updates:
     directory: /
     schedule: { interval: weekly, day: monday, time: "06:00", timezone: America/Los_Angeles }
     commit-message: { prefix: "ci" }
+    labels: [dependencies, github_actions, "ws:ops"]
   - package-ecosystem: pip
     directory: /
     schedule: { interval: monthly, timezone: America/Los_Angeles }
     commit-message: { prefix: "build" }
+    labels: [dependencies, python, "ws:ops"]
     open-pull-requests-limit: 3

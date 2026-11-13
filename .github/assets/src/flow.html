@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="brand.css">
+<style>
+body{width:1280px;height:520px}
+.wrap{width:1280px;height:520px;padding:40px 48px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:28px 36px;border-radius:14px}
+.light.wrap{background:#F4F6F7;border:1px solid var(--rule)} .dark.wrap{background:#171B1F;border:1px solid #2A3036}
+.step{position:relative;border-radius:10px;padding:26px 28px 22px;display:flex;flex-direction:column;gap:10px;border-top:6px solid var(--c)}
+.light .step{background:#fff;border-left:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dark .step{background:#111417;border-left:1px solid #2A3036;border-right:1px solid #2A3036;border-bottom:1px solid #2A3036}
+.n{font:500 18px/1 "Martian Mono",monospace;letter-spacing:.14em}
+.light .n{color:var(--muted)} .dark .n{color:var(--grey-b)}
+.t{font-weight:650;font-size:34px;line-height:1.1;letter-spacing:-.01em}
+.s{font-size:21px;line-height:1.35}
+.light .s{color:#3A4247} .dark .s{color:#C9D1D6}
+.light{color:var(--ink)} .dark{color:var(--paper)}
+.step:not(:nth-child(3n))::after{content:"→";position:absolute;right:-31px;top:50%;transform:translateY(-50%);font:500 30px/1 "Martian Mono",monospace}
+.light .step::after{color:var(--muted)} .dark .step::after{color:var(--grey-b)}
+</style>
+<body><div class="wrap" id="w">
+<div class="step" style="--c:#8FB0E0"><div class="n">01</div><div class="t">Branch</div><div class="s">Short-lived: feat/, fix/, content/, speaking/, pub/, chore/, ops/</div></div>
+<div class="step" style="--c:#A08FE6"><div class="n">02</div><div class="t">Pull request</div><div class="s">Opened by the bot account from the matching template</div></div>
+<div class="step" style="--c:#3FBF85"><div class="n">03</div><div class="t">Required checks</div><div class="s">Compliance, claims, secrets, site build and gates</div></div>
+<div class="step" style="--c:#B7C1C9"><div class="n">04</div><div class="t">Avi approves</div><div class="s">The squash-merge is the approval of record</div></div>
+<div class="step" style="--c:#D2A63A"><div class="n">05</div><div class="t">Dev deploy</div><div class="s">themarginwars-dev, on every merge to main</div></div>
+<div class="step" style="--c:#EA6259"><div class="n">06</div><div class="t">Production</div><div class="s">Started by hand; Avi approves the production environment</div></div>
+</div>
+<script>document.getElementById('w').classList.add(new URLSearchParams(location.search).get('mode')||'light')</script>

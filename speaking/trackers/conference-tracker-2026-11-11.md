@@ -55,7 +55,9 @@ Official pages only. 'not confirmed' = not on an official page today. Nothing su
 | Women in Payments USA Symposium 2027 | 23–25 Feb 2027 · Ritz-Carlton Tysons Corner, McLean, VA | not confirmed | Call for speakers closed 16 Sep 2026 ([form](https://info.womeninpayments.org/call-for-speakers-usa-2027-registration-page)); deadline: closed | - | not confirmed | not confirmed | Closed; diary 2028 | [1](https://info.womeninpayments.org/call-for-speakers-usa-2027-registration-page) |
 
 ## Additions, 11 Nov 2026 wide scan (PT)
+
 Rows from "Fintech NerdCon 2026" down are new, added by the California-first wide scan. The rows above them are unchanged. Ranking, funnel and the press-pass track are in wide_scan_1111.md.
+
 - Money20/20 USA 2027 press pass: us.money2020.com/media now says "Applications are now open" (re-checked 11 Nov 2026).
 - MPE pages (attend/, media/) returned Cloudflare 520 on 11 Nov 2026. That is a server error, not a 404, so the row stays; re-check before use.
 - MRC Speaker & SME form returned HTTP 500 on two tries on 11 Nov 2026 (MRC's server is intermittent).

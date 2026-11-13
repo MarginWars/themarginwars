@@ -1,4 +1,4 @@
-# Margin Wars Briefing: Public Signals & Approach
+# The Margin Wars Briefing: public signals and approach
 
 *Week of 9 November 2026 · Run #3 · Public sources only, all accessed 9 Nov 2026*
 
@@ -31,6 +31,7 @@
 The approach itself has not changed. What has changed is where the space is open. A Checkout.com-sponsored Brainfood essay (3 November) now covers declines and debit routing, so decline explainers are getting crowded. Our judgement is that Issue 01 should lean on what that piece does not do: a holdout-tested re-route compared across four markets, with the rule citations. The Mastercard token switchover, the UK scheme-fee governance rules and Nigeria's stablecoin rules have had no peer coverage that we could find.
 
 **Issue 01 (dual-network and multi-acquirer routing, sends 1 December 2026)**
+
 - None of last week's edits are in the draft yet. Apply them:
   - the US fee-cap status sentence;
   - the settlement described as "pending";
@@ -41,16 +42,19 @@ The approach itself has not changed. What has changed is where the space is open
 - Someone still needs to check the EU caps by hand in a browser. Our automated checks are blocked and the last read is now more than 30 days before the send date.
 
 **Issue 02 (network tokens, sends 5 January 2027)**
+
 - Rename the Mastercard token service to SCOF.
 - Add a prerequisite: "is your tokeniser SCOF-ready?"
 - Try to confirm the switchover with Mastercard or a second acquirer before sending.
 - Add a line that Mastercard has announced no plans to decline untokenised card numbers in Europe.
 
 **Issue 03 (retries and decline codes, sends 2 February 2027)**
+
 - Cite the RBI e-mandate rules for India. Each retry of a recurring debit sits inside the notice and limit rules.
 - Last week's Category 1 edits still apply.
 
 **Playbook cards and working sessions**
+
 - Card 04: add the UK's new scheme-fee governance rules.
 - Card 10: add the UPI fee slabs and the court challenge.
 - Card 12: add Nigeria's stablecoin rules as the Africa anchor.
@@ -85,6 +89,7 @@ Nothing resolved this week. All nine open calls are too early to score, and the 
 Earlier calls stay open as logged: the settlement (60% by 31 January 2027 and 35% by year-end), PSD3/PSR in the Official Journal (70%), the Parliament approving at second reading (80%), the 8th Circuit mandate (40%), UPI going live (55%), the UK cap (30%), South Africa (45%) and Visa's next edition (85%).
 
 **What we're watching:**
+
 - the 16 November settlement hearing;
 - the 10 November Commons second reading;
 - any 8th Circuit rehearing petition by around 10 December;
@@ -101,6 +106,7 @@ Earlier calls stay open as logged: the settlement (60% by 31 January 2027 and 35
 ## Sources
 
 All accessed 9 Nov 2026:
+
 - [Visa Core Rules and Visa Product and Service Rules, 24 Oct 2026](https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf)
 - [Checkout.com: Mastercard migration to Secure Card on File](https://support.checkout.com/hc/en-us/articles/39222017788690-Mastercard-migration-to-Secure-Card-on-File-SCOF)
 - [Checkout.com: Mastercard network token roadmap for Europe](https://support.checkout.com/hc/en-us/articles/39223370002962-What-is-Mastercard-s-network-token-roadmap-for-Europe)

@@ -1,8 +1,9 @@
-# The Margin Wars — marketing instrumentation
+# The Margin Wars: marketing instrumentation
 
 Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
 
 ## 1. Attribution (UTM capture)
+
 - `assets/mk.js` (source `marketing/mk.js`), loaded deferred on every page. First-party, **cookieless, sessionStorage only**, no third-party pixels or tags.
 - Per browser session it keeps `first` and `last` touch: `source, medium, campaign, content, term` (from `utm_*`), `referrer` (external host only, never the full URL), `landing` path, `at`. A new touch is recorded when a page is opened with UTM tags or from another site.
 - The Contact / Briefing form and the assistant escalation send it as `attribution`; it is sanitised server-side and stored with the submission (D1 `submissions.attribution`, KV record `attribution`).
@@ -10,6 +11,7 @@ Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign,
 - Active on themarginwars.com only, and never in automated browsers (`navigator.webdriver`: Lighthouse, test runners). Dev and previews send nothing unless opened once with `?mk_test=1` (QA).
 
 ## 2. Conversion events (server-side aggregates)
+
 Table `mk_daily` in the environment's D1 (`CONTACT_DB`): one counter per `(day UTC, page, campaign, source, medium, event)`. No IP, no user agent, no visitor id.
 
 | Event | Counted by | When |
@@ -24,14 +26,16 @@ Table `mk_daily` in the environment's D1 (`CONTACT_DB`): one counter per `(day U
 Bots (UA match) are dropped; `/api/ev` is rate limited per IP. Test submissions are not counted unless tagged with a `qa-*` campaign; `qa-*` rows are hidden from the report by default.
 
 ## 3. Link registry and tagging convention
+
 Registry: `marketing/links.csv` (id, destination, utm_*, url, owner, status, created, notes). Mint every campaign or outbound link from it:
 
-```
+```bash
 python3 marketing/mint_link.py --dest https://themarginwars.com/advisory --source linkedin --medium social --campaign 2026-11-teardown --content post-1
 python3 marketing/mint_link.py --list
 ```
 
 Convention (the script enforces it):
+
 - lowercase, `a-z 0-9 - . _` only; no spaces, no personal data, no client names.
 - `utm_source` = where the click happens: `linkedin`, `substack`, `x`, `email`, `slack`, `themarginwars.com` (own site), a partner's domain.
 - `utm_medium` ∈ `website, social, email, newsletter, referral, paid-social, cpc, display, partner, event, qr, chat`.
@@ -42,20 +46,25 @@ Convention (the script enforces it):
 The build (`marketing/apply_marketing.py`) rewrites every outbound LinkedIn/Substack link on the site from the registry (`utm_source=themarginwars.com&utm_medium=website&utm_campaign=always-on&utm_content=<page>-<slot>`) and tags LinkedIn share buttons (`visitor-share`). JSON-LD `sameAs` URLs stay canonical (untagged) on purpose.
 
 ## 4. Campaign landing-page template
+
 `marketing/landing/make_landing.py SPEC.json [--out DIR]` renders an on-brand page (live site shell, nav, footer, plate art, statband, four-step route, CTA to the Contact form with a pre-selected topic). Example spec: `marketing/landing/example.json`; previews `marketing/landing/preview_d.png`, `preview_m.png`. Pages are `noindex` and not in the sitemap. Four stats and four steps are required (keeps the grids symmetric). **No campaign page is published**; publishing means writing into `site_calm/lp/`, running build.sh, dev QA, then production — each needs Avi's go.
 
 ## 5. Report (machine-readable, auth only)
+
 `GET https://themarginwars.com/api/mk/report?from=YYYY-MM-DD&to=YYYY-MM-DD[&include_qa=1]` with header `authorization: Bearer <MK_REPORT_TOKEN>` (401 without it; never public, noindex, no-store). Dev has its own token. Returns JSON: `by_day_campaign`, `by_campaign`, `by_page`, `by_source` and `totals`, each with `visits`, `conversions`, `by_form`, `cta`, `conversion_rate` (= conversions / visits). Days are UTC. For a routine:
 
-```
+```bash
 curl -s -H "authorization: Bearer $R" "https://themarginwars.com/api/mk/report?from=$(date -u -d yesterday +%F)&to=$(date -u -d yesterday +%F)"
 ```
+
 Report aggregates only. Never post submission contents anywhere public; public #margin-wars-ops gets totals only.
 
 ## 6. Share metadata
+
 Every page: canonical (production URL), unique title and description, OG + Twitter `summary_large_image`, JSON-LD (Organization with logo, slogan, sameAs Substack + LinkedIn page; members Avi and Anitha by first name only, Avi's public LinkedIn; WebSite, WebPage or Article). Default social image `assets/brand/og-default.png` (logo C, pink-rule wordmark, six-colour band, tagline); feed items use their own branded cards. No private facts.
 
 ## 7. Surfaces register
+
 `marketing/surfaces.csv` (regenerate + live probe: `python3 marketing/make_surfaces.py`): every page, form, API, feed, the LinkedIn page, Substack, both Slack channels and the email sender, with URL, environment, what it collects, notification route, last status and last checked. X @MoneyInMotionAW is not Margin Wars-branded (it is "Ada Wren / Money in Motion"), so it is left out.
 
 ## Internal launch, Nov 10 2026
@@ -68,12 +77,15 @@ Every page: canonical (production URL), unique title and description, OG + Twitt
 - Daily ops remains scheduled for first run 11 Nov 2026 around 8 AM PT in #margin-wars-ops (aggregates and uptime only; never submission contents or visitor personal data).
 
 ## X (Twitter)
-- Handle: @marginwars (https://x.com/marginwars), renamed from @themarginwars on 2026-11-11; same account (id 2116590583167037440), created Oct 31 2026.
+
+- Handle: @marginwars (<https://x.com/marginwars>), renamed from @themarginwars on 2026-11-11; same account (id 2116590583167037440), created Oct 31 2026.
 - Login: from 1Password through Passwords & Vaults (email {{contact.email}}). Sign in only from the dedicated Margin Wars browser profile, never from any other browser session. Type the handle by hand; the saved fill doesn't register on X's username field.
 - Status: 0 posts, profile not set up yet (no avatar, banner or bio). Use for launch and narrative only after Avi's go.
 
 ## Game share flow (staged 11 Nov 2026, not live)
+
 Built in `share_1111/` (layer `apply_share.py`, runs on a built copy, never on `site_calm`). **Not on production** until Avi approves a production deploy.
+
 - Buttons on every game result card (Daily, Spot the Leak, Price the Deal, Pub Quiz, Tracewire, Season 1 episodes) and a "Share the Arcade" row on the hub.
 - Links: `https://themarginwars.com/<game>?utm_source=<x|linkedin|copy|native>&utm_medium=social&utm_campaign=game-share&utm_content=<game>`. Registry rows `game-share-<source>-<game>` (60 rows, status `staged`). The older `visitor-share` rows stay for the live LinkedIn button until the switch.
 - Events (cookieless, `/api/ev`): `share_x`, `share_linkedin`, `share_copy`, `share_native`, `share_card`, counted per page (= game). Needs `share_1111/deploy/functions/api/_mk.js` (CLIENT_EVENTS) promoted to `review_deploy/functions` with the release.

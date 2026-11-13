@@ -1,4 +1,4 @@
-# Margin Wars Briefing: Public Signals, Run 2 (week of 2026-11-02)
+# The Margin Wars Briefing: public signals, run 2 (week of 2026-11-02)
 
 *Run #2 · prepared 2026-11-02 (America/Los_Angeles) · public sources only · every source below accessed 2026-11-02 unless stated otherwise.*
 *Previous run: [public-signals-2026-10-26.md](public-signals-2026-10-26.md).*
@@ -73,6 +73,7 @@
 
 **Crowded:** agentic commerce, stablecoin theses and earnings recaps. The 8th Circuit ruling is covered as *news*, but nobody we saw framed it as an operator decision.
 **Open (no peer coverage found):**
+
 - the Mastercard TLID requirement as a multi-acquirer and migration blocker;
 - the Visa 24 Oct 2026 edition's retry and verification changes (ban on non-zero verification auths, AAV, no 51 on Account Verification, Visa Recurrent Service);
 - regional stacking of fees on non-tokenised traffic (Europe 7.5 bps, APAC 4 bps, UAE 5 bps);
@@ -98,6 +99,7 @@ The only exception we found is one secondary blog (Gray Merchants) covering the 
 
 The rule (method-changes Run 1, change 2) is that each figure is checked against its primary source. A figure is flagged if its source changed, or if it hasn't been checked within 30 days of its send date.
 **Status key:**
+
 - **CURRENT:** checked 2026-11-02 against the source shown.
 - **CURRENT (run 1):** last checked 2026-10-26.
 - **EDIT:** the draft text is wrong or incomplete against the source.

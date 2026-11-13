@@ -1,4 +1,4 @@
-# Margin Wars Briefing: Public Signals, Run 3 (week of 2026-11-09)
+# The Margin Wars Briefing: public signals, run 3 (week of 2026-11-09)
 
 *Run #3 · prepared 2026-11-09 (America/Los_Angeles) · public sources only · every source below accessed 2026-11-09 unless stated otherwise.*
 *Previous runs: [public-signals-2026-11-02.md](public-signals-2026-11-02.md) (run 2) · [public-signals-2026-10-26.md](public-signals-2026-10-26.md) (run 1).*
@@ -6,6 +6,7 @@
 **Confidence key.** High = primary rule, regulator, legislature or court text read directly. Medium = good secondary or acquirer source, or a primary seen only through a search summary. Low = single secondary source or search summary only.
 
 **Method used this run (per method-changes.md, run-2 changes).**
+
 1. Primary-source checklist first, now widened: Visa public rules PDF (cover date + `pdfinfo` CreationDate + SHA-256), Checkout.com merchant communications **and support/network-roadmap articles**, **Stripe docs changelog**, PSR/FCA, RBA, Fed/eCFR, settlement site, OCC/Treasury, Council/EP Legislative Observatory, BoE, SARB/Treasury, CBN, CBK, RBI/NPCI, MAS/HKMA.
 2. **Court-docket watch:** 8th Cir. No. 25-3000 (Justia docket), 6th Cir. No. 25-6038 *Linney's Pizza* (CourtListener docket), MDL 1720 (settlement site + search on the hearing).
 3. **Provenance check** on every secondary figure before it enters the register (section F).

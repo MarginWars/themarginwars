@@ -7,7 +7,7 @@
       "id": "group-standards/CONTRIBUTING.md",
       "local": "CONTRIBUTING.md",
       "mode": "adapted",
-      "sha256": "f8078d6b05cafd94f0b8db53eef32147423a56e144a9920af1a2622dabd72181"
+      "sha256": "7929af0a6719bf3f55d89563e0ff003592c0665222542639a00760818f80284a"
     },
     {
       "id": "group-standards/SECURITY.md",
@@ -19,19 +19,19 @@
       "id": "group-standards/.github/CODEOWNERS",
       "local": ".github/CODEOWNERS",
       "mode": "adapted",
-      "sha256": "7c4c7703a4e0d1e2e0afe4e6f26664f9f57b000974b0a732cd2606f1427f0521"
+      "sha256": "b4822865d1f73d0250c3393b20275370252a68908c00950fea410de7e78d62cf"
     },
     {
       "id": "group-standards/.github/PULL_REQUEST_TEMPLATE.md",
       "local": ".github/pull_request_template.md",
       "mode": "adapted",
-      "sha256": "c80589b43860400951b73e87f8d51abbddee3fbf3c7d621b5735063ec97afe1d"
+      "sha256": "e461f195f898f1f753df028030fadbed54faa7cabba121000981e2ebb8e42768"
     },
     {
       "id": "group-standards/.github/ISSUE_TEMPLATE/decision-needed.md",
       "local": ".github/ISSUE_TEMPLATE/decision-needed.yml",
       "mode": "adapted",
-      "sha256": "f86ce2322ba26a10dfb6cb1b1a2a7dbcb2d8408fd9ba4abf15a24c0f4a8f1b2a"
+      "sha256": "27c6a6b387215355e6f38fea172144cc64bdd097c4c8e7eee82df31904393588"
     },
     {
       "id": "group-standards/scripts/check-claims.mjs",
@@ -55,7 +55,7 @@
       "id": "group-standards/.editorconfig",
       "local": ".editorconfig",
       "mode": "adopted",
-      "sha256": "2567d7fe4b66caf7c7d9316021090810243f49385a2c7990ecb22aaa048efcc1"
+      "sha256": "ee9c0df10d072e0b8a905c1fbdb00f8998d609b7c3d7aa4460db88a429bf0f0b"
     },
     {
       "id": "skills/public-site-release-polish",

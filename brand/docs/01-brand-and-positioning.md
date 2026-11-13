@@ -1,4 +1,4 @@
-# Avi Reddy - Brand and Positioning Brief
+# Avi Reddy: brand and positioning brief
 
 Draft for Avi's review. Prepared 21 Oct 2026 (PT). Nothing in this pack has been posted, published, sent or shared.
 
@@ -70,15 +70,11 @@ War stories are the format across all five pillars, not a separate pillar. Every
 
 **Short (about 40 words)**
 
-
 **Medium (about 110 words)**
-
 
 **Long (about 230 words)**
 
-
 His perspective is global. He works across the US, UK/Europe and Africa, and pays particular attention to cross-border corridors and emerging-market rails, where stablecoins are most likely to change the economics of moving money first.
-
 
 Avi writes The Margin Wars Briefing, an invite-only monthly briefing in which each issue is one payment tactic for winning back margin, compared across markets. He prefers practitioner sessions, workshops and closed-door executive roundtables to big stages. He is based in Palo Alto.
 
@@ -106,7 +102,6 @@ Avi writes The Margin Wars Briefing, an invite-only monthly briefing in which ea
 
 ## 9. Website and media kit outline
 
-
 - **Sitemap:** Home - About (and war stories) - Advisory - Speaking - Briefing - Contact (as built; see 06).
 - **Home:** one-line positioning, three problems Avi solves, latest essay, one call to action ("Start a conversation").
 - **About:** medium bio, operating timeline, war-story index (placeholders only).
@@ -115,8 +110,6 @@ Avi writes The Margin Wars Briefing, an invite-only monthly briefing in which ea
 - **Media kit (downloadable):** three bios (Section 7), headshot (to be shot), topic list, session formats, A/V and travel requirements, contact for organisers, "Views are my own" note.
 - **Briefing:** what The Margin Wars Briefing is, who it is for, one public excerpt and "Request an invitation". No public sign-up and no archive.
 - **Contact:** advisory enquiries, speaking enquiries, press enquiries - one email address ({{contact.email}}).
-
-
 
 **Career arc (sourced).**
 
@@ -129,7 +122,6 @@ Avi writes The Margin Wars Briefing, an invite-only monthly briefing in which ea
 - Nacha Smarter Faster Payments 2025: "Trending Payments News" panel (her LinkedIn post, 28 Apr 2025).
 - Money20/20 USA 2025: session "No-Checkout Checkout: Identity, Tokens, and the Future of Embedded Payments" (Aeropay LinkedIn post).
 - Fintech NerdCon 2026 (San Diego): listed speaker as co-host of The Payments Shed (fintechnerdcon.com).
-
 
 **Recognition and boards.** Nominated by Women in Payments for the Distinguished Payments Professional Award (her LinkedIn post, Jan 2025). Serves as treasurer on the board of a local horse rescue (stappconsulting.com). No paid corporate advisory-board role was found.
 
@@ -146,10 +138,10 @@ Avi writes The Margin Wars Briefing, an invite-only monthly briefing in which ea
 
 **Sources (accessed 21 Oct 2026):**
 
-- Stapp Consulting: https://stappconsulting.com/
-- The Payments Shed home page: https://www.thepaymentsshed.com/
-- The Payments Shed on Apple Podcasts: https://podcasts.apple.com/us/podcast/the-payments-shed/id1829254269
-- LinkedIn - Aeropay Money20/20 post: https://www.linkedin.com/posts/aeropay_money2020-activity-7391239312178241536-ORMk
+- Stapp Consulting: <https://stappconsulting.com/>
+- The Payments Shed home page: <https://www.thepaymentsshed.com/>
+- The Payments Shed on Apple Podcasts: <https://podcasts.apple.com/us/podcast/the-payments-shed/id1829254269>
+- LinkedIn - Aeropay Money20/20 post: <https://www.linkedin.com/posts/aeropay_money2020-activity-7391239312178241536-ORMk>
 
 ## 11. Conference strategy (summary)
 

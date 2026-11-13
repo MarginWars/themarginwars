@@ -2,8 +2,8 @@
 
 | Environment | Pages project | Trigger | Gate |
 |---|---|---|---|
-| dev | `themarginwars-dev` (branch `main`) → https://themarginwars-dev.pages.dev | every push to `main` touching `site/**` (= merged PR) | required checks on the PR; `site/dist.md5` must match the build |
-| production | `themarginwars` → https://themarginwars.com | manual only: Actions → deploy → Run workflow → `production` (never on push) | `production` environment: Avi approves; latest nightly on `main` green |
+| dev | `themarginwars-dev` (branch `main`) → <https://themarginwars-dev.pages.dev> | every push to `main` touching `site/**` (= merged PR) | required checks on the PR; `site/dist.md5` must match the build |
+| production | `themarginwars` → <https://themarginwars.com> | manual only: Actions → deploy → Run workflow → `production` (never on push) | `production` environment: Avi approves; latest nightly on `main` green |
 
 Both run `npx wrangler@4 pages deploy dist` from `site/`, so `site/functions` deploy with the static build.
 Secrets: `CLOUDFLARE_API_TOKEN` in each environment (Pages:Edit for this account only); variable `CLOUDFLARE_ACCOUNT_ID`.
