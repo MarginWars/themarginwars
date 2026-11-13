@@ -1,42 +1,53 @@
 # GitHub setup for MarginWars/themarginwars
 
-Run once, in this order, by Avi (org owner) or by Site & Release with Avi's OK. `ops/github/setup.sh` does steps 3–7.
+State as applied on 12 Nov 2026 (PT), and what changes later. `ops/github/setup.sh` is the original one-shot
+script; the JSON files in this folder are the source of truth for the rulesets.
 
-1. **Bot account.** Create the machine user (for example `marginwars-bot`) with its own email and 2FA; invite it to
-   the `MarginWars` org; create team `marginwars-bots` containing only the bot; give the team **Write** on the repo.
-   Agents commit and open PRs as the bot; Avi approves (GitHub blocks approving your own PR).
-2. **Push.** From the box: `git remote add origin https://github.com/MarginWars/themarginwars.git`,
-   `git push -u origin main`, then `git push origin fix/restore-buildout-css` and open its PR.
-   Push `main` **before** applying rulesets (step 6), or the first push needs a temporary bypass.
-3. **Repo settings.** Squash merge only (title = PR title), delete head branches, no auto-merge, no wiki;
-   Actions: default token read-only, Actions may not approve PRs; require approval for first-time contributors.
-4. **Security.** Secret scanning and push protection on; Dependabot alerts and security updates on;
-   private vulnerability reporting on (`SECURITY.md`).
-5. **Environments.**
-   - `dev`: deployment branches `main` only. Secret `CLOUDFLARE_API_TOKEN`.
-   - `production`: required reviewer `@AviShip-Type0`, prevent self-review, deployment branches `main` only.
-     Secret `CLOUDFLARE_API_TOKEN` (may be the same token or a separate production-only one).
-   - Repository variable `CLOUDFLARE_ACCOUNT_ID` (not secret, but kept out of files).
-6. **Rulesets** (`ops/github/ruleset-*.json`):
-   - `main-protected` on the default branch: PR required, 1 approval, code-owner review, dismiss stale approvals,
-     approval of the last push, conversations resolved, squash only, linear history, no force-push, no deletion,
-     required checks `compliance`, `frontmatter-limits`, `claims`, `links-docs`, `secrets`, `standards-lock`,
-     `functions`, `site-build`, `site-gates` (strict). **No bypass actors**, so the bot cannot bypass.
-   - `ledger-bot-only` on `refs/heads/ledger`: no deletion, no force-push, updates restricted; bypass only for the
-     `marginwars-bots` team (set `BOTS_TEAM_ID`).
-   - `release-tags` on `prod-*` and `v*` tags: no update or deletion.
-7. **Labels** from `.github/labels.yml` (the `labels` workflow keeps them in sync after that).
-8. **Repository secrets for CI** (all optional; checks degrade to the public-safe subset without them):
-   - `COMPLIANCE_EXTRA_TERMS`: the clear-text restricted names list, one per line (adds to the hashed list).
-   - `MW_GUARD`, `MW_GUARD_TESTS`: the site assistant's guard JSON and its test cases (the `functions` job runs the
-     full 19 tests when present, the fail-closed test otherwise).
-   - `QA_TOKEN`: the contact-form QA bypass token for live form checks (nightly, later).
-   - `MK_REPORT_TOKEN`: read token for `/api/mk/report` metrics (Channels, later).
-9. **Cloudflare Pages secrets** on both `themarginwars-dev` and `themarginwars`: `MW_GUARD` (required before the
-   first deploy from this repo; without it the assistant answers 503).
-10. **Projects board** (Launch Command): fields Status, Workstream, Channel, Schedule, Live URL; views Launch,
-    Calendar, Speaking, Waiting on Avi, Board.
-11. Optional: Anitha as a second code owner on `content/**` and `speaking/**` (decision D5), via CODEOWNERS PR.
+## Applied now
 
-Note: the first runs of `site-build` and `site-gates` on `main` are expected to fail until the
-`fix/restore-buildout-css` PR merges (see its description). Merge that PR first.
+| Area | Setting |
+|---|---|
+| Repo | Public. Squash merge only (title = PR title, message = PR body), delete head branches on merge, no auto-merge, no wiki |
+| Actions | Default `GITHUB_TOKEN` read-only; Actions cannot approve PRs |
+| Security | Secret scanning and push protection on; Dependabot alerts and security updates on; private vulnerability reporting on |
+| Environment `dev` | Deployment branches: `main` only. Secret `CLOUDFLARE_API_TOKEN` |
+| Environment `production` | Required reviewer `@AviShip-Type0`; **prevent self-review off** (see below); deployment branches `main` only. Secret `CLOUDFLARE_API_TOKEN`. Deploys only by manual dispatch of `deploy.yml` |
+| Variable | `CLOUDFLARE_ACCOUNT_ID` (repository variable) |
+| Ruleset `main-protected` (`ruleset-main.json`) | PR required, **0 approvals, no code-owner review** (see below), stale approvals dismissed, conversations resolved, squash only, linear history, no force-push, no deletion, no bypass actors. Required checks (strict): `compliance`, `frontmatter-limits`, `claims`, `links-docs`, `secrets`, `standards-lock`, `functions`, `site-build`, `site-gates` |
+| Ruleset `ledger-bot-only` (`ruleset-ledger.json`) | `refs/heads/ledger`: no deletion, no force-push, updates restricted; bypass only for team `marginwars-bots` (members: `marginwars-bot` only) |
+| Ruleset `release-tags` (`ruleset-tags.json`) | `prod-*` and `v*` tags cannot be updated or deleted |
+| Labels | From `.github/labels.yml`; the `labels` workflow keeps them in sync |
+| Cloudflare Pages secrets | `MW_GUARD` on `themarginwars-dev` and `themarginwars` |
+| Contact mailer Worker | `themarginwars-contact-mailer` is deployed separately (wrangler, not CI); secret `MAIL_TO` set |
+
+## Why two protections are relaxed today
+
+Until now every PR is authored by `AviShip-Type0`, and Avi is the only human reviewer. GitHub blocks approving
+your own PR and, with prevent self-review, approving your own deployment. With the target settings nothing could
+merge or deploy. So, temporarily:
+
+- `main-protected` requires 0 approvals and no code-owner review (the required checks still gate every merge).
+- `production` allows the person who started the deploy to approve it.
+
+## Re-tighten plan (waits for a working bot login)
+
+`marginwars-bot` is in the org and the `marginwars-bots` team, but its password is being fixed at Avi's next
+Touch ID session. Re-tighten only after the bot can sign in and has opened and pushed at least one PR, so Avi is
+never locked out:
+
+1. Agents commit and open PRs as `marginwars-bot` (its own credentials; never Avi's session).
+2. Apply `ruleset-main.target.json` to ruleset `main-protected`: 1 approval, code-owner review, approval of the
+   last push. `gh api -X PUT repos/MarginWars/themarginwars/rulesets/<id> --input ops/github/ruleset-main.target.json`
+3. Turn on prevent self-review for `production` once deploys are dispatched by the bot (or a second reviewer exists).
+4. Copy the target file over `ruleset-main.json` in the same PR, so the repo keeps describing what is applied.
+
+Optional later: Anitha as a second code owner on `content/**` and `speaking/**` (decision D5).
+
+## Secrets reference (values live in Passwords & Vaults; never in git)
+
+- Environments `dev`, `production`: `CLOUDFLARE_API_TOKEN` (Pages edit only; it cannot manage Workers).
+- Optional repository secrets: `COMPLIANCE_EXTRA_TERMS`, `MW_GUARD`, `MW_GUARD_TESTS`, `QA_TOKEN`, `MK_REPORT_TOKEN`.
+- Pages projects: `MW_GUARD` (required; without it `/api/soldier` answers 503).
+- Worker `themarginwars-contact-mailer`: `MAIL_TO` (a verified Email Routing destination). Redeploying the Worker
+  from `site/workers/contact_mailer/worker.js` needs a token with Workers Scripts edit and the private
+  `wrangler.toml` (send_email allow-list), and Avi's OK.

@@ -1,10 +1,11 @@
 // Internal mailer for The Margin Wars contact form. Reached only through a Pages service binding
 // (no public route). It sends a notification to the site owner's verified address; it never
-// emails visitors.
+// emails visitors. The default destination comes from the MAIL_TO secret (a verified Email Routing
+// destination, also listed in the send_email binding's allowed_destination_addresses); no address is
+// kept in source. Set it with: wrangler secret put MAIL_TO (in the directory holding wrangler.toml).
 import { EmailMessage } from "cloudflare:email";
 
 const FROM = "contact-form@themarginwars.com";
-const OWNER = "avinesh.reddy@gmail.com";
 const clean = (s, n) => String(s || "").replace(/[\r\n]+/g, " ").slice(0, n);
 const b64 = s => { const b = new TextEncoder().encode(s); let o = ""; for (const x of b) o += String.fromCharCode(x); return btoa(o).replace(/.{1,76}/g, "$&\r\n"); };
 const encH = s => "=?UTF-8?B?" + btoa(String.fromCharCode(...new TextEncoder().encode(s))) + "?=";
@@ -22,7 +23,9 @@ export default {
       "Message:", String(s.message || "").slice(0, 5000), "",
       "Reply to this email to answer the sender directly. Nothing was sent to the sender automatically."
     ].join("\r\n");
-    const list = (Array.isArray(s.to) && s.to.length ? s.to : [OWNER]).map(x => clean(x, 200)).filter(emailOk).slice(0, 5);
+    const fallback = clean(env.MAIL_TO, 200);
+    const list = (Array.isArray(s.to) && s.to.length ? s.to : (fallback ? [fallback] : [])).map(x => clean(x, 200)).filter(emailOk).slice(0, 5);
+    if (!list.length) return Response.json({ ok: false, sent: 0, total: 0, error: "MAIL_TO is not configured" }, { status: 503 });
     const failed = [];
     let sent = 0;
     for (const TO of list) { const r = await sendOne(env, TO, subject, body, s); if (r === true) sent++; else failed.push(TO.split("@")[0] + ": " + r); }

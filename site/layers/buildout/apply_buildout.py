@@ -6,7 +6,7 @@ import re,json,hashlib,shutil,html,os
 from pathlib import Path
 import tinycss2
 H=Path(__file__).resolve().parent;ROOT=H.parent/'site_calm';PROD='https://themarginwars.com';e=html.escape
-MAIL='mailto:avinesh.reddy@gmail.com'
+MAIL='mailto:hello@themarginwars.com'
 def rd(p):return p.read_text()
 def wr(p,s):p.write_text(s)
 pages=sorted(p for p in ROOT.rglob('*.html') if not p.name.startswith('_'))

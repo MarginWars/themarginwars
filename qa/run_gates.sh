@@ -16,6 +16,7 @@ static() {
   python3 qa/check_links.py --docs
   python3 qa/check_standards_lock.py
   node qa/functions/test_soldier.mjs
+  node qa/functions/test_mailer.mjs
 }
 serve() {
   python3 qa/serve.py site/dist 8817 & SRV=$!; trap 'kill $SRV 2>/dev/null || true' EXIT

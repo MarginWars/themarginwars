@@ -90,7 +90,7 @@ AUTO='<!--feeds-discovery-->'+''.join(f'<link rel="alternate" type="{typ}" title
 def subscribe(name,label='Copy RSS URL'):
  return f'<div class="f-subscribe"><a href="/feeds/{name}.xml">RSS</a><a href="/feeds/{name}.atom">Atom</a><a href="/feeds/{name}.json">JSON</a><button hidden type="button" data-copy="/feeds/{name}.xml">{label}</button></div>'
 def flag(x):
- return '<a href="mailto:avinesh.reddy@gmail.com?'+e(urllib.parse.urlencode({'subject':'Wire correction: '+x['title'],'body':'Item: '+x['id']+'\nOfficial source / correction:\n'}))+'">Flag a change we missed</a>'
+ return '<a href="mailto:hello@themarginwars.com?'+e(urllib.parse.urlencode({'subject':'Wire correction: '+x['title'],'body':'Item: '+x['id']+'\nOfficial source / correction:\n'}))+'">Flag a change we missed</a>'
 def links(x,kind='wire'):
  return f'<div class="f-links"><a href="{e(x["source"])}" rel="noopener" target="_blank">Official source ↗<span class="f-sr"> (opens in a new tab)</span></a><a href="{e(url(x,kind))}">Permalink</a>{flag(x)}</div>'
 def filters(types=True):
