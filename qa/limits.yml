@@ -1,0 +1,20 @@
+# Character limits per channel (enforced by qa/check_frontmatter.py). Body = text after the front-matter.
+# X counts every URL as 23 characters. Threads split into posts on lines containing only ---.
+channels:
+  x:                  {post: 280, thread_post: 280, profile: {bio: 160}}   # 280 unless X Premium is confirmed for @marginwars
+  linkedin-personal:  {post: 3000}
+  linkedin-company:   {post: 3000, profile: {tagline: 120}}
+  substack:           {subject: 90}    # house style (assumption; revisit with Publications)
+  briefing:           {subject: 90}    # house style (assumption)
+item_globs:
+  - content/**/*.md
+  - publications/briefing/issue-*.md
+  - publications/essays/*.md
+  - publications/route-briefs/*.md
+  - speaking/events/*/pack.md
+  - media/pitches/*.md
+  - media/passes/*.md
+skip_globs:
+  - content/**/README.md
+  - content/_templates/**
+publishable_channels: [linkedin-personal, linkedin-company, x, substack, briefing, site, media-pitch]

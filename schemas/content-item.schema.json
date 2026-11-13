@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MarginWars/themarginwars/schemas/content-item.schema.json",
+  "title": "Outbound item front-matter",
+  "type": "object",
+  "required": ["id", "channel", "status", "owner"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "channel": {"enum": ["linkedin-personal", "linkedin-company", "x", "substack", "briefing", "site", "speaking-form", "email-draft", "media-pitch"]},
+    "kind": {"enum": ["post", "thread", "issue", "profile", "pack", "pitch", "proposal", "page"]},
+    "schedule": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?-0[78]:00$", "description": "Pacific Time with an explicit offset (-08:00 PST, -07:00 PDT)"},
+    "status": {"enum": ["draft", "in-review", "approved", "ready", "filed", "pitched", "live", "withdrawn"]},
+    "status_note": {"type": ["string", "null"]},
+    "owner": {"enum": ["launch-command", "site-release", "channels", "content-studio", "publications", "speaking", "pipeline", "research"]},
+    "approvals": {"type": ["object", "null"], "additionalProperties": {"type": "string", "pattern": "^A-[0-9]{3}$"}},
+    "sources": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "links": {"type": "array", "items": {"type": "string"}},
+    "standing_permission": {"type": ["string", "null"], "pattern": "^SP-[0-9]+$"},
+    "subject": {"type": "string"},
+    "fields": {"type": "object", "additionalProperties": {"type": "string"}},
+    "event": {"type": "string"}, "deadline": {"type": ["string", "null"]}, "fee": {"type": ["string", "null"]},
+    "co_speaker": {"type": ["string", "null"]}, "privacy": {"type": "string"}
+  },
+  "additionalProperties": false
+}

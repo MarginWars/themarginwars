@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publish ledger entry (ledger branch, ledger/published.jsonl, one JSON object per line)",
+  "type": "object",
+  "required": ["id", "channel", "status", "at", "route", "sha"],
+  "properties": {
+    "id": {"type": "string"},
+    "channel": {"type": "string"},
+    "status": {"enum": ["scheduled", "published", "failed", "withdrawn"]},
+    "at": {"type": "string", "description": "ISO time in PT with offset"},
+    "url": {"type": ["string", "null"]},
+    "route": {"enum": ["api", "computer-use", "native-scheduler", "wrangler", "connector"]},
+    "sha": {"type": "string", "description": "git blob sha of the merged file that was published"},
+    "merge_pr": {"type": ["integer", "null"]},
+    "standing_permission": {"type": ["string", "null"]},
+    "reason": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+# gitleaks config: the default rules plus Margin Wars specifics. Run: gitleaks git --config .gitleaks.toml --redact .
+title = "themarginwars"
+[extend]
+useDefault = true
+
+[[rules]]
+id = "cloudflare-resource-id"
+description = "Cloudflare account, D1 or KV namespace id assigned in config"
+regex = '''(?i)\b(account_id|database_id|kv_namespace_id|namespace_id|id)\s*[=:]\s*["']?[0-9a-f]{32}\b'''
+keywords = ["account_id", "database_id", "namespace_id", "id"]
+
+[[rules]]
+id = "slack-webhook-any"
+description = "Slack incoming webhook"
+regex = '''hooks\.slack\.com/(services|workflows|triggers)/[A-Za-z0-9/_-]{20,}'''
+keywords = ["hooks.slack.com"]
+
+[[rules]]
+id = "discord-webhook"
+description = "Discord webhook"
+regex = '''discord(app)?\.com/api/webhooks/\d+/[A-Za-z0-9_-]{20,}'''
+keywords = ["discord"]
+
+[allowlist]
+description = "Build output and fixtures"
+paths = ['''^site/dist/''', '''^qa-out/''', '''^site/layers/brand_logo/fonts/''']

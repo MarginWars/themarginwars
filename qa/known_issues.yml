@@ -1,0 +1,7 @@
+# Waivers for known browser-gate failures. Each needs an issue and an expiry date; expired waivers stop applying.
+# - case: "contact.html|*"
+#   gate: spacing
+#   reason: "..."
+#   until: 2026-11-20
+#   issue: 1
+[]
