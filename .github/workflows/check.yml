@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - name: Private terms (optional extra list from a secret; never printed)
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - run: python3 qa/check_frontmatter.py ${{ github.event_name == 'pull_request' && format('--changed origin/{0}', github.base_ref) || '' }}
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - run: python3 qa/check_claims.py
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - run: python3 qa/check_links.py --docs
@@ -104,7 +104,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with: { python-version: "3.13", cache: pip }
       - run: pip install -r requirements.txt
       - name: Build site/dist and compare with the committed manifest (byte-identical)
@@ -129,7 +129,7 @@ jobs:
         run: |
           base="${{ github.event.pull_request.base.sha || github.event.before }}"
           if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ] || git diff --name-only "$base" HEAD | grep -qE '^(site/|qa/|requirements.txt)'; then echo "run=1" >> "$GITHUB_OUTPUT"; else echo "run=0" >> "$GITHUB_OUTPUT"; echo "No site changes: gate passes without a browser run."; fi
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         if: steps.f.outputs.run == '1'
         with: { python-version: "3.13", cache: pip }
       - if: steps.f.outputs.run == '1'
