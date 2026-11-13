@@ -24,7 +24,7 @@ jobs:
       - name: Text overflow and spacing at every width
         if: always()
         run: qa/run_gates.sh browser
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with: { name: nightly-matrix, path: "qa-out/", retention-days: 14 }
   live:
