@@ -11,7 +11,7 @@ Known issues may be waived in qa/known_issues.yml (list of {case: <glob>, gate: 
 waivers past their date stop applying. Exit 0 = pass, 1 = fail, 2 = missing expected output."""
 import argparse, fnmatch, glob, json, os, sys, datetime
 from pathlib import Path
-ap = argparse.ArgumentParser(); ap.add_argument('out'); ap.add_argument('--engines', default='chromium'); ap.add_argument('--profiles', default='core')
+ap = argparse.ArgumentParser(); ap.add_argument('out'); ap.add_argument('--engines', default='chromium'); ap.add_argument('--profiles', default='core'); ap.add_argument('--require', default='text-overflow,spacing', help="outputs that must exist besides the matrix; 'none' for a matrix-only run")
 a = ap.parse_args(); O = Path(a.out)
 REPO = Path(__file__).resolve().parent.parent
 waivers = []
@@ -48,12 +48,13 @@ for e in a.engines.split(','):
             v = dict(v); se = v.pop('shoterr', None)
             if se: warns.append(('matrix', f'{e}|{k}', 'screenshot: ' + se[:80]))
             v.pop('spacing_info', None)
-            if v: add(f'matrix-{e}', k, '; '.join(f'{x}={json.dumps(y)[:120]}' for x, y in v.items()))
-if not to: missing.append('text-overflow')
-if not sp: missing.append('spacing')
+            if v: add(f'matrix-{e}/{p}', k, '; '.join(f'{x}={json.dumps(y)[:120]}' for x, y in v.items()))
+req = set() if a.require == 'none' else set(a.require.split(','))
+if not to and 'text-overflow' in req: missing.append('text-overflow')
+if not sp and 'spacing' in req: missing.append('spacing')
 lines = ['# Browser gate verdict', '', '| Gate | Cases | Failing |', '|---|---:|---:|']
 for g, n in counts.items():
-    key = 'matrix-' + g.split()[1].split('/')[0] if g.startswith('matrix') else g
+    key = 'matrix-' + g.split()[1] if g.startswith('matrix') else g
     lines.append(f'| {g} | {n} | {sum(1 for f in fails if f[0] == key)} |')
 lines += ['', f'Waived by qa/known_issues.yml: {waived_n}', f'Missing outputs: {", ".join(missing) or "none"}', '']
 if fails:

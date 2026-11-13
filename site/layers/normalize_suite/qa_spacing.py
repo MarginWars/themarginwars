@@ -19,8 +19,8 @@ for(const e of content){if(inScroller(e))continue;const r=e.getBoundingClientRec
  const L=r.left,Rr=W-r.right;minL=Math.min(minL,L);minR=Math.min(minR,Rr);
  if(L<E-2||Rr<E-2)intr.push({el:e.tagName+'.'+[...e.classList].slice(0,2).join('.'),t:(e.textContent||'').trim().slice(0,30),L:Math.round(L),R:Math.round(Rr)})}
 // rhythm: consecutive section-level blocks; same surface => R between content, surface change => R each side
-const bgOf=e=>{let x=e;while(x&&x!==document.documentElement){const b=getComputedStyle(x).backgroundColor;if(b!='rgba(0, 0, 0, 0)'&&b!='transparent')return b;x=x.parentElement}return 'rgb(255, 255, 255)'};
-const own=e=>{const b=getComputedStyle(e).backgroundColor;return b!='rgba(0, 0, 0, 0)'&&b!='transparent'};
+const bgOf=e=>{let x=e;while(x&&x!==document.documentElement){const b=getComputedStyle(x).backgroundColor;if(!/^(transparent|rgba\([^)]*,\s*0\))$/.test(b))return b;x=x.parentElement}return 'rgb(255, 255, 255)'};
+const own=e=>{const b=getComputedStyle(e).backgroundColor;return !/^(transparent|rgba\([^)]*,\s*0\))$/.test(b)};
 const main=document.querySelector('main');const blocks=[];
 if(main)for(const c of main.children){if(!vis(c)||c.matches('nav,script,style,dialog,.nextp'))continue;
  if(c.matches('.wrap')){let lead=null;const n0=blocks.length;for(const k of c.children){if(!vis(k)||k.matches('script,style'))continue;if(k.matches('section,div')){blocks.push({el:k,wrap:c,lead});lead=null}else if(blocks.length>n0)blocks[blocks.length-1].tail=k;else lead=k}}
