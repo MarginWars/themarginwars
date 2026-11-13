@@ -1,12 +1,13 @@
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
   <source media="(prefers-color-scheme: light)" srcset=".github/assets/banner-light.png">
   <img alt="The Margin Wars: payment tactics for winning back margin" src=".github/assets/banner-light.png" width="100%">
 </picture>
+</p>
 
 <p>
   <a href="https://github.com/MarginWars/themarginwars/actions/workflows/check.yml"><img alt="Required checks" src="https://img.shields.io/github/actions/workflow/status/MarginWars/themarginwars/check.yml?branch=main&amp;label=checks&amp;style=flat-square&amp;labelColor=111417"></a>
-  <a href="https://github.com/MarginWars/themarginwars/actions/workflows/nightly.yml"><img alt="Nightly cross-engine matrix" src="https://img.shields.io/github/actions/workflow/status/MarginWars/themarginwars/nightly.yml?branch=main&amp;label=nightly&amp;style=flat-square&amp;labelColor=111417"></a>
   <a href="https://github.com/MarginWars/themarginwars/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/MarginWars/themarginwars/deploy.yml?branch=main&amp;label=deploy&amp;style=flat-square&amp;labelColor=111417"></a>
   <a href="https://themarginwars.com"><img alt="Website: themarginwars.com" src="https://img.shields.io/badge/site-themarginwars.com-2E5A96?style=flat-square&amp;labelColor=111417"></a>
 </p>
@@ -71,11 +72,13 @@ npx markdownlint-cli2         # Markdown style (config in .markdownlint-cli2.jso
 
 ## How changes flow
 
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/flow-dark.png">
   <source media="(prefers-color-scheme: light)" srcset=".github/assets/flow-light.png">
   <img alt="How a change ships: branch, pull request, required checks, Avi approves with a squash-merge, dev deploy, then production started by hand and approved by Avi" src=".github/assets/flow-light.png" width="100%">
 </picture>
+</p>
 
 1. An agent (the bot account) opens a pull request from a short-lived branch: `feat/`, `fix/`, `content/`,
    `speaking/`, `pub/`, `chore/` or `ops/`.
