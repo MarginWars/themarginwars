@@ -57,8 +57,11 @@ jobs:
             --commit-hash "$GITHUB_SHA" --commit-message "${GITHUB_SHA::12} dist ${{ needs.build.outputs.md5 }}" | tee ../deploy.log
       - name: Smoke (dev)
         run: |
-          for p in / /about /contact /speaking /briefing /ops-check-no-such-page; do
-            c=$(curl -s -o /dev/null -w '%{http_code}' "https://themarginwars-dev.pages.dev$p"); echo "$p $c"; done
+          fail=0
+          for p in / /about /advisory /contact /speaking /writing /wire/ /feeds/ /sitemap.xml; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://themarginwars-dev.pages.dev$p"); echo "$p $c"; [ "$c" = 200 ] || fail=1; done
+          c=$(curl -s -o /dev/null -w '%{http_code}' "https://themarginwars-dev.pages.dev/ops-check-no-such-page"); echo "unknown URL $c"; [ "$c" = 404 ] || fail=1
+          exit $fail
       - run: echo "dev deployed $GITHUB_SHA (dist ${{ needs.build.outputs.md5 }})" >> "$GITHUB_STEP_SUMMARY"
   production:
     needs: [build, dev]
