@@ -159,10 +159,6 @@ emails:
   - example.net
   - users.noreply.github.com
   allowed_hashed:
-  - h: 975c34a9d23d0cc386ba7683
-    paths:
-    - site/workers/contact_mailer/worker.js
-    why: contact-form notification destination in the mailer worker (not shown on the site; the public address is hello@themarginwars.com since 12 Nov 2026)
   - h: 770aa5ac619b61367fc60d26
     paths:
     - site/**
