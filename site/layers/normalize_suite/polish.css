@@ -149,3 +149,40 @@ html body.nm section.gm[data-game=ep]:empty{min-height:440px}
 html body.nm section.gm[data-game=deal]:empty{min-height:500px}
 html body.nm section.gm[data-game=leak]:empty{min-height:1000px}
 html body.nm section.gm[data-game=quiz]:empty{min-height:100px}
+
+/* 19. Go further cards (.wrl): titles must fit inside the card at mid and desktop widths.
+   styles.css sizes titles with clamp(26px, 2.6vw, 36px) against --D. The calm/suite layers
+   reassign --D from Big Shoulders Display (condensed) to Schibsted Grotesk (much wider),
+   so ADVISORY/SPEAKING/BRIEFING no longer fit when .split is 2-col (from 960px) and .wrl
+   is 3-col (from 761px). wk.css also forces align-items:center on .wrl a, so the titles
+   sit outside the card padding and collide. Page-level overflow stays 0, which is why
+   the previous spacing gate passed. */
+html body.nm main .wrl{align-items:stretch;min-width:0}
+html body.nm main .wrl a{
+  display:flex!important;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  min-width:0!important;
+  max-width:100%;
+  box-sizing:border-box;
+  overflow-wrap:break-word;
+  word-break:normal;
+  hyphens:manual;
+  line-height:1.1;
+  text-wrap:balance;
+}
+html body.nm main .wrl a span{max-width:100%;overflow-wrap:break-word;text-wrap:pretty}
+/* .split becomes 2-col from 960px, so the three cards would share a ~464–512px column.
+   Stack them there so the title size can stay. Below 960px the plate already stacks and
+   the 3-col row has a full content width (measured clean at 768). */
+@media(min-width:960px){html body.nm main .split .wrl{grid-template-columns:1fr}}
+
+/* 20. Text-overflow gate follow-ups (Nov 12): keep control labels and chevrons inside their boxes. */
+/* Research "Rule, source & share" summary: the anonymous title plus the ＋ were 5px wider than the card (min-width:auto). */
+html body.nm details.fx-details,html body.nm details.fx-details>summary{min-width:0;max-width:100%;box-sizing:border-box}
+html body.nm details.fx-details>summary{display:grid!important;grid-template-columns:minmax(0,1fr) max-content;align-items:center;column-gap:16px;justify-content:stretch}
+html body.nm details.fx-details>summary>span{justify-self:end;min-width:3em;text-align:center;box-sizing:content-box}
+/* Arcade "How we handle history" chevron's 3px border sat 2.5px outside the section. */
+html body.nm details.acc>summary,html body.nm details.sec-acc>summary{min-width:0;max-width:100%;box-sizing:border-box;padding-right:4px}
+html body.nm .acc-chev{box-sizing:border-box;max-width:100%}

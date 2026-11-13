@@ -27,6 +27,7 @@ The final step also rebuilds `review_deploy/functions/api/_knowledge.js` from th
 - `qa_interactions.py` → 64 extra-width render cases, 3 actual search/preferences checks, 89 static no-JS route checks.
 - `qa_actions.py`, `qa_keys.py` → actual action/answer/focus and keyboard/reduced-motion regressions.
 - `qa_privacy.py` and `qa_function.mjs` → static/payload privacy and local output-guard tests.
+- `qa_text_overflow.py` → every route at 360, 390, 768, 1024, 1280 and 1440. Fails if any text element's scrollWidth exceeds its clientWidth, or if text ink spills horizontally outside its element or card border box. Shared probe: `text_overflow_check.js` (also injected into `qa_spacing.py`). Page-level `documentElement.scrollWidth > innerWidth` is not enough: titles can collide inside the layout without widening the document.
 - `make_sheets.py` / screenshot inspection → numerical results are never the sole visual acceptance gate.
 
 ## White/grey refinement

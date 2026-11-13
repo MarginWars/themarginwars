@@ -38,7 +38,12 @@ for(let i=0;i+1<blocks.length;i++){const A=blocks[i],B=blocks[i+1];const a=box(A
   if(i>0&&Math.abs(g1-R)>2)rhythm.push({sec:nm(A.el)+'→'+nm(B.el),side:'before-surface',v:Math.round(g1),want:R});
   if(Math.abs(g2-R)>2)rhythm.push({sec:nm(A.el)+'→'+nm(B.el),side:'after-surface',v:Math.round(g2),want:R})}}
 const hb=[];for(const h of document.querySelectorAll('main h2,body>section h2')){if(!vis(h)||h.closest(skip)||h.closest('article,li,details,.card,.f-entry,.pc,figure,form,.gm,dialog,table,.rt-hero'))continue;let n=h.nextElementSibling;if(!n||!n.matches('p'))continue;if(!vis(n))continue;if(n.getBoundingClientRect().left>=h.getBoundingClientRect().right-1||n.getBoundingClientRect().top<h.getBoundingClientRect().top+2)continue;const g=n.getBoundingClientRect().top-h.getBoundingClientRect().bottom;if(Math.abs(g-HB)>2)hb.push({h:h.textContent.trim().slice(0,30),gap:Math.round(g),want:HB})}
-return {E,R,HB,minL:Math.round(minL),minR:Math.round(minR),edgeDev:Math.abs(minL-E)>2||Math.abs(minR-E)>2,lr:Math.round(minL-minR),intr:intr.slice(0,15),nIntr:intr.length,rhythm,hb,overflow:document.documentElement.scrollWidth>innerWidth}}'''
+const TO=(__TO_JS__);
+return {E,R,HB,minL:Math.round(minL),minR:Math.round(minR),edgeDev:Math.abs(minL-E)>2||Math.abs(minR-E)>2,lr:Math.round(minL-minR),intr:intr.slice(0,15),nIntr:intr.length,rhythm,hb,overflow:document.documentElement.scrollWidth>innerWidth,textOverflow:TO.issues,nTextOverflow:TO.n}}'''
+# Shared text-overflow check is injected below at runtime
+
+# Inject the shared text-overflow check into the in-page probe.
+JS=JS.replace('const TO=(__TO_JS__);','const TO=('+(H/'text_overflow_check.js').read_text().strip()+')();')
 res={}
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path=os.environ.get('QA_CHROME') or None,args=['--no-sandbox'])

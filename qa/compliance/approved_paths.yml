@@ -1,0 +1,6 @@
+# Path-level approvals for approval-gated names in files that cannot carry front-matter (site HTML, functions).
+# Each grant must point at an `approved` row in ops/approvals.md.
+grants:
+  - paths: ["site/**"]
+    approvals: {paypal: A-001}
+    note: "Live site copy (present tense) as approved with the production deploys; see A-001."
