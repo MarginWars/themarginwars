@@ -79,7 +79,7 @@ Every page: canonical (production URL), unique title and description, OG + Twitt
 ## X (Twitter)
 
 - Handle: @marginwars (<https://x.com/marginwars>), renamed from @themarginwars on 2026-11-11; same account (id 2116590583167037440), created Oct 31 2026.
-- Login: from 1Password through Passwords & Vaults (email {{contact.email}}). Sign in only from the dedicated Margin Wars browser profile, never from any other browser session. Type the handle by hand; the saved fill doesn't register on X's username field.
+- Login: from 1Password through Passwords & Vaults (email {{contact.email}}). Sign in only from the box Chrome profile "Margin Wars (clean)". Never sign in to x.com in the default shared Chrome profile, because other workflows use it. Type the handle by hand; the saved fill doesn't register on X's username field.
 - Status: 0 posts, profile not set up yet (no avatar, banner or bio). Use for launch and narrative only after Avi's go.
 
 ## Game share flow (staged 11 Nov 2026, not live)
