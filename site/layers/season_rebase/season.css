@@ -1,0 +1,3 @@
+/* Season 1 lock (season_rebase layer). While locked, main shows only the lock panel. */
+.s1-on main>:not(.s1-lock){display:none!important}
+.s1-lock .cd{font-variant-numeric:tabular-nums}

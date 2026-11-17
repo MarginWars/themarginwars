@@ -1,7 +1,7 @@
 /* Tracewire: daily payments word-path puzzle. Boards in window.RT_BOARDS (machine-verified unique). */
 (function(){
 var d=document,root=d.querySelector('[data-game=tracewire]');if(!root)return;
-var B=window.RT_BOARDS||[],Q=new URLSearchParams(location.search),PREV=Q.has('preview')&&(/^(review\.themarginwars\.pages\.dev|localhost|127\.0\.0\.1)$/.test(location.hostname));
+var B=window.RT_BOARDS||[],Q=new URLSearchParams(location.search),PREV=Q.has('preview')&&(/^(review\.themarginwars\.pages\.dev|([a-z0-9-]+\.)?themarginwars-dev\.pages\.dev|localhost|127\.0\.0\.1)$/.test(location.hostname));
 var COL=['#2F6FDE','#0E9F7E','#E07A1F','#7A4CD9','#C9A227','#1F8FB3','#5B8C2A','#3D4A5C'];
 var R=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function pt(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles'}).format(new Date())}
@@ -17,7 +17,7 @@ if(today<first&&!PREV){
  root.innerHTML='<div class="rt-lock"><p class="rt-k">Launching soon</p><h2>The first board drops '+nice(first)+'</h2><p>A new board every day at midnight PT. Same board for everyone.</p><p class="rt-cd" aria-live="polite"></p></div>';
  var cd=root.querySelector('.rt-cd'),T=Date.parse(first+'T08:00:00Z');
  (function tick(){var s=(T-Date.now())/1000;if(s<=0){location.reload();return}cd.textContent=Math.floor(s/86400)+'d '+Math.floor(s%86400/3600)+'h '+Math.floor(s%3600/60)+'m';setTimeout(tick,30000)})();return}
-var idx=0;for(var i=0;i<B.length;i++)if(B[i].date<=today)idx=i;
+var idx=0;for(var i=0;i<B.length;i++)if(B[i].date<=today)idx=i;if(!PREV&&today>B[B.length-1].date){root.innerHTML='<div class="rt-lock"><p class="rt-k">Between boards</p><h2>The next board is coming</h2><p>New Tracewire boards are on the way. Play the <a href="daily.html">Daily</a> while you wait.</p></div>';return}
 if(PREV&&Q.get('b')){idx=Math.min(B.length-1,Math.max(0,(+Q.get('b')||1)-1))}else if(PREV&&today<first)idx=0;
 var b=B[idx],N=b.size,G=b.grid,W=b.words.slice().sort(function(x,y){return b.solution[y].length-b.solution[x].length||(x<y?-1:1)});
 var key=b.date,st=ls('s_'+key)||{found:[],hints:0,t:0,done:false,rev:{}};st.rev=st.rev||{};
