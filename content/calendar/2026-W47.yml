@@ -1,23 +1,24 @@
-# Launch week (Mon 16 - Sun 22 Nov 2026). Content Studio fills `items` in the launch calendar PR; merging it with
-# status: approved is Avi's approval of every listed item at its listed time (see ops/publish/scheduler-spec.md).
+# Launch week (Mon 16 - Sun 22 Nov 2026). Monday 16 Nov launch posts are all timed for 9:00 PM PT
+# (2026-11-16T21:00:00-08:00), per Avi's 16 Nov decision. Later W47 items are unchanged. Merging this
+# calendar with status: approved is Avi's approval of every listed item at its listed time (see ops/publish/scheduler-spec.md).
 week: 2026-W47
 status: in-review
 standing_permission: null
 items:
 - file: content/linkedin/company/2026-11-16-launch.md
-  schedule: '2026-11-16T08:30:00-08:00'
+  schedule: '2026-11-16T21:00:00-08:00'
   channel: linkedin-company
 - file: content/linkedin/personal/avi/2026-11-16-reshare.md
-  schedule: '2026-11-16T08:45:00-08:00'
+  schedule: '2026-11-16T21:00:00-08:00'
   channel: linkedin-personal
 - file: content/x/2026-11-16-launch-thread.md
-  schedule: '2026-11-16T09:00:00-08:00'
+  schedule: '2026-11-16T21:00:00-08:00'
   channel: x
 - file: content/x/2026-11-16-pinned-intro.md
-  schedule: '2026-11-16T09:05:00-08:00'
+  schedule: '2026-11-16T21:00:00-08:00'
   channel: x
 - file: content/substack/2026-11-16-welcome.md
-  schedule: '2026-11-16T09:30:00-08:00'
+  schedule: '2026-11-16T21:00:00-08:00'
   channel: substack
 - file: content/linkedin/company/2026-11-17-interchange.md
   schedule: '2026-11-17T08:30:00-08:00'
