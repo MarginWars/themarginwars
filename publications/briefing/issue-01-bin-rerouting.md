@@ -30,20 +30,21 @@ sources: []
 - Same 3DS/SCA set-up, MCC and descriptor on both paths.
 - Reconciliation that ingests two settlement files and two fee reports.
 - Primary contract checked for volume commitments / tier breaks.
+- For Mastercard merchant-initiated payments (MITs): if the first cardholder-initiated transaction ran on acquirer A and you route the MIT to acquirer B, capture, store and send the Transaction Link Identifier (TLID). Checkout.com (article updated 11 Nov 2026) says Mastercard will require the TLID on economically related MITs from 1 Aug 2027; other processors have cited earlier dates, so check yours. [GAP: second source / Mastercard primary. Do not treat 23 Oct 2026 as the required-by date.] https://support.checkout.com/hc/en-us/articles/33589249067538-Mastercard-Transaction-Link-Identifier
 
 ## Metrics and expected impact
 - **Primary:** approval rate on moved group, test vs holdout.
 - **Secondary:** cost per approved transaction (bps), first-attempt approval share, fraud-to-sales and chargeback ratios on new MID.
 - **Impact range: [Assumption — sized from your own step-2 data].** No credible public benchmark exists for BIN-level re-routing uplift specifically; vendor claims are not used. No employer or client figures.
 - **Related public reference points (context, not a forecast):**
-  - Australia: RBA estimates debit acceptance cost is "nearly 20 per cent lower" for merchants with least-cost routing — a network-routing analogue, not acquirer re-routing. https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/backgrounders/backgrounder-on-least-cost-routing.html
+  - Australia: RBA estimates debit acceptance cost is "nearly 20 per cent lower" for merchants with least-cost routing — RBA estimate (2024 data); a network-routing analogue, not acquirer re-routing. https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/backgrounders/backgrounder-on-least-cost-routing.html
   - [GAP: find a neutral public study of multi-acquirer approval uplift; if none, keep as assumption.]
 
 ## Failure modes (early sign → rollback)
 - **Lost volume tier at primary:** saving on one group wiped out by price step-up elsewhere → check contract bands before moving → model first.
 - **Fraud moves with traffic / new MID has no history:** fraud-to-sales spike in week one → start small, ramp.
 - **Credential mismatch:** spike in "invalid card" declines on B → end-to-end token test pre-launch.
-- **Cross-acquirer retry loops:** decline on A retried on B, counted toward scheme reattempt limits (Visa: 20 retries/30 days for categories 2–4, none for category 1; per-attempt fees) → one routing decision per attempt. Sources: https://support.checkout.com/hc/en-us/articles/25482040901394-When-can-I-retry-a-declined-transaction ; https://chargebacks911.com/visa-excessive-reattempts-rule/ [CONFIRM against current Visa Rules before publishing]
+- **Cross-acquirer retry loops:** decline on A retried on B, counted toward scheme reattempt limits (Visa Core Rules, 24 Oct 2026, Table 7-2, pp. 547–549: up to 20 reattempts in 30 days for categories 2–4; a merchant must never resubmit category 1) → one routing decision per attempt. https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf
 - **Reconciliation breaks:** timing gaps from two settlement cycles → reconcile daily for month one.
 
 ## Owner
@@ -52,10 +53,10 @@ Head of payments decides; payments engineering builds the rule; finance tracks c
 ## Cross-market column
 | Market | What changes |
 |---|---|
-| **US** | Debit: Regulation II requires issuers to enable ≥2 unaffiliated networks incl. card-not-present (effective 1 Jul 2023), and bars routing restrictions — so debit has a network-routing lever *in addition* to acquirer choice. Check both before changing debit routing. https://www.federalreserve.gov/newsevents/pressreleases/bcreg20221003a.htm ; https://www.ecfr.gov/on/2023-07-01/title-12/chapter-II/subchapter-A/part-235/section-235.7 |
-| **UK/EU** | Consumer interchange capped at 0.2% debit / 0.3% credit in the EU (IFR 2015/751, Arts 3–4), so gains come mainly from approvals, SCA exemption rates and acquirer markup, not interchange. https://eur-lex.europa.eu/eli/reg/2015/751/oj/eng [GAP: cite UK retained caps + PSR cross-border UK–EEA interchange source] |
+| **US** | Debit: Regulation II requires issuers to enable ≥2 unaffiliated networks incl. card-not-present (effective 1 Jul 2023), and bars routing restrictions — so debit has a network-routing lever *in addition* to acquirer choice. Check both before changing debit routing. https://www.federalreserve.gov/newsevents/pressreleases/bcreg20221003a.htm ; https://www.ecfr.gov/on/2023-07-01/title-12/chapter-II/subchapter-A/part-235/section-235.7 The Reg II 21-cent debit interchange cap was vacated and remanded to the Fed by the 8th Circuit on 26 Oct 2026 (*Corner Post v. Board of Governors*, No. 25-3000); the court set no replacement rate. The current cap stays in force until the mandate issues. Dual-network routing under §235.7 is not the subject of that ruling. https://ecf.ca8.uscourts.gov/opndir/26/10/253000P.pdf The Visa/Mastercard interchange settlement remains pending (fairness hearing 16 Nov 2026; outcome unverified as of the 16 Nov research run). [CONFIRM WITH AVI: re-check the settlement outcome before the 1 Dec send.] |
+| **UK/EU** | Consumer interchange is capped at 0.2% debit / 0.3% credit in the EU (IFR 2015/751, Arts 3–4) and under the UK's retained IFR (Art 3: 0.2% on any UK debit card transaction; Art 4: 0.3% on any UK credit card transaction). Gains come mainly from approvals, SCA exemption rates and acquirer markup, not interchange. EU: https://eur-lex.europa.eu/eli/reg/2015/751/oj/eng [CONFIRM: re-read EU Arts 3–4 in a normal browser before the 1 Dec send; EUR-Lex blocked automated checks after 26 Oct.] UK: https://www.legislation.gov.uk/eur/2015/751/article/3 ; https://www.legislation.gov.uk/eur/2015/751/article/4 [GAP: PSR source for UK–EEA cross-border interchange.] |
 | **Africa** | Narrower acquirer choice; local vs cross-border acquiring usually matters more than BIN routing. Test local acquiring first. [GAP: public source on South Africa / Nigeria / Kenya acquiring market structure] [CONFIRM WITH AVI: South Africa experience] |
-| **APAC** | Domestic schemes and local-acquiring requirements vary by market; route by market before BIN. Australia: dual-network debit with least-cost routing; domestic debit interchange ceiling 8c or 0.16%. https://www.rba.gov.au/payments-and-infrastructure/debit-cards/regulatory-framework.html [GAP: India/Japan/SEA local acquiring sources] |
+| **APAC** | Domestic schemes and local-acquiring requirements vary by market; route by market before BIN. Australia: dual-network debit with least-cost routing; domestic debit interchange ceiling 8c or 0.16%; consumer credit cap 0.3%; surcharging banned on eftpos, Mastercard and Visa from 1 Oct 2026; a 1.0% cap on foreign-issued cards starts 1 Apr 2027. https://www.rba.gov.au/payments-and-infrastructure/debit-cards/regulatory-framework.html ; https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/interchange-fees.html ; https://www.legislation.gov.au/F2016L00837/2026-10-01/2026-10-01/text/original/pdf [GAP: India/Japan/SEA local acquiring sources] |
 
 ## War story
 [WAR STORY: CONFIRM WITH AVI — leave blank. Must be sanitised; no employer, client or customer identifiable.]
@@ -75,3 +76,4 @@ Head of payments decides; payments engineering builds the rule; finance tracks c
 - Replaced unsourced cross-market text with verified citations (Reg II, IFR, RBA); gaps marked.
 - Added scheme reattempt-limit exposure to retry-loop failure mode.
 - Fixed cross-reference (token portability now points to Issue 2 / card 11).
+- 16 Nov 2026 (public-signals runs 2–4): US debit-cap status and pending settlement; Visa Table 7-2 retry cite; Mastercard TLID prerequisite (date conflict flagged); UK retained IFR caps; Australia surcharge ban, credit cap and foreign-card cap. See edits-2026-11-16.md.
