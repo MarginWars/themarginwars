@@ -3,7 +3,7 @@ id: x-2026-11-16-launch-thread
 channel: x
 kind: thread
 schedule: '2026-11-16T21:00:00-08:00'
-status: in-review
+status: approved
 owner: content-studio
 sources:
 - site/src/index.html

@@ -2,8 +2,8 @@
 # (2026-11-16T21:00:00-08:00), per Avi's 16 Nov decision. Later W47 items are unchanged. Merging this
 # calendar with status: approved is Avi's approval of every listed item at its listed time (see ops/publish/scheduler-spec.md).
 week: 2026-W47
-status: in-review
-standing_permission: null
+status: approved
+standing_permission: SP-1
 items:
 - file: content/linkedin/company/2026-11-16-launch.md
   schedule: '2026-11-16T21:00:00-08:00'
