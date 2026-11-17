@@ -2,7 +2,7 @@
 // Before launch (or with force "locked") every gated game page is served as the lock panel only, uncached, noindex.
 // After launch, an episode whose data-open time is still ahead is served without its game. ?preview=1 skips the gates
 // on non-production hosts only (the dev project, its preview branches, review, localhost).
-const S = {"launch": "2026-11-16T17:00:00Z", "force": "locked", "gated": ["arcade", "tracewire", "daily", "leak", "deal", "quiz", "ep1", "ep2", "ep3", "ep4", "ep5", "ep6", "ep7", "ep8", "ep9"]};
+const S = {"launch": "2026-11-16T17:00:00Z", "force": "open", "gated": ["arcade", "tracewire", "daily", "leak", "deal", "quiz", "ep1", "ep2", "ep3", "ep4", "ep5", "ep6", "ep7", "ep8", "ep9"]};
 const GATED = new Set(S.gated);
 const PREVIEW_HOST = /^(review\.themarginwars\.pages\.dev|([a-z0-9-]+\.)?themarginwars-dev\.pages\.dev|localhost|127\.0\.0\.1)$/;
 const PT = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", weekday: "short", month: "short", day: "numeric" });

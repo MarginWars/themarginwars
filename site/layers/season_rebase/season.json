@@ -1,6 +1,6 @@
 {
   "_doc": "Season 1 rebase (launch day one = Mon 16 Nov 2026). Edit here, then run site/build.sh full. See README.md.",
-  "force": "locked",
+  "force": "open",
   "launch": "2026-11-16T17:00:00Z",
   "episodes": {
     "1": "2026-11-16T17:00:00Z",
