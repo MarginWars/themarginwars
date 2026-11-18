@@ -7,13 +7,18 @@ How agents turn the **merged queue on `main`** into posts. Nothing outside `main
 Every 15 minutes, 7 AM–7 PM PT (`ops/schedules.json` → `channels/publish-due`):
 
 1. `git fetch origin main ledger` and read `main` at its latest commit.
-2. Candidates = files matching `qa/limits.yml` `item_globs` whose front-matter has
-   `status: approved`, a `schedule` (PT, explicit offset) `<= now`, and `schedule >= now - 24h`.
+2. Candidates = files matching `qa/limits.yml` `item_globs` that are **approved** (front-matter `status: approved`, or
+   listed in a merged `content/calendar/<week>.yml` with `status: approved` and `standing_permission: SP-1` while
+   SP-1 is `granted`, even if the item's own `status` is still `in-review`; see step 3), with a `schedule`
+   (PT, explicit offset) `<= now` and `schedule >= now - 24h`.
 3. An item is **authorised** only if one of these holds, checked at publish time:
    - it is listed in a merged `content/calendar/<week>.yml` whose `status: approved` **and** SP-1 is `granted`
      in `ops/standing-permissions.md`; or
    - the item itself was merged in a PR approved by the code owner (the merge commit's PR review is `APPROVED`
      by `@AviShip-Type0`), and the channel's rule allows publishing on merge (see `channels.md`).
+   An item's own `status` never blocks the first route: a calendar listing under SP-1 is the approval, and a stale
+   `in-review` in the item's front-matter is not a reason to skip it. A calendar with `status: in-review` or
+   `standing_permission: null` approves nothing.
    LinkedIn items additionally need that the approving merge is Avi's (always true under CODEOWNERS).
 4. Skip anything already in `ledger/published.jsonl` with the same `id` and `status: published` or `scheduled`.
 5. Skip anything whose current blob sha differs from the sha approved in the merge (edits need a new PR).
