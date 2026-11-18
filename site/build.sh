@@ -12,7 +12,7 @@ MODE="${1:-dist}"
 SITE="$(cd "$(dirname "$0")" && pwd)"; REPO="$(dirname "$SITE")"; ST="$SITE/.build"
 FONTS="$SITE/layers/brand_logo/fonts"
 export PYTHONHASHSEED=0 MW_BANNED_YML="$REPO/qa/compliance/banned.yml"
-LAYERS=(copy_weekend ui_weekend route_brief copy_tighten about_rethink_1108 feeds normalize_suite buildout marketing)
+LAYERS=(copy_weekend ui_weekend route_brief copy_tighten about_rethink_1108 feeds normalize_suite buildout marketing season_rebase)
 stage() {
   rm -rf "$ST"; mkdir -p "$ST/review_deploy" "$ST/site_qa"
   cp -a "$SITE/src" "$ST/site_calm"
@@ -35,7 +35,8 @@ run_layers() {  # any layer error fails the build (&& chain: set -e is off insid
     python3 normalize_suite/apply_normalize.py &&
     python3 buildout/apply_buildout.py &&
     python3 marketing/apply_marketing.py &&
-    python3 buildout/apply_esc_ts.py ) > "$REPO/qa-out/layers.log" 2>&1 || { tail -40 "$REPO/qa-out/layers.log"; exit 1; }
+    python3 buildout/apply_esc_ts.py &&
+    python3 season_rebase/apply_season.py ) > "$REPO/qa-out/layers.log" 2>&1 || { tail -40 "$REPO/qa-out/layers.log"; exit 1; }
 }
 make_dist() {
   ( cd "$ST" && python3 buildout/make_dist.py )
