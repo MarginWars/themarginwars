@@ -17,7 +17,6 @@ e37351de2151baab14ffa26390a2bba8  ./assets/arcade.css
 22b59e54cbc9cdcfee87a90a1456eab3  ./assets/b/22b59e54cbc9.css
 2706009ede418f19beeedc6267edf8da  ./assets/b/2706009ede41.css
 3d9c22331319560ca4587cd17dcc4d4c  ./assets/b/3d9c22331319.css
-473712e93710510dd598af856c4c9cee  ./assets/b/473712e93710.css
 5be111347d44873f4c1ea9d2b27469d2  ./assets/b/5be111347d44.css
 5c166327cce11b1d5dff8515eafa779e  ./assets/b/5c166327cce1.css
 6487ab643db4c134cb36131f582cad9d  ./assets/b/6487ab643db4.css
@@ -31,6 +30,7 @@ aad7e5a04790250a7903081d82fb69af  ./assets/b/aad7e5a04790.css
 b1b9dc4e277200c9f2cb03af8fecf6db  ./assets/b/b1b9dc4e2772.css
 b51422a940c13ff81166336cdb32dd65  ./assets/b/b51422a940c1.css
 c8e031baaabe574d5a4da66bef2cdb89  ./assets/b/c8e031baaabe.css
+da5faaab4a7ba8bbbb173f68339a1b64  ./assets/b/da5faaab4a7b.css
 dc12c05d676bd775e281a00ec9e1894c  ./assets/b/dc12c05d676b.css
 de03b4799e4d35443a27fe7a91c91a7e  ./assets/b/de03b4799e4d.css
 dfe6386b31c0431bd92cc411644ec71f  ./assets/b/dfe6386b31c0.css
@@ -277,8 +277,8 @@ ffd9f5c271c29e04e0c54e164f1ba144  ./assets/reserves.js
 4c5cba7cbd27b409689e2d3d84c8743b  ./assets/season.css
 2e2ce4bae6315ba1d9d009cb287d4cc6  ./assets/season.js
 38aa001e94b2c4145427dcbd6f5b085c  ./assets/suite.css
-8481c77f7a7692a7335b84335190adcc  ./assets/tracewire.js
-d0c0d3982cc749dd2c85d392a731ef6d  ./assets/tracewire_boards.js
+36db1d0a54685f14822600834fe1f3f4  ./assets/tracewire.js
+78de5a8a6edcae1fe35f9379cd3ce82c  ./assets/tracewire_boards.js
 514997191fded2e0ffd9d0e158a84e28  ./assets/video/GMrw6A09Eqs.jpg
 9483f1b0b233ecbd31d1c3ae105c46f8  ./assets/video/cMUn6XFHZs0.jpg
 08de70e286464821824594f57e3ed07c  ./assets/wk.css
@@ -319,11 +319,11 @@ ce58f70d1965897ce207494de4a7ec05  ./deal.html
 0e7b2fb37cc27541f03757c600a15a13  ./ep1.html
 7cc316931db13ec6a77eb3111052d7b5  ./ep2.html
 a399cab296b8b2484a5d04ae804b602c  ./ep3.html
-1f2efc2bf6ec35b15d79792d22b619ab  ./ep4.html
+f052c1483c9a74447fa000edf2beb62e  ./ep4.html
 c27daf0bfd9590e34f9cd21c7b16dcc5  ./ep5.html
-fc726bb7dff401a787e18eb9782d7282  ./ep6.html
+dfd9223baf033bfa2e4bebf44e432949  ./ep6.html
 90381a897310168999ed8a0b4ed3bb21  ./ep7.html
-3e58362a6013a7777820eb4ace54be99  ./ep8.html
+3301043af5efe72a62ba22ac4f0b4865  ./ep8.html
 54a21b66421385e81ca5823377fe3b56  ./ep9.html
 883b4946f7451b72f70083719dc60dff  ./favicon.ico
 77bc147409fc831b26a9a1af13df0642  ./feeds/bp-watch.atom
@@ -370,7 +370,7 @@ db9fe981965af7135bcdcbc0aa276a74  ./route-briefs/items/us-bank-context-20261108/
 7c4386eb49165b99c3cc7fc99320b0a5  ./sitemap.xml
 c598a9782fd0c6f7be60f39910e27404  ./speaking.html
 2fef86e65596ca0de155d151973ea641  ./styles.css
-d8414e0d97cd84bc48022a0e3d4b7487  ./tracewire.html
+e93ff773e21ffa53407bc2aab9231d60  ./tracewire.html
 ff3125c83cc9166dc7a3e5431bfca383  ./warroom.html
 7468bab82ebfaf60859a441eb9adbf3a  ./wire/index.html
 3facff8d5e838f3472f147e8a0e9420f  ./wire/items/ach-availability-exceptions/index.html
