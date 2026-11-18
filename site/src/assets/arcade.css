@@ -132,7 +132,7 @@ body.pg-arcade>.sold-l{display:flex;margin:0 auto 20px;background:#111417;color:
  .rt-toast{margin:4px 0 0;min-height:20px;line-height:20px;font-size:13px}
  .rt-slots{margin:4px 0;gap:4px}
  .rt-slot{gap:3px}
- .rt-slot i{width:min(26px,calc((100vw - 60px)/11));height:22px;font-size:15px;border-radius:5px}
+ .rt-slot i{width:min(26px,calc((100vw - 100px)/11));height:22px;font-size:15px;border-radius:5px}
  .rt-tools{margin:12px 0 6px}
 }
 @media(max-width:700px){
