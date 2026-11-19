@@ -29,15 +29,9 @@ items:
 - file: content/linkedin/company/2026-11-18-scheme-fees.md
   schedule: '2026-11-18T08:30:00-08:00'
   channel: linkedin-company
-- file: content/x/2026-11-18-fx.md
-  schedule: '2026-11-18T09:00:00-08:00'
-  channel: x
 - file: content/linkedin/company/2026-11-19-speaking.md
-  schedule: '2026-11-19T08:30:00-08:00'
+  schedule: '2026-11-19T13:30:00-08:00'
   channel: linkedin-company
-- file: content/x/2026-11-19-routing.md
-  schedule: '2026-11-19T09:00:00-08:00'
-  channel: x
 - file: content/linkedin/company/2026-11-20-teardown.md
   schedule: '2026-11-20T08:30:00-08:00'
   channel: linkedin-company
