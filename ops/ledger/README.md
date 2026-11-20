@@ -1,8 +1,7 @@
 # The `ledger` branch convention
 
 `ledger` is an orphan data branch (no site or content code) that records what was actually published and how it
-performed. It is **not** reviewed like `main`: only the bot account may push to it (ruleset `ledger-bot-only`),
-force-pushes and deletion are blocked, and every line validates against `schemas/ledger-entry.schema.json`.
+performed. It is **not** reviewed like `main`: it is append-only (ruleset `ledger-bot-only`: force-pushes and deletion are blocked; plain fast-forward pushes are allowed), and every line validates against `schemas/ledger-entry.schema.json`.
 
 ```text
 ledger/
