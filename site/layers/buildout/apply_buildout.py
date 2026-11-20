@@ -32,25 +32,38 @@ for p in pages:
 
 # ---------- 2 contact form ----------
 TOPICS=['Margin Teardown','Campaign Sprint','Board sessions and workshops','Retained advisory','Briefing invitation','Something else']
-opts=''.join(f'<label class="wk-opt"><input type="radio" name="topic" value="{e(x)}" required aria-describedby="cf-topic-e"><span class="wk-no" aria-hidden="true">{k+1:02d}</span><b>{e(x)}</b></label>' for k,x in enumerate(TOPICS))
 def fld(n,label,typ='text',ac='',extra='',cls='',opt=False,ta=False):
  req='' if opt else ' required aria-required="true"'
  lab=f'<label class="cf-l" for="cf-{n}">{label}'+(' <span class="cf-opt">(optional)</span>' if opt else '')+'</label>'
  ctl=(f'<textarea class="cf-i" id="cf-{n}" name="{n}" rows="6"{req}{extra} aria-describedby="cf-{n}-e"></textarea>' if ta else f'<input class="cf-i" id="cf-{n}" name="{n}" type="{typ}"'+(f' autocomplete="{ac}"' if ac else '')+f'{req}{extra} aria-describedby="cf-{n}-e">')
  return f'<div class="cf-f{(" "+cls) if cls else ""}">{lab}{ctl}<p class="cf-err" id="cf-{n}-e" hidden></p></div>'
-FORM=('<!--bo-form--><form class="wk-route cform" id="contact-form" action="/api/contact" method="post" novalidate hidden aria-labelledby="cf-h">'
- '<div class="cf-body"><fieldset class="cf-topic"><legend id="cf-h">Choose a topic</legend><div class="wk-opts">'+opts+'</div><p class="cf-err" id="cf-topic-e" hidden></p></fieldset>'
- '<div class="cf-fields">'+fld('name','Name',ac='name',extra=' maxlength="120"')+fld('email','Email',typ='email',ac='email',extra=' maxlength="200" inputmode="email" spellcheck="false"')+fld('company','Company',ac='organization',extra=' maxlength="160"',cls='cf-co',opt=True)
- +fld('message','Message',extra=' maxlength="5000"',cls='cf-wide',ta=True)+
+# Short path first: email + one line are the only required fields. Topic, name and company sit behind "More details".
+# Margin Teardown is the default topic, so a visit from /teardown-li or /teardown-x (?topic=teardown) and a plain visit both land on it.
+opts=''.join(f'<label class="wk-opt"><input type="radio" name="topic" value="{e(x)}" required aria-describedby="cf-topic-e"'+(' checked' if k==0 else '')+f'><span class="wk-no" aria-hidden="true">{k+1:02d}</span><b>{e(x)}</b></label>' for k,x in enumerate(TOPICS))
+FORM=('<!--bo-form--><section class="cf-book" id="book"><p class="eyebrow sx">01</p><h2 id="cf-title">Book a Teardown</h2>'
+ '<p class="cf-lede" id="cf-lede">Tell us what you want torn down. Your email and one line are enough to start.</p>'
+ '<form class="wk-route cform" id="contact-form" action="/api/contact" method="post" novalidate hidden aria-labelledby="cf-title">'
+ '<div class="cf-body"><div class="cf-fields">'
+ +fld('email','Email',typ='email',ac='email',extra=' maxlength="200" inputmode="email" spellcheck="false"')
+ +fld('message','What do you want torn down?',extra=' maxlength="300" placeholder="One line is fine"',cls='cf-line')+
+ '<details class="cf-more"><summary>More details <span class="cf-opt">(optional)</span></summary><div class="cf-more-b">'
+ '<fieldset class="cf-topic"><legend id="cf-h">Choose a topic</legend><div class="wk-opts">'+opts+'</div><p class="cf-err" id="cf-topic-e" hidden></p></fieldset>'
+ '<div class="cf-fields cf-fields2">'+fld('name','Name',ac='name',extra=' maxlength="120"',opt=True)+fld('company','Company',ac='organization',extra=' maxlength="160"',cls='cf-co',opt=True)+'</div></div></details>'
  '<div class="cf-hp" aria-hidden="true"><label for="cf-website">Website</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>'
  '<div class="cf-ts" id="cf-ts"></div><p class="cf-status" role="status" aria-live="polite" tabindex="-1" hidden></p>'
- f'<div class="cf-actions"><button class="btn nm-primary cf-send" type="submit" aria-busy="false"><span>Send message</span></button><p class="cf-alt">Or <a class="nm-inline nm-intext" href="{MAIL}">email us directly</a>.</p></div></div></div>'
+ f'<div class="cf-actions"><button class="btn nm-primary cf-send" type="submit" aria-busy="false"><span>Send request</span></button><p class="cf-alt">Or <a class="nm-inline nm-intext" href="{MAIL}">email us directly</a>.</p></div></div></div>'
  '<div class="cf-done" id="cf-done" tabindex="-1" hidden><h3>Message sent. Thank you.</h3><p>It is with the team now. If you need to add anything, <a class="nm-inline nm-intext" href="'+MAIL+'">email us directly</a>.</p><p class="cf-ref"></p><button class="btn alt cf-again" id="cf-again" type="button">Send another message</button></div>'
  '</form><script>document.getElementById("contact-form").hidden=false</script>'
- f'<noscript><p class="cf-nojs">The message form needs JavaScript. <a class="nm-inline nm-intext" href="{MAIL}">Email us directly</a> instead.</p></noscript><!--/bo-form-->')
+ f'<noscript><p class="cf-nojs">The message form needs JavaScript. <a class="nm-inline nm-intext" href="{MAIL}">Email us directly</a> instead.</p></noscript></section><!--/bo-form-->')
 p=ROOT/'contact.html';t=rd(p);t=re.sub(r'<!--bo-form-->.*?<!--/bo-form-->','',t,flags=re.S)
-m=re.search(r'<a class="nm-inline nm-intext" href="https://www\.linkedin\.com/in/avi-reddy-64b07218[^"]*">Connect on LinkedIn</a></li></ul>',t)
+m=re.search(r'</section><div class="wrap">\n?(?=<section>)',t)
 assert m;t=t[:m.end()]+FORM+t[m.end():]
+# Hero: a direct path to the Teardown request, above the fold.
+t=re.sub(r'<!--bo-cta-->.*?<!--/bo-cta-->','',t,flags=re.S)
+t,c=re.subn(r'(<p class="lede">.*?</p>)(?=</div><figure)',lambda m:m.group(1)+'<!--bo-cta--><p class="ih-cta"><a class="btn nm-primary nm-inline" href="#book">Book a Teardown</a></p><!--/bo-cta-->',t,count=1,flags=re.S);assert c==1
+# Section numbers follow page order (the form section is first).
+for k,title in enumerate(['Book a Teardown','Get in touch','Helpful to include','How engagements run']):
+ t,c=re.subn(r'(<p class="eyebrow sx">)\d+(</p><h2[^>]*>'+re.escape(title)+'</h2>)',lambda m:m.group(1)+f'{k+1:02d}'+m.group(2),t);assert c==1,title
 if '/assets/contact.js' not in t:t=t.replace('</body>','<script defer src="/assets/contact.js"></script></body>',1)
 wr(p,t)
 

@@ -536,6 +536,10 @@ html body.nm .cards:not(.wk-ledger)>details.card.acc>.acc-b{padding:12px 0 0 44p
 /* Open disclosures: no layout-shifting left keyline; the chevron carries the state. */
 html body.nm details[open]>summary{border-left:0!important;padding-left:0!important}
 html body.nm details.fx-details[open]>summary,html body.nm details.bio-acc[open]>summary{padding-left:0!important}
+/* About accordion (Where and how we work): the card clips overflow, so the gold focus ring sits inside it, and the first bullet gets clear room below the header. */
+html body.nm details.bio-acc>summary,html body.nm details.bio-acc[open]>summary{padding:14px 16px!important}
+html body.nm details.bio-acc>summary:focus-visible{outline-offset:-3px!important}
+html body.nm details.bio-acc>.acc-b{padding:12px 16px 16px!important}
 /* Other cards: one anatomy for radii, borders and shadows. */
 html body.nm :is(.card,.band>div:not(.bh),.steps li,.gc,.f-feedcard,.f-market,.st){border-radius:12px!important}
 
@@ -732,6 +736,21 @@ form.cform .cf-again{cursor:pointer}
 @media(max-width:900px){form.cform .wk-opts{grid-template-columns:repeat(2,1fr)}form.cform .cf-fields{grid-template-columns:repeat(2,minmax(0,1fr))}form.cform .cf-f.cf-co{grid-column:1/-1}}
 @media(max-width:560px){form.cform .cf-fields{grid-template-columns:1fr;padding:20px 16px}form.cform .cf-actions{flex-direction:column;align-items:stretch}form.cform .cf-send{width:100%}form.cform .cf-alt{text-align:center}}
 @media(max-width:480px){form.cform .wk-opts{grid-template-columns:1fr}}
+/* Contact: the short Teardown request first (email + one line); topic, name and company sit behind "More details". */
+.cf-book .cf-lede{margin:8px 0 0;max-width:62ch}
+.ih-copy .ih-cta{margin:24px 0 0}
+form.cform .cf-body>.cf-fields{grid-template-columns:repeat(2,minmax(0,1fr));border-top:0}
+form.cform .cf-f.cf-line{min-width:0}
+form.cform details.cf-more{grid-column:1/-1;border:0;border-radius:0;background:none;padding:0;margin:0}
+form.cform details.cf-more>summary{cursor:pointer;display:flex;align-items:center;gap:10px;min-height:44px;padding:0;margin:0;border:0;list-style:none;font:600 15px/1.4 'Schibsted Grotesk',system-ui,sans-serif;color:#111417}
+form.cform details.cf-more>summary::-webkit-details-marker{display:none}
+form.cform details.cf-more>summary::after{content:"+";font:700 18px/1 'Schibsted Grotesk',system-ui,sans-serif}
+form.cform details.cf-more[open]>summary::after{content:"\2212"}
+form.cform .cf-more-b{display:grid;gap:20px;padding:8px 0 4px}
+form.cform .cf-more-b .cf-topic .cf-err{padding:12px 0 0}
+form.cform .cf-more-b .cf-fields2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;padding:0;border-top:0}
+form.cform .cf-more-b .cf-fields2 .cf-f.cf-co{grid-column:auto}
+@media(max-width:560px){form.cform .cf-body>.cf-fields,form.cform .cf-more-b .cf-fields2{grid-template-columns:1fr}}
 /* 404 */
 .nf-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:32px 0 0!important;padding:0!important;list-style:none!important}
 .nf-links li{margin:0!important;padding:0!important;max-width:none!important}
