@@ -14,6 +14,8 @@ Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign,
 
 Table `mk_daily` in the environment's D1 (`CONTACT_DB`): one counter per `(day UTC, page, campaign, source, medium, event)`. No IP, no user agent, no visitor id.
 
+Per-post counts: `mk_daily_content` has the same counters plus `content` (the `utm_content` post slug, `(none)` when untagged). `mk_daily` is unchanged. Migration: `site/migrations/0001_mk_daily_content.sql`. `/api/mk/report` returns it as `by_content`.
+
 | Event | Counted by | When |
 |---|---|---|
 | `visit` | `/api/ev` (beacon) | first page view of a session |

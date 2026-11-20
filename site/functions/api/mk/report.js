@@ -23,6 +23,9 @@ export async function onRequestGet({ request, env }) {
   await ensureMk(env.CONTACT_DB);
   const { results } = await env.CONTACT_DB.prepare("SELECT day, page, campaign, source, medium, event, n FROM mk_daily WHERE day BETWEEN ?1 AND ?2" + (qa ? "" : " AND campaign NOT LIKE 'qa-%'") + " ORDER BY day").bind(from, to).all();
   const rows = results || [];
+  // Per-post (utm_content) rollup from mk_daily_content; empty when nothing is tagged yet.
+  let crows = [];
+  try { const c = await env.CONTACT_DB.prepare("SELECT day, page, campaign, source, medium, content, event, n FROM mk_daily_content WHERE day BETWEEN ?1 AND ?2" + (qa ? "" : " AND campaign NOT LIKE 'qa-%'") + " ORDER BY day").bind(from, to).all(); crows = c.results || []; } catch {}
   const by_day_campaign = roll(rows, r => ({ id: r.day + "|" + r.campaign, cols: { day: r.day, campaign: r.campaign } }));
   return J({
     ok: true, env: String(env.SITE_ENV || "production"), generated_at: new Date().toISOString(), from, to, timezone: "UTC", include_qa: qa,
@@ -30,6 +33,7 @@ export async function onRequestGet({ request, env }) {
     by_day_campaign,
     by_campaign: roll(rows, r => ({ id: r.campaign, cols: { campaign: r.campaign } })),
     by_page: roll(rows, r => ({ id: r.page, cols: { page: r.page } })),
+    by_content: roll(crows, r => ({ id: r.campaign + "|" + r.content, cols: { campaign: r.campaign, content: r.content } })),
     by_source: roll(rows, r => ({ id: r.source + "|" + r.medium, cols: { source: r.source, medium: r.medium } })),
     totals: roll(rows, () => ({ id: "all", cols: {} }))[0] || { visits: 0, conversions: 0, by_form: {}, cta: {}, conversion_rate: null }
   });
