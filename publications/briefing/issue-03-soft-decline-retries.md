@@ -16,7 +16,7 @@ sources: []
 
 ## Mechanics
 1. Map all decline codes to scheme categories (Visa cat 1 never-approve; 2 temporary; 3 data quality; 4 generic). Mastercard equivalent [GAP: Mastercard MAC codes source].
-2. Block retries on category 1 (e.g. 04, 07, 14, 15, 41, 43, 46, 57).
+2. Block retries on category 1 (Visa Core Rules, 24 Oct 2026, Table 7-2, pp. 547–549: 04, 07, 12, 14, 15, 41, 43, 46, 57, R0, R1, R3 — a merchant must never resubmit). https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf
 3. Category 3: fix data (expiry, CVV, account updater) before any retry.
 4. Category 2 (e.g. 51 insufficient funds): schedule retries around pay cycles; cap attempts below scheme limit.
 5. Separate counters for CIT and MIT; log every attempt with credential (token vs PAN).
@@ -29,7 +29,7 @@ sources: []
 
 ## Metrics and expected impact
 - Recovered approvals per 100 soft declines; retry fees paid; involuntary churn.
-- **Scheme limits/fees (verified secondary sources; confirm against Visa Rules):** Visa allows 20 reattempts per card in rolling 30 days for categories 2–4 (raised from 15 on 19 May 2025); category 1 retries are never allowed and every one is feeable. Fees cited at $0.10 domestic / $0.25 cross-border per attempt. https://support.checkout.com/hc/en-us/articles/25482040901394-When-can-I-retry-a-declined-transaction ; https://chargebacks911.com/visa-excessive-reattempts-rule/ ; https://developers.tabapay.com/docs/network-authorization-best-practices
+- **Scheme limits (Visa Core Rules, 24 Oct 2026, Table 7-2, pp. 547–549):** Visa allows up to 20 reattempts in 30 days for categories 2–4; category 1 retries are never allowed. https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf Fees cited at $0.10 domestic / $0.25 cross-border per attempt remain acquirer-level citations, not a Visa-published fee schedule. [CONFIRM: $0.10 domestic fee has only acquirer support.] https://support.checkout.com/hc/en-us/articles/25482040901394-When-can-I-retry-a-declined-transaction ; https://developers.tabapay.com/docs/network-authorization-best-practices
 - **Recovery range: [Assumption]** — no neutral public benchmark verified; size from holdout. [GAP]
 
 ## Failure modes
