@@ -37,6 +37,21 @@ form.cform .cf-again{cursor:pointer}
 @media(max-width:900px){form.cform .wk-opts{grid-template-columns:repeat(2,1fr)}form.cform .cf-fields{grid-template-columns:repeat(2,minmax(0,1fr))}form.cform .cf-f.cf-co{grid-column:1/-1}}
 @media(max-width:560px){form.cform .cf-fields{grid-template-columns:1fr;padding:20px 16px}form.cform .cf-actions{flex-direction:column;align-items:stretch}form.cform .cf-send{width:100%}form.cform .cf-alt{text-align:center}}
 @media(max-width:480px){form.cform .wk-opts{grid-template-columns:1fr}}
+/* Contact: the short Teardown request first (email + one line); topic, name and company sit behind "More details". */
+.cf-book .cf-lede{margin:8px 0 0;max-width:62ch}
+.ih-copy .ih-cta{margin:24px 0 0}
+form.cform .cf-body>.cf-fields{grid-template-columns:repeat(2,minmax(0,1fr));border-top:0}
+form.cform .cf-f.cf-line{min-width:0}
+form.cform details.cf-more{grid-column:1/-1;border:0;border-radius:0;background:none;padding:0;margin:0}
+form.cform details.cf-more>summary{cursor:pointer;display:flex;align-items:center;gap:10px;min-height:44px;padding:0;margin:0;border:0;list-style:none;font:600 15px/1.4 'Schibsted Grotesk',system-ui,sans-serif;color:#111417}
+form.cform details.cf-more>summary::-webkit-details-marker{display:none}
+form.cform details.cf-more>summary::after{content:"+";font:700 18px/1 'Schibsted Grotesk',system-ui,sans-serif}
+form.cform details.cf-more[open]>summary::after{content:"\2212"}
+form.cform .cf-more-b{display:grid;gap:20px;padding:8px 0 4px}
+form.cform .cf-more-b .cf-topic .cf-err{padding:12px 0 0}
+form.cform .cf-more-b .cf-fields2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;padding:0;border-top:0}
+form.cform .cf-more-b .cf-fields2 .cf-f.cf-co{grid-column:auto}
+@media(max-width:560px){form.cform .cf-body>.cf-fields,form.cform .cf-more-b .cf-fields2{grid-template-columns:1fr}}
 /* 404 */
 .nf-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:32px 0 0!important;padding:0!important;list-style:none!important}
 .nf-links li{margin:0!important;padding:0!important;max-width:none!important}

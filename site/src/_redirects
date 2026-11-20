@@ -2,3 +2,10 @@
 /routed.html /tracewire 301
 /insights /warroom 301
 /network /#network 301
+
+# Friendly short links for scheduled posts (302: the UTM-tagged destination can change). One slug per post.
+/fx https://themarginwars.com/?utm_source=x&utm_medium=social&utm_campaign=2026-11-launch&utm_content=wed-fx 302
+/speaking-li https://themarginwars.com/speaking?utm_source=linkedin&utm_medium=social&utm_campaign=2026-11-launch&utm_content=company-thu-speaking 302
+/routing https://themarginwars.com/advisory?utm_source=x&utm_medium=social&utm_campaign=2026-11-launch&utm_content=thu-routing 302
+/teardown-li https://themarginwars.com/contact?topic=teardown&utm_source=linkedin&utm_medium=social&utm_campaign=2026-11-launch&utm_content=company-fri-teardown 302
+/teardown-x https://themarginwars.com/contact?topic=teardown&utm_source=x&utm_medium=social&utm_campaign=2026-11-launch&utm_content=fri-teardown 302
