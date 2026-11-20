@@ -14,7 +14,7 @@ script; the JSON files in this folder are the source of truth for the rulesets.
 | Environment `production` | Required reviewer `@AviShip-Type0`; **prevent self-review off** (see below); deployment branches `main` only. Secret `CLOUDFLARE_API_TOKEN`. Deploys only by manual dispatch of `deploy.yml` |
 | Variable | `CLOUDFLARE_ACCOUNT_ID` (repository variable) |
 | Ruleset `main-protected` (`ruleset-main.json`) | PR required, **0 approvals, no code-owner review** (see below), stale approvals dismissed, conversations resolved, squash only, linear history, no force-push, no deletion, no bypass actors. Required checks (strict): `compliance`, `frontmatter-limits`, `claims`, `links-docs`, `secrets`, `standards-lock`, `functions`, `site-build`, `site-gates` |
-| Ruleset `ledger-bot-only` (`ruleset-ledger.json`) | `refs/heads/ledger`: no deletion, no force-push, updates restricted; bypass only for team `marginwars-bots` (members: `marginwars-bot` only) |
+| Ruleset `ledger-bot-only` (`ruleset-ledger.json`) | `refs/heads/ledger`: no deletion, no force-push (append-only); fast-forward pushes by anyone with write access are allowed since 19 Nov 2026 (the `update` rule was removed because it blocked every push, including the publisher's; bypass team `marginwars-bots` kept) |
 | Ruleset `release-tags` (`ruleset-tags.json`) | `prod-*` and `v*` tags cannot be updated or deleted |
 | Labels | From `.github/labels.yml`; the `labels` workflow keeps them in sync |
 | Cloudflare Pages secrets | `MW_GUARD` on `themarginwars-dev` and `themarginwars` |
