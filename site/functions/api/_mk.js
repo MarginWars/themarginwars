@@ -3,8 +3,11 @@
 export const CLIENT_EVENTS = new Set(["visit", "cta_contact", "cta_briefing", "out_substack", "out_linkedin"]);
 export const FORM_EVENTS = new Set(["form_contact", "form_briefing", "form_escalation"]);
 const SCHEMA = "CREATE TABLE IF NOT EXISTS mk_daily (day TEXT NOT NULL, page TEXT NOT NULL, campaign TEXT NOT NULL, source TEXT NOT NULL, medium TEXT NOT NULL, event TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, page, campaign, source, medium, event))";
+// Per-post breakdown (utm_content = the post slug). A sidecar table, not a column on mk_daily: SQLite cannot change a primary key in place,
+// and mk_daily's counters and every existing query stay exactly as they were. Migration: site/migrations/0001_mk_daily_content.sql.
+const SCHEMA_CONTENT = "CREATE TABLE IF NOT EXISTS mk_daily_content (day TEXT NOT NULL, page TEXT NOT NULL, campaign TEXT NOT NULL, source TEXT NOT NULL, medium TEXT NOT NULL, content TEXT NOT NULL, event TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, page, campaign, source, medium, content, event))";
 let ready = false;
-export async function ensureMk(db) { if (!ready) { await db.prepare(SCHEMA).run(); ready = true; } }
+export async function ensureMk(db) { if (!ready) { await db.prepare(SCHEMA).run(); await db.prepare(SCHEMA_CONTENT).run(); ready = true; } }
 export const tok = (v, n = 64) => { const s = String(v || "").toLowerCase().trim().replace(/[^a-z0-9._~-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, n); return s || "(none)"; };
 export const pathOf = v => { try { let p = new URL(String(v || "/"), "https://themarginwars.com").pathname; p = p.replace(/\.html$/, "").replace(/\/index$/, "/"); return p.slice(0, 120) || "/"; } catch { return "/"; } };
 const hostOf = v => { try { return new URL(String(v)).hostname.replace(/^www\./, "").slice(0, 80); } catch { return ""; } };
@@ -21,7 +24,7 @@ export function dims(attr, page) {
   const l = (attr && attr.last) || {};
   const source = l.source ? tok(l.source) : l.referrer ? tok(l.referrer) : "direct";
   const medium = l.medium ? tok(l.medium) : l.referrer ? "referral" : "(none)";
-  return { page: pathOf(page || (attr && attr.last && attr.last.landing)), campaign: tok(l.campaign), source, medium };
+  return { page: pathOf(page || (attr && attr.last && attr.last.landing)), campaign: tok(l.campaign), source, medium, content: tok(l.content) };
 }
 export async function count(env, event, d) {
   if (!env.CONTACT_DB || !(CLIENT_EVENTS.has(event) || FORM_EVENTS.has(event))) return false;
@@ -30,6 +33,11 @@ export async function count(env, event, d) {
     const day = new Date().toISOString().slice(0, 10);
     await env.CONTACT_DB.prepare("INSERT INTO mk_daily (day, page, campaign, source, medium, event, n) VALUES (?1,?2,?3,?4,?5,?6,1) ON CONFLICT (day, page, campaign, source, medium, event) DO UPDATE SET n = n + 1")
       .bind(day, d.page, d.campaign, d.source, d.medium, event).run();
+    // Per-post counter; a failure here never loses the mk_daily count above.
+    try {
+      await env.CONTACT_DB.prepare("INSERT INTO mk_daily_content (day, page, campaign, source, medium, content, event, n) VALUES (?1,?2,?3,?4,?5,?6,?7,1) ON CONFLICT (day, page, campaign, source, medium, content, event) DO UPDATE SET n = n + 1")
+        .bind(day, d.page, d.campaign, d.source, d.medium, d.content || "(none)", event).run();
+    } catch {}
     return true;
   } catch { return false; }
 }
