@@ -1,0 +1,12 @@
+# Preserve the existing Ep2 review state. Not approved by the company-pack calendar merge.
+# Both source items belong to content-studio and remain status: in-review.
+week: 2026-W48
+status: in-review
+standing_permission: null
+items:
+- file: content/x/2026-11-23-ep2.md
+  schedule: '2026-11-23T09:00:00-08:00'
+  channel: x
+- file: content/linkedin/company/2026-11-23-ep2.md
+  schedule: '2026-11-23T09:05:00-08:00'
+  channel: linkedin-company
