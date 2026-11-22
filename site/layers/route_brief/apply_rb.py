@@ -49,6 +49,7 @@ for n in ('index.html','advisory.html'):
     if 'assets/rb.css' not in s:
         s=s.replace('</head>','<link rel="stylesheet" href="assets/rb.css"><script src="assets/rb.js" defer></script></head>',1)
     m=re.search(r'<section\b(?=[^>]*\bclass="(?=[^"]*\btstrip\b)(?=[^"]*\btmap\b)[^"]*")[^>]*>',s)
+    if not m and n=='index.html': f.write_text(s); print('rb: home carries no terrain block (site_eval_1121), skipped'); continue
     assert m,n
     i=m.start()
     s=s[:i]+B+s[i:]

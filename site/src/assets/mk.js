@@ -23,7 +23,7 @@
  document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'',u;
   try{u=new URL(h,location.href)}catch(x){return}
   if(/(^|\.)substack\.com$/.test(u.hostname))send('out_substack');
-  else if(/(^|\.)linkedin\.com$/.test(u.hostname))send('out_linkedin');
+  else if(/(^|\.)linkedin\.com$/.test(u.hostname)&&!a.closest('.mws'))send('out_linkedin');
   else if(u.hostname===H&&/^\/contact(\.html)?$/.test(u.pathname))send(/topic=briefing/i.test(u.search)?'cta_briefing':'cta_contact');
  },true);
 })();
