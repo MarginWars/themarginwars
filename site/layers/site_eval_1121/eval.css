@@ -1,0 +1,43 @@
+/* Site evaluation 21 Nov 2026. Last in the cascade. Source of truth for these fixes. */
+/* Advisory: offers (wk.js ledger keeps its price column) + one CTA. */
+html body.nm .offers .off-cta{margin:32px 0 0!important}
+/* Home: one factual line, using the shared section-rhythm and edge tokens. */
+html body.nm main>section.cred:not(#\#):not(#\#){padding:64px 16px!important;margin:0!important;border-top:1px solid #DDE1E4!important;border-bottom:1px solid #DDE1E4!important;background:#fff!important;color:#111417}
+html body.nm .cred-line{margin:0!important;padding:0!important;font:500 14px/1.7 'Schibsted Grotesk',system-ui,sans-serif;max-width:1072px}
+html body.nm .cred-line a{white-space:nowrap;font-weight:600}
+@media(min-width:768px){html body.nm main>section.cred:not(#\#):not(#\#){padding:96px 24px!important}}
+@media(min-width:1280px){html body.nm main>section.cred:not(#\#):not(#\#){padding:120px calc((100% - 1072px)/2)!important}}
+html body.nm .rt-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 32px}
+@media(max-width:700px){
+ html body.nm main>.cred{padding:24px 16px!important}
+ html body.nm .cred-l{display:grid;gap:12px}
+ html body.nm .cred-l li:not(:first-child):not(.cred-a){border:0;padding:0!important}
+ html body.nm .cred-l .cred-a{margin:0!important}
+}
+/* Real table layout, not a min-content expansion into the gutter (Leak + Ep2 result state). */
+html body.nm .gm table.lk{table-layout:fixed}
+html body.nm .gm table.lk :is(th,td):last-child{width:7.5em}
+html body.nm .gm table.lk button{overflow-wrap:anywhere;hyphens:auto}
+/* Tracewire: the row container is semantically real; its children keep their exact CSS-grid positions. */
+.rt-row{display:contents}
+/* The previous mobile visually-hidden hero is overridden in full, including the high-specificity suite rule. */
+@media(max-width:700px){
+ html body.nm.pg-tracewire main>section.ihero:not(#\#):not(#\#){display:block!important;position:static!important;width:auto!important;height:auto!important;min-width:0!important;max-width:none!important;min-height:0!important;max-height:none!important;overflow:visible!important;clip:auto!important;clip-path:none!important;white-space:normal!important;margin:0!important;padding:24px 16px!important;border:0!important}
+ html body.nm.pg-tracewire .ihero h1{font-size:clamp(28px,7vw,36px)!important;line-height:1.15!important;letter-spacing:-.03em!important;margin:0 0 12px!important}
+ html body.nm.pg-tracewire .ihero h1 span{display:inline!important}
+ html body.nm.pg-tracewire .ihero h1 span+span::before{content:' '}
+ html body.nm.pg-tracewire .ihero .lede{font-size:13px!important;line-height:1.6!important;margin:0!important;max-width:none!important}
+ html body.nm.pg-tracewire .ihero .lede{min-height:3.2em}
+}
+@media (max-width:479px){
+ html body.nm.pg-tracewire .ihero .lede{min-height:4.8em}
+}
+html body.nm .cf-priv{margin:16px 0 0!important;font-size:13px;line-height:1.6;color:var(--nm-muted,#4A555B)}
+html body.nm .privacy-copy{max-width:800px}
+
+html body.nm .privacy-copy p,html body.nm .privacy-copy li{line-height:1.7}
+html body.nm .privacy-copy ul{padding-left:24px}
+/* Tracewire mobile: the board is built by script after first paint now that the title is visible; reserve its space so the footer does not jump. */
+@media (max-width:700px) and (scripting:enabled){
+ html body.nm.pg-tracewire main .gm.rt{min-height:700px}
+}
