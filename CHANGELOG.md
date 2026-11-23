@@ -6,6 +6,10 @@ All notable changes. Format: Keep a Changelog; dates in Pacific Time.
 
 ### Added
 
+- Home page: a compact Briefing-invite strip above the hero (existing invitation copy and form flow), with distinct
+  `utm_content` / `data-mk-content` labels (`index-top-briefing` vs the existing hero button `index-hero-briefing`)
+  so the two placements can be compared in `/api/mk/report` `by_content`. Dev only until reviewed.
+
 - Repository created from the box migration (12 Nov 2026): site history rebuilt from dated backups
   (31 Oct to 12 Nov 2026), layered build, Pages Functions, release gates, governance, CI, deploy workflows,
   publish pipeline scaffold, agent roster, ADR-0001 to ADR-0003 and the Monday 16 Nov launch runbook.
