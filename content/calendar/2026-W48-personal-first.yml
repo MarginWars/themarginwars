@@ -1,0 +1,28 @@
+# Week 48 remaining posts, rewritten personal-first after Avi's 23 Nov 2026,
+# 2:18 PM PT decision: "Let's follow your lead on posting from my page and then
+# the reshare." Personal posts at the original pack times; company page reshares
+# one hour later. Status is draft. Do not publish until Avi approves and this
+# calendar is merged as approved (SP-1). Thu 26 Nov (US Thanksgiving) is left
+# empty on purpose.
+week: 2026-W48
+status: draft
+standing_permission: null
+items:
+- file: content/linkedin/personal/avi/2026-11-24-lesson-carousel-close-quarters.md
+  schedule: '2026-11-24T08:30:00-08:00'
+  channel: linkedin-personal
+- file: content/linkedin/company/2026-11-24-lesson-carousel-close-quarters.md
+  schedule: '2026-11-24T09:30:00-08:00'
+  channel: linkedin-company
+- file: content/linkedin/personal/avi/2026-11-25-thought-debit-routing.md
+  schedule: '2026-11-25T08:30:00-08:00'
+  channel: linkedin-personal
+- file: content/linkedin/company/2026-11-25-thought-debit-routing.md
+  schedule: '2026-11-25T09:30:00-08:00'
+  channel: linkedin-company
+- file: content/linkedin/personal/avi/2026-11-27-thought-net-revenue.md
+  schedule: '2026-11-27T12:00:00-08:00'
+  channel: linkedin-personal
+- file: content/linkedin/company/2026-11-27-thought-net-revenue.md
+  schedule: '2026-11-27T13:00:00-08:00'
+  channel: linkedin-company
