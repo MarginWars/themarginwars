@@ -1,6 +1,6 @@
 # The Margin Wars: environments, promote and rollback
 
-Last updated 10 Nov 2026, 5:35 PM PT. Secrets are never written here; names only.
+Last updated 22 Nov 2026, 5:00 PM PT. Secrets are never written here; names only.
 
 ## One build, two places
 
@@ -85,6 +85,8 @@ Rollback restores static files and Functions of that deployment; bindings/secret
 
 | When (PT) | Project | Deployment | Rollback target | What |
 |---|---|---|---|---|
+| 21 Nov 2026 22:50 | themarginwars (prod) | dce45b1a-ef31-45d9-a110-a589322096d7 | f9c08b3e-e88e-45e5-87d4-eee05332d6ef | site-eval fixes 1121 (PR #29, merge 670f194): Advisory offers under the hero, Home credibility strip, Privacy page, Tracewire mobile/ARIA/CLS, Ep2 overflow, marketing share-click fix |
+| 21 Nov 2026 22:41 | themarginwars-dev | df5a5fa7-469d-44db-886b-866a25ee29f5 | 795c4602 | same artifact as prod, proven first (prior dev was the #27 share-flow preview 795c4602.themarginwars-dev.pages.dev) |
 | 10 Nov 2026 17:32 | themarginwars (prod) | 6d796b8f-d678-4d20-834f-ae2f562ece39 | 91271ab7-0b5f-4d0a-9d4c-405cf8d8ba58 | old Slack webhook retired: no Slack fallback, MAILER email fallback kept; SLACK_WEBHOOK_URL deleted. Note: rolling back to 91271ab7 or earlier gives no webhook fallback, as the secret is gone |
 | 10 Nov 2026 17:31 | themarginwars-dev | 9a58769f-4884-4a03-a554-e5a3af624668 | d1d1b33a-5319-4d08-9ce8-6690eaab46d9 | same functions, proven first |
 | 10 Nov 2026 17:21 | themarginwars (prod) | 91271ab7-0b5f-4d0a-9d4c-405cf8d8ba58 | 6dc34813-cf6a-4659-9667-92f2ed31e82e | form alerts cut over to the signed alert route, old webhook + MAILER kept as fallback; same site_dist artifact |
