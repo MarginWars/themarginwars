@@ -9,8 +9,6 @@ owner: content-studio
 sources:
 - site/src/warroom.html
 - site/src/index.html
-links:
-- 2026-11-expert-pieces-linkedin-personal-net-revenue
 fields:
   format: text post
 ---

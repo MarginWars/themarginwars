@@ -11,8 +11,6 @@ sources:
 - site/src/assets/games.js
 - site/src/index.html
 - https://www.sahistory.org.za/people/shaka-zulu
-links:
-- 2026-11-lessons-linkedin-personal-carousel-ep2
 fields:
   format: document post (PDF carousel, 6 pages)
   document: content/linkedin/company/assets/2026-11-company-pack/carousel-close-quarters.pdf

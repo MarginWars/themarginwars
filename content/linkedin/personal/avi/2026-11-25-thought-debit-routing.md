@@ -10,8 +10,6 @@ sources:
 - site/src/index.html
 - site/src/assets/tracewire_boards.js
 - https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm
-links:
-- 2026-11-expert-pieces-linkedin-personal-debit-routing
 fields:
   format: text post
 ---
