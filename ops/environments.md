@@ -85,6 +85,8 @@ Rollback restores static files and Functions of that deployment; bindings/secret
 
 | When (PT) | Project | Deployment | Rollback target | What |
 |---|---|---|---|---|
+| 23 Nov 2026 9:01 AM | themarginwars (prod) | 10b61a5f-3e8b-4610-a529-c0f0d1a35997 | dce45b1a-ef31-45d9-a110-a589322096d7 | home Briefing invite CTA above the hero (PR #33, merge 5e7583e). Avi approved in chat 23 Nov 9:00 AM PT |
+| 23 Nov 2026 9:02 AM | themarginwars-dev | dcef6d7e-437a-47ab-b580-1a18d0042a15 | df5a5fa7-469d-44db-886b-866a25ee29f5 | same artifact as prod (5e7583e, auto-deploy on merge to main) |
 | 21 Nov 2026 22:50 | themarginwars (prod) | dce45b1a-ef31-45d9-a110-a589322096d7 | f9c08b3e-e88e-45e5-87d4-eee05332d6ef | site-eval fixes 1121 (PR #29, merge 670f194): Advisory offers under the hero, Home credibility strip, Privacy page, Tracewire mobile/ARIA/CLS, Ep2 overflow, marketing share-click fix |
 | 21 Nov 2026 22:41 | themarginwars-dev | df5a5fa7-469d-44db-886b-866a25ee29f5 | 795c4602 | same artifact as prod, proven first (prior dev was the #27 share-flow preview 795c4602.themarginwars-dev.pages.dev) |
 | 10 Nov 2026 17:32 | themarginwars (prod) | 6d796b8f-d678-4d20-834f-ae2f562ece39 | 91271ab7-0b5f-4d0a-9d4c-405cf8d8ba58 | old Slack webhook retired: no Slack fallback, MAILER email fallback kept; SLACK_WEBHOOK_URL deleted. Note: rolling back to 91271ab7 or earlier gives no webhook fallback, as the secret is gone |
