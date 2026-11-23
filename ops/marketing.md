@@ -1,6 +1,6 @@
 # The Margin Wars: marketing instrumentation
 
-Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
+Last updated 23 Nov 2026, 8:30 AM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
 
 ## 1. Attribution (UTM capture)
 
@@ -14,13 +14,13 @@ Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign,
 
 Table `mk_daily` in the environment's D1 (`CONTACT_DB`): one counter per `(day UTC, page, campaign, source, medium, event)`. No IP, no user agent, no visitor id.
 
-Per-post counts: `mk_daily_content` has the same counters plus `content` (the `utm_content` post slug, `(none)` when untagged). `mk_daily` is unchanged. Migration: `site/migrations/0001_mk_daily_content.sql`. `/api/mk/report` returns it as `by_content`.
+Per-post counts: `mk_daily_content` has the same counters plus `content` (the `utm_content` post slug on visits; the CTA placement on clicks when the link carries `utm_content` or `data-mk-content`; `(none)` when untagged). `mk_daily` is unchanged. Migration: `site/migrations/0001_mk_daily_content.sql`. `/api/mk/report` returns it as `by_content`.
 
 | Event | Counted by | When |
 |---|---|---|
 | `visit` | `/api/ev` (beacon) | first page view of a session |
 | `cta_contact` | `/api/ev` | click on any link to /contact |
-| `cta_briefing` | `/api/ev` | click on a Briefing invitation link (`/contact?topic=briefing`) |
+| `cta_briefing` | `/api/ev` | click on a Briefing invitation link (`/contact?topic=briefing`). Home placements: `index-top-briefing` (strip above the hero) and `index-hero-briefing` (existing hero button), via `data-mk-content` / the link's `utm_content`. |
 | `out_substack`, `out_linkedin` | `/api/ev` | outbound click |
 | `form_contact`, `form_briefing` | `/api/contact` | stored submission (server-side only; `/api/ev` refuses form_* events) |
 | `form_escalation` | `/api/escalate` | stored escalation |

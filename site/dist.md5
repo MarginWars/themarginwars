@@ -12,8 +12,8 @@ c55d731da7cb085682fee5fa6051d483  ./assets/about-palette.css
 4876985384603136b9683f6e08b560c4  ./assets/arcade.css
 0657aefc5eba29b96dbc71e2391c1c37  ./assets/b/0657aefc5eba.css
 0814a8e87317ddd1b475ddb81cd95482  ./assets/b/0814a8e87317.css
-091736e9e33e26ea003c3fefacad5c1d  ./assets/b/091736e9e33e.css
 0c486c91015c339846e81898ece7dd55  ./assets/b/0c486c91015c.css
+204ebaa306433da68c7b4538e7bfe67d  ./assets/b/204ebaa30643.css
 2e066b92d59aada96ddccad8477750e1  ./assets/b/2e066b92d59a.css
 3d9c22331319560ca4587cd17dcc4d4c  ./assets/b/3d9c22331319.css
 5be111347d44873f4c1ea9d2b27469d2  ./assets/b/5be111347d44.css
@@ -203,6 +203,7 @@ e1ffd66080516249eb3fc5866dca36dc  ./assets/fonts/big-shoulders-display-latin-832
 65233324c91259d651c60a49417128b0  ./assets/fonts/schibsted-grotesk-latin-ext-a6caa690.woff2
 ba4038fc5cb57fda692c7fcae5662de1  ./assets/fonts/schibsted-grotesk-latin-f5ed7f02.woff2
 c14160a9d0c018593c95bac52865d4fe  ./assets/games.js
+a30fc8ea5ad0e411165ff2825a26c5a2  ./assets/home-cta.css
 1b5f72f0cad53e6607d77c46aa79ea1d  ./assets/logo/option_A/lockup_dark.svg
 e4e6c6fa2726441092b41b0ab928ba5a  ./assets/logo/option_A/lockup_light.svg
 e39a65dcf83172ee81ff2d28eed75a0d  ./assets/logo/option_A/mark32_dark.svg
@@ -219,7 +220,7 @@ c74b82927326b71002b72b9bdb0490d0  ./assets/logo/option_C/lockup_light.svg
 7677732f2fa0156360817f533feabf55  ./assets/logo/option_D/lockup_light.svg
 788cb5e57485772794d2f759786bfc62  ./assets/logo/option_D/mark32_dark.svg
 93345bd657e0e0dc186acae60fe957a5  ./assets/logo/option_D/mark32_light.svg
-6e6389854b9800a5405fad4eab0d8a8b  ./assets/mk.js
+25403bd677453d01873af3b419a7278c  ./assets/mk.js
 af520e7ac920e3aa66d98d0778dc953d  ./assets/motion.js
 702732fa9a854afcae78243e71f3da84  ./assets/people/anitha-portrait.webp
 d87cd2402f6d6fb11200b6279c716d02  ./assets/people/anitha-print.jpg
@@ -378,7 +379,7 @@ c30df1233c6309067d27dd53e8d5946f  ./feeds/wire-us.xml
 d7cfdb4f0c5e48c5f7ea9cf681eae76a  ./feeds/wire.json
 de9d81730452c709007b6e06d58a24d0  ./feeds/wire.xml
 75740b25791dfc58c25ee8a42853cba6  ./icon.svg
-3fe9715b605e3e5c731b007bc8ea40e5  ./index.html
+d68aaf4b71a969132141314c30bcc356  ./index.html
 04449d4fc003ff42f0f841a0d8b4ff8e  ./leak.html
 ae73291ab45f58d3497a4abaa822ceff  ./privacy.html
 bb57dc9bb44e3e6722570c53acc5e42c  ./quiz.html

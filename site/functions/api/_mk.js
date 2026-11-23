@@ -21,11 +21,12 @@ function touch(t) {
 }
 // Sanitised first/last touch attribution as sent by assets/mk.js (sessionStorage only).
 export function cleanAttr(a) { if (!a || typeof a !== "object") return null; const first = touch(a.first), last = touch(a.last); return first || last ? { first, last } : null; }
-export function dims(attr, page) {
+export function dims(attr, page, contentOverride) {
   const l = (attr && attr.last) || {};
   const source = l.source ? tok(l.source) : l.referrer ? tok(l.referrer) : "direct";
   const medium = l.medium ? tok(l.medium) : l.referrer ? "referral" : "(none)";
-  return { page: pathOf(page || (attr && attr.last && attr.last.landing)), campaign: tok(l.campaign), source, medium, content: tok(l.content) };
+  const content = (contentOverride != null && String(contentOverride).trim()) ? tok(contentOverride) : tok(l.content);
+  return { page: pathOf(page || (attr && attr.last && attr.last.landing)), campaign: tok(l.campaign), source, medium, content };
 }
 export async function count(env, event, d) {
   if (!env.CONTACT_DB || !(CLIENT_EVENTS.has(event) || FORM_EVENTS.has(event))) return false;
