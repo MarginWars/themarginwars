@@ -1,8 +1,7 @@
-# Preserve the existing Ep2 review state. Not approved by the company-pack calendar merge.
-# Both source items belong to content-studio and remain status: in-review.
+# Ep2 launch pair approved by Avi in chat, Mon 23 Nov 2026 7:50 AM PT (SP-1).
 week: 2026-W48
-status: in-review
-standing_permission: null
+status: approved
+standing_permission: SP-1
 items:
 - file: content/x/2026-11-23-ep2.md
   schedule: '2026-11-23T09:00:00-08:00'
