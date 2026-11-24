@@ -3,8 +3,8 @@ id: li-company-2026-11-27-thought-net-revenue
 channel: linkedin-company
 kind: post
 schedule: '2026-11-27T13:00:00-08:00'
-status: draft
-status_note: Reshare of li-personal-2026-11-27-thought-net-revenue, one hour later. Personal-first draft, 23 Nov 2026. Status is draft until Avi approves. Do not tag anyone.
+status: approved
+status_note: 'Reshare of li-personal-2026-11-27-thought-net-revenue, one hour later. Approved by Avi in chat, Mon 23 Nov 2026 5:44 PM PT: "Yes, approve the three personal posts and page reshares as listed" (SP-1). Do not tag anyone.'
 owner: content-studio
 sources:
 - site/src/warroom.html

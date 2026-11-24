@@ -1,12 +1,12 @@
-# Week 48 remaining posts, rewritten personal-first after Avi's 23 Nov 2026,
-# 2:18 PM PT decision: "Let's follow your lead on posting from my page and then
-# the reshare." Personal posts at the original pack times; company page reshares
-# one hour later. Status is draft. Do not publish until Avi approves and this
-# calendar is merged as approved (SP-1). Thu 26 Nov (US Thanksgiving) is left
+# W48 remaining posts, personal-first. Approved by Avi in chat, Mon 23 Nov 2026
+# 5:44 PM PT: "Yes, approve the three personal posts and page reshares as listed"
+# (SP-1). Earlier the same day, 2:18 PM PT: "Let's follow your lead on posting
+# from my page and then the reshare." Personal posts at the original pack times;
+# company page reshares one hour later. Thu 26 Nov (US Thanksgiving) is left
 # empty on purpose.
 week: 2026-W48
-status: draft
-standing_permission: null
+status: approved
+standing_permission: SP-1
 items:
 - file: content/linkedin/personal/avi/2026-11-24-lesson-carousel-close-quarters.md
   schedule: '2026-11-24T08:30:00-08:00'

@@ -3,8 +3,8 @@ id: li-personal-2026-11-24-lesson-carousel-close-quarters
 channel: linkedin-personal
 kind: post
 schedule: '2026-11-24T08:30:00-08:00'
-status: draft
-status_note: Personal-first draft, 23 Nov 2026. Avi decided remaining W48 posts go from his profile first, with the company page resharing about an hour later. Status is draft until he approves. Do not tag anyone.
+status: approved
+status_note: 'Approved by Avi in chat, Mon 23 Nov 2026 5:44 PM PT: "Yes, approve the three personal posts and page reshares as listed" (SP-1). Personal-first: company page reshares about an hour later. Do not tag anyone.'
 owner: content-studio
 sources:
 - site/src/ep2.html
