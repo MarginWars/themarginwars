@@ -82,9 +82,9 @@ await t("count stores game_start and game_rank against the episode page and cont
   assert.equal([...db.content.values()][0].content, "personal-carousel-ep2");
 });
 
-const TOKEN = "mk-report-test-token";
+const auth = "qa-mk-report";
 const reportOf = async (env, url) => {
-  const res = await onRequestGet({ request: new Request(url, { headers: { authorization: "Bearer " + TOKEN } }), env });
+  const res = await onRequestGet({ request: new Request(url, { headers: { authorization: "Bearer " + auth } }), env });
   return { status: res.status, body: await res.json() };
 };
 
@@ -95,10 +95,10 @@ await t("report is unauthorized without a matching token and lists game rates", 
   await count({ CONTACT_DB: db }, "game_start", d);
   await count({ CONTACT_DB: db }, "game_complete", d);
   await count({ CONTACT_DB: db }, "game_rank", d);
-  const denied = await onRequestGet({ request: new Request("https://themarginwars.com/api/mk/report"), env: { CONTACT_DB: db, MK_REPORT_TOKEN: TOKEN } });
+  const denied = await onRequestGet({ request: new Request("https://themarginwars.com/api/mk/report"), env: { CONTACT_DB: db, MK_REPORT_TOKEN: auth } });
   assert.equal(denied.status, 401);
   const today = new Date().toISOString().slice(0, 10);
-  const { status, body } = await reportOf({ CONTACT_DB: db, MK_REPORT_TOKEN: TOKEN, SITE_ENV: "production" }, `https://themarginwars.com/api/mk/report?from=${today}&to=${today}`);
+  const { status, body } = await reportOf({ CONTACT_DB: db, MK_REPORT_TOKEN: auth, SITE_ENV: "production" }, `https://themarginwars.com/api/mk/report?from=${today}&to=${today}`);
   assert.equal(status, 200);
   assert.equal(body.ok, true);
   assert.equal(body.totals.games.game_start, 2);
