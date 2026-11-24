@@ -98,6 +98,7 @@ jobs:
           if [ -n "$MW_GUARD_TESTS" ]; then printf '%s' "$MW_GUARD_TESTS" > "$RUNNER_TEMP/t.json"; export MW_GUARD_TESTS_FILE="$RUNNER_TEMP/t.json"; fi
           node qa/functions/test_soldier.mjs
           node qa/functions/test_mailer.mjs
+          node qa/functions/test_mk.mjs
           for f in site/functions/api/*.js site/functions/api/mk/*.js site/functions/*.js; do node --check "$f"; done
   site-build:
     name: site-build
