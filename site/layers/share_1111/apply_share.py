@@ -99,11 +99,12 @@ for slug in GAMES:
     p = D / f"{slug}.html"; t = p.read_text()
     title = html.unescape(re.search(r"<title>([^<]*)</title>", t).group(1))
     desc = html.unescape(re.search(r'<meta content="([^"]*)" property="og:description"/>', t).group(1))
-    h1 = [html.unescape(x) for x in re.findall(r"<span>([^<]*)</span>", re.search(r"<h1>(.*?)</h1>", t).group(1))]
+    live = re.sub(r"<template\b.*?</template>", "", t, flags=re.S)  # skip the Season 1 lock template (its h1 is the countdown, not the page)
+    h1 = [html.unescape(x) for x in re.findall(r"<span>([^<]*)</span>", re.search(r"<h1>(.*?)</h1>", live).group(1))]
     big = h1[1] if slug.startswith("ep") else " ".join(h1)
     kicker = "Arcade · Season 1 · " + h1[0] if slug.startswith("ep") else "Arcade"
     og_card(slug, kicker, big, desc)
-    img = SITE + f"assets/brand/og/{slug}.png"; alt = f"{big}: {desc}" if not desc.startswith(big) else desc
+    img = SITE + f"assets/brand/og/{slug}.png"; alt = desc if desc.startswith(big) or desc.startswith(h1[-1] + ":") else f"{big}: {desc}"
     for attr, key, val in [("property", "og:title", title), ("name", "twitter:title", title), ("property", "og:image", img), ("name", "twitter:image", img), ("property", "og:image:alt", alt)]:
         t = meta_set(t, attr, key, val)
     if 'name="twitter:image:alt"' not in t: t = t.replace('<meta content="%s" name="twitter:image"/>' % img, '<meta content="%s" name="twitter:image"/><meta content="%s" name="twitter:image:alt"/>' % (img, html.escape(alt, quote=True)), 1)

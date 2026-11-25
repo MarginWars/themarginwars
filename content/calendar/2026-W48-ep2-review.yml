@@ -1,0 +1,11 @@
+# Ep2 launch pair approved by Avi in chat, Mon 23 Nov 2026 7:50 AM PT (SP-1).
+week: 2026-W48
+status: approved
+standing_permission: SP-1
+items:
+- file: content/x/2026-11-23-ep2.md
+  schedule: '2026-11-23T09:00:00-08:00'
+  channel: x
+- file: content/linkedin/company/2026-11-23-ep2.md
+  schedule: '2026-11-23T09:05:00-08:00'
+  channel: linkedin-company

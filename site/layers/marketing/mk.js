@@ -15,15 +15,19 @@
  if(has||ref||!st.first){t.landing=location.pathname;t.at=new Date().toISOString();if(!st.first)st.first=t;if(has||ref||!st.last)st.last=t}
  var firstView=!st.v;st.v=1;try{S&&S.setItem(K,JSON.stringify(st))}catch(e){}
  window.TMW_ATTR=function(){return {first:st.first||null,last:st.last||null}};
- function send(e){if(!ON)return;var b=JSON.stringify({e:e,p:location.pathname,a:window.TMW_ATTR()});
+ function send(e,extra){if(!ON)return;var o={e:e,p:location.pathname,a:window.TMW_ATTR()};
+  if(extra&&extra.content)o.c=String(extra.content).slice(0,100);
+  var b=JSON.stringify(o);
   try{if(navigator.sendBeacon&&navigator.sendBeacon('/api/ev',new Blob([b],{type:'text/plain'})))return}catch(x){}
   try{fetch('/api/ev',{method:'POST',body:b,keepalive:true,headers:{'content-type':'text/plain'}})}catch(x){}}
  window.TMW_EV=send;
  if(firstView)send('visit');
  document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'',u;
   try{u=new URL(h,location.href)}catch(x){return}
-  if(/(^|\.)substack\.com$/.test(u.hostname))send('out_substack');
-  else if(/(^|\.)linkedin\.com$/.test(u.hostname))send('out_linkedin');
-  else if(u.hostname===H&&/^\/contact(\.html)?$/.test(u.pathname))send(/topic=briefing/i.test(u.search)?'cta_briefing':'cta_contact');
+  var slot=a.getAttribute('data-mk-content')||'';try{if(!slot)slot=u.searchParams.get('utm_content')||''}catch(x){}
+  var extra=slot?{content:slot}:undefined;
+  if(/(^|\.)substack\.com$/.test(u.hostname))send('out_substack',extra);
+  else if(/(^|\.)linkedin\.com$/.test(u.hostname)&&!a.closest('.mws'))send('out_linkedin',extra);
+  else if(u.hostname===H&&/^\/contact(\.html)?$/.test(u.pathname))send(/topic=briefing/i.test(u.search)?'cta_briefing':'cta_contact',extra);
  },true);
 })();

@@ -1,11 +1,12 @@
-# Week 48 (Mon 23 - Sun 29 Nov 2026). Only the Season 1 Ep2 drop so far; the rest of W48 comes in its own PR.
+# Week 48. Tracewire No. 8 ran Mon 23 Nov from the company page (SP-1).
+# Tue, Wed and Fri were withdrawn from this pack on 23 Nov after Avi's
+# decision (2:18 PM PT) to post from his personal profile first, with the
+# company page resharing about an hour later. Those items are now approved
+# in 2026-W48-personal-first.yml (Avi OK 23 Nov 5:44 PM PT, SP-1).
 week: 2026-W48
-status: in-review
-standing_permission: null
+status: approved
+standing_permission: SP-1
 items:
-- file: content/x/2026-11-23-ep2.md
-  schedule: '2026-11-23T09:00:00-08:00'
-  channel: x
-- file: content/linkedin/company/2026-11-23-ep2.md
-  schedule: '2026-11-23T09:05:00-08:00'
+- file: content/linkedin/company/2026-11-23-tracewire-teaser-no8.md
+  schedule: '2026-11-23T12:00:00-08:00'
   channel: linkedin-company

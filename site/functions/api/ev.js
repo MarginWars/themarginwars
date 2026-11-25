@@ -9,7 +9,7 @@ export async function onRequestPost({ request, env }) {
   if (!CLIENT_EVENTS.has(ev)) return none(400);
   if (BOT.test(request.headers.get("user-agent") || "")) return none();
   if (await limited(env, "ev:" + ipOf(request))) return none(429);
-  await count(env, ev, dims(cleanAttr(b.a), b.p));
+  await count(env, ev, dims(cleanAttr(b.a), b.p, b.c));
   return none();
 }
 const no = () => none(405);

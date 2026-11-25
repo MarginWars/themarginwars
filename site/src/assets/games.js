@@ -9,6 +9,8 @@ function rng(seed){var a=hash(String(seed));return function(){a|=0;a=a+0x6D2B79F
 function shuffle(arr,r){arr=arr.slice();for(var i=arr.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=arr[i];arr[i]=arr[j];arr[j]=t}return arr}
 function pick(seed,n,pool){return shuffle(pool||QB,rng(seed)).slice(0,n)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ev(n){try{if(window.TMW_EV)window.TMW_EV(n)}catch(e){}}
+function evOnce(n){var k='tmw_game_'+n+'_'+location.pathname.replace(/[^a-z0-9]+/gi,'-');try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1')}catch(e){}ev(n)}
 function base(){return location.protocol==='file:'?'https://review.themarginwars.pages.dev/':location.origin+location.pathname.replace(/[^/]*$/,'')}
 function liURL(path){return 'https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(base()+path+(path.indexOf('?')<0?'?':'&')+'utm_source=linkedin&utm_medium=social&utm_campaign=visitor-share&utm_content='+path.replace(/[^a-z0-9]+/gi,'-'))}
 window.MW={ptDate:ptDate,pick:pick,hash:hash,liURL:liURL,get:get,set:set,dealRange:dealRange};
@@ -101,10 +103,11 @@ function ep(el){
   var n=+el.dataset.ep,ids=el.dataset.qs.split(','),qs=QB.filter(function(q){return ids.indexOf(q.id)>=0}),need=+el.dataset.need,prev=n>1&&!get('ep'+(n-1),null)&&!(/preview/.test(location.search)&&(/^(review\.themarginwars\.pages\.dev|([a-z0-9-]+\.)?themarginwars-dev\.pages\.dev|localhost|127\.0\.0\.1)$/.test(location.hostname)));
   var title=el.dataset.title,rank=el.dataset.rank;
   var op=el.dataset.open&&Date.now()<Date.parse(el.dataset.open)&&!(/preview/.test(location.search)&&(/^(review\.themarginwars\.pages\.dev|([a-z0-9-]+\.)?themarginwars-dev\.pages\.dev|localhost|127\.0\.0\.1)$/.test(location.hostname)));if(op){el.innerHTML='<p class="lock">🔒 This episode opens in <b data-drop="'+el.dataset.open+'">soon</b>. Play the <a href="daily.html" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:0 4px">Daily</a> while you wait.</p>';countdown(el.querySelector('[data-drop]'));return}
-  if(prev){el.innerHTML='<p class="lock">🔒 Clear Episode '+(n-1)+' first. <a href="ep'+(n-1)+'.html">Go to Episode '+(n-1)+'</a></p>';return}
-  function win(s,tot){var ok=s>=need;if(ok)set('ep'+n,{s:s,rank:rank});
+  if(prev){el.innerHTML='<p class="lock">🔒 Clear Episode '+(n-1)+' first. <a href="ep'+(n-1)+'.html" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:0 4px">Go to Episode '+(n-1)+'</a></p>';return}
+  function win(s,tot){var ok=s>=need;if(ok)set('ep'+n,{s:s,rank:rank});evOnce('game_complete');if(ok)evOnce('game_rank');
     $('#epout').innerHTML=ok?'<div class="ins" aria-hidden="true">'+Array(n+1).join('<i></i>')+'</div><h3 aria-level="2">Episode cleared. Rank: '+esc(rank)+'</h3>'+shareBox('I cleared Episode '+n+': '+title+' in The Margin Wars, Season 1.\nRank: '+rank,'ep'+n+'.html?ref=share-li','I cleared Episode '+n+': '+title,'The Margin Wars, Season 1 · Rank: '+rank)+'<div class="cliff">'+$('#cliff').innerHTML+'</div>':'<h3 aria-level="2">'+s+'/'+tot+'. You need '+need+' to clear.</h3><button type="button" class="btn" onclick="location.reload()">Regroup and retry</button>'}
   var to={untimed:function(){return true}};if(el.dataset.time){var u=document.createElement('p');u.innerHTML='<label><input type="checkbox" id="eput"> Play untimed</label>';el.parentNode.insertBefore(u,el);to={time:+el.dataset.time,untimed:function(){var c=$('#eput');return c&&c.checked}}}
+  evOnce('game_start');
   if(el.dataset.deal2){deal2(el,function(f,t){var b=document.createElement('div');el.appendChild(b);b.innerHTML='<h3 aria-level="2">Now the briefing questions</h3><div id="eq"></div>';runQs($('#eq'),qs,'ep'+n,to,function(s){win(s+f,qs.length+t)})});return}
   if(el.dataset.leak){leak(el,{ep:1,done:function(f,t){var b=document.createElement('div');el.appendChild(b);setTimeout(function(){b.innerHTML='<h3 aria-level="2">Now the briefing questions</h3><div id="eq"></div>';runQs($('#eq'),qs,'ep'+n,{untimed:function(){return true}},function(s){win(s+f,qs.length+t)})},50)}})}
   else runQs(el,qs,'ep'+n,to,win);

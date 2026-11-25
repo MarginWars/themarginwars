@@ -6,6 +6,16 @@ All notable changes. Format: Keep a Changelog; dates in Pacific Time.
 
 ### Added
 
+- Season 1 episodes emit cookieless `game_start`, `game_complete` and `game_rank` events through `/api/ev` into
+  `mk_daily` / `mk_daily_content` (once per browser session per page; no IP, visitor id or score is stored).
+  `/api/mk/report` adds a `games` rollup and `game_completion_rate` so the daily metrics file can include them.
+  The Episode 2 "Go to Episode 1" lock link is a 44px tap target, matching the existing "opens soon" Daily link,
+  which unblocks the Chromium core site-gates failure at 390px.
+
+- Home page: a compact Briefing-invite strip above the hero (existing invitation copy and form flow), with distinct
+  `utm_content` / `data-mk-content` labels (`index-top-briefing` vs the existing hero button `index-hero-briefing`)
+  so the two placements can be compared in `/api/mk/report` `by_content`. Dev only until reviewed.
+
 - Repository created from the box migration (12 Nov 2026): site history rebuilt from dated backups
   (31 Oct to 12 Nov 2026), layered build, Pages Functions, release gates, governance, CI, deploy workflows,
   publish pipeline scaffold, agent roster, ADR-0001 to ADR-0003 and the Monday 16 Nov launch runbook.

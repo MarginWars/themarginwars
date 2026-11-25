@@ -12,13 +12,14 @@ MODE="${1:-dist}"
 SITE="$(cd "$(dirname "$0")" && pwd)"; REPO="$(dirname "$SITE")"; ST="$SITE/.build"
 FONTS="$SITE/layers/brand_logo/fonts"
 export PYTHONHASHSEED=0 MW_BANNED_YML="$REPO/qa/compliance/banned.yml"
-LAYERS=(copy_weekend ui_weekend route_brief copy_tighten about_rethink_1108 feeds normalize_suite buildout marketing season_rebase)
+LAYERS=(copy_weekend ui_weekend route_brief copy_tighten about_rethink_1108 feeds normalize_suite buildout marketing season_rebase site_eval_1121 home_cta_1123)
 stage() {
   rm -rf "$ST"; mkdir -p "$ST/review_deploy" "$ST/site_qa"
   cp -a "$SITE/src" "$ST/site_calm"
   cp -a "$SITE/functions" "$ST/review_deploy/functions"
   for l in "${LAYERS[@]}"; do cp -a "$SITE/layers/$l" "$ST/$l"; done
   cp -a "$SITE/layers/brand_logo" "$ST/linkedin_page_1110"
+  cp -a "$SITE/layers/share_1111" "$ST/share_1111"   # game share flow: runs on the built copy (site_dist), never on site_calm
   cp "$SITE/layers/_mwguard.py" "$ST/_mwguard.py"
   cp -a "$REPO/qa/lib/." "$ST/site_qa/"
   grep -rlE '@MW_ROOT@|@MW_FONTS@' "$ST" --include='*.py' --include='*.sh' | while read -r f; do
@@ -36,10 +37,12 @@ run_layers() {  # any layer error fails the build (&& chain: set -e is off insid
     python3 buildout/apply_buildout.py &&
     python3 marketing/apply_marketing.py &&
     python3 buildout/apply_esc_ts.py &&
-    python3 season_rebase/apply_season.py ) > "$REPO/qa-out/layers.log" 2>&1 || { tail -40 "$REPO/qa-out/layers.log"; exit 1; }
+    python3 season_rebase/apply_season.py &&
+    python3 site_eval_1121/apply_eval.py &&
+    python3 home_cta_1123/apply_cta.py ) > "$REPO/qa-out/layers.log" 2>&1 || { tail -40 "$REPO/qa-out/layers.log"; exit 1; }
 }
 make_dist() {
-  ( cd "$ST" && python3 buildout/make_dist.py )
+  ( cd "$ST" && python3 buildout/make_dist.py && python3 share_1111/apply_share.py site_dist && python3 share_1111/apply_share.py site_dist )
   rm -rf "$SITE/dist"; mv "$ST/site_dist" "$SITE/dist"
   ( cd "$SITE/dist" && find . -type f -print0 | sort -z | xargs -0 md5sum ) > "$REPO/qa-out/dist.md5"
   echo "dist: $(wc -l < "$REPO/qa-out/dist.md5") files, manifest md5 $(md5sum < "$REPO/qa-out/dist.md5" | cut -c1-32)"

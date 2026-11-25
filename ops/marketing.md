@@ -1,6 +1,6 @@
 # The Margin Wars: marketing instrumentation
 
-Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
+Last updated 24 Nov 2026, 9:20 AM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
 
 ## 1. Attribution (UTM capture)
 
@@ -14,14 +14,17 @@ Last updated 10 Nov 2026, 4:45 PM PT. Ready for AI-run campaigns; **no campaign,
 
 Table `mk_daily` in the environment's D1 (`CONTACT_DB`): one counter per `(day UTC, page, campaign, source, medium, event)`. No IP, no user agent, no visitor id.
 
-Per-post counts: `mk_daily_content` has the same counters plus `content` (the `utm_content` post slug, `(none)` when untagged). `mk_daily` is unchanged. Migration: `site/migrations/0001_mk_daily_content.sql`. `/api/mk/report` returns it as `by_content`.
+Per-post counts: `mk_daily_content` has the same counters plus `content` (the `utm_content` post slug on visits; the CTA placement on clicks when the link carries `utm_content` or `data-mk-content`; `(none)` when untagged). `mk_daily` is unchanged. Migration: `site/migrations/0001_mk_daily_content.sql`. `/api/mk/report` returns it as `by_content`.
 
 | Event | Counted by | When |
 |---|---|---|
 | `visit` | `/api/ev` (beacon) | first page view of a session |
 | `cta_contact` | `/api/ev` | click on any link to /contact |
-| `cta_briefing` | `/api/ev` | click on a Briefing invitation link (`/contact?topic=briefing`) |
+| `cta_briefing` | `/api/ev` | click on a Briefing invitation link (`/contact?topic=briefing`). Home placements: `index-top-briefing` (strip above the hero) and `index-hero-briefing` (existing hero button), via `data-mk-content` / the link's `utm_content`. |
 | `out_substack`, `out_linkedin` | `/api/ev` | outbound click |
+| `game_start` | `/api/ev` | Season 1 episode play begins (not locked). Once per browser session per page. |
+| `game_complete` | `/api/ev` | Player finishes every question in the episode, whether or not they cleared. Once per session per page. |
+| `game_rank` | `/api/ev` | Player clears the episode and ranks up (Ep1 Recruit = 4 of 5; Ep2 Line Sergeant = 5 of 6). Once per session per page. Rank name is implied by the page (`/ep1`, `/ep2`). |
 | `form_contact`, `form_briefing` | `/api/contact` | stored submission (server-side only; `/api/ev` refuses form_* events) |
 | `form_escalation` | `/api/escalate` | stored escalation |
 
@@ -53,7 +56,7 @@ The build (`marketing/apply_marketing.py`) rewrites every outbound LinkedIn/Subs
 
 ## 5. Report (machine-readable, auth only)
 
-`GET https://themarginwars.com/api/mk/report?from=YYYY-MM-DD&to=YYYY-MM-DD[&include_qa=1]` with header `authorization: Bearer <MK_REPORT_TOKEN>` (401 without it; never public, noindex, no-store). Dev has its own token. Returns JSON: `by_day_campaign`, `by_campaign`, `by_page`, `by_source` and `totals`, each with `visits`, `conversions`, `by_form`, `cta`, `conversion_rate` (= conversions / visits). Days are UTC. For a routine:
+`GET https://themarginwars.com/api/mk/report?from=YYYY-MM-DD&to=YYYY-MM-DD[&include_qa=1]` with header `authorization: Bearer <MK_REPORT_TOKEN>` (401 without it; never public, noindex, no-store). Dev has its own token. Returns JSON: `by_day_campaign`, `by_campaign`, `by_page`, `by_content`, `by_source` and `totals`, each with `visits`, `conversions`, `by_form`, `cta`, `games` (`game_start`, `game_complete`, `game_rank`), `conversion_rate` (= conversions / visits) and `game_completion_rate` (= game_complete / game_start). Days are UTC. Daily 6 PM PT metrics (`ledger/metrics`) already pull this report, so episode starts, completions and rank-ups show up there once the events are live on production. For a routine:
 
 ```bash
 curl -s -H "authorization: Bearer $R" "https://themarginwars.com/api/mk/report?from=$(date -u -d yesterday +%F)&to=$(date -u -d yesterday +%F)"
