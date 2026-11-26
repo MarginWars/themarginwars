@@ -1,21 +1,23 @@
 // GET /api/mk/report  — auth-protected JSON report for routines. Never public.
 // Auth: header "authorization: Bearer <MK_REPORT_TOKEN>". Params: from, to (YYYY-MM-DD, UTC; default last 30 days), include_qa=1.
-import { ensureMk, FORM_EVENTS, GAME_EVENTS } from "../_mk.js";
+import { ensureMk, FORM_EVENTS, FUNNEL_EVENTS, GAME_EVENTS } from "../_mk.js";
 const J = (o, s = 200) => new Response(JSON.stringify(o, null, 1), { status: s, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });
 async function same(a, b) { const e = new TextEncoder(); const [x, y] = await Promise.all([crypto.subtle.digest("SHA-256", e.encode(a)), crypto.subtle.digest("SHA-256", e.encode(b))]); const u = new Uint8Array(x), v = new Uint8Array(y); let d = 0; for (let i = 0; i < u.length; i++) d |= u[i] ^ v[i]; return d === 0; }
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
 function roll(rows, keyf) {
   const m = new Map();
   for (const r of rows) {
-    const k = keyf(r); let o = m.get(k.id); if (!o) { o = { ...k.cols, visits: 0, conversions: 0, by_form: {}, cta: {}, games: {} }; m.set(k.id, o); }
+    const k = keyf(r); let o = m.get(k.id); if (!o) { o = { ...k.cols, visits: 0, conversions: 0, by_form: {}, cta: {}, games: {}, funnel: {} }; m.set(k.id, o); }
     if (r.event === "visit") o.visits += r.n;
     else if (FORM_EVENTS.has(r.event)) { o.conversions += r.n; o.by_form[r.event] = (o.by_form[r.event] || 0) + r.n; }
     else if (GAME_EVENTS.has(r.event)) o.games[r.event] = (o.games[r.event] || 0) + r.n;
+    else if (FUNNEL_EVENTS.has(r.event)) o.funnel[r.event] = (o.funnel[r.event] || 0) + r.n;
     else o.cta[r.event] = (o.cta[r.event] || 0) + r.n;
   }
   return [...m.values()].map(o => {
     const starts = o.games.game_start || 0, completes = o.games.game_complete || 0;
-    return { ...o, conversion_rate: o.visits ? +(o.conversions / o.visits).toFixed(4) : null, game_completion_rate: starts ? +(completes / starts).toFixed(4) : null };
+    const views = o.funnel.form_view || 0, submits = o.funnel.form_submit || 0;
+    return { ...o, conversion_rate: o.visits ? +(o.conversions / o.visits).toFixed(4) : null, game_completion_rate: starts ? +(completes / starts).toFixed(4) : null, form_submit_rate: views ? +(submits / views).toFixed(4) : null };
   });
 }
 export async function onRequestGet({ request, env }) {
@@ -35,13 +37,13 @@ export async function onRequestGet({ request, env }) {
   const by_day_campaign = roll(rows, r => ({ id: r.day + "|" + r.campaign, cols: { day: r.day, campaign: r.campaign } }));
   return J({
     ok: true, env: String(env.SITE_ENV || "production"), generated_at: new Date().toISOString(), from, to, timezone: "UTC", include_qa: qa,
-    definitions: { visits: "first page view per browser session (sessionStorage), last-touch attributed", conversions: "stored form submissions: " + [...FORM_EVENTS].join(", "), conversion_rate: "conversions / visits", games: "cookieless episode events, once per browser session per page: " + [...GAME_EVENTS].join(", "), game_completion_rate: "game_complete / game_start; game_rank is a clear (rank-up)" },
+    definitions: { visits: "first page view per browser session (sessionStorage), last-touch attributed", conversions: "stored form submissions: " + [...FORM_EVENTS].join(", "), conversion_rate: "conversions / visits", games: "cookieless episode events, once per browser session per page: " + [...GAME_EVENTS].join(", "), game_completion_rate: "game_complete / game_start; game_rank is a clear (rank-up)", funnel: "cookieless contact-form events, once per browser session per page: " + [...FUNNEL_EVENTS].join(", "), form_submit_rate: "form_submit / form_view" },
     by_day_campaign,
     by_campaign: roll(rows, r => ({ id: r.campaign, cols: { campaign: r.campaign } })),
     by_page: roll(rows, r => ({ id: r.page, cols: { page: r.page } })),
     by_content: roll(crows, r => ({ id: r.campaign + "|" + r.content, cols: { campaign: r.campaign, content: r.content } })),
     by_source: roll(rows, r => ({ id: r.source + "|" + r.medium, cols: { source: r.source, medium: r.medium } })),
-    totals: roll(rows, () => ({ id: "all", cols: {} }))[0] || { visits: 0, conversions: 0, by_form: {}, cta: {}, games: {}, conversion_rate: null, game_completion_rate: null }
+    totals: roll(rows, () => ({ id: "all", cols: {} }))[0] || { visits: 0, conversions: 0, by_form: {}, cta: {}, games: {}, funnel: {}, conversion_rate: null, game_completion_rate: null, form_submit_rate: null }
   });
 }
 const no = () => J({ ok: false, error: "Method not allowed" }, 405);
