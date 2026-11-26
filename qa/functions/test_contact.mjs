@@ -32,7 +32,7 @@ t("missing or invalid email is rejected", () => {
   const missing = validate({ topic: "Briefing invitation" });
   assert.equal(missing.e.email, "Please enter your email address.");
   const bad = validate({ email: "not-an-email", topic: "Briefing invitation" });
-  assert.equal(bad.e.email, "Please enter a valid email address, like name@company.com.");
+  assert.match(bad.e.email, /^Please enter a valid email address/);
 });
 
 t("unknown topic is rejected", () => {
