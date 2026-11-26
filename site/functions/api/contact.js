@@ -22,12 +22,12 @@ export function validate(f) {
     topic: String(f.topic || "").trim(), message: String(f.message || "").trim()
   };
   const e = {};
-  // Name is optional (the short Teardown form asks only for email and one line); it is stored as "Not given" when blank.
+  // Name and the one-line message are optional; each is stored as "Not given" when blank.
   if (v.name.length > LIM.name) e.name = `Please keep your name under ${LIM.name} characters.`; else if (!v.name) v.name = "Not given";
   if (!v.email) e.email = "Please enter your email address."; else if (v.email.length > LIM.email || !EMAIL.test(v.email)) e.email = "Please enter a valid email address, like name@company.com.";
   if (v.company.length > LIM.company) e.company = `Please keep this under ${LIM.company} characters.`;
   if (!TOPICS.includes(v.topic)) e.topic = "Please choose a topic.";
-  if (v.message.length < 4) e.message = "Please add a line about what you need."; else if (v.message.length > LIM.message) e.message = `Please keep your message under ${LIM.message} characters.`;
+  if (!v.message) v.message = "Not given"; else if (v.message.length > LIM.message) e.message = `Please keep your message under ${LIM.message} characters.`;
   return { v, e };
 }
 

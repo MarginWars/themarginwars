@@ -37,15 +37,15 @@ def fld(n,label,typ='text',ac='',extra='',cls='',opt=False,ta=False):
  lab=f'<label class="cf-l" for="cf-{n}">{label}'+(' <span class="cf-opt">(optional)</span>' if opt else '')+'</label>'
  ctl=(f'<textarea class="cf-i" id="cf-{n}" name="{n}" rows="6"{req}{extra} aria-describedby="cf-{n}-e"></textarea>' if ta else f'<input class="cf-i" id="cf-{n}" name="{n}" type="{typ}"'+(f' autocomplete="{ac}"' if ac else '')+f'{req}{extra} aria-describedby="cf-{n}-e">')
  return f'<div class="cf-f{(" "+cls) if cls else ""}">{lab}{ctl}<p class="cf-err" id="cf-{n}-e" hidden></p></div>'
-# Short path first: email + one line are the only required fields. Topic, name and company sit behind "More details".
+# Short path first: email is the only required field; the one-line message is optional. Topic, name and company sit behind "More details".
 # Margin Teardown is the default topic, so a visit from /teardown-li or /teardown-x (?topic=teardown) and a plain visit both land on it.
 opts=''.join(f'<label class="wk-opt"><input type="radio" name="topic" value="{e(x)}" required aria-describedby="cf-topic-e"'+(' checked' if k==0 else '')+f'><span class="wk-no" aria-hidden="true">{k+1:02d}</span><b>{e(x)}</b></label>' for k,x in enumerate(TOPICS))
 FORM=('<!--bo-form--><section class="cf-book" id="book"><p class="eyebrow sx">01</p><h2 id="cf-title">Book a Teardown</h2>'
- '<p class="cf-lede" id="cf-lede">Tell us what you want torn down. Your email and one line are enough to start.</p>'
+ '<p class="cf-lede" id="cf-lede">Tell us what you want torn down. Your email is enough to start. A line is optional.</p>'
  '<form class="wk-route cform" id="contact-form" action="/api/contact" method="post" novalidate hidden aria-labelledby="cf-title">'
  '<div class="cf-body"><div class="cf-fields">'
  +fld('email','Email',typ='email',ac='email',extra=' maxlength="200" inputmode="email" spellcheck="false"')
- +fld('message','What do you want torn down?',extra=' maxlength="300" placeholder="One line is fine"',cls='cf-line')+
+ +fld('message','What do you want torn down?',extra=' maxlength="300" placeholder="One line is fine"',cls='cf-line',opt=True)+
  '<details class="cf-more"><summary>More details <span class="cf-opt">(optional)</span></summary><div class="cf-more-b">'
  '<fieldset class="cf-topic"><legend id="cf-h">Choose a topic</legend><div class="wk-opts">'+opts+'</div><p class="cf-err" id="cf-topic-e" hidden></p></fieldset>'
  '<div class="cf-fields cf-fields2">'+fld('name','Name',ac='name',extra=' maxlength="120"',opt=True)+fld('company','Company',ac='organization',extra=' maxlength="160"',cls='cf-co',opt=True)+'</div></div></details>'

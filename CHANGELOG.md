@@ -6,6 +6,12 @@ All notable changes. Format: Keep a Changelog; dates in Pacific Time.
 
 ### Added
 
+- Contact and Briefing forms emit cookieless `form_view`, `form_start`, `form_error` and `form_submit`
+  events through `/api/ev` (once per browser session per page; no IP, visitor id or form values).
+  `/api/mk/report` adds a `funnel` rollup and `form_submit_rate` (`form_submit / form_view`).
+  The visible form is shorter: email is required, the one-line message is optional, and a Briefing
+  link no longer opens the "More details" topic list. Honeypot and Turnstile stay in place.
+
 - Season 1 episodes emit cookieless `game_start`, `game_complete` and `game_rank` events through `/api/ev` into
   `mk_daily` / `mk_daily_content` (once per browser session per page; no IP, visitor id or score is stored).
   `/api/mk/report` adds a `games` rollup and `game_completion_rate` so the daily metrics file can include them.

@@ -1,9 +1,11 @@
 // First-party, cookieless marketing measurement. Aggregates only: no IP, no user agent, no visitor id is stored.
 // Table mk_daily in CONTACT_DB: one counter per (day, page, campaign, source, medium, event).
 export const GAME_EVENTS = new Set(["game_start", "game_complete", "game_rank"]);  // season episodes; once per session per page
+export const FUNNEL_EVENTS = new Set(["form_view", "form_start", "form_error", "form_submit"]);  // contact/briefing form; once per session per page
 export const CLIENT_EVENTS = new Set(["visit", "cta_contact", "cta_briefing", "out_substack", "out_linkedin",
   "share_x", "share_linkedin", "share_copy", "share_native", "share_card",  // game share flow (share_1111)
-  "game_start", "game_complete", "game_rank"]);
+  "game_start", "game_complete", "game_rank",
+  "form_view", "form_start", "form_error", "form_submit"]);
 export const FORM_EVENTS = new Set(["form_contact", "form_briefing", "form_escalation"]);
 const SCHEMA = "CREATE TABLE IF NOT EXISTS mk_daily (day TEXT NOT NULL, page TEXT NOT NULL, campaign TEXT NOT NULL, source TEXT NOT NULL, medium TEXT NOT NULL, event TEXT NOT NULL, n INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, page, campaign, source, medium, event))";
 // Per-post breakdown (utm_content = the post slug). A sidecar table, not a column on mk_daily: SQLite cannot change a primary key in place,

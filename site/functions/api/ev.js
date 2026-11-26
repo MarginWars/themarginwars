@@ -1,4 +1,4 @@
-// POST /api/ev  — cookieless aggregate event counter (visits and CTA clicks). Stores counts only.
+// POST /api/ev  — cookieless aggregate event counter (visits, CTA clicks, game and form-funnel events). Stores counts only.
 import { limited, ipOf } from "./_rl.js";
 import { CLIENT_EVENTS, cleanAttr, dims, count } from "./_mk.js";
 const BOT = /bot|crawl|spider|slurp|preview|headless|lighthouse|facebookexternalhit|embedly|monitor/i;

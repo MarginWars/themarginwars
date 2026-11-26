@@ -1,6 +1,6 @@
-// Contract tests for cookieless marketing counters and the auth-protected report, including episode game events.
+// Contract tests for cookieless marketing counters and the auth-protected report, including episode game and form-funnel events.
 import assert from "node:assert/strict";
-import { CLIENT_EVENTS, FORM_EVENTS, GAME_EVENTS, tok, pathOf, dims, count, countable } from "../../site/functions/api/_mk.js";
+import { CLIENT_EVENTS, FORM_EVENTS, FUNNEL_EVENTS, GAME_EVENTS, tok, pathOf, dims, count, countable } from "../../site/functions/api/_mk.js";
 import { onRequestGet } from "../../site/functions/api/mk/report.js";
 
 let n = 0;
@@ -11,6 +11,20 @@ await t("game events are accepted client events and not form events", () => {
     assert.equal(GAME_EVENTS.has(ev), true, ev);
     assert.equal(CLIENT_EVENTS.has(ev), true, ev);
     assert.equal(FORM_EVENTS.has(ev), false, ev);
+  }
+});
+
+
+await t("form funnel events are accepted client events and not stored-submission form events", () => {
+  for (const ev of ["form_view", "form_start", "form_error", "form_submit"]) {
+    assert.equal(FUNNEL_EVENTS.has(ev), true, ev);
+    assert.equal(CLIENT_EVENTS.has(ev), true, ev);
+    assert.equal(FORM_EVENTS.has(ev), false, ev);
+  }
+  for (const ev of ["form_contact", "form_briefing", "form_escalation"]) {
+    assert.equal(CLIENT_EVENTS.has(ev), false, ev);
+    assert.equal(FUNNEL_EVENTS.has(ev), false, ev);
+    assert.equal(FORM_EVENTS.has(ev), true, ev);
   }
 });
 
@@ -110,6 +124,31 @@ await t("report is unauthorized without a matching token and lists game rates", 
   assert.equal(page.games.game_rank, 1);
   const content = body.by_content.find((r) => r.content === "personal-carousel-ep2");
   assert.equal(content.games.game_start, 2);
+});
+
+
+await t("report lists form funnel rates and keeps funnel events out of cta", async () => {
+  const db = memoryDb();
+  const d = { page: "/contact", campaign: "always-on", source: "themarginwars.com", medium: "website", content: "index-top-briefing" };
+  await count({ CONTACT_DB: db }, "form_view", d);
+  await count({ CONTACT_DB: db }, "form_view", d);
+  await count({ CONTACT_DB: db }, "form_start", d);
+  await count({ CONTACT_DB: db }, "form_error", d);
+  await count({ CONTACT_DB: db }, "form_submit", d);
+  const today = new Date().toISOString().slice(0, 10);
+  const { status, body } = await reportOf({ CONTACT_DB: db, MK_REPORT_TOKEN: auth, SITE_ENV: "production" }, `https://themarginwars.com/api/mk/report?from=${today}&to=${today}`);
+  assert.equal(status, 200);
+  assert.equal(body.totals.funnel.form_view, 2);
+  assert.equal(body.totals.funnel.form_start, 1);
+  assert.equal(body.totals.funnel.form_error, 1);
+  assert.equal(body.totals.funnel.form_submit, 1);
+  assert.equal(body.totals.form_submit_rate, 0.5);
+  assert.equal(body.totals.cta.form_view, undefined);
+  assert.equal(body.totals.cta.form_submit, undefined);
+  const page = body.by_page.find((r) => r.page === "/contact");
+  assert.equal(page.funnel.form_start, 1);
+  const content = body.by_content.find((r) => r.content === "index-top-briefing");
+  assert.equal(content.funnel.form_view, 2);
 });
 
 console.log(`mk: ${n} local mock tests passed`);

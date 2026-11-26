@@ -1,6 +1,6 @@
 # The Margin Wars: marketing instrumentation
 
-Last updated 24 Nov 2026, 9:20 AM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
+Last updated 25 Nov 2026, 8:15 PM PT. Ready for AI-run campaigns; **no campaign, post, ad or outreach runs without Avi's explicit go.** Soft launch stays.
 
 ## 1. Attribution (UTM capture)
 
@@ -25,7 +25,11 @@ Per-post counts: `mk_daily_content` has the same counters plus `content` (the `u
 | `game_start` | `/api/ev` | Season 1 episode play begins (not locked). Once per browser session per page. |
 | `game_complete` | `/api/ev` | Player finishes every question in the episode, whether or not they cleared. Once per session per page. |
 | `game_rank` | `/api/ev` | Player clears the episode and ranks up (Ep1 Recruit = 4 of 5; Ep2 Line Sergeant = 5 of 6). Once per session per page. Rank name is implied by the page (`/ep1`, `/ep2`). |
-| `form_contact`, `form_briefing` | `/api/contact` | stored submission (server-side only; `/api/ev` refuses form_* events) |
+| `form_view` | `/api/ev` | Contact form is on screen. Once per browser session per page. |
+| `form_start` | `/api/ev` | First interaction with the form (focus or input). Once per session per page. |
+| `form_error` | `/api/ev` | First validation, human-check or server error on the form. Once per session per page. |
+| `form_submit` | `/api/ev` | Client posts a request to `/api/contact` after local checks pass. Once per session per page. Does not mean it was stored. |
+| `form_contact`, `form_briefing` | `/api/contact` | stored submission (server-side only; `/api/ev` refuses these and `form_escalation`) |
 | `form_escalation` | `/api/escalate` | stored escalation |
 
 Bots (UA match) are dropped; `/api/ev` is rate limited per IP. Test submissions are not counted unless tagged with a `qa-*` campaign; `qa-*` rows are hidden from the report by default.
@@ -56,7 +60,7 @@ The build (`marketing/apply_marketing.py`) rewrites every outbound LinkedIn/Subs
 
 ## 5. Report (machine-readable, auth only)
 
-`GET https://themarginwars.com/api/mk/report?from=YYYY-MM-DD&to=YYYY-MM-DD[&include_qa=1]` with header `authorization: Bearer <MK_REPORT_TOKEN>` (401 without it; never public, noindex, no-store). Dev has its own token. Returns JSON: `by_day_campaign`, `by_campaign`, `by_page`, `by_content`, `by_source` and `totals`, each with `visits`, `conversions`, `by_form`, `cta`, `games` (`game_start`, `game_complete`, `game_rank`), `conversion_rate` (= conversions / visits) and `game_completion_rate` (= game_complete / game_start). Days are UTC. Daily 6 PM PT metrics (`ledger/metrics`) already pull this report, so episode starts, completions and rank-ups show up there once the events are live on production. For a routine:
+`GET https://themarginwars.com/api/mk/report?from=YYYY-MM-DD&to=YYYY-MM-DD[&include_qa=1]` with header `authorization: Bearer <MK_REPORT_TOKEN>` (401 without it; never public, noindex, no-store). Dev has its own token. Returns JSON: `by_day_campaign`, `by_campaign`, `by_page`, `by_content`, `by_source` and `totals`, each with `visits`, `conversions`, `by_form`, `cta`, `games` (`game_start`, `game_complete`, `game_rank`), `funnel` (`form_view`, `form_start`, `form_error`, `form_submit`), `conversion_rate` (= conversions / visits), `game_completion_rate` (= game_complete / game_start) and `form_submit_rate` (= form_submit / form_view). Days are UTC. Daily 6 PM PT metrics (`ledger/metrics`) already pull this report, so episode starts, completions and rank-ups show up there once the events are live on production. For a routine:
 
 ```bash
 curl -s -H "authorization: Bearer $R" "https://themarginwars.com/api/mk/report?from=$(date -u -d yesterday +%F)&to=$(date -u -d yesterday +%F)"
