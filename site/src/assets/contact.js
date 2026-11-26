@@ -11,7 +11,7 @@ var COPY={'Margin Teardown':['Book a Teardown','Tell us what you want torn down.
 var COPY_DEFAULT=['Send us a message','Your email is enough to start. A line is optional.','What do you need?','Send message'];
 function ev(n){var sent=false;function send(){if(sent||!window.TMW_EV)return;sent=true;try{window.TMW_EV(n)}catch(e){}}send();if(!sent){document.addEventListener('DOMContentLoaded',send);window.addEventListener('load',send);setTimeout(send,0)}}
 function evOnce(n){var k='tmw_form_'+n+'_'+location.pathname.replace(/[^a-z0-9]+/gi,'-');try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1')}catch(e){}ev(n)}
-function seen(){evOnce('form_view');loadTs()}
+function seen(){evOnce('form_view')}
 if(typeof IntersectionObserver==='function'){var io=new IntersectionObserver(function(ents){if(ents.some(function(e){return e.isIntersecting})){seen();io.disconnect()}},{threshold:0.15,rootMargin:'0px'});io.observe(f.closest('#book')||f)}else seen();
 ['focusin','input'].forEach(function(evn){f.addEventListener(evn,function(){evOnce('form_start')},{passive:true})});
 function skin(){var c=f.querySelector('input[name=topic]:checked'),k=COPY[c&&c.value]||COPY_DEFAULT;if(ttl)ttl.textContent=k[0];if(led)led.textContent=k[1];if(lab){lab.textContent='';lab.appendChild(document.createTextNode(k[2]+' '));var opt=document.createElement('span');opt.className='cf-opt';opt.textContent='(optional)';lab.appendChild(opt)}if(sendL){sendL.textContent=k[3];sendL.dataset.l=k[3]}}
@@ -33,7 +33,7 @@ f.addEventListener('change',function(e){if(e.target.name==='topic'){show('topic'
 function status(t,kind){st.textContent=t;st.className='cf-status'+(kind?' cf-'+kind:'');st.hidden=!t}
 function loadTs(){if(tsLoaded)return;tsLoaded=true;window.__cfTs=function(){try{wid=turnstile.render('#cf-ts',{sitekey:key,theme:'light',size:'flexible',callback:function(t){token=t;if(pending){pending=false;f.requestSubmit?f.requestSubmit():f.dispatchEvent(new Event('submit',{cancelable:true}))}},'expired-callback':function(){token=''},'error-callback':function(){token=''}})}catch(e){}};
  var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__cfTs';s.async=true;s.defer=true;document.head.appendChild(s)}
-/* Load the human check when the form is shown, so a token is ready before send. */
+/* Load the human check only when someone starts using the form (keeps the page light; a third-party fetch on view would also stall QA networkidle). */
 ['focusin','pointerdown','touchstart','keydown'].forEach(function(ev){f.addEventListener(ev,loadTs,{passive:true})});
 var pending=false;
 function busy(b){btn.disabled=b;btn.setAttribute('aria-busy',b?'true':'false');btn.querySelector('span').textContent=b?'Sending…':(sendL&&sendL.dataset.l||'Send message');f.classList.toggle('cf-busy',b)}

@@ -10,8 +10,7 @@ All notable changes. Format: Keep a Changelog; dates in Pacific Time.
   events through `/api/ev` (once per browser session per page; no IP, visitor id or form values).
   `/api/mk/report` adds a `funnel` rollup and `form_submit_rate` (`form_submit / form_view`).
   The visible form is shorter: email is required, the one-line message is optional, and a Briefing
-  link no longer opens the "More details" topic list. Turnstile still runs; it now loads when the
-  form comes on screen so the human check is ready before send.
+  link no longer opens the "More details" topic list. Honeypot and Turnstile stay in place.
 
 - Season 1 episodes emit cookieless `game_start`, `game_complete` and `game_rank` events through `/api/ev` into
   `mk_daily` / `mk_daily_content` (once per browser session per page; no IP, visitor id or score is stored).
