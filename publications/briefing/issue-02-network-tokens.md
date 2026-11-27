@@ -16,7 +16,7 @@ sources: []
 
 ## Mechanics
 1. Inventory stored credentials by scheme, issuer country, and whether they live in your vault or a PSP's.
-2. Enable token requestor status directly with schemes or via your PSP/gateway (Visa Token Service, Mastercard MDES).
+2. Enable token requestor status directly with schemes or via your PSP/gateway (Visa Token Service, Mastercard Secure Card on File (SCOF)). [CONFIRM: Checkout.com reports that SCOF replaces MDES / M4M for merchant tokens from 31 Dec 2026; single source as of 16 Nov 2026.] https://support.checkout.com/hc/en-us/articles/39222017788690-Mastercard-migration-to-Secure-Card-on-File-SCOF
 3. Bulk-provision tokens for the existing base; provision new cards at save time.
 4. Send token + cryptogram on CIT and MIT; keep PAN fallback rules explicit.
 5. Subscribe to token lifecycle updates (reissue, expiry) so stored credentials stay current.
@@ -27,12 +27,12 @@ sources: []
 - Vault able to store token + PAN mapping; PCI scope reviewed.
 - Gateway support for cryptograms on MIT; scheme token fees understood [GAP: public scheme token fee schedules].
 - Issuer coverage check by market.
+- Confirm your tokeniser is SCOF-ready before 31 Dec 2026 (or your provider's cutover date). [CONFIRM: Checkout.com only, as of 16 Nov 2026.]
 
 ## Metrics and expected impact
 - Approval rate, fraud rate, and involuntary churn on stored-card transactions, tokenised vs PAN holdout.
 - **Public reference (scheme-reported, self-interested; network-wide averages, not a merchant forecast):**
   - Visa: 4.8% higher authorisation rate for tokenised vs PAN CNP (VisaNet, Jan–Dec 2025); 39.4% lower fraud rate (FY25). https://www.visa.com/en-us/solutions/tokenization
-  - Visa earlier: ~3% auth uplift, 28% fraud reduction. https://usa.visa.com/content/dam/VCOM/regional/na/us/Solutions/documents/visas-journey-through-tokenization.pdf
   - [GAP: Mastercard public figure; independent (non-scheme) measurement.]
 - **Your range: [Assumption]** — expect lower than scheme averages where your PAN approval rate is already high; size from holdout.
 
@@ -50,8 +50,8 @@ Payments product decides; card-vault owner builds; finance validates net value; 
 | Market | Notes |
 |---|---|
 | US | Highest card-on-file share; [GAP: debit token routing interplay with Reg II dual-network] |
-| UK/EU | Tokens interact with SCA: MIT exemptions and initial authentication; [GAP: EBA/SCA source] |
-| Africa | Issuer token enablement uneven; Visa CEMEA cites 4.3% uplift (VisaNet Oct–Dec 2023) https://globalclient.visa.com/cemea-network-tokens [GAP: market-level issuer coverage] |
+| UK/EU | Tokens interact with SCA: MIT exemptions and initial authentication; [GAP: EBA/SCA source]. Checkout.com reports that Mastercard has required network tokens for Mastercard credential-on-file transactions in covered European issuing countries since 1 Oct 2026 (guest checkout from April 2028; all e-commerce from April 2030); consult the linked roadmap for excluded issuing countries, including Turkey. Mastercard has not announced plans to decline PAN transactions, but this does not establish an exemption from the token requirement. Apply the PAN holdout in Mechanics step 6 and the Monday checklist only to traffic where PAN use is permitted; confirm eligibility with your provider before starting. [CONFIRM: whether the UK is included in "Europe" is not stated in the public Checkout.com roadmap.] https://support.checkout.com/hc/en-us/articles/39223370002962-What-is-Mastercard-s-network-token-roadmap-for-Europe |
+| Africa | Issuer token enablement uneven; Visa CEMEA cites 4.3% uplift (VisaNet Oct–Dec 2023 data) https://globalclient.visa.com/cemea-network-tokens [GAP: market-level issuer coverage] |
 | APAC | India RBI card-on-file tokenisation mandate (merchants may not store card data) [GAP: cite RBI circular URL]; other markets voluntary |
 
 ## War story

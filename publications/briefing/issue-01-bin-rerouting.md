@@ -44,7 +44,7 @@ sources: []
 - **Lost volume tier at primary:** saving on one group wiped out by price step-up elsewhere → check contract bands before moving → model first.
 - **Fraud moves with traffic / new MID has no history:** fraud-to-sales spike in week one → start small, ramp.
 - **Credential mismatch:** spike in "invalid card" declines on B → end-to-end token test pre-launch.
-- **Cross-acquirer retry loops:** decline on A retried on B, counted toward scheme reattempt limits (Visa Core Rules, 24 Oct 2026, Table 7-2, pp. 547–549: up to 20 reattempts in 30 days for categories 2–4; a merchant must never resubmit category 1) → one routing decision per attempt. https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf
+- **Cross-acquirer retry loops:** decline on A retried on B, counted toward scheme reattempt limits (Visa Core Rules, 24 Oct 2026, Table 7-2, pp. 547–549: up to 20 reattempts in 30 days for categories 2–4; a merchant must never resubmit category 1). Rule 1.7.2.1 (pp. 131–132) separately prohibits intentionally manipulating the original request's data on reattempts, including the Acquiring Identifier → choose the acquirer before the first attempt; enforce category rules and shared retry counters on subsequent attempts, and do not intentionally manipulate reattempt data. https://usa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf
 - **Reconciliation breaks:** timing gaps from two settlement cycles → reconcile daily for month one.
 
 ## Owner
