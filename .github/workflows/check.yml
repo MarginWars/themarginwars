@@ -99,6 +99,7 @@ jobs:
           node qa/functions/test_soldier.mjs
           node qa/functions/test_mailer.mjs
           node qa/functions/test_mk.mjs
+          node qa/functions/test_contact.mjs
           for f in site/functions/api/*.js site/functions/api/mk/*.js site/functions/*.js; do node --check "$f"; done
   site-build:
     name: site-build

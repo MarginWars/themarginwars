@@ -1,4 +1,4 @@
-60ac73c241cfd9be1e3cbb5867650662  ./404.html
+4a8ff8f4c4825cb1aa5cb63eba92ca3a  ./404.html
 5b62f132c866b7d32bcca0d9d1b3fb50  ./_headers
 bb9dc6723c790ba8c81ff9357dd9fe60  ./_redirects
 957161abb421b8da8ce8e78c48da9622  ./about.html
@@ -19,13 +19,12 @@ c55d731da7cb085682fee5fa6051d483  ./assets/about-palette.css
 5be111347d44873f4c1ea9d2b27469d2  ./assets/b/5be111347d44.css
 5c166327cce11b1d5dff8515eafa779e  ./assets/b/5c166327cce1.css
 6487ab643db4c134cb36131f582cad9d  ./assets/b/6487ab643db4.css
-7730064b9af4b9106633b4ffe59164ed  ./assets/b/7730064b9af4.css
+738b9df40af1d5824ea10b571ddbd611  ./assets/b/738b9df40af1.css
 795ad89456e2835e6b0f5982e55a74e9  ./assets/b/795ad89456e2.css
 7e665528eca3a26a7f474c38d67f5455  ./assets/b/7e665528eca3.css
 7e6c5066c12102a42ab9b49e1260f56d  ./assets/b/7e6c5066c121.css
 88c9c99cb589fafeacfeac2f4b87e734  ./assets/b/88c9c99cb589.css
 8af0fa5e39d75a1becfe846297e27168  ./assets/b/8af0fa5e39d7.css
-918f3f8c3e342a9e5ccd13975421fb49  ./assets/b/918f3f8c3e34.css
 a2d33de152cd336215a54371218f3657  ./assets/b/a2d33de152cd.css
 a973b7edea52c01211c2b8b15f9e1f29  ./assets/b/a973b7edea52.css
 aad7e5a04790250a7903081d82fb69af  ./assets/b/aad7e5a04790.css
@@ -36,6 +35,7 @@ ceec3e28c85aa4f416b8280fa7507626  ./assets/b/ceec3e28c85a.css
 d1d2522a9180522807c99f80ff01987d  ./assets/b/d1d2522a9180.css
 d1d3037072785b42790faec6906db0f7  ./assets/b/d1d303707278.css
 dc12c05d676bd775e281a00ec9e1894c  ./assets/b/dc12c05d676b.css
+de03b4799e4d35443a27fe7a91c91a7e  ./assets/b/de03b4799e4d.css
 e440d2645f10dc3de9221e8c8bd17d15  ./assets/b/e440d2645f10.css
 f54f91845b6643927a26359aa09f7439  ./assets/b/f54f91845b66.css
 f84fcb0460356b28a4bd6afc3ae02576  ./assets/b/f84fcb046035.css
@@ -58,7 +58,7 @@ d9846fc2236456f45eca5eca590a8796  ./assets/brand/og/quiz.png
 746186b48667e106d15081558d597c95  ./assets/brand/og/tracewire.png
 f73d0de1fd58596854b34cd1e601025a  ./assets/calm.css
 e90430d4ba5a01903d42bae6b0d7b7f7  ./assets/calm.js
-2d5d9330095bdf8adfed894c59b17317  ./assets/contact.js
+2364ac3d69e0915e49d2bb566cb2cc6e  ./assets/contact.js
 ba8ac0baae0f3142026061ac203c59c6  ./assets/esc-ts.js
 25e8198280fb8e6b07dd8f1c8deb3337  ./assets/eval.css
 e273afebf559be8b42969c89e8984903  ./assets/feeds-index.js
@@ -331,7 +331,7 @@ cccf32d187cab6aac89e3c3c3453ac0f  ./calendar/items/uk-fee-logic-extension/index.
 74d5f7600eae2363be9c907f671feed4  ./calendar/items/uk-fee-transparency/index.html
 dc74d22cc87ce36d5cc7d4d43f4aa972  ./calendar/items/uk-pricing-governance/index.html
 16e37ab1789895720849e07a60c4fd3d  ./calendar/items/uk-safeguarding/index.html
-5449c85d1dd3f17c0855d521140b4291  ./contact.html
+03318a61ba7180c6c50b41cd3a720533  ./contact.html
 524a4245c12627ee303e826ec453e7f0  ./daily.html
 8d13a37c0cb660b5f5058c3e8d52eaf0  ./deal.html
 1369429d5507c72bc46d9d76ea974922  ./digest/2026-11-08/index.html
@@ -381,7 +381,7 @@ de9d81730452c709007b6e06d58a24d0  ./feeds/wire.xml
 75740b25791dfc58c25ee8a42853cba6  ./icon.svg
 d68aaf4b71a969132141314c30bcc356  ./index.html
 04449d4fc003ff42f0f841a0d8b4ff8e  ./leak.html
-ae73291ab45f58d3497a4abaa822ceff  ./privacy.html
+edc6617ff4acb55de0d2759bde33c396  ./privacy.html
 bb57dc9bb44e3e6722570c53acc5e42c  ./quiz.html
 5acc71bdbd0b56f8a0427cfae068e2af  ./robots.txt
 d38db18ca5ec3b0042fce29c10151381  ./route-briefs/items/anz-card-context-20261108/index.html
